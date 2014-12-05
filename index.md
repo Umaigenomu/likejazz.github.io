@@ -115,6 +115,8 @@ title: index
 [1201]: http://dev.likejazz.com/post/40596076167/tf-idf
 
 # General
+- [help와 man을 대체하는 dash][2302]
+- [Markdown? CommonMark!][2301]
 - [brackets-shell과 python의 관계][1114]
 - [Chromium Embedded Framework][1404]
 - [최고의 코딩 폰트 Consolas][2006]
@@ -126,6 +128,8 @@ title: index
 - [Stackoverflow.com 의 아키텍처][1803]
 - [REST API 디자인][1801]
 
+[2302]: http://likejazz.com/post/104368463135/help-man-dash
+[2301]: http://likejazz.com/post/103592702708/markdown-commonmark
 [1114]: http://likejazz.com/post/102497955420/brackets-shell-python
 [1404]: http://likejazz.com/post/102440223620/chromium-embedded-framework
 [2006]: http://likejazz.com/post/100905920195/consolas
