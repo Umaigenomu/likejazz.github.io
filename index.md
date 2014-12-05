@@ -62,6 +62,7 @@ title: index
 - [tf-idf][1201]
 
 ## General
+- [snake_case: the opposite of CamelCase][2303]
 - [help와 man을 대체하는 dash][2302]
 - [Markdown? CommonMark!][2301]
 - [brackets-shell과 python의 관계][1114]
@@ -137,6 +138,7 @@ title: index
 - [Removing GRUB from windows][2102]
 - [hosts-bakka: A Tool for automatically managing your Windows hosts file][2101]
 
+[2303]: http://dev.likejazz.com/post/104402425486/snake-case-the-opposite-of-camelcase 
 [1021]: http://likejazz.com/post/95334809115/k-ranker
 [1020]: http://dev.likejazz.com/post/103420588216/freemarker-troubleshooting
 [1018]: http://dev.likejazz.com/post/103031049326/freemarker
