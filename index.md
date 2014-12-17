@@ -42,7 +42,6 @@ title: index
 - [C++: what regex library should I use? - Stack Overflow][1111]
 - [uint8_t, uint32_t][1109]
 - [The &amp; operator finds the address of a variable][1108]
-- [C언어로 API 서버 개발, 생각보다 나쁘지 않아요][1107]
 - [long과 int는 크기가 같은데 왜 존재하나요?][1106]
 - [C/CGI][1105]
 - [Binary Trees][1104]
@@ -50,32 +49,24 @@ title: index
 - [RegEx: PCRE, POSIX][1102]
 - [Python, Extending with C][1101]
 
-# IR
+# IR, Algorithm
 - [Inverse Document Frequency Weighting][1209]
 - [Stanford NLP 코스][1208]
 - [Curve Fitting][1207]
 - [Inverted Index][1206]
+- [문자열 검색 개발][1110]
 - [검색엔진 개발기][1205]
 - [가능하면 원서를 읽는 편인데 진도가 너무 안나간다][1204]
 - [IR, Stopwords][1203]
 - [BM25][1202]
 - [tf-idf][1201]
 
-## General
-- [snake_case: the opposite of CamelCase][2303]
-- [help와 man을 대체하는 dash][2302]
-- [Markdown? CommonMark!][2301]
-- [brackets-shell과 python의 관계][1114]
-- [최고의 코딩 폰트 Consolas][2006]
-- [한메일 안읽은메일 알리미 for Mac][1604]
-- [문자열 검색 개발][1110]
-- [리눅스와 GNU 프로젝트][1518]
-- [10 Programming Languages You Should Learn in 2014][1603]
-- ['glibc' pronounce /zuileepsi:/][1807]
+# Architecture
+- [C언어로 API 서버 개발, 생각보다 나쁘지 않아요][1107]
 - [Stackoverflow.com 의 아키텍처][1803]
 - [REST API 디자인][1801]
 
-# System/Compiler/Network
+## System/Compiler/Network
 - [CONTEST: Mock TCP Server][1812]
 - [IR is better than assembly — Idea of the day][1811]
 - [telnet for testing ssl/https websites][1810]
@@ -112,18 +103,35 @@ title: index
 - [RVM을 이용한 Ruby, Gems 설치][1601]
 
 ## HTML, CSS, JavaScript-related
-- [Chromium Embedded Framework][1404]
 - [네이버의 검색 결과를 frame안에 embed 할 일이 생겼는데][1403]
 - [Twitter Bootstrap, Flat UI][1402]
 - [CSS Image Sprites][1401]
 
-# git
+# General, Productivity
+- [How-to-Make-a-Computer-Operating-System][2306]
+- [Programming Paradigm][2305]
+- [snake_case: the opposite of CamelCase][2303]
+- [help와 man을 대체하는 dash][2302]
+- [brackets-shell과 python의 관계][1114]
+- [Chromium Embedded Framework][1404]
+- [최고의 코딩 폰트 Consolas][2006]
+- [한메일 안읽은메일 알리미 for Mac][1604]
+- [리눅스와 GNU 프로젝트][1518]
+- [10 Programming Languages You Should Learn in 2014][1603]
+- ['glibc' pronounce /zuileepsi:/][1807]
+
+## Editor, Markdown
+- [Sublime Text][2005]
+- [Markdown? CommonMark!][2301]
+- [How to install Sublime Text 2 on Ubuntu 12.04 (Unity)][1901]
+
+## git
+- [Git Data Transport Commands][2304]
 - [git 몇 가지 사용법][1702]
 - [git 사용시 repository의 최초 ssh 설정을 깜빡하면][1701]
 
-# Mac
+## Mac
 - [OS X Yosemite Clean Install][2007]
-- [Sublime Text][2005]
 - [How can I fully clear my iTerm2 scrollback?][2004]
 - [Homebrew install specific version of formula?][2003]
 - [Fink → MacPorts → Homebrew][2002]
@@ -132,12 +140,14 @@ title: index
 ## Ubuntu
 - [우분투 13.10 한글 삽질의 추억][1903]
 - [우분투 업데이트 후 한글이 안된다면][1902]
-- [How to install Sublime Text 2 on Ubuntu 12.04 (Unity)][1901]
 
 ## Windows
 - [Removing GRUB from windows][2102]
 - [hosts-bakka: A Tool for automatically managing your Windows hosts file][2101]
 
+[2306]: http://dev.likejazz.com/post/104722248406/samypesse-how-to-make-a-computer-operating-system
+[2305]: http://dev.likejazz.com/post/105222814456/programming-paradigm
+[2304]: http://dev.likejazz.com/post/105415992296/git-data-transport-commands
 [2303]: http://dev.likejazz.com/post/104402425486/snake-case-the-opposite-of-camelcase 
 [1021]: http://likejazz.com/post/95334809115/k-ranker
 [1020]: http://dev.likejazz.com/post/103420588216/freemarker-troubleshooting
