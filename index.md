@@ -62,6 +62,7 @@ title: index
 - [tf-idf][1201]
 
 # Architecture
+- [Chromium Embedded Framework][1404]
 - [C언어로 API 서버 개발, 생각보다 나쁘지 않아요][1107]
 - [Stackoverflow.com 의 아키텍처][1803]
 - [REST API 디자인][1801]
@@ -113,7 +114,6 @@ title: index
 - [snake_case: the opposite of CamelCase][2303]
 - [help와 man을 대체하는 dash][2302]
 - [brackets-shell과 python의 관계][1114]
-- [Chromium Embedded Framework][1404]
 - [최고의 코딩 폰트 Consolas][2006]
 - [한메일 안읽은메일 알리미 for Mac][1604]
 - [리눅스와 GNU 프로젝트][1518]
@@ -123,7 +123,7 @@ title: index
 ## Editor, Markdown
 - [Sublime Text][2005]
 - [Markdown? CommonMark!][2301]
-- [How to install Sublime Text 2 on Ubuntu 12.04 (Unity)][1901]
+- [마크다운(Markdown) 이야기][2307]
 
 ## git
 - [Git Data Transport Commands][2304]
@@ -140,11 +140,13 @@ title: index
 ## Ubuntu
 - [우분투 13.10 한글 삽질의 추억][1903]
 - [우분투 업데이트 후 한글이 안된다면][1902]
+- [How to install Sublime Text 2 on Ubuntu 12.04 (Unity)][1901]
 
 ## Windows
 - [Removing GRUB from windows][2102]
 - [hosts-bakka: A Tool for automatically managing your Windows hosts file][2101]
 
+[2307]: http://likejazz.com/post/91688598730/markdown
 [2306]: http://dev.likejazz.com/post/104722248406/samypesse-how-to-make-a-computer-operating-system
 [2305]: http://dev.likejazz.com/post/105222814456/programming-paradigm
 [2304]: http://dev.likejazz.com/post/105415992296/git-data-transport-commands
