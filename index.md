@@ -3,6 +3,9 @@ layout: default
 title: index
 ---
 # Java/JVM ecosystem
+- [Spring 4][2328]
+- [Design pattern samples in Java][2325]
+- [Jackson: High-performance JSON processor][2318]
 - [K-Ranker][1021]
 - [Freemarker Troubleshooting][1020]
 - [Freemarker][1018]
@@ -37,6 +40,8 @@ title: index
 - [Storm: distributed realtime computation system][2201]
 
 # C/C++
+- [What does "static" mean in a C program?][2327]
+- [Life of a C++ Standard][2321]
 - [memset() vs. bzero() — Ultimate Showdown][1113]
 - [What is the default path for OSX system include files when building a C++ application?][1112]
 - [C++: what regex library should I use? - Stack Overflow][1111]
@@ -50,6 +55,7 @@ title: index
 - [Python, Extending with C][1101]
 
 # IR, Algorithm
+- [자연어 검색][2312]
 - [Inverse Document Frequency Weighting][1209]
 - [Stanford NLP 코스][1208]
 - [Curve Fitting][1207]
@@ -68,17 +74,28 @@ title: index
 - [REST API 디자인][1801]
 
 ## System/Compiler/Network
+- [Lemon Parser Generator Tutorial][2316]
+- [기초 리눅스 API][2314]
+- [SQLite][2310]
 - [CONTEST: Mock TCP Server][1812]
-- [IR is better than assembly — Idea of the day][1811]
 - [telnet for testing ssl/https websites][1810]
 - [컴파일러 구조와 원리][1809]
 - [Anatomy of Linux dynamic libraries, ELF][1808]
 - [Evolution of Build Systems][1806]
 - [History of Unix-like operating systems][1805]
-- [What exactly is LLVM?][1804]
 - [Latency: The New Web Performance Bottleneck][1802]
 
+### LLVM
+- [LLVM IR][2326]
+- [LLVM & 민장님 블로그][2315]
+- [IR is better than assembly — Idea of the day][1811]
+- [What exactly is LLVM?][1804]
+
 ## Linux/Bash
+- [Add A File Extension To vim XML Highlighting][2324]
+- [Htop showing multiple java processes with different pids][2323]
+- [Linux' 'ps f' (tree view) equivalent on OSX?][2320]
+- [How to recover from "Too many Authentication Failures for user root"][2319]
 - [Why does find -mtime +1 only return files older than 2 days?][1517]
 - [.vimrc][1516]
 - [How to get the primary IP of Mac/Linux machine][1515]
@@ -104,6 +121,8 @@ title: index
 - [RVM을 이용한 Ruby, Gems 설치][1601]
 
 ## HTML, CSS, JavaScript-related
+- [변수 선언과 유효범위 - 자바스크립트 자습서][2322]
+- [레티나(Retina) 이미지 대응][2311]
 - [네이버의 검색 결과를 frame안에 embed 할 일이 생겼는데][1403]
 - [Twitter Bootstrap, Flat UI][1402]
 - [CSS Image Sprites][1401]
@@ -121,11 +140,15 @@ title: index
 - ['glibc' pronounce /zuileepsi:/][1807]
 
 ## Editor, Markdown
+- [IntelliJ better than Eclipse][2317]
+- [JetBrains 개발툴 IDE][2313]
+- [Sublime Theme 추천 - Spacegray][2308]
 - [Sublime Text][2005]
 - [Markdown? CommonMark!][2301]
 - [마크다운(Markdown) 이야기][2307]
 
 ## git
+- [git activity][2309]
 - [Git Data Transport Commands][2304]
 - [git 몇 가지 사용법][1702]
 - [git 사용시 repository의 최초 ssh 설정을 깜빡하면][1701]
@@ -146,6 +169,27 @@ title: index
 - [Removing GRUB from windows][2102]
 - [hosts-bakka: A Tool for automatically managing your Windows hosts file][2101]
 
+[2328]: http://dev.likejazz.com/post/114906971646/spring-4
+[2327]: http://dev.likejazz.com/post/114813401021/what-does-static-mean-in-a-c-program
+[2326]: http://dev.likejazz.com/post/114812847901/llvm-ir
+[2325]: http://dev.likejazz.com/post/114656077596/iluwatar-java-design-patterns
+[2324]: http://dev.likejazz.com/post/114383914181/add-a-file-extension-to-vim-xml-highlighting
+[2323]: http://dev.likejazz.com/post/113940663531/htop-showing-multiple-java-processes-with
+[2322]: http://dev.likejazz.com/post/113495006651
+[2321]: http://dev.likejazz.com/post/113158137186
+[2320]: http://dev.likejazz.com/post/112395944426/linux-ps-f-tree-view-equivalent-on-osx
+[2319]: http://dev.likejazz.com/post/107477279706/how-to-recover-from-too-many-authentication
+[2318]: http://dev.likejazz.com/post/106604050011/jackson-high-performance-json-processor
+[2317]: http://dev.likejazz.com/post/106010270301/intellij-better-than-eclipse
+[2316]: http://dev.likejazz.com/post/105879856821/lemon-parser-generator-tutorial
+[2315]: http://likejazz.com/post/113494591560/llvm
+[2314]: http://likejazz.com/post/113124002630/api
+[2313]: http://likejazz.com/post/112670720955/jetbrains-ide
+[2312]: http://likejazz.com/post/110201689745
+[2311]: http://likejazz.com/post/106033548880/retina
+[2310]: http://likejazz.com/post/105909296527/sqlite
+[2309]: http://likejazz.com/post/105818260214/git-activity
+[2308]: http://likejazz.com/post/105477754780/sublime-theme-spacegray
 [2307]: http://likejazz.com/post/91688598730/markdown
 [2306]: http://dev.likejazz.com/post/104722248406/samypesse-how-to-make-a-computer-operating-system
 [2305]: http://dev.likejazz.com/post/105222814456/programming-paradigm
