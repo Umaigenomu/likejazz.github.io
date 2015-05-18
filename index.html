@@ -1,0 +1,16 @@
+---
+layout: default
+title: Home
+---
+
+<div class="posts">
+  {% for post in site.posts %}
+  <article class="post">
+    <h1 class="archive">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}</a>
+    </h1>
+    <time datetime="{{ post.date | date_to_xmlschema }}" class="archive-date">{{ post.date | date_to_string }}</time>
+  </article>
+  {% endfor %}
+</div>

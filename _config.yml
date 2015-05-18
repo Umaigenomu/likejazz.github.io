@@ -1,0 +1,30 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           "/:title"
+relative_permalinks: true
+
+# Setup
+title:               Sang-Kil Park
+tagline:             The missing Papers
+url:                 http://dev.likejazz.com
+paginate:            1
+baseurl:             ""
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
+author:
+  name:              Sang-Kil Park
+  url:               http://likejazz.com/
+  email:             likejazz@gmail.com
+
+# Custom vars
+version:             1.0.0
+github:
+  repo:              https://github.com/poole/poole
