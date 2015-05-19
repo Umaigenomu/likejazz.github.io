@@ -127,7 +127,7 @@ public static int getIntersectionSize(Set<Integer> set1, Set<Integer> set2) {
 
 ## 결론
 
-교집합을 구하는 방식을 기존 JDK 방식에서 NIH 방식으로 바꿔 기존 대비 340% 성능 개선 효과를 얻을 수 있었다.
+교집합을 구하는 방식을 기존 JDK 방식에서 NIH 방식으로 바꿔 **기존 대비 340% 성능 개선 효과**를 얻을 수 있었다.
 
 <table>
   <thead>
