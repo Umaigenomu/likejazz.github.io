@@ -7,18 +7,19 @@ title: Intersection of two Sets optimized way in Java
 중복 제거를 위해 250개의 문서를 상호 비교할 경우 총 31,125번의 비교를 진행하게 된다. 이에 따른 CPU 비용이 상당히 높은데 이를 보다 최적화하여 개선할 수 있는 방안을 찾아본다.
 </div>
 
+*2015년 5월 19일 초안 작성*
+
 ## 내용
 
 두 문서의 유사도를 계산하는 [w-shingling 알고리즘](http://en.wikipedia.org/wiki/W-shingling)은 A/B 두 문서의 슁글(shingle) 사이즈를 아래와 같이 간단한 교집합(intersection)과 합집합(union)으로 유사도를 표현한다.
 
 ![w-shingling](http://upload.wikimedia.org/math/5/7/c/57c09a4c79a15ebfb940af31b0594059.png)
 
-자카드 계수(Jaccard coefficient) 정의와도 동일한데 따라서 교집합(intersection)을 빠르게 계산하는 것이 성능 개선의 핵심이다. 이 부분은 약 3만회 이상 비교를 진행하는 핫스팟(Hot Spot)이고 따라서 약간의 수치 개선 만으로도 전체적인 성능 개선 효과가 크기 때문이다.
+자카드 계수(Jaccard coefficient) 정의와도 동일한데 따라서 교집합(intersection)을 빠르게 계산하는 것이 성능 개선의 핵심이다. 이 부분은 3만회 이상 비교를 진행하는 핫스팟(Hot Spot)이고 약간의 수치 개선 만으로도 전체적인 성능 개선 효과가 크다.
 
 자바에서 [두 Set 간 교집합(intersection)을 계산하는 방법](http://www.leveluplunch.com/java/examples/intersection-of-two-sets/)은 여러가지가 있으며, 이를 이용해 다양한 교집합을 구해보고 성능을 측정하기로 한다.
 
 성능 측정은 튀는 값을 배제하기 위해 평균(average)이 아닌 중앙값(median)을 취하기로 한다. 중앙값 메소드는 [SO에 있는 코드](http://stackoverflow.com/a/11955900/3513266)를 참조하여 아래와 같이 작성했다.
-
 
 {% highlight java %}
 private static double median(long[] arr) {
@@ -35,7 +36,23 @@ private static double median(long[] arr) {
 }
 {% endhighlight %}
 
-### Straight up Java
+시간 계산은 아래 형태로 100회씩 진행하여 중앙값을 구했다.
+
+{% highlight java %}
+for (int i = 0;i<100;i++) {
+  long startTimeMillis = System.currentTimeMillis();
+
+  // do stuff
+  ...
+
+  long lastTime = System.currentTimeMillis();
+  elapsed[i] = lastTime - startTimeMillis;
+}
+
+System.out.println("median(elapsed) = " + median(elapsed));
+{% endhighlight %}
+
+### Straight up Java(JDK)
 
 기존 JDK 기본 라이브러리를 사용한 코드는 아래와 같다. 
 
@@ -48,7 +65,7 @@ intersectionSize = intersection.size();
 
 `retainAll()` 메소드는 `java.util.Collection`에서 제공하는 JDK 기본 메소드이며 일치하는 Set을 남겨주는 역할을 한다. 즉, 교집합에 해당하는 만큼을 남기며 원본을 조작하므로 원본을 손실하지 않기 위해선 위와 같이 별도의 HashSet을 생성해 담아야 한다.
 
-기존에는 이 기본 메소드를 사용했으며 100회 계산에 중앙값을 취해 109ms 응답 속도를 얻었다. 
+기존에는 이 기본 메소드를 사용했으며 100회 계산시 109ms 응답 속도 중앙값을 얻었다. 
 
 ### Guava
 
@@ -62,15 +79,15 @@ Guava에는 `Sets.intersection` 이라는 좋은 교집합 메소드를 제공�
 
 > Note: The returned view performs slightly better when set1 is the smaller of the two sets. If you have reason to believe one of your sets will generally be smaller than the other, pass it first.
 
-마찬가지로 100회 계산 중앙값은 58ms. 일반적으로 Guava 가 성능이 좋다고 알려져있으며 실제로 이 또한 기존 대비 80% 이상 성능 개선 효과가 있다.
+마찬가지로 100회 계산 중앙값은 58ms. 일반적으로 Guava 가 성능이 좋다고 알려져있으며 실제로 이 또한 기존 대비 1.8배 이상 성능 개선 효과가 있다.
 
-### No intermediate HashSet
+### No intermediate HashSet(NIH)
 
-Guava만 해도 기존 보다 80% 이상 응답속도가 빨라졌지만 더 성능을 낼 수 있는 방법이 없을까 고민하던차 SO에서 좋은 질문을 발견했다.
+Guava만 해도 기존 보다 응답속도가 빨라졌지만 더 성능을 낼 수 있는 방법이 없을까 고민하던차, SO에서 좋은 질문을 발견했다.
 
 [Efficiently compute Intersection of two Sets in Java?](http://stackoverflow.com/questions/7574311/efficiently-compute-intersection-of-two-sets-in-java)
 
-게다가 친절하게 성능 비교를 직접 진행한 답변이 있었다. 본인이 친절히 성능 테스트를 진행하고 결과를 아래와 같이 제시했다.
+게다가 본인이 친절히 성능 테스트를 진행하고 아래와 같이 결과를 제시했다.
 
 {% highlight bash %}
 Running tests for 1x1
@@ -92,17 +109,21 @@ IntersectTest$MyMethod2@65450f1f took 4.109205 count=729000
 ...
 {% endhighlight %}
 
-`PostMethod`는 기존 JDK에서 제공하는 `retainAll()` 메소드를 뜻하며, `MyMethod1`은 No intermediate HashSet(이하 NIH) 방식이며 `MyMethod2`는 With intermediate HashSet 방식이다.
+- `PostMethod`: 기존 JDK에서 제공하는 `retainAll()` 메소드
+- `MyMethod1` : No intermediate HashSet(이하 NIH) 방식
+- `MyMethod2` : With intermediate HashSet(이하 WIH) 방식
 
-결과를 살펴보면 어떠한 경우에도 `retainAll()` 이 가장 느리고 NIH 방식이 With intermediate HashSet 에 비해 두 배 정도 빨라짐을 확인할 수 있다. 정확히 중간(intermediate) 단계가 추가된 만큼 더 느려짐을 추정할 수 있다.
+결과를 살펴보면 어떠한 경우에도 `retainAll()` 이 가장 느리고 NIH 방식이 WIH 에 비해 두 배 정도 빠름을 확인할 수 있다. WIH 가 정확히 중간(intermediate) 단계가 추가된 만큼 더 느리다.
 
-이에 따르면 성능 개선의 핵심은 중간 단계 배제(No intermediate)였다. 즉, 교집합을 보관할 별도의 Set 을 만들지 않고 단순히 비교해서 수치만 뽑아낼 경우 `retainAll()` 보다 3배 이상, 중간 단계를 만들때보다도 2배 이상 빠른 응답 속도를 보여준다. 앞서 언급했듯 단순 비교일때는 무시할만한 수치일 수 있으나 현재 이 부분은 약 3만회 이상 비교를 진행하는 핫스팟(Hot Spot)이고 약간의 수치 개선만으로 전체적인 성능 개선 효과가 크기 때문이다.
+이에 따르면 성능 개선의 핵심은 중간 단계 배제(No intermediate)였다. 즉, 교집합을 보관할 별도의 Set 을 만들지 않고 단순히 비교해서 수치만 뽑아낼 경우 `retainAll()` 보다 3배 이상, 중간 단계를 만들때보다도 2배 이상 빠른 응답 속도를 보여준다. 앞서 언급했듯 단순 비교일때는 무시할만한 수치일 수 있으나 현재 이 부분은 3만회 이상 비교를 진행하는 핫스팟(Hot Spot)이고 약간의 수치 개선만으로 전체적인 성능 개선 효과가 크다.
 
-코드는 아래와 같다.
+더욱이 w-shingling 알고리즘은 교집합의 수 만 중요하지 교집합의 원소가 무엇인지는 필요하지 않기 때문에 중간 단계 없이 교집합의 수 만 int 로 구해도 충분하다.
+
+`MyMethod1`의 코드는 아래와 같다.
 
 {% highlight java %}
 // No intermediate HashSet
-public static int getIntersectionSize(Set<Integer> set1, Set<Integer> set2) {
+public static int MyMethod1(Set<Integer> set1, Set<Integer> set2) {
     Set<Integer> a;
     Set<Integer> b;
     if (set1.size() <= set2.size()) {
@@ -121,13 +142,13 @@ public static int getIntersectionSize(Set<Integer> set1, Set<Integer> set2) {
     return count;
 }
 {% endhighlight %}
-마찬가지로 100회 계산했고 이번에는 32ms에 불과하다. 가장 빠르다.
+마찬가지로 100회 계산했고 32ms에 불과하다. 가장 빠르다.
 
-또한 Guava 와 마찬가지로 크기가 작은 Set 가 앞에 왔을때 성능이 더 좋다. 크기 비교를 하지 않고 단순 대입으로 진행해보니 조금 더 느린 41ms가 나왔다. `size()`를 여러번 호출하는건 성능에 별 영향을 끼치진 않는다.
+또한 Guava 와 마찬가지로 크기가 작은 Set 가 앞에 왔을때 성능이 더 좋다. 크기 비교를 하지 않고 단순 대입으로 진행한 경우 조금 더 느린 41ms가 나왔다. `size()`를 여러번 호출하는건 성능에 별 영향을 끼치지 않으므로 반드시 크기 비교를 통해 작은 Set 을 앞에 두도록 한다.
 
 ## 결론
 
-교집합을 구하는 방식을 기존 JDK 방식에서 NIH 방식으로 바꿔 **기존 대비 3.4배 성능 개선 효과**를 얻을 수 있었다.
+교집합을 구하는 방식을 기존 JDK 방식에서 NIH 방식으로 바꿔 **기존 대비 3.4배 성능 개선 효과**를 얻었다.
 
 <table>
   <thead>
