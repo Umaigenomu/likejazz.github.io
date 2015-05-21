@@ -7,7 +7,7 @@ relative_permalinks: true
 # Setup
 title:               Sang-Kil Park
 tagline:             The missing Papers
-url:                 http://dev.likejazz.com
+url:                 http://docs.likejazz.com
 paginate:            1
 baseurl:             ""
 
