@@ -79,11 +79,11 @@ Guava에는 `Sets.intersection` 이라는 좋은 교집합 메소드를 제공�
 
 > Note: The returned view performs slightly better when set1 is the smaller of the two sets. If you have reason to believe one of your sets will generally be smaller than the other, pass it first.
 
-마찬가지로 100회 계산 중앙값은 58ms. 일반적으로 Guava 가 성능이 좋다고 알려져있으며 실제로 이 또한 기존 대비 1.8배 이상 성능 개선 효과가 있다.
+마찬가지로 100회 계산 중앙값은 58ms. 일반적으로 Guava 가 제공하는 기능들은 성능에 있어서 만큼은 좋은 결과를 보여주고 있으며 실제로 이 또한 기존 대비 1.8배 이상 성능 개선 효과가 있다.
 
 ### No intermediate HashSet(NIH)
 
-Guava만 해도 기존 보다 응답속도가 빨라졌지만 더 성능을 낼 수 있는 방법이 없을까 고민하던차, SO에서 좋은 질문을 발견했다.
+기존 보다 응답속도가 훨씬 빨라졌지만 더 성능을 낼 수 있는 방법이 없을까 고민하던차, SO에서 좋은 질문을 발견했다.
 
 [Efficiently compute Intersection of two Sets in Java?](http://stackoverflow.com/questions/7574311/efficiently-compute-intersection-of-two-sets-in-java)
 
@@ -144,7 +144,7 @@ public static int MyMethod1(Set<Integer> set1, Set<Integer> set2) {
 {% endhighlight %}
 마찬가지로 100회 계산했고 32ms에 불과하다. 가장 빠르다.
 
-또한 Guava 와 마찬가지로 크기가 작은 Set 가 앞에 왔을때 성능이 더 좋다. 크기 비교를 하지 않고 단순 대입으로 진행한 경우 조금 더 느린 41ms가 나왔다. `size()`를 여러번 호출하는건 성능에 별 영향을 끼치지 않으므로 반드시 크기 비교를 통해 작은 Set 을 앞에 두도록 한다.
+또한 Guava 와 마찬가지로 크기가 작은 Set 가 앞에 왔을때 성능이 더 좋다. 크기 비교를 하지 않고 단순 대입으로 진행한 경우 조금 더 느린 41ms가 나왔다. `size()`를 여러번 호출해도 성능에 별 영향을 끼치지 않으므로 반드시 크기 비교를 통해 작은 Set 을 앞에 두도록 한다.
 
 ## 결론
 
