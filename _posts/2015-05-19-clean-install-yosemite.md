@@ -29,7 +29,7 @@ title: Clean Install OS X Yosemite
 - 당장 읽고 싶은 문서는 Pocket으로, 아카이빙 용도의 링크는 [Delicious](http://likejazz.com/post/108592366618/delicious-com)에 저장한다. 둘 다 공식 익스텐션 사용 중.
 - 당연히 광고도 제거. AdBlock 익스텐션.
 - 사내 커뮤니케이션을 위한 Agit Notifier.
-- <strike>Vimium을 써보는 중이다.</strike> 요즘은 기본적으로 단축키를 제공하는 서비스가 너무 많다. Vimium은 그런 사이트들과 단축키 충돌이 너무 잦아 오히려 더 불편했다.
+- <del>Vimium을 써보는 중이다.</del> 요즘은 기본적으로 단축키를 제공하는 서비스가 너무 많다. Vimium은 그런 사이트들과 단축키 충돌이 너무 잦아 오히려 더 불편했다.
 
 ### 생산성
 
@@ -38,8 +38,8 @@ title: Clean Install OS X Yosemite
 - `~/bin` 설정. 콘솔에서 컴맨드로 처리해야할 모든 명령은 여기에 두고 Dropbox에 동기화 해둔다.
 ![bin](https://farm8.staticflickr.com/7761/17815084675_8082e6ece8_o.png "bin")
 - 블로그 용도의 이미지는 [Flickr Uploadr](https://www.flickr.com/tools/)를 통해 특정 폴더가 자동으로 업로드 되도록 하고 사용한다.
-- iStumbler 설치. <strike>출장 갔을때 호텔방에서 Wi-Fi 잡으려면 필수다.</strike> 요즘은 그냥 아이폰에서 핫스팟을 만들어 사용한다. 한 달 데이타를 8G로 했더니 충분히 여유있다. 밖에서 동영상도 그냥 보는 편이다. 무료 Wi-Fi 찾느라 스트레스 받고 보안 문제에 시달리느니 이 편이 훨씬 낫다.
-- <strike>주소록 동기화. Facebook, Daum Exchange, Google등 연동해서 각각에 저장된 주소록을 동기화한다.</strike>
+- iStumbler 설치. <del>출장 갔을때 호텔방에서 Wi-Fi 잡으려면 필수다.</del> 요즘은 그냥 아이폰에서 핫스팟을 만들어 사용한다. 한 달 데이타를 8G로 했더니 충분히 여유있다. 밖에서 동영상도 그냥 보는 편이다. 무료 Wi-Fi 찾느라 스트레스 받고 보안 문제에 시달리느니 이 편이 훨씬 낫다.
+- <del>주소록 동기화. Facebook, Daum Exchange, Google등 연동해서 각각에 저장된 주소록을 동기화한다.</del>
 - iCal 설정. 구글 캘린더 동기화.
 - 카카오톡 메신저 설치.
 - Things. 5년 넘게 애용해온 최고의 GTD 도구.
@@ -48,7 +48,7 @@ title: Clean Install OS X Yosemite
 - 웹 기반이 편하다 보니 오피스는 사용하지 않는다. MS 오피스는 물론, 맥의 iWorks 도 사용하지 않는다. 웹에서 즉시 브라우징 가능한게 가장 편하다.
 - AppCleaner. 언인스톨러가 없는 맥에서 필수 유틸리티
 - Deckset. 프리젠테이션도 마크다운으로. 간단한 발표 자료 만들때 최고다.
-- <strike>LaunchBar. 이 것도 6년 넘게 쓰고 있다. Spotlight가 좋아져서 계속 필요한지는 고민 중이다.</strike> 기본 Spotlight 만으로 훌륭해서 더 이상 별도의 런처가 필요하지 않다.
+- <del>LaunchBar. 이 것도 6년 넘게 쓰고 있다. Spotlight가 좋아져서 계속 필요한지는 고민 중이다.</del> 기본 Spotlight 만으로 훌륭해서 더 이상 별도의 런처가 필요하지 않다.
 - 나는 [Little Snitch](https://www.obdev.at/products/littlesnitch/index.html) 정품 사용자다. 어떤 앱이 얼마만큼의 네트워크를 사용하는지 모니터링하고 차단할 수 있다.
 - 1 Password. [SuperGenPass](http://www.supergenpass.com/)를 이용하다 비밀번호 자동 생성 만으로는 부족함이 있어 1 Password를 구매해 사용 중. 서비스 별로 ID가 다른 경우도 있고 주기적으로 비밀번호를 다르게 바꿔야 할 때도 있는데 기억할 필요가 없어 매우 편하다.
 - Junos Pulse. 외부에서 사내망에 접속하기 위해선 어쩔 수 없이 써야하는 VPN 앱이다. 항상 그렇듯 비지니스용 앱의 사용성에는 큰 기대를 하지 않는게 좋다.
@@ -70,7 +70,7 @@ title: Clean Install OS X Yosemite
 - 개발 관련 디렉토리 생성. 지난 몇 년간 항상 `~/workspace`을 만들어 사용했다.
 - github.com 공개 프로젝트를 위한 `~/workspace/github.com` 별도 생성. 워낙에 clone을 많이 받았더니 이제 이 디렉토리 용량만도 상당하다.
 - github 클라이언트 설치. 콘솔에서 컴맨드로 일일이 셋팅하는건 번거롭다. 클라이언트를 설치해 디렉토리만 지정하면 나머지 모든 설정은 이 앱이 알아서 처리한다. 심지어 .ssh 설정 까지도.
-- <strike>.profile 맵핑. gist에 올려두고 공개 관리하고 있다.</strike>
+- <del>.profile 맵핑. gist에 올려두고 공개 관리하고 있다.</del>
 - bash 말고 zsh 이용. 그 동안 서버에서 헷갈릴 수 있다는 이유로 bash를 고집했으나 zsh의 편리함을 경험하고 바로 변경. 게다가 [prezto](https://github.com/sorin-ionescu/prezto)는 매우 훌륭하다. 처음엔 oh-my-zsh를 사용했으나 너무 느려 갈아탐.
 - Homebrew 설치. 콘솔/개발도구는 이거 하나면 뭐든지 설치할 수 있다. 너무 편하다. brew를 통해 설치한 팩키지를 따로 관리해야할 정도. 툴 뿐만 아니라 Tomcat 같은 어플리케이션, 심지어 언어와 컴파일러까지 콘솔에서 돌아가는 모든 것을 brew로 관리한다.
 ![brew](https://farm8.staticflickr.com/7671/17817653181_baf456dc32_o.png "brew")
