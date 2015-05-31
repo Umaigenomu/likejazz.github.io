@@ -108,9 +108,6 @@ import java.io.InputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
-/**
- *
- */
 public class Client {
     public static void main(String[] args) throws Exception {
         Socket socket = new Socket(InetAddress.getByName("localhost"), 12345);
