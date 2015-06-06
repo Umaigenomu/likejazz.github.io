@@ -13,7 +13,7 @@ title: How to handle CLOSE_WAIT state
 
 ### 현상
 
-서버 부하 테스트 과정 중 일정 시간이 경과하면 점점 더 느려지면서 행업 상태에 빠지는 경우가 생겼다. 부하가 높으면 느려지는건 당연한 일이지만 문제는 테스트가 끝나도 행업 상태에서 복구되지 않았다. 이는 담당자가 매 번 상태를 확인하고 복구해야 함을 뜻하며 서비스에는 도입할 수 없을 정도로 치명적이다. 분명히 특정한 원인이 있을 것이며 그에 따른 적절한 해결책이 존재할 것이다.
+서버 부하 테스트 과정 중 일정 시간이 경과하면 점점 더 느려지면서 행업 상태에 빠지는 경우가 생겼다. 부하가 높으면 느려지는건 당연한 일이지만 문제는 테스트가 끝나도 행업 상태에서 복구되지 않았다는 점이다. 이는 담당자가 매 번 상태를 확인하고 복구해야 함을 뜻하며 서비스에는 도입할 수 없을 정도로 치명적이다. 분명히 특정한 원인이 있을 것이며 그에 따른 적절한 해결책이 존재할 것이다.
 
 먼저 행업 직전, 8080으로 서비스 중인 포트 상황은 아래와 같다.
 
@@ -48,21 +48,13 @@ tcp        1      0 10.41.249.26:8080           10.51.31.152:30147          CLOS
 
 ### TCP 상태
 
-TCP 상태 다이어그램은 네트워크 서적의 바이블 격인 TCP/IP Illustrated[^fn-5] 책에 잘 나와있다.
+먼저 네트워크 서적의 바이블격인 TCP/IP Illustrated 에 등장하는 TCP 커넥션 다이어그램은 아래와 같다.
 
-<img src="http://flylib.com/books/3/223/1/html/2/files/18fig12.gif" width="350" />
+<img src="https://farm1.staticflickr.com/440/18338404268_f693b065d4_o.png" width="350" />
 
-이를 상호 대응하는 구조로 그린 그림은 아래와 같다.
+이 중 `ESTABLISHED` 이후 종료 과정에서 어플리케이션의 `close()` 호출 부분을 추가로 표시해봤다. Active Close 쪽이 먼저 `close()`를 수행하고 `FIN`을 보내면 Passive Close 쪽은 `ACK`을 보낸 후 어플리케이션의 `close()`를 수행한다. 보다 상세한 과정은 아래와 같다.
 
-<img src="http://flylib.com/books/3/223/1/html/2/files/18fig13.gif" width="350" />
-
-국내 문서에서 보기좋게 잘 그린 그림[^fn-1]을 발견했다. 특히 어플리케이션의 `close()` 관계가 잘 표현되어 있어 많은 도움이 되었다.
-
-<img src="https://farm9.staticflickr.com/8765/17864442069_d535abbb15_b.jpg" width="400" />
-
-TCP 연결 종료는 4-way handshake를 통해 이뤄지며 과정은 아래와 같다.
-
-1. 클라이언트가 `FIN`을 보내고 `FIN_WAIT1` 상태로 대기한다.
+1. 먼저 `close()`를 실행한 클라이언트가 `FIN`을 보내고 `FIN_WAIT1` 상태로 대기한다.
 1. 서버는 `CLOSE_WAIT`으로 바꾸고 응답 `ACK`를 전달한다. 그와 동시에 해당 포트에 연결되어 있는 어플리케이션에게 `close()`를 요청한다.
 1. `ACK`를 받은 클라이언트는 상태를 `FIN_WAIT2`로 변경한다.
 1. `close()` 요청을 받은 서버 어플리케이션은 종료 프로세스를 진행하고 `FIN`을 클라이언트에 보내 `LAST_ACK` 상태로 바꾼다.
@@ -70,11 +62,11 @@ TCP 연결 종료는 4-way handshake를 통해 이뤄지며 과정은 아래와 
 
 한 가지 주의할 점은 클라이언트와 서버의 지칭인데, 반드시 서버만 `CLOSE_WAIT` 상태를 갖는 것은 아니다. 왜냐면 서버가 먼저 종료하겠다고 `FIN`을 보낼 수 있기 때문에 이 경우 서버측이 `FIN_WAIT1`이 될 수 있다.
 
-따라서 표현을 클라이언트와 서버가 아닌 **Active Close**(기존 클라이언트)와 **Passive Close**(기존 서버) 정도로 구분하는게 올바르다.
+따라서 표현을 클라이언트와 서버가 아닌 **Active Close**(또는 Initiator, 기존 클라이언트)와 **Passive Close**(또는 Receiver, 기존 서버) 정도로 구분하는게 올바르다.
 
 ### CLOSE_WAIT 재현
 
-`CLOSE_WAIT`은 아래 코드로 재현할 수 있다.[^fn-2] 아래 예제에서도 서버가 먼저 `FIN`을 보내 클라이언트가 `CLOSE_WAIT` 상태에 빠지는 것을 보여준다.
+`CLOSE_WAIT`을 아래와 같이 Java 코드로 재현 했다.[^fn-2] 아래 예제에서도 서버가 먼저 `FIN`을 보내 클라이언트가 `CLOSE_WAIT` 상태에 빠지는 것을 보여준다.
 
 {% highlight java %}
 // Server.java (sends some data and exits)
@@ -136,9 +128,14 @@ $ netstat -p tcp -a -n | grep CLOSE_WAIT | grep 12345
 
 10분이 지나도 `CLOSE_WAIT` 상태가 계속 변하지 않음을 확인한 모습이다.
 
-아울러 Passive Close 측이 `CLOSE_WAIT` 상태에 빠지면 Active Close 측은 `FIN`을 못 받는 상태이기 때문에 `FIN_WAIT2`에서 마찬가지로 대기하게 된다. 하지만 `FIN_WAIT2`는 `CLOSE_WAIT`과 달리 일정 시간이 경과하면 스스로 `TIME_WAIT` 상태가 된다.
+아울러 Passive Close 측이 `CLOSE_WAIT` 상태에 빠지면 Active Close 측은 `FIN`을 못 받는 상태이기 때문에 `FIN_WAIT2`에서 마찬가지로 대기하게 된다. 하지만 `FIN_WAIT2`는 `CLOSE_WAIT`과 달리 일정 시간이 경과하면 스스로 `TIME_WAIT` 상태가 된다. CentOS 6의 경우 30초로 설정되어 있다.
 
-CentOS 6.x의 경우 30초로 설정되어 있다. 참고로 `TIME_WAIT`는 60초다.
+{% highlight bash %}
+$ netstat -ton
+tcp        0      0 10.41.249.26:8080           10.51.31.149:40484          FIN_WAIT2  timewait (28.29/0/0)
+{% endhighlight %}
+
+참고로 `TIME_WAIT`는 2*MSL(Maximum Segment Lifetime)으로 60초다.
 
 ### CLOSE_WAIT 종료
 
@@ -179,7 +176,7 @@ $ jstack 27836
 
 즉, 보낼 수도 없고 받을 수도 없는 일종의 **교착 상태(deadlock)**가 원인으로 지목됐다. 아울러 이 상태는 성능 테스트가 끝나도 정상으로 복구되지 않았다.
 
-## 결론
+## 해결
 
 요청과 응답을 받는 과정에서 recursive 한 호출이 교착 상태의 원인이었으며 별도 서버를 구성하여 상호 의존성 없이 호출 가능하도록 구성했다.
 
@@ -187,9 +184,7 @@ $ jstack 27836
 
 ### References
 
-[^fn-1]: <http://hyeonstorage.tistory.com/287>
 [^fn-2]: <http://www.codeitive.com/0xJeqqgPPW/reproduce-tcp-closewait-state-with-java-clientserver.html>
 [^fn-3]: <http://stackoverflow.com/questions/15912370/how-do-i-remove-a-close-wait-socket-connection#comment22663601_15912370>
 [^fn-4]: <http://unix.stackexchange.com/a/10132>
-[^fn-5]: <http://flylib.com/books/en/3.223.1.188/1/>
 [^fn-6]: <http://benohead.com/tcp-about-fin_wait_2-time_wait-and-close_wait/>
