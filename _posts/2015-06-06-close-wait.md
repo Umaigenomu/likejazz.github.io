@@ -128,7 +128,7 @@ $ netstat -p tcp -a -n | grep CLOSE_WAIT | grep 12345
 
 10분이 지나도 `CLOSE_WAIT` 상태가 계속 변하지 않음을 확인한 모습이다.
 
-아울러 Passive Close 측이 `CLOSE_WAIT` 상태에 빠지면 Active Close 측은 `FIN`을 못 받는 상태이기 때문에 `FIN_WAIT2`에서 마찬가지로 대기하게 된다. 하지만 `FIN_WAIT2`는 `CLOSE_WAIT`과 달리 일정 시간이 경과하면 스스로 `TIME_WAIT` 상태가 된다. CentOS 6의 경우 30초로 설정되어 있다.
+아울러 Passive Close 측이 `CLOSE_WAIT` 상태에 빠지면 Active Close 측은 `FIN`을 못 받는 상태이기 때문에 `FIN_WAIT2`에서 마찬가지로 대기하게 된다. 하지만 `FIN_WAIT2`는 `CLOSE_WAIT`과 달리 일정 시간이 경과하면 스스로 `TIME_WAIT` 상태가 된다. CentOS 6의 경우 `net.ipv4.tcp_fin_timeout`에 30초로 설정되어 있다.
 
 {% highlight bash %}
 $ netstat -ton
