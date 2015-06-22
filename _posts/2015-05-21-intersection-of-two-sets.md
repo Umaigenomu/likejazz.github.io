@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Intersection of two Sets optimized way in Java
+title: Java 의 두 Set 교집합 최적화
 ---
 
 <div class="message">

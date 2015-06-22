@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to handle CLOSE_WAIT state
+title: CLOSE_WAIT 문제 해결
 ---
 
 <div class="message">

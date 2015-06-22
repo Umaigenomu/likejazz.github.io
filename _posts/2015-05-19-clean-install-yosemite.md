@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Clean Install OS X Yosemite
+title: OS X 요세미티 클린 인스톨 정리
 ---
 
 <div class="message">
