@@ -9,6 +9,15 @@ title: OS X 요세미티 클린 인스톨 정리
 
 *2014년 10월 23일 초안 작성*
 
+- [내용](#section)
+  - [기본 설정](#section-1)
+  - [인터넷](#section-2)
+  - [생산성](#section-3)
+  - [생활, 엔터테인먼트](#section-4)
+  - [콘솔, 개발 도구](#section-5)
+  - [개인 자료](#section-6)
+- [정리하며](#section-7)
+
 ## 내용
 
 <img src="https://farm8.staticflickr.com/7673/17228888583_65c885c6d5_b.jpg" width="384" />
