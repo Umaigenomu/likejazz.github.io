@@ -75,21 +75,20 @@ title: OS X 요세미티 클린 인스톨 정리
 ### 콘솔, 개발 도구
 
 - 콘솔에서 `gcc`를 입력하면 자동으로 XCode를 설치하겠냐는 메시지가 뜬다. 선택하여 설치.
-  - Command Line Tools 설치가 진행된다. 이후에 XCode도 따로 설치. 사실 XCode를 직접 쓸 일은 없다. 만약 OS X 앱 개발 할 일이 있더라도 AppCode 쪽이 훨씬 편하다.
+  - Command Line Tools 설치가 진행된다. 이후에 XCode도 따로 설치. 사실 XCode를 직접 쓸 일은 없으나 brew 에서 필요로 한다. 만일 OS X 앱 개발 할 일이 있더라도 AppCode 를 선호하는 편이다.
 - 개발 관련 디렉토리 생성. 지난 몇 년간 항상 `~/workspace`을 만들어 사용했다.
-- github.com 공개 프로젝트를 위한 `~/workspace/github.com` 별도 생성. 워낙에 clone을 많이 받았더니 이제 이 디렉토리 용량만도 상당하다.
+- github.com 공개 프로젝트를 위한 `~/workspace/github.com` 를 별도로 만들었다. 작은 디렉토리였는데 하나둘 clone 을 많이 받았더니 이제 디렉토리 용량만도 상당하다.
 - github 클라이언트 설치. 콘솔에서 컴맨드로 일일이 셋팅하는건 번거롭다. 클라이언트를 설치해 디렉토리만 지정하면 나머지 모든 설정은 이 앱이 알아서 처리한다. 심지어 .ssh 설정 까지도.
-- <del>.profile 맵핑. gist에 올려두고 공개 관리하고 있다.</del>
-- bash 말고 zsh 이용. 그 동안 서버에서 헷갈릴 수 있다는 이유로 bash를 고집했으나 zsh의 편리함을 경험하고 바로 변경. 게다가 [prezto](https://github.com/sorin-ionescu/prezto)는 매우 훌륭하다. 처음엔 oh-my-zsh를 사용했으나 너무 느려 갈아탐.
-- Homebrew 설치. 콘솔/개발도구는 이거 하나면 뭐든지 설치할 수 있다. 너무 편하다. brew를 통해 설치한 팩키지를 따로 관리해야할 정도. 툴 뿐만 아니라 Tomcat 같은 어플리케이션, 심지어 언어와 컴파일러까지 콘솔에서 돌아가는 모든 것을 brew로 관리한다.
+- bash 말고 zsh 이용. 그 동안 서버에서 헷갈릴 수 있다는 이유로 bash를 고집했으나 zsh의 편리함을 경험하고 바로 변경. 게다가 [prezto](https://github.com/sorin-ionescu/prezto)는 매우 훌륭하다. 처음엔 oh-my-zsh를 사용했으나 너무 느려 갈아탐. prezto 의 플러그인 중 가장 선호하고 자주 쓰는 것은 fasd 이다.
+- Homebrew 설치. 콘솔/개발도구는 이걸로 뭐든지 설치할 수 있다. 너무 편하다. brew를 통해 설치한 팩키지를 따로 관리해야할 정도. 툴 뿐만 아니라 Tomcat 같은 어플리케이션, 심지어 언어와 컴파일러까지 콘솔에서 돌아가는 모든 것을 brew로 관리한다.
 ![brew](https://farm8.staticflickr.com/7671/17817653181_baf456dc32_o.png "brew")
 - 반면 Cask는 오히려 앱 관리하기가 혼란스러워 삭제.
 - Tomcat, Gradle, Maven 훌륭한 자바 도구들이다. 당연히 brew로 설치한다.
 - [Java for OS X 2014-001](https://support.apple.com/kb/DL1572?locale=ko_KR) 설치. Java 6으로 만들어진 앱을 실행하면 자동으로 설치하겠냐고 묻는다.
 - JDK 8 설치
 - JetBrains IDE 설치. IntelliJ를 비롯하여 [CLion](http://likejazz.com/post/118649049333/clion-1-0), WebStorm, PyCharm, AppCode 등. [가장 즐겨쓰는 최고의 IDE](http://likejazz.com/post/112670720955/jetbrains-ide)다.
-- Android Studio 설치. IntelliJ에 여러가지 플러그인을 설치하다보면 느려지는 느낌이라 각각의 용도에 적합한 별도의 개발툴을 사용하는 편이다. 이외에도 Golang을 위해서는 아예 Community Edtion에 Go 플러그인을 설치해 사용한다. 참고로 나는 [IntelliJ 정품 사용자](http://likejazz.com/post/103532169020/intellij-idea)다.
-- 코딩을 직접 할때는 항상 JetBrains의 IDE를 사용하지만 리뷰 용도나 간단한 작업시에는 [Sublime Text 3](http://likejazz.com/post/102824813705/sublime-text) 또는 Visual Studio Code를 이용한다. Atom, Brackets등의 다른 에디터는 사용하지 않는다. vim도 쓰지만 가능하면 GUI 도구를 사용하는 편이다.
+- Android Studio 설치. IntelliJ에 여러가지 플러그인을 설치하다보면 느려지는 느낌이라 각각의 용도에 적합한 별도의 개발툴을 사용하는 편이다. 이외에도 Golang을 위해서는 아예 Community Edtion에 Go 플러그인을 설치해 사용한다. 참고로 [IntelliJ 정품 사용자](http://likejazz.com/post/103532169020/intellij-idea)이지만 Java 개발을 제외한 환경에선 CE 버전을 적극 활용한다.
+- 코딩을 할때는 항상 JetBrains의 IDE를 사용하지만 리뷰 용도나 간단한 작업시에는 [Sublime Text 3](http://likejazz.com/post/102824813705/sublime-text) 또는 Visual Studio Code를 이용한다. Atom, Brackets등의 다른 에디터는 사용하지 않는다. vim 도 쓰지만 GUI 도구와 마우스의 편리함을 굳이 배척하진 않는다.
 
 ### 개인 자료
 
