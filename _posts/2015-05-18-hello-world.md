@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hello World
+title: 안녕, 세상아
 ---
 
 <div class="message">
