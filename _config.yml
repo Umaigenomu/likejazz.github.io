@@ -28,3 +28,7 @@ author:
 version:             1.0.0
 github:
   repo:              https://github.com/poole/poole
+
+# Custom Gems
+gems:
+  - jekyll-redirect-from
