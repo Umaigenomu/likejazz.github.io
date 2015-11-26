@@ -1,7 +1,6 @@
 ---
 layout: post
 title: OS X 엘 캐피탄 클린 인스톨 정리
-redirect_from: "/clean-install-yosemite"
 ---
 
 <div class="message">
