@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 검색 엔진 개발기
+title: 검색 엔진 개발
 ---
 
 <div class="message">
