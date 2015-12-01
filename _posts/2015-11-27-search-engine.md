@@ -4,7 +4,7 @@ title: 검색 엔진 개발
 ---
 
 <div class="message">
-IIR 책을 보면서 이론을 직접 구현 해봐야겠다는 생각에 주말에 짬을 내어 직접 검색 엔진을 만들어봤다.
+주말에 짬을 내어 검색 엔진을 만들어봤다.
 </div>
 
 *2015년 11월 27일 1차 개정*  
@@ -42,4 +42,4 @@ fork 하기로 했다. 이후 전체 구조를 그림을 그리면서 파악해�
 읽기만 하는 것과 직접 써보는 것은 또 다른 문제다. 여러번 읽어오면서 느끼지 못했던 부분들을 직접 써보면서 커밋하고 푸쉬하면서 얼마나 편리하고 얼마나 훌륭한지 다시 한 번 체감할 수 있었다. 몰랐던 새로운 기능들도 많이 알게 됐다.
 
 ## GitHub
-[Simple Search Engine 바로 가기](https://github.com/likejazz/simple-search-engine)
+- [Simple Search Engine - GitHub](https://github.com/likejazz/simple-search-engine)
