@@ -74,7 +74,7 @@ PHP 를 웹으로 서빙하는 케이스는 크게 3 종류로 나눌 수 있다
 
 단순 QPS 만 비교하면 Nginx 가 아파치 보다 약 7% 정도 성능이 더 좋은것으로 나온다. CSS, JS 등의 Static 파일이 압도적인 성능을 보여주는 것에 비하면 성능이 약간 높긴 하나 다소 실망스런 결과다.
 
-[Why is FastCGI /w Nginx so much faster than Apache /w mod_php?](http://www.eschrade.com/page/why-is-fastcgi-w-nginx-so-much-faster-than-apache-w-mod_php/) 를 보면 비슷한 얘기를 하고 있다. 아파치 설정을 튜닝하고 불필요한 시스템 콜을 없애자 실제로는 비슷한 성능을 보여주며 큰 파일(100KB)인 경우 오히려 아파치가 더 나은 성능을 보여준다고 지적한다.
+[Why is FastCGI /w Nginx so much faster than Apache /w mod_php?](http://www.eschrade.com/page/why-is-fastcgi-w-nginx-so-much-faster-than-apache-w-mod_php/) 를 보면 비슷한 얘기를 하고 있다. 아파치 설정을 튜닝하고 불필요한 시스템 콜을 없애자 실제로는 비슷한 성능을 보여주며 큰 파일(100KB)인 경우 오히려 아파치가 더 나은 성능을 보여준다고 한다.
 
 ### 전통적인 CGI
 
@@ -187,8 +187,8 @@ EOF
 
 예상했듯이 C 가 가장 빠르고 그 다음 C++ > Bash > PHP > Python 순이다. 전통적인 CGI 방식은 프로세스를 직접 실행한 결과를 보여주는 방식이기 때문에 미리 바이너리를 만들고 사이즈가 가장 작은 C 가 가장 빠르다.
 
-그러나 이 역시도 mod_php 에 비하면 1/7 수준에 불과하다. 따라서 특수한 경우를 제외하곤 굳이 C 로 전통적인 CGI 를 만들어야 할 이유가 전혀 없다. 재밌는 점은 PHP 의 경우인데, 전통적인 CGI 에서는 250 QPS 밖에 나오지 않는다. 그러나 mod_php/FastCGI 에서 돌리면 7,100 ~ 7,600 QPS 가 나온다. 거의 30배 이상 성능 차이가 난다.
+그러나 이 역시도 mod_php 에 비하면 1/7 수준에 불과하다. 따라서 특수한 경우를 제외하곤 굳이 C 로 전통적인 CGI 를 만들어야 할 이유가 전혀 없다. 재밌는 점은 PHP 의 경우인데, 전통적인 CGI 에서는 250 QPS 밖에 나오지 않지만 mod_php/FastCGI 에서 돌리면 7,100 ~ 7,600 QPS 가 나온다. 거의 30배 이상 성능 차이가 난다.
 
 ## 결론
 
-Static 파일과 달리 CGI(PHP) 방식에서 Apache w/ mod_php 와 Nginx w/ FastCGI 의 성능 차이는 크지 않다. 따라서 각자에게 편한 웹 서버를 사용해도 무방하다. 그러나 전통적인 CGI 방식과는 성능 차이가 매우 크므로 특수한 경우를 제외하곤 전통적인 CGI 방식은 사용하지 않는다.
+Static 파일과 달리 CGI(PHP) 방식에서 Apache w/ mod_php 와 Nginx w/ FastCGI 의 성능 차이는 크지 않다. 따라서 각자에게 편한 웹 서버를 사용해도 무방하다. 그러나 전통적인 CGI 방식과는 성능 차이가 매우 크므로 특수한 경우를 제외하곤 전통적인 CGI 방식은 사용하지 않는게 좋다.
