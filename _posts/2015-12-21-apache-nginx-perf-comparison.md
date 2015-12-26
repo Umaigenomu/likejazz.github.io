@@ -42,37 +42,37 @@ PHP 를 웹으로 서빙하는 케이스는 크게 3 종류로 나눌 수 있다
 
 <img src="https://c1.staticflickr.com/1/604/23769965592_288fec6c96_h.jpg" width="700" />
 
-**carrotw** 는 사내에서 만든 브라우저로 직접 부하 테스트가 가능한 성능 테스트 도구(외부에 공개되지 않은 사내 시스템이라 부득이하게 주소를 가림)다. 전통적인 쓰레드 방식으로 동작하며 여기서는 쓰레드를 200개 주어 최대 성능을 측정했다. 200개 쓰레드가 동시에 요청을 보내 응답을 받아오는 초당 평균 횟수/속도를 측정하는 방식이며 10초간 측정한 결과는 약 7,600 QPS 에, 평균 응답속도 25ms 수준이다.
+**carrotw** 는 사내에서 만든 브라우저로 직접 부하 테스트가 가능한 성능 테스트 도구(외부에 공개되지 않은 사내 시스템이라 부득이하게 주소를 가림)다. 전통적인 쓰레드 방식으로 동작하며 여기서는 쓰레드를 200개 주어 최대 성능을 측정했다. 200개 쓰레드가 동시에 요청을 보내 응답을 받아오는 초당 평균 횟수/속도를 측정하는 방식이며 10초간 측정한 결과는 약 7,600 TPS 에, 평균 응답속도 25ms 수준이다.
 
 아주 좋은 성능의 서버가 아님에도 불구하고 초당 7,600회 처리라는 준수한 성능을 보여준다. 그렇다면 과연 아파치는 Nginx 에 비해 어느 정도 성능이 나오는지 확인해본다.
 
 <img src="https://c2.staticflickr.com/6/5706/23510393719_d14a9758f0_h.jpg" width="700" />
 
-동일한 200개 쓰레드에서 7,100 QPS, 27ms 가 나왔다. 이를 표로 정리하면 아래와 같다.
+동일한 200개 쓰레드에서 7,100 TPS, 27ms 가 나왔다. 이를 표로 정리하면 아래와 같다.
 
 <table>
   <thead>
     <tr>
       <th>방식</th>
-      <th>QPS</th>
+      <th>TPS</th>
       <th>응답 속도</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Nginx w/ FastCGI</td>
-      <td>7,600 QPS</td>
+      <td>7,600 TPS</td>
       <td>25ms</td>
     </tr>
     <tr>
       <td>Apache w/ mod_php</td>
-      <td>7,100 QPS</td>
+      <td>7,100 TPS</td>
       <td>27ms</td>
     </tr>
   </tbody>
 </table>
 
-단순 QPS 만 비교하면 Nginx 가 아파치 보다 약 7% 정도 성능이 더 좋은것으로 나온다. CSS, JS 등의 Static 파일이 압도적인 성능을 보여주는 것에 비하면 성능이 약간 높긴 하나 다소 실망스런 결과다.
+단순 TPS 만 비교하면 Nginx 가 아파치 보다 약 7% 정도 성능이 더 좋은것으로 나온다. CSS, JS 등의 Static 파일이 압도적인 성능을 보여주는 것에 비하면 성능이 약간 높긴 하나 다소 실망스런 결과다.
 
 [Why is FastCGI /w Nginx so much faster than Apache /w mod_php?](http://www.eschrade.com/page/why-is-fastcgi-w-nginx-so-much-faster-than-apache-w-mod_php/) 를 보면 비슷한 얘기를 하고 있다. 아파치 설정을 튜닝하고 불필요한 시스템 콜을 없애자 실제로는 비슷한 성능을 보여주며 큰 파일(100KB)인 경우 오히려 아파치가 더 나은 성능을 보여준다고 한다.
 
@@ -85,14 +85,14 @@ PHP 를 웹으로 서빙하는 케이스는 크게 3 종류로 나눌 수 있다
   <thead>
     <tr>
       <th>방식</th>
-      <th>QPS</th>
+      <th>TPS</th>
       <th>코드</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Bash</td>
-      <td>870 QPS</td>
+      <td>870 TPS</td>
       <td>
       {% highlight bash %}
 #!/bin/bash
@@ -108,7 +108,7 @@ echo '</html>'
     </tr>
     <tr>
       <td>Python</td>
-      <td>190 QPS</td>
+      <td>190 TPS</td>
       <td>
       {% highlight python %}
 #!/usr/bin/python
@@ -124,7 +124,7 @@ print '''<html>
     </tr>
     <tr>
       <td>C</td>
-      <td>1,580 QPS</td>
+      <td>1,580 TPS</td>
       <td>
       {% highlight c %}
 #include <stdio.h>
@@ -144,7 +144,7 @@ int main(void) {
     </tr>
     <tr>
       <td>C++</td>
-      <td>1,100 QPS</td>
+      <td>1,100 TPS</td>
       <td>
       {% highlight cpp %}
 #include <iostream>
@@ -165,7 +165,7 @@ int main(void) {
     </tr>
     <tr>
       <td>PHP</td>
-      <td>250 QPS</td>
+      <td>250 TPS</td>
       <td>
       {% highlight php %}
 #!/usr/bin/php
@@ -187,7 +187,7 @@ EOF
 
 예상했듯이 C 가 가장 빠르고 그 다음 C++ > Bash > PHP > Python 순이다. 전통적인 CGI 방식은 프로세스를 직접 실행한 결과를 보여주는 방식이기 때문에 미리 바이너리를 만들고 사이즈가 가장 작은 C 가 가장 빠르다.
 
-그러나 이 역시도 mod_php 에 비하면 1/7 수준에 불과하다. 따라서 특수한 경우를 제외하곤 굳이 C 로 전통적인 CGI 를 만들어야 할 이유가 전혀 없다. 재밌는 점은 PHP 의 경우인데, 전통적인 CGI 에서는 250 QPS 밖에 나오지 않지만 mod_php/FastCGI 에서 돌리면 7,100 ~ 7,600 QPS 가 나온다. 거의 30배 이상 성능 차이가 난다.
+그러나 이 역시도 mod_php 에 비하면 1/7 수준에 불과하다. 따라서 특수한 경우를 제외하곤 굳이 C 로 전통적인 CGI 를 만들어야 할 이유가 전혀 없다. 재밌는 점은 PHP 의 경우인데, 전통적인 CGI 에서는 250 TPS 밖에 나오지 않지만 mod_php/FastCGI 에서 돌리면 7,100 ~ 7,600 TPS 가 나온다. 거의 30배 이상 성능 차이가 난다.
 
 ## 결론
 
