@@ -19,16 +19,12 @@ URL 을 자동으로 변환해주는 아파치 모듈을 만들었다.
 고성능을 위해 패턴을 내장했기 때문에 수정할때는 `mod_url_replace.c` 에서 코드를 직접 수정한 후 다시 컴파일해야 하는 번거로움이 있다. 다행히 아파치 모듈은 **apxs**로 손쉽게 빌드 가능하다. 아울러 모듈명은 url-replace 이지만 URL 외에 다양한 룰도 적용 가능하다.
 
 {% highlight c %}
-/* --------------------- ADD PATTERNS HERE ---------------------- */
-
 char *spdy_addr = "//t99.search.daumcdn.net/";
 
 add_pattern(p, dcfg, "//t1.search.daumcdn.net/", spdy_addr);
 add_pattern(p, dcfg, "//t2.search.daumcdn.net/", spdy_addr);
 add_pattern(p, dcfg, "//t3.search.daumcdn.net/", spdy_addr);
 add_pattern(p, dcfg, "//t4.search.daumcdn.net/", spdy_addr);
-
-/* -------------------------------------------------------------- */
 {% endhighlight %}
 
 원래 다른 모듈명으로 사내 CDN 주소 변경 용도로 만들었으나 정리하여 오픈소스로 공개한다. 공개하면서 일부 코드를 함께 정리했는데, 정리한 부분은 다시 사내 버전에 반영 하면서 상호 개선 효과를 얻을 수 있었다. 소스 코드는 단일 C 파일로 작성되어 있으며 [README](https://github.com/likejazz/mod-url-replace/blob/master/README.md) 에 이용 방법과 설치 방법을 상세히 기술했다.
