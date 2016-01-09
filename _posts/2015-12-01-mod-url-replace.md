@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 아파치 모듈 mod_url_replace
+title: mod_url_replace
 ---
 
 <div class="message">

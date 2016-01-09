@@ -8,11 +8,13 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.25;
   color: #313131;
   text-rendering: optimizeLegibility;
-  display: inline;
 }
 
 h1 {
   font-size: 2rem;
+}
+.posts .post h1 {
+  margin: 0;
 }
 
 h2 {
