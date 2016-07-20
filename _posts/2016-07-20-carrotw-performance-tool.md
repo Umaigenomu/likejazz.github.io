@@ -29,9 +29,9 @@ carrot은 초 단위의 실시간 TPS를 확인할 수 있다는 점에서 기�
 
 URL, thread 수, query 파라미터, 동작 시간(duration time), timeout(기본 1초)등으로 구성되며, Permalink 생성을 누를 경우 해당 설정 값으로 고유한 URL이 생성된다. 따라서 이 URL을 공유하면 즉시 성능 테스트가 가능한 환경으로 구성할 수 있다.
 
-- QPS: Queries Per Second, 원래 TPS(Transactions)가 맞으나 검색에서 사용을 위해 쿼리로 명칭을 변경한다. 즉, 초당 최대 쿼리 요청 수 이다.
-- Response Time: 응답 시간. 단위는 ms 이다.
-- Fail Count: 요청 실패 횟수. 주로 timeout을 초과하거나 socket 커넥션 오류가 발생하거나 또는 너무 많은 요청이 들어가 thread에 문제가 발생한 경우에 올라간다. 콘솔에는 stderr에 오류를 표시하나 웹 에서는 stdout만 표현하므로 오류 메시지는 보여주지 않고 카운트만 올라간다. 이는 다음 버전에 해결 예정이다.
+- `QPS`: Queries Per Second, 원래 TPS(Transactions)가 맞으나 검색에서 사용을 위해 쿼리로 명칭을 변경한다. 즉, 초당 최대 쿼리 요청 수 이다.
+- `Response Time`: 응답 시간. 단위는 ms 이다.
+- `Fail Count`: 요청 실패 횟수. 주로 timeout을 초과하거나 socket 커넥션 오류가 발생하거나 또는 너무 많은 요청이 들어가 thread에 문제가 발생한 경우에 올라간다. 콘솔에는 stderr에 오류를 표시하나 웹 에서는 stdout만 표현하므로 오류 메시지는 보여주지 않고 카운트만 올라간다. 이는 다음 버전에 해결 예정이다.
 
 timeout에는 두 가지가 있는데 Connection-Timeout은 socket 통신이 연결되기 전까지, Read-Write Timeout은 연결 이후 TTLB(Time To Last Byte)까지의 시간이다. 보통은 Connection이 훨씬 더 짧아야 하나 TTLB가 긴 것도 서버의 응답(Response)이 지나치게 느리다는 것이므로 좋지 않다.
 
