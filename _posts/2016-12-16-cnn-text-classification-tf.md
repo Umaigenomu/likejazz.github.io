@@ -109,7 +109,7 @@ self.h_pool_flat = tf.reshape(self.h_pool, [-1, num_filters_total])
 
 #### DROPOUT LAYER
 
-드롭아웃은 합성곱 신경망의 오버피팅을 방지하는 가장 유명하면서도 가장 흥미로운 방법이다. 드롭아웃 레이어는 뉴런의 일부를 확률적으로 "비활성화"한다. 이는 뉴런의 동시 적응을 방지하고 특징을 개별적으로 학습하도록 강제하여 사람이 그림을 맞출때 일부를 손으로 가린채 특징을 학습하여 맞추도록 하는 방식과 유사하다. [이 방식이 정확도를 오히려 향상시킨다는 논문이 2014년 토론토 대학에서 발간](http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf)됐으며 여기서 드롭아웃을 학습 중에는 0.5, 평가 중에는 1(당연히 비활성화)로 설정한다.
+[드롭아웃](http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf)은 합성곱 신경망의 오버피팅을 방지하는 가장 유명하면서도 가장 흥미로운 방법이다. 드롭아웃 레이어는 뉴런의 일부를 확률적으로 "비활성화"한다. 이는 뉴런의 동시 적응을 방지하고 특징을 개별적으로 학습하도록 강제하여 사람이 그림을 맞출때 일부를 손으로 가린채 특징을 학습하여 맞추도록 하는 방식과 유사하다. 여기서는 드롭아웃을 학습 중에는 0.5(즉, 50%), 평가 중에는 1(당연히 비활성화)로 설정한다.
 
 #### SCORES AND PREDICTIONS
 
@@ -182,7 +182,7 @@ dev_summary_writer = tf.train.SummaryWriter(dev_summary_dir, sess.graph_def)
 
 #### INITIALIZING THE VARIABLES
 
-모델을 학습하기 전에 그래프에서 변수를 초기화 해야 한다. `initialize_all_variables` 함수를 사용했으며(deprecated 되어 [이에 대한 간단한 패치를 제출](https://github.com/dennybritz/cnn-text-classification-tf/pull/52)하였고 적용됨) 정의한 변수를 모두 초기화 하는 편리한 함수다. 변수의 초기화 프로그램을 수동으로 호출 할 수도 있는데 미리 훈련 된 값으로 임베딩을 초기화하려는 경우 유용하다.
+모델을 학습하기 전에 그래프에서 변수를 초기화 해야 한다. `initialize_all_variables` 함수를 사용했으며 정의한 변수를 모두 초기화 하는 편리한 함수다. 현재는 deprecated 된 상태이므로 [이에 대한 간단한 패치를 제출](https://github.com/dennybritz/cnn-text-classification-tf/pull/52)했고 머지 되었다. 물론 변수의 초기화 프로그램을 수동으로 호출 할 수도 있는데 미리 훈련 된 값으로 임베딩을 초기화하려는 경우 유용하다.
 
 #### DEFINING A SINGLE TRAINING STEP
 
@@ -234,7 +234,7 @@ tensorboard --logdir /PATH_TO_CODE/runs/1449760558/summaries/
 
 이외에 모델 성능을 개선할 수 있는 유용한 케이스를 몇 가지 소개한다.
 
-- 사전 훈련된 word2vec 벡터를 사용하여 임베딩을 초기화한다. 그런데 앞서 모델 챕터에서 언급했듯이 서울대 논문에서는 별 효과가 없었다고 하니 참고 바란다.[^fn-5]
+- 사전 훈련된 word2vec 벡터를 사용하여 임베딩을 초기화한다. 그런데 앞서 모델 챕터에서 언급했듯이 서울대 논문에서는 별 효과가 없었다고 한다.[^fn-5]
 - 논문에서 처럼 마지막 레이어에 가중치 벡터 L2 norm을 제한한다. 각 학습 단계 사이에 가중치를 업데이트하는 작업을 정의하여 수행할 수 있다.
 - 오버피팅 방지를 위해 망에 L2 정규화를 추가하고 드롭아웃 비율 증가를 실험한다. 참고로 코드에는 이미 L2 정규화 옵션이 포함되어 있으며 비활성화 되어 있다.
 - 가중치 업데이트 및 레이어 액션에 대한 히스토그램 써머리를 추가하고 텐서보드에서 시각화한다.
