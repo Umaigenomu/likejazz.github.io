@@ -22,11 +22,11 @@ title: NLP를 위한 딥러닝 가이드
 
 ### 이론, 튜토리얼
 - [스탠포드 CS 딥러닝 튜토리얼](http://deeplearning.stanford.edu/tutorial/)  
-CS 자료이며 수식 중심 알고리즘 중심으로 정리. 실무 적용보다는 이론을 체계적으로 익히는데 유용. CNN 까지 설명되어 있음.
+수식, 알고리즘 중심으로 정리된 딥러닝 문서. 실무 적용보다는 이론을 체계적으로 익히는데 유용. CNN 까지 설명되어 있음.
 - [모두를 위한 머신러닝/딥러닝 강의](https://hunkim.github.io/ml/)  
-한글로 가장 잘 정리된 문서
+한글로 가장 잘 정리된 김성훈 교수님의 머신러닝 문서
 - [모두를 위한 머신러닝/딥러닝 정리 노트](http://pythonkim.tistory.com/notice/25)  
-매우 깔끔하게 잘 정리
+위 동영상의 강의 노트를 매우 깔끔하게 정리
 - [Get Started with Machine Learning](http://suriyadeepan.github.io/2016-06-06-ml-basics-course/)  
 각종 머신러닝 개념을 Cheat Sheets 형태로 깔끔하게 정리. 인도의 한 과학자가 정리. 인도는 영어가 되니 이렇게 영문서도 깔끔하게 잘 정리한다. 부러운 부분.
 - [THE NEURAL NETWORK ZOO](http://www.asimovinstitute.org/neural-network-zoo/)  
