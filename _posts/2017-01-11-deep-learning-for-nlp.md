@@ -81,8 +81,11 @@ Karpathy의 Char-RNN 소개
 - [Bidirectional LSTM for IMDB sentiment classification](https://transcranial.github.io/keras-js/#/imdb-bidirectional-lstm)  
 LSTM을 이용한 IMDB 댓글의 감정 분류를 js로 구현. 예전 Karpathy의 [ConvNetJS](http://cs.stanford.edu/people/karpathy/convnetjs/)는 CNN 이미지 처리에 특화되어 있고 학습 자체도 js에서 직접 해야 하는 한계가 있었는데 이 라이브러리는 서버의 Keras에서 학습을 진행하고 학습셋을 js에서 가져와 사용하므로 훨씬 유용하다. 
 - [Theano, Keras 튜토리얼 중국어 자료](http://blog.csdn.net/niuwei22007/article/category/5868745)  
-- [Keras로 Multi Layer Perceptron 구현하기](http://iostream.tistory.com/111)
-- [Deep Language Modeling for Question Answering using Keras](http://benjaminbolte.com/blog/2016/keras-language-modeling.html)
+구글 번역기로 읽을만하다.
+- [Keras로 Multi Layer Perceptron 구현하기](http://iostream.tistory.com/111)  
+한글로 된 Keras 간단한 튜토리얼. 이와 함께 [XOR 구현 예제]https://gist.github.com/cburgdorf/e2fb46e5ad61ed7b9a29029c5cc30134)를 보면 Keras가 얼마나 코드를 간단하게 만드는지 확인할 수 있다.
+- [Deep Language Modeling for Question Answering using Keras](http://benjaminbolte.com/blog/2016/keras-language-modeling.html)  
+QA를 위한 딥 랭기지 모델인데 LSTM, GRU RNN을 설명하는 문서이지만 Keras만 이용한 알고리즘 구현은 흔치 않기 때문에 Keras 카테고리로 분류했다.
 
 ### 강화 학습
 - [Simple reinforcement learning methods to learn CartPole](http://kvfrans.com/simple-algoritms-for-solving-cartpole/)  
@@ -100,11 +103,11 @@ NLP를 위한 딥러닝을 실제 서비스에 적용하면서 매우 다양한 
 - [불멸의 이론](http://book.daum.net/detail/book.do?bookid=KOR9788958626190)  
 마찬가지로 재밌게 읽을 수 있는 역사책(?)이다. '베이즈 정리는 어떻게 250년 동안 불확실한 세상을 지배하였는가' 부제가 딱 어울리는 책.
 - [인공지능 현대적 접근방식](http://book.daum.net/detail/book.do?bookid=KOR9791185890418)  
-가뜩이나 책 내용이 복잡한 수식으로 가득찬 어려운 이론서인데, 번역 또한 이해하고 풀어쓴게 아니라 원문의 직역에 가깝기 때문에 한국어로 읽었을때 도무지 무슨 말인지 이해할 수가 없다. 차라리 원서를 보는 편이 이해가 더 빠르다. 개인적으로 직역은 절대 피해야 한다는 지론을 갖고 있는데 아래에 소개하는 '텐서플로 첫걸음'이 완벽하게 이해하고 의역한 모범 사례를 보여준다면 이 책은 이해하지 못한 상태에서 번역하면 어떻게 되는지를 보여준 나쁜 사례로 볼 수 있다. 안타까운 부분이다.
+가뜩이나 책 내용이 복잡한 수식으로 가득찬 어려운 이론서인데, 번역 또한 이해하고 풀어쓴게 아니라 원문의 직역에 가깝기 때문에 한국어로 읽었을때 도무지 무슨 말인지 이해할 수가 없다. 차라리 원서를 보는 편이 이해가 더 빠르다. 개인적으로 직역은 절대 피해야 한다는 지론을 갖고 있는데 아래에 소개하는 '텐서플로 첫걸음'이 완벽하게 이해하고 의역한 모범 사례를 보여준다면 이 책은 이해하지 못한 상태에서 직역하면 어떻게 되는지를 보여준 나쁜 사례로 볼 수 있다. 안타까운 점이다.
 - [밑바닥부터 시작하는 딥러닝](http://book.daum.net/detail/book.do?bookid=BOK00031872854YE)  
 라이브러리를 사용하지 않고 직접 알고리즘을 구현하며 원리를 설명하는 좋은 책. 실제 서비스에서는 결국 라이브러리를 사용할 수 밖에 없지만 이렇게 원리를 밑바닥 부터 이해해야 제대로 된 서비스 구현이 가능하다.
 - [Building Machine Learning Systems with Python](http://book.daum.net/detail/book.do?bookid=KOR9788960777613)  
-scikit-learn을 이용, 따라하기 식으로 구현하는 있는 머신러닝 책. 딥러닝은 아니지만 머신러닝을 직접 구현해보고 이해하는데 큰 도움이 된다.
+scikit-learn을 이용, 따라하기 식으로 구현하는 머신러닝 책. 딥러닝은 아니지만 머신러닝을 직접 구현해보고 이해하는데 큰 도움이 된다.
 - [텐서플로 첫걸음](http://book.daum.net/detail/book.do?bookid=KOR9788968484902)  
 바르셀로나의 카탈루냐 공과대학교 교수인 Jordi Torres가 적은 튜토리얼을 번역한 책. 한글로 된 매우 훌륭한 블로그인 [텐서플로우 코리아 블로그](https://tensorflow.blog/)의 운영자가 직접 번역한 책. 기술을 이해하고 번역한 책이라 그런지 번역이 매우 자연스럽고 번역서 부록인 RNN, LSTM 섹션도 읽을만함. 딥러닝 개념을 이해한 상태에서 텐서플로우 활용법을 처음 접하기에 좋은 책
 - [집단지성 프로그래밍](http://book.daum.net/detail/book.do?bookid=KOR9788979145625)  
@@ -112,7 +115,7 @@ scikit-learn을 이용, 따라하기 식으로 구현하는 있는 머신러닝 
 - [파이썬 라이브러리를 활용한 데이터 분석](http://book.daum.net/detail/book.do?bookid=KOR9788968480478)  
 데이타 시각화에 관한 책
 - [인공지능, 머신러닝, 딥러닝 입문](http://book.daum.net/detail/book.do?bookid=KOR9791158390419)  
-번역서가 아닌 빠르게 나온 국내서로 머신러닝의 역사와 개념을 잡는데는 도움이 된다. 그런데 본격적인 알고리즘 설명 책도 아니면서 수식을 함께 나열하는 것은 다소 무리가 있다는 생각.
+번역서가 아닌 빠르게 나온 국내서로 머신러닝의 역사와 개념을 잡는데는 도움이 된다. 그런데 본격적인 알고리즘 책도 아니면서 수식을 함께 나열하는 것은 다소 무리수 였다는 생각.
 - [Python Machine Learning](http://book.daum.net/detail/book.do?bookid=BOK00027563049YE)  
 앞서 신경망 섹션에서 소개한 Raschka가 적은 책. 블로그를 참 잘 적는데 책 내용도 깔끔하게 정리되어 있다. 아쉽게도 번역서는 나오지 않았다.
 - [Data Science from Scratch](http://shop.oreilly.com/product/0636920033400.do)  
