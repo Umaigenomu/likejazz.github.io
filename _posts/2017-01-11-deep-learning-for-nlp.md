@@ -82,7 +82,7 @@ LSTM을 이용한 IMDB 댓글의 감정 분류를 js로 구현. 예전 Karpathy�
 - [Theano, Keras 튜토리얼 중국어 자료](http://blog.csdn.net/niuwei22007/article/category/5868745)  
 구글 번역기로 읽을만하다.
 - [Keras로 Multi Layer Perceptron 구현하기](http://iostream.tistory.com/111)  
-한글로 된 Keras 간단한 튜토리얼. 이와 함께 [XOR 구현 예제]https://gist.github.com/cburgdorf/e2fb46e5ad61ed7b9a29029c5cc30134)를 보면 Keras가 얼마나 코드를 간단하게 만드는지 확인할 수 있다.
+한글로 된 Keras 간단한 튜토리얼. 이와 함께 [XOR 구현 예제](https://gist.github.com/cburgdorf/e2fb46e5ad61ed7b9a29029c5cc30134)를 보면 Keras가 얼마나 코드를 간단하게 만드는지 확인할 수 있다.
 - [Deep Language Modeling for Question Answering using Keras](http://benjaminbolte.com/blog/2016/keras-language-modeling.html)  
 QA를 위한 딥 랭기지 모델인데 LSTM, GRU RNN을 설명하는 문서이지만 Keras만 이용한 알고리즘 구현은 흔치 않기 때문에 Keras 카테고리로 분류했다.
 
