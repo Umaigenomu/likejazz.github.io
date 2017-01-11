@@ -32,6 +32,8 @@ CS 자료이며 수식 중심 알고리즘 중심으로 정리. 실무 적용보
 - [THE NEURAL NETWORK ZOO](http://www.asimovinstitute.org/neural-network-zoo/)  
 새로운 신경망이 빠르게 등장하고 있기 때문에 약어만 듣고 구조를 일일이 파악하기란 매우 힘든 일이 되었다. 이 문서에서는 DCIGN, BiLSTM, DCGAN 같은 약어들의 신경망 구조를 한 눈에 알아볼 수 있도록 시각화하여 제공한다.
 - [세상에 있는 (거의) 모든 머신러닝 문제 공략법](http://keunwoochoi.blogspot.kr/2016/08/blog-post.html)
+- [The major advancements in Deep Learning in 2016](https://tryolabs.com/blog/2016/12/06/major-advancements-deep-learning-2016/)  
+2016년 딥러닝 분야의 주요 혁신 요약. 중간에 NLP 분야도 있으며 문장이해, 질의응답(QA), 기계번역 분야의 혁신을 소개한다.
 
 ### 신경망
 - [Single-Layer Neural Networks and Gradient Descent](https://sebastianraschka.com/Articles/2015_singlelayer_neurons.html)  
@@ -68,7 +70,8 @@ Karpathy의 Char-RNN 소개
 - [Unfolding RNNs](http://suriyadeepan.github.io/2017-01-07-unfolding-rnn/)  
 마찬가지로 인도의 한 과학자가 정리한 내용. 깔끔한 다이어그램이 돋보인다.
 - [초보자를 위한 RNNs과 LSTM 가이드](https://deeplearning4j.org/kr/kr-lstm)
-- [DL4J와 RNNs (Recurrent Neural Networks)](https://deeplearning4j.org/kr/kr-usingrnns)
+- [DL4J와 RNNs (Recurrent Neural Networks)](https://deeplearning4j.org/kr/kr-usingrnns)  
+위 두 문서는 모두 Deeplearning4j 한글 번역 문서
 - [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
 ### TensorFlow, Keras
