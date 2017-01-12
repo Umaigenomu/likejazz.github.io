@@ -78,7 +78,7 @@ LSTM 문자 인식 과정에 어느 데이타 포인트가 영향을 주는지 �
 - [DL4J와 RNNs (Recurrent Neural Networks)](https://deeplearning4j.org/kr/kr-usingrnns)  
 위 두 문서는 모두 Deeplearning4j 한글 번역 문서
 - [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)  
-깔끔한 다이어그램이 돋보이는 지금까지 본 LSTM을 가장 잘 설명한 문서. [한글 번역](https://brunch.co.kr/@chris-song/9)도 있다.
+깔끔한 다이어그램이 돋보이는 지금까지 본 LSTM을 가장 잘 설명한 문서. [한글 번역](https://brunch.co.kr/@chris-song/9)도 있다. [모두의 연구소 한글 번역](http://whydsp.org/280)이 또 있는데 같은 문장인데도 한글 번역이 완전히 다르다. 재밌는 점
 - [Understanding LSTM and its diagrams](https://medium.com/@shiyan/understanding-lstm-and-its-diagrams-37e2f46f1714)  
 위 문서의 다이어그램을 좀 더 자세히 설명. 문서를 읽으면서 내내 다이어그램 참 잘 그려낸다고 감탄.
 - [Written Memories: Understanding, Deriving and Extending the LSTM](http://r2rt.com/written-memories-understanding-deriving-and-extending-the-lstm.html)  
