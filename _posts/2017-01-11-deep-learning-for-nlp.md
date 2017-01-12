@@ -24,23 +24,28 @@ title: NLP를 위한 딥러닝 가이드
 - [스탠포드 CS 딥러닝 튜토리얼](http://deeplearning.stanford.edu/tutorial/)  
 수식, 알고리즘 중심으로 정리된 딥러닝 문서. 실무 적용보다는 이론을 체계적으로 익히는데 유용. CNN 까지 설명되어 있음.
 - [모두를 위한 머신러닝/딥러닝 강의](https://hunkim.github.io/ml/)  
-한글로 가장 잘 정리된 김성훈 교수님의 머신러닝 문서
-- [모두를 위한 머신러닝/딥러닝 정리 노트](http://pythonkim.tistory.com/notice/25)  
-위 동영상의 강의 노트를 매우 깔끔하게 정리
+한글로 가장 잘 정리된 김성훈 교수님의 머신러닝 문서. [동영상 강의 노트](http://pythonkim.tistory.com/notice/25)를 매우 깔끔하게 정리
 - [Get Started with Machine Learning](http://suriyadeepan.github.io/2016-06-06-ml-basics-course/)  
 각종 머신러닝 개념을 Cheat Sheets 형태로 깔끔하게 정리. 인도의 한 과학자가 정리. 인도는 영어가 되니 이렇게 영문서도 깔끔하게 잘 정리한다. 부러운 부분.
 - [THE NEURAL NETWORK ZOO](http://www.asimovinstitute.org/neural-network-zoo/)  
-새로운 신경망이 빠르게 등장하고 있기 때문에 약어만 듣고 구조를 일일이 파악하기란 매우 힘든 일이 되었다. 이 문서에서는 DCIGN, BiLSTM, DCGAN 같은 약어들의 신경망 구조를 한 눈에 알아볼 수 있도록 시각화하여 제공한다.
+새로운 신경망이 빠르게 등장하고 있기 때문에 약어만 듣고 구조를 일일이 파악하기란 매우 힘든 일이 되었다. 이 문서에서는 DCIGN, BiLSTM, DCGAN 같은 약어들의 신경망 구조를 한 눈에 알아볼 수 있도록 시각화하여 제공
 - [세상에 있는 (거의) 모든 머신러닝 문제 공략법](http://keunwoochoi.blogspot.kr/2016/08/blog-post.html)
 - [The major advancements in Deep Learning in 2016](https://tryolabs.com/blog/2016/12/06/major-advancements-deep-learning-2016/)  
 2016년 딥러닝 분야의 주요 혁신 요약. 중간에 NLP 분야도 있으며 문장이해, 질의응답(QA), 기계번역 분야의 혁신을 소개한다.
 - [We are the Google Brain team. We'd love to answer your questions about machine learning.](https://www.reddit.com/r/MachineLearning/comments/4w6tsv/ama_we_are_the_google_brain_team_wed_love_to/)  
 '우리는 구글 브레인 팀이에요. 궁금한거 물어보세요' reddit에서 진행한 이벤트. 구글 브레인에 관한 다양한 궁금증을 확인할 수 있음. 다들 성의있게 답변도 잘 해줌.
+- [제프리 힌튼 - 드롭아웃을 깨닫게 된 3번의 '아하'](http://keunwoochoi.blogspot.kr/2016/08/3.html)  
+딥러닝 본좌 제프리 힌튼의 드롭아웃 구현 이야기
+- [전상혁님의 머신러닝 스터디 자료](http://sanghyukchun.github.io/blog/categories/machine-learning/)
 
 ### 신경망
 - [Single-Layer Neural Networks and Gradient Descent](https://sebastianraschka.com/Articles/2015_singlelayer_neurons.html)  
 단일 신경망을 구현하여 신경망의 원리를 알기쉽게 잘 설명한 글. Sebastian Raschka의 글로 아래 책 섹션에서 소개한 그의 저서 Python Machine Learning의 두 번째 챕터에 나오는 내용과 동일하다.
 - [IMPLEMENTING A NEURAL NETWORK FROM SCRATCH IN PYTHON – AN INTRODUCTION](http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/)
+- [Neural Network](http://nmhkahn.github.io/NN)  
+신경망 전반에 대해 한글로 알기 쉽게 정리
+- [The Basic Principles in Deep Neural Networks](http://sanghyukchun.github.io/54/)  
+Yoshua Bengio 교수 연구실에서 포닥 과정을 밟고 계신 장민석 박사의 The Basic Principles in Deep Neural Networks 세미나 요약
 
 ### NLP
 - [CS224d: Deep Learning for Natural Language Processing](http://cs224d.stanford.edu/syllabus.html)  
@@ -50,7 +55,7 @@ NLP를 위한 딥러닝 기법, CNN, RNN, GRU, LSTM등을 총 망라.
 - [Deep Learning for NLP](http://lxmls.it.pt/2014/socher-lxmls.pdf)  
 Richard Socher가 2014년 리스본 ML 섬머 스쿨에서 발표한 자료. NLP를 위한 딥러닝 기술을 설명하는 자료인데 너무 길어서 아직 다 읽어보진 못함. 다른 얘기지만 상당히 매력적으로 생긴 사람. AI For Everyone이란 주제로 진행된 [세일즈포스 키노트](https://www.salesforce.com/video/282547/)에서 발표(메타마인드는 세일즈포스에 합병됨)한 영상에 40분부터 등장. 재킷이 어색하다며 웃는데 상당히 매력적. 여기서 마지막에 QA 시스템을 소개. 아마도 세일즈포스는 자사의 ERP, CRM에 고품질 QA를 탑재할 예정인듯.
 - [Deep Learning for NLP](https://media.wix.com/ugd/142eb4_7581cfcf090e4e31a52599315f77c648.pdf)  
-Richard Socher가 비슷한 내용으로 [2016년 딥러닝 스쿨에서 발표](https://www.bayareadlschool.org/schedule)한 내용. 여기에 소위 딥러닝 본좌들이 모여 이틀간 발표를 했는데 유튜브 발표 영상도 있으니 반드시 보는 것을 추천. [1일차](https://www.youtube.com/watch?v=eyovmAtoUx0), [2일차](https://www.youtube.com/watch?v=9dXiAecyJrY) 각각 10시간 짜리.
+Richard Socher가 비슷한 내용으로 [2016년 딥러닝 스쿨에서 발표](https://www.bayareadlschool.org/schedule)한 내용. 여기에 소위 딥러닝 본좌들이 모여 이틀간 발표를 했는데 유튜브 발표 영상이 있으니 반드시 감상 추천. [1일차](https://www.youtube.com/watch?v=eyovmAtoUx0), [2일차](https://www.youtube.com/watch?v=9dXiAecyJrY) 각각 10시간
 - [Natural Language Processing (almost) from Scratch](https://blog.acolyer.org/2016/07/04/natural-language-understanding-almost-from-scratch/)  
 2011년에 arXiv에 올라온 같은 제목의 논문을 소개. 참고로 이 블로그는 운영자인 Adrian Colyer가 CS 논문을 하나씩 선별하여 소개하는 블로그인데 좋은 논문들이 많이 올라온다. 블로그 제목도 the morning paper.
 - [Deep Learning, NLP, and Representations](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/)
@@ -64,24 +69,28 @@ Richard Socher가 비슷한 내용으로 [2016년 딥러닝 스쿨에서 발표]
 
 ### RNN, LSTM
 - [INTRODUCTION TO RNNS](http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/)  
-이 글 이후에 시리즈로 GRU/LSTM까지 소개한다. 앞서 CNN 샘플과 함께 구글 브레인에 근무하는 Denny Britz가 운영하는 훌륭한 블로그.
-- [Recurrent Neural Network (RNN) Tutorial - Part 1](http://aikorea.org/blog/rnn-tutorial-1/)  
-마침 찾아보니 AI Korea의 번역이 있다. 총 4개의 시리즈 문서가 모두 번역되어 있음. 하지만 아쉽게도 최근 블로그 운영은 중단된 상태다.
+이 글 이후에 시리즈로 GRU/LSTM까지 소개한다. 앞서 CNN 샘플과 함께 구글 브레인에 근무하는 Denny Britz가 운영하는 훌륭한 블로그. 마침 찾아보니 [AI Korea의 번역](http://aikorea.org/blog/rnn-tutorial-1/)이 있다. 총 4개의 시리즈 문서가 모두 번역되어 있음. 아쉽게도 2015년 이후 더 이상 새로운 글은 올라오지 않는 상태
 - [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)  
 Karpathy의 Char-RNN 소개
+- [A Deep Dive into Recurrent Neural Nets](http://nikhilbuduma.com/2015/01/11/a-deep-dive-into-recurrent-neural-networks/)  
+LSTM 문자 인식 과정에 어느 데이타 포인트가 영향을 주는지 시각화한 영상 제공
 - [Unfolding RNNs](http://suriyadeepan.github.io/2017-01-07-unfolding-rnn/)  
 마찬가지로 인도의 한 과학자가 정리한 내용. 깔끔한 다이어그램이 돋보인다.
 - [초보자를 위한 RNNs과 LSTM 가이드](https://deeplearning4j.org/kr/kr-lstm)
 - [DL4J와 RNNs (Recurrent Neural Networks)](https://deeplearning4j.org/kr/kr-usingrnns)  
 위 두 문서는 모두 Deeplearning4j 한글 번역 문서
 - [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)  
-깔끔한 다이어그램이 돋보이는 지금까지 본 LSTM을 가장 잘 설명한 문서.
+깔끔한 다이어그램이 돋보이는 지금까지 본 LSTM을 가장 잘 설명한 문서. [한글 번역](https://brunch.co.kr/@chris-song/9)이 있다.
 - [Understanding LSTM and its diagrams](https://medium.com/@shiyan/understanding-lstm-and-its-diagrams-37e2f46f1714)  
 위 문서의 다이어그램을 좀 더 자세히 설명. 문서를 읽으면서 내내 다이어그램 참 깔끔하게 잘 그려낸다고 감탄.
 - [Understanding Stateful LSTM Recurrent Neural Networks in Python with Keras](http://machinelearningmastery.com/understanding-stateful-lstm-recurrent-neural-networks-python-keras/)  
 Keras로 Stateful LSTM RNN을 쉽게 구현한 샘플. Machine Learning Mastery에 쉽게 따라할 수 있는 튜토리얼과 샘플이 많다.
 - [Written Memories: Understanding, Deriving and Extending the LSTM](http://r2rt.com/written-memories-understanding-deriving-and-extending-the-lstm.html)  
 최근에 찾은 또 다른 LSTM 문서인데 너무 길어서 아직 읽어보진 못함.
+- [A noob’s guide to implementing RNN-LSTM using Tensorflow](http://monik.in/a-noobs-guide-to-implementing-rnn-lstm-using-tensorflow/)  
+LSTM RNN 텐서플로우 구현을 쉽게 정리
+- [RNN Regularizations](http://nmhkahn.github.io/RNN-Regularizations)  
+한글로 정리한 RNN 정규화 문서
 
 ### TensorFlow, Keras
 - [텐서플로우(TensorFlow)를 이용해 자연어를 처리하기(NLP)](http://solarisailab.com/archives/374)  
@@ -94,6 +103,7 @@ LSTM을 이용한 IMDB 댓글의 감정 분류를 js로 구현. 예전 Karpathy�
 한글로 된 Keras 간단한 튜토리얼. 이와 함께 [XOR 구현 예제](https://gist.github.com/cburgdorf/e2fb46e5ad61ed7b9a29029c5cc30134)를 보면 Keras가 얼마나 코드를 간단하게 만드는지 확인할 수 있다.
 - [Deep Language Modeling for Question Answering using Keras](http://benjaminbolte.com/blog/2016/keras-language-modeling.html)  
 QA를 위한 딥 랭기지 모델인데 LSTM, GRU RNN을 설명하는 문서이지만 Keras만 이용한 알고리즘 구현은 흔치 않기 때문에 Keras 카테고리로 분류했다.
+- [RNN 기본 구조와 Keras를 사용한 RNN 구현](https://www.datascienceschool.net/view-notebook/1d93b9dc6c624fbaa6af2ce9290e2479/)
 - [François Chollet - Quora](https://www.quora.com/profile/Fran%C3%A7ois-Chollet)  
 Keras를 만든 François Chollet가 Quora에 답변을 남긴 내용들. 주로 Keras에 대한 궁금증을 해결해주고 있다. 그는 지난 여름부터 구글에서 근무 중.
 
@@ -104,6 +114,14 @@ OpenAI gym에서 만나는 가장 쉬운 강화학습 샘플인 카트폴을 상
 Karpathy의 Pong 강화학습 튜토리얼을 한글로 훌륭하게 번역
 - [Simple Reinforcement Learning](https://medium.com/@awjuliani)  
 텐서플로우를 이용한 강화학습 자료를 올리고 있는 Arthur Julinani의 미디엄
+- [Machine Learning 스터디 (20) Reinforcement Learning](http://sanghyukchun.github.io/76/)  
+스탠포드 CS229 강의 노트를 기반으로 작성한 강화학습 한글 문서
+
+### 기타
+- [Arxiv Sanity Preserver](http://www.arxiv-sanity.com/)  
+Karpathy가 만든
+- [GitXiv](http://www.gitxiv.com/)  
+논문 구현을 깃헙 코드와 연동
 
 ## 책
 NLP를 위한 딥러닝을 실제 서비스에 적용하면서 매우 다양한 책을 구매하여 읽어보았다. 구매하여 읽었던 책 목록과 간략한 소감을 정리해본다.

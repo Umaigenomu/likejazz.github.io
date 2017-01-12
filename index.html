@@ -9,7 +9,7 @@ title: Home
     {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
     {% capture prev_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
     {% if forloop.first %}
-      <h1>{{ this_year }}</h1>
+      <h1 style="padding: 20px 10px; text-align: left">{{ this_year }}</h1>
     {% endif %}
 
     <h1 class="archive">
@@ -19,7 +19,7 @@ title: Home
 
     {% unless forloop.last %}
       {% if this_year != prev_year %}
-        <h1 style="padding-top: 20px">{{ prev_year }}</h1>
+        <h1 style="padding: 20px 10px; text-align: left">{{ prev_year }}</h1>
       {% endif %}
     {% endunless %}
   </article>
