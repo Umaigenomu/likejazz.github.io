@@ -129,7 +129,7 @@ scikit-learn을 이용, 따라하기 식으로 구현하는 머신러닝 책. �
 - [Python Machine Learning](http://book.daum.net/detail/book.do?bookid=BOK00027563049YE)  
 앞서 신경망 섹션에서 소개한 Raschka가 적은 책. 블로그를 참 잘 적는데 책 내용도 깔끔하게 정리되어 있다. 아쉽게도 번역서는 나오지 않았다.
 - [Data Science from Scratch](http://book.daum.net/detail/book.do?bookid=BOK00024161479KA)  
-국내에는 '데이타 과학'이란 이름으로 번역서가 나왔으나 원서만 읽어봤다. 선형대수, 확률, 통계등 이론적 기반을 주로 다룬다.
+국내에는 '데이타 과학'이란 이름으로 번역서가 나왔으나 이 책은 원서일때 읽어봐서 번역서의 품질은 확인할 수 없다. 선형대수, 확률, 통계등 이론적 기반을 주로 다룬다.
 - [Artificial Intelligence](https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/)  
 깃북에 있는 내용이다 보니 이걸 책으로 분류해야 할 지 문서로 분류해야 할 지 헷갈리는데 다루는 내용이 방대하고 길기 때문에 일단 책으로 분류. 여러가지 개념들을 알기쉽게 상세히 소개하고 있다.
 - [Python Data Science Cookbook](http://book.daum.net/detail/book.do?bookid=BOK00027872748AL)  
