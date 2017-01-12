@@ -145,7 +145,7 @@ scikit-learn을 이용, 따라하기 식으로 구현하는 머신러닝 책. �
 - [파이썬 라이브러리를 활용한 데이터 분석](http://book.daum.net/detail/book.do?bookid=KOR9788968480478)  
 데이타 시각화에 관한 책
 - [인공지능, 머신러닝, 딥러닝 입문](http://book.daum.net/detail/book.do?bookid=KOR9791158390419)  
-번역서가 아닌 빠르게 나온 국내서로 머신러닝의 역사와 개념을 잡는데는 도움이 된다. 그런데 본격적인 알고리즘 책도 아니면서 수식을 함께 나열하는 것은 다소 무리수 였다는 생각.
+번역서가 아닌 빠르게 나온 국내서로 머신러닝의 역사와 개념을 잡는데 도움이 된다. 그런데 본격적인 알고리즘 책도 아니면서 수식을 함께 나열하는 것은 다소 무리수 였다는 생각.
 - [Python Machine Learning](http://book.daum.net/detail/book.do?bookid=BOK00027563049YE)  
 앞서 신경망 섹션에서 소개한 Raschka가 적은 책. 블로그를 참 잘 적는데 책 내용도 깔끔하게 정리되어 있다. 아쉽게도 번역서는 나오지 않았다.
 - [Data Science from Scratch](http://book.daum.net/detail/book.do?bookid=BOK00024161479KA)  
