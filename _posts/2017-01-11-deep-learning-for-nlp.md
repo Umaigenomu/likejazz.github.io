@@ -128,11 +128,11 @@ scikit-learn을 이용, 따라하기 식으로 구현하는 머신러닝 책. �
 번역서가 아닌 빠르게 나온 국내서로 머신러닝의 역사와 개념을 잡는데는 도움이 된다. 그런데 본격적인 알고리즘 책도 아니면서 수식을 함께 나열하는 것은 다소 무리수 였다는 생각.
 - [Python Machine Learning](http://book.daum.net/detail/book.do?bookid=BOK00027563049YE)  
 앞서 신경망 섹션에서 소개한 Raschka가 적은 책. 블로그를 참 잘 적는데 책 내용도 깔끔하게 정리되어 있다. 아쉽게도 번역서는 나오지 않았다.
-- [Data Science from Scratch](http://shop.oreilly.com/product/0636920033400.do)  
+- [Data Science from Scratch](http://book.daum.net/detail/book.do?bookid=BOK00024161479KA)  
 국내에는 '데이타 과학'이란 이름으로 번역서가 나왔으나 원서만 읽어봤다. 선형대수, 확률, 통계등 이론적 기반을 주로 다룬다.
 - [Artificial Intelligence](https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/)  
 깃북에 있는 내용이다 보니 이걸 책으로 분류해야 할 지 문서로 분류해야 할 지 헷갈리는데 다루는 내용이 방대하고 길기 때문에 일단 책으로 분류. 여러가지 개념들을 알기쉽게 상세히 소개하고 있다.
-- [Python Data Science Cookbook](https://www.packtpub.com/big-data-and-business-intelligence/python-data-science-cookbook)  
+- [Python Data Science Cookbook](http://book.daum.net/detail/book.do?bookid=BOK00027872748AL)  
 마찬가지로 이론적 기반을 주로 다루고 scikit-learn을 이용해 따라해보는 예제들로 구성되어 있다. 번역서는 나오지 않음.
 - [Think Bayes: Bayesian Statistics Made Simple](http://www.greenteapress.com/thinkbayes/html/index.html)  
 온라인에서 전문을 볼 수 있으며 PDF로 전체를 다운로드 할 수 있다. 주로 베이즈를 중심으로 한 이론적 기반을 다루지만 복잡한 수식보다는 파이썬 코드로 쉽게 따라해 볼 수 있는데 중점을 둔 책.
