@@ -4,17 +4,17 @@ title: NLP를 위한 딥러닝 가이드
 ---
 
 <div class="message">
-<p>2012년 이미지넷에서 토론토 대학의 알렉스 크리제브스키가 들고 나온 '알렉스넷(Alexnet)'은 기존의 참가자들을 현격한 차이로 따돌리며 놀랄만한 정확도를 보여주며 우승을 차지했다. 알렉스넷은 딥러닝이었다. 이후 불과 몇 년 사이 모든 참가자들이 딥러닝을 택할 정도로 이제 딥러닝은 비전 인식에 획기적인 변화를 주도 하고 있다. (아래 그래프 참조)</p>
+<p>2012년 이미지넷(ImageNet)에서 토론토 대학의 알렉스 크리제브스키가 들고 나온 '알렉스넷(Alexnet)'은 기존의 참가자들을 현격한 차이로 따돌리며 놀랄만한 정확도를 보여주었다. 알렉스넷은 딥러닝이었다. 이후 불과 몇 년 사이 모든 참가자들이 딥러닝을 택할 정도로 이제 딥러닝은 비전 인식에 획기적인 변화<sup>아래 그래프 참조</sup>를 주도 하고 있다. 우리가 잘 알고 있는 2016년 알파고도 딥러닝이었다.</p>
 
-<p>바야흐로 딥러닝에 관한 다양한 양질의 문서가 하루가 멀다하고 출판되기 시작하며 배움의 속도보다 논문이 출판되는 속도가 더 빨라지기 시작했다.  작금의 시점에 또 다른 문서를 작성하며 숟가락을 얹기 보다 기존의 좋은 문서를 잘 엮어주는게 훨씬 더 중요하고 가치 있겠다는 판단에 따라 이번에는 그 동안의 글과 달리 여러 딥러닝 자료들을 정리하고 부연 설명을 곁들인 형태로 정리해 본다.</p>
+<p>바야흐로 딥러닝에 관한 다양한 양질의 문서가 하루가 멀다하고 출판되기 시작하며 배움의 속도보다 새로운 논문이 출판되는 속도가 더 빠른 세상이다. 작금의 시점에 또 다른 문서를 작성하며 숟가락을 얹기 보다 기존의 좋은 문서를 잘 엮어주는게 훨씬 더 중요하고 가치 있겠다는 판단에 이번에는 그 동안의 문서와 달리 여러 딥러닝 자료들을 정리하고 부연 설명을 곁들여 정리해 본다.</p>
 
-<p>특히 비전 인식을 제외하고, NLP에만 집중하여 정리해야할 자료의 범위를 좁히고 수식과 알고리즘부터 시작하여, 밑바닥부터 시작하는(from scratch) 구현, 도구(TensorFlow, Keras)를 활용한 서비스를 위한 구현까지, 단계별로 정리해볼 예정이다. 기존 Awesome-X 시리즈와 유사한 형태로 상세한 부연 설명을 곁들여 NLP를 위한 딥러닝을 구현하는데 도움이 되도록 한다.</p>
+<p>특히 비전 인식을 제외하고, NLP에만 집중하여 정리해야할 자료의 범위를 좁히고 수식과 알고리즘부터 시작하여, 밑바닥부터 시작하는(from scratch) 구현, 도구(TensorFlow, Keras)를 활용한 서비스를 위한 구현까지, 단계별로 정리해볼 예정이다. 기존 awesome lists와 유사한 형태로 상세한 부연 설명을 곁들여 NLP를 위한 딥러닝을 구현하는데 도움이 되도록 한다.</p>
 </div>
 
 - *2017년 1월 11일 초안 작성*
 
 <img src="https://c1.staticflickr.com/1/623/31406346824_682c223d93_o.png" width="300" />
-*<sup>전통적인 CV방식(파란색)과 딥러닝 방식(초록색)의 이미지넷 정확도 결과[^1]</sup>*
+*전통적인 CV방식(파란색)과 딥러닝 방식(초록색)의 이미지넷 정확도 결과[^1]*
 
 [^1]: [2012년 이미지넷에서 알파고까지… 딥 러닝의 모든 것](https://forums.geforce.co.kr/index.php?document_srl=222723&mid=news)
 
@@ -34,6 +34,8 @@ title: NLP를 위한 딥러닝 가이드
 - [세상에 있는 (거의) 모든 머신러닝 문제 공략법](http://keunwoochoi.blogspot.kr/2016/08/blog-post.html)
 - [The major advancements in Deep Learning in 2016](https://tryolabs.com/blog/2016/12/06/major-advancements-deep-learning-2016/)  
 2016년 딥러닝 분야의 주요 혁신 요약. 중간에 NLP 분야도 있으며 문장이해, 질의응답(QA), 기계번역 분야의 혁신을 소개한다.
+- [We are the Google Brain team. We'd love to answer your questions about machine learning.](https://www.reddit.com/r/MachineLearning/comments/4w6tsv/ama_we_are_the_google_brain_team_wed_love_to/)  
+'우리는 구글 브레인 팀이에요. 궁금한거 물어보세요' reddit에서 진행한 이벤트. 구글 브레인에 관한 다양한 궁금증을 확인할 수 있음. 다들 성의있게 답변도 잘 해줌.
 
 ### 신경망
 - [Single-Layer Neural Networks and Gradient Descent](https://sebastianraschka.com/Articles/2015_singlelayer_neurons.html)  
@@ -72,7 +74,14 @@ Karpathy의 Char-RNN 소개
 - [초보자를 위한 RNNs과 LSTM 가이드](https://deeplearning4j.org/kr/kr-lstm)
 - [DL4J와 RNNs (Recurrent Neural Networks)](https://deeplearning4j.org/kr/kr-usingrnns)  
 위 두 문서는 모두 Deeplearning4j 한글 번역 문서
-- [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+- [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)  
+깔끔한 다이어그램이 돋보이는 지금까지 본 LSTM을 가장 잘 설명한 문서.
+- [Understanding LSTM and its diagrams](https://medium.com/@shiyan/understanding-lstm-and-its-diagrams-37e2f46f1714)  
+위 문서의 다이어그램을 좀 더 자세히 설명. 문서를 읽으면서 내내 다이어그램 참 깔끔하게 잘 그려낸다고 감탄.
+- [Understanding Stateful LSTM Recurrent Neural Networks in Python with Keras](http://machinelearningmastery.com/understanding-stateful-lstm-recurrent-neural-networks-python-keras/)  
+Keras로 Stateful LSTM RNN을 쉽게 구현한 샘플. Machine Learning Mastery에 쉽게 따라할 수 있는 튜토리얼과 샘플이 많다.
+- [Written Memories: Understanding, Deriving and Extending the LSTM](http://r2rt.com/written-memories-understanding-deriving-and-extending-the-lstm.html)  
+최근에 찾은 또 다른 LSTM 문서인데 너무 길어서 아직 읽어보진 못함.
 
 ### TensorFlow, Keras
 - [텐서플로우(TensorFlow)를 이용해 자연어를 처리하기(NLP)](http://solarisailab.com/archives/374)  
@@ -85,6 +94,8 @@ LSTM을 이용한 IMDB 댓글의 감정 분류를 js로 구현. 예전 Karpathy�
 한글로 된 Keras 간단한 튜토리얼. 이와 함께 [XOR 구현 예제](https://gist.github.com/cburgdorf/e2fb46e5ad61ed7b9a29029c5cc30134)를 보면 Keras가 얼마나 코드를 간단하게 만드는지 확인할 수 있다.
 - [Deep Language Modeling for Question Answering using Keras](http://benjaminbolte.com/blog/2016/keras-language-modeling.html)  
 QA를 위한 딥 랭기지 모델인데 LSTM, GRU RNN을 설명하는 문서이지만 Keras만 이용한 알고리즘 구현은 흔치 않기 때문에 Keras 카테고리로 분류했다.
+- [François Chollet - Quora](https://www.quora.com/profile/Fran%C3%A7ois-Chollet)  
+Keras를 만든 François Chollet가 Quora에 답변을 남긴 내용들. 주로 Keras에 대한 궁금증을 해결해주고 있다. 그는 지난 여름부터 구글에서 근무 중.
 
 ### 강화 학습
 - [Simple reinforcement learning methods to learn CartPole](http://kvfrans.com/simple-algoritms-for-solving-cartpole/)  
@@ -118,7 +129,7 @@ scikit-learn을 이용, 따라하기 식으로 구현하는 머신러닝 책. �
 - [Python Machine Learning](http://book.daum.net/detail/book.do?bookid=BOK00027563049YE)  
 앞서 신경망 섹션에서 소개한 Raschka가 적은 책. 블로그를 참 잘 적는데 책 내용도 깔끔하게 정리되어 있다. 아쉽게도 번역서는 나오지 않았다.
 - [Data Science from Scratch](http://shop.oreilly.com/product/0636920033400.do)  
-국내에는 '데이타 과학'이란 이름으로 번역서가 나왔으나 아직 원서만 읽어본 상태. 선형대수, 확률, 통계등 이론적 기반을 주로 다룬다.
+국내에는 '데이타 과학'이란 이름으로 번역서가 나왔으나 원서만 읽어봤다. 선형대수, 확률, 통계등 이론적 기반을 주로 다룬다.
 - [Artificial Intelligence](https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/)  
 깃북에 있는 내용이다 보니 이걸 책으로 분류해야 할 지 문서로 분류해야 할 지 헷갈리는데 다루는 내용이 방대하고 길기 때문에 일단 책으로 분류. 여러가지 개념들을 알기쉽게 상세히 소개하고 있다.
 - [Python Data Science Cookbook](https://www.packtpub.com/big-data-and-business-intelligence/python-data-science-cookbook)  
