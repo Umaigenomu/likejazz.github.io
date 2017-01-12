@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 신규 URL 자동 변환 아파치 모듈
+title: URL 자동 변환 아파치 모듈
 ---
 
 <div class="message">
