@@ -57,6 +57,9 @@ title: NLP를 위한 딥러닝 가이드
 신경망 전반에 대해 한글로 알기 쉽게 정리
 - [The Basic Principles in Deep Neural Networks](http://sanghyukchun.github.io/54/)  
 Yoshua Bengio 교수 연구실에서 포닥 과정을 밟고 계신 장민석 박사의 The Basic Principles in Deep Neural Networks 세미나 요약
+- [A Neural Network in 11 lines of Python](https://iamtrask.github.io/2015/07/12/basic-python-network/)  
+11줄짜리 파이썬 코드로 구현해보는 신경망. [머신러닝 장인](https://iamtrask.github.io/)이라는 블로그인데 해리포터 word2vec 분석 부터 경사하강, 드롭아웃, [LSTM RNN](https://iamtrask.github.io/2015/11/15/anyone-can-code-lstm/)까지. 글이 많지 않고 몇 년이 흘렀으나 알찬 내용으로 가득
+
 
 ### NLP
 - [CS224d: Deep Learning for Natural Language Processing](http://cs224d.stanford.edu/syllabus.html)  
