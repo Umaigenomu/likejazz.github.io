@@ -6,9 +6,9 @@ title: NLP를 위한 딥러닝 가이드
 <div class="message">
 <p>2012년 이미지넷(ImageNet)에서 토론토 대학의 알렉스 크리제브스키가 들고 나온 '알렉스넷(Alexnet)'은 기존의 참가자들을 현격한 차이로 따돌리며 놀랄만한 정확도를 보여주었다. 알렉스넷은 딥러닝이었다. 이후 불과 몇 년 사이 모든 참가자들이 딥러닝을 택할 정도로 이제 딥러닝은 비전 인식에 획기적인 변화<sup>아래 그래프 참조</sup>를 주도 하고 있다. 우리가 잘 알고 있는 2016년 알파고도 딥러닝이다.</p>
 
-<p>바야흐로 딥러닝에 관한 다양한 양질의 문서가 하루가 멀다하고 출판되기 시작하며 배움의 속도보다 새로운 논문이 출판되는 속도가 더 빠른 세상이다. 작금의 시점에 또 다른 문서를 작성하며 숟가락을 얹기 보다 기존의 좋은 문서를 잘 엮어주는게 훨씬 더 중요하고 가치 있겠다는 판단에 이번에는 기존과 달리 여러 딥러닝 자료들을 정리하고 부연 설명을 곁들인 형태로 정리해 본다.</p>
+<p>바야흐로 딥러닝에 관한 다양한 양질의 문서가 하루가 멀다하고 출판되기 시작했다. 배움의 속도보다 새로운 논문이 출판되는 속도가 더 빠른 세상이다. 작금의 시점에 또 다른 문서를 작성하며 숟가락을 얹기 보다 기존의 좋은 문서를 잘 엮어주는게 훨씬 더 중요하고 가치 있겠다는 판단에 이번에는 기존과 달리 여러 딥러닝 자료들을 정리하고 부연 설명을 곁들인 형태로 정리해 본다.</p>
 
-<p>특히 비전 인식을 제외한 NLP로 주제를 제한하고 수식과 알고리즘부터 시작하여 밑바닥부터 시작하는(from scratch) 구현, 도구(TensorFlow, Keras)를 활용한 서비스를 위한 구현까지. 단계별로 정리해볼 예정이다. 기존 awesome lists와 유사한 형태로 상세한 부연 설명을 곁들여 NLP를 위한 딥러닝을 구현하는데 도움이 되도록 한다.</p>
+<p>특히 비전 인식을 제외한 NLP로 주제를 제한하고 수식과 알고리즘부터 시작하여 밑바닥부터 시작하는(from scratch) 구현, 도구(TensorFlow, Keras)를 활용한 서비스를 위한 구현까지 단계별로 정리해볼 예정이다. 기존 awesome lists와 유사한 형태로 상세한 부연 설명을 곁들여 NLP를 위한 딥러닝을 구현하는데 도움이 되도록 한다.</p>
 </div>
 
 *2017년 1월 11일 초안 작성*
@@ -58,7 +58,7 @@ title: NLP를 위한 딥러닝 가이드
 - [The Basic Principles in Deep Neural Networks](http://sanghyukchun.github.io/54/)  
 Yoshua Bengio 교수 연구실에서 포닥 과정을 밟고 계신 장민석 박사의 The Basic Principles in Deep Neural Networks 세미나 요약
 - [A Neural Network in 11 lines of Python](https://iamtrask.github.io/2015/07/12/basic-python-network/)  
-11줄짜리 파이썬 코드로 구현해보는 신경망. [머신러닝 장인](https://iamtrask.github.io/)이라는 블로그인데 해리포터 word2vec 분석 부터 경사하강, 드롭아웃, [LSTM RNN](https://iamtrask.github.io/2015/11/15/anyone-can-code-lstm/)까지. 글이 많지 않고 몇 년이 흘렀으나 알찬 내용으로 가득
+11줄짜리 파이썬 코드로 구현해보는 신경망. [머신러닝 장인](https://iamtrask.github.io/)이라는 블로그인데 해리포터 word2vec 분석 부터 경사하강, 드롭아웃, [LSTM RNN](https://iamtrask.github.io/2015/11/15/anyone-can-code-lstm/)까지. 글이 많지 않고 2015년 자료이나 알찬 내용으로 가득
 
 
 ### NLP
@@ -161,7 +161,7 @@ scikit-learn을 이용, 따라하기 식으로 구현하는 머신러닝 책. �
 - [파이썬 라이브러리를 활용한 데이터 분석](http://book.daum.net/detail/book.do?bookid=KOR9788968480478)  
 데이타 시각화에 관한 책
 - [인공지능, 머신러닝, 딥러닝 입문](http://book.daum.net/detail/book.do?bookid=KOR9791158390419)  
-번역서가 아닌 빠르게 나온 국내서로 머신러닝의 역사와 개념을 잡는데 도움이 된다. 그런데 본격적인 알고리즘 책도 아니면서 수식을 함께 나열하는 것은 다소 무리수 였다는 생각.
+번역서가 아닌 빠르게 나온 국내서로 머신러닝의 역사와 개념을 잡는데 도움이 된다. 그러나 본격적인 알고리즘 책도 아니면서 수식을 함께 나열하는 것은 다소 무리수 였다는 생각.
 - [Python Machine Learning](http://book.daum.net/detail/book.do?bookid=BOK00027563049YE)  
 앞서 신경망 섹션에서 소개한 Raschka가 적은 책. 블로그를 참 잘 적는데 책 내용도 깔끔하게 정리되어 있다. 아쉽게도 번역서는 나오지 않았다.
 - [Data Science from Scratch](http://book.daum.net/detail/book.do?bookid=BOK00024161479KA)  
