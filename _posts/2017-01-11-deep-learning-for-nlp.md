@@ -11,7 +11,18 @@ title: NLP를 위한 딥러닝 가이드
 <p>특히 비전 인식을 제외한 NLP로 주제를 제한하고 수식과 알고리즘부터 시작하여 밑바닥부터 시작하는(from scratch) 구현, 도구(TensorFlow, Keras)를 활용한 서비스를 위한 구현까지. 단계별로 정리해볼 예정이다. 기존 awesome lists와 유사한 형태로 상세한 부연 설명을 곁들여 NLP를 위한 딥러닝을 구현하는데 도움이 되도록 한다.</p>
 </div>
 
-- *2017년 1월 11일 초안 작성*
+*2017년 1월 11일 초안 작성*
+
+- [문서](#section)
+  - [이론, 튜토리얼](#section-1)
+  - [신경망](#section-2)
+  - [NLP](#nlp)
+  - [CNN](#cnn)
+  - [RNN, LSTM](#rnn-lstm)
+  - [TensorFlow, Keras](#tensorflow-keras)
+  - [강화 학습](#section-3)
+  - [기타](#section-4)
+- [책](#section-5)
 
 <img src="https://c1.staticflickr.com/1/623/31406346824_682c223d93_o.png" width="300" />
 *전통적인 CV방식(파란색)과 딥러닝 방식(초록색)의 이미지넷 정확도 결과[^1]*
