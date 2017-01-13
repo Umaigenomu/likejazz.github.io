@@ -59,6 +59,8 @@ Richard Socher가 비슷한 내용으로 [2016년 딥러닝 스쿨에서 발표]
 - [Natural Language Processing (almost) from Scratch](https://blog.acolyer.org/2016/07/04/natural-language-understanding-almost-from-scratch/)  
 2011년에 arXiv에 올라온 같은 제목의 논문을 소개. 참고로 이 블로그는 운영자인 Adrian Colyer가 CS 논문을 하나씩 선별하여 소개하는 블로그인데 좋은 논문들이 많이 올라온다. 블로그 제목도 the morning paper.
 - [Deep Learning, NLP, and Representations](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/)
+- [On word embeddings - Part 1](http://sebastianruder.com/word-embeddings-1/index.html)  
+워드 임베딩 모델에 대한 소개. 글 목록을 보면 Part 3까지 word2vec, GloVe등 대표적인 모델을 소개한다. [GloVe와 word2vec은 어떻게 다른가요?](https://www.quora.com/How-is-GloVe-different-from-word2vec) Quora에 올라온 질문. word2vec은 "예측" 모델이고, GloVe는 "카운트 기반" 모델이라고
 
 ### CNN
 - [UNDERSTANDING CONVOLUTIONAL NEURAL NETWORKS FOR NLP](http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/)  
