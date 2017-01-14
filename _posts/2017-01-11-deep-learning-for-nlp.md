@@ -37,7 +37,7 @@ title: NLP를 위한 딥러닝 가이드
 - [모두를 위한 머신러닝/딥러닝 강의](https://hunkim.github.io/ml/)  
 한글로 가장 잘 정리된 김성훈 교수님의 머신러닝 문서. [동영상 강의 노트](http://pythonkim.tistory.com/notice/25)도 매우 깔끔하게 정리
 - [Get Started with Machine Learning](http://suriyadeepan.github.io/2016-06-06-ml-basics-course/)  
-각종 머신러닝 개념을 Cheat Sheets 형태로 깔끔하게 정리. 인도의 한 과학자가 정리. 인도는 영어가 되니 이렇게 영문서도 잘 정리한다. 부러운 부분.
+각종 머신러닝 개념을 Cheat Sheets 형태로 깔끔하게 정리. 인도의 한 과학자가 정리. 인도는 영어가 되니 이렇게 영문서도 잘 정리한다. 부러운 부분. 그런데 매트릭스 연산을 직접 하다가 잘 안되는 부분이 있어서 저길 참조했는데 계속 틀리게 나와서 한참 고생하다 CS231n 강의 노트를 보고서야 저 곳의 numpy multiplication이 잘못 정리 되었다는걸 깨달음. 댓글로 잘못된 부분을 알려주었고 바로 수정하겠다고 함. 덕분에 고생은 좀 했지만 뿌듯
 - [THE NEURAL NETWORK ZOO](http://www.asimovinstitute.org/neural-network-zoo/)  
 새로운 신경망이 빠르게 등장하고 있기 때문에 약어만 듣고 구조를 일일이 파악하기란 매우 힘든 일이 되었다. 이 문서에서는 DCIGN, BiLSTM, DCGAN 같은 약어들의 신경망 구조를 한 눈에 알아볼 수 있도록 시각화하여 제공
 - [세상에 있는 (거의) 모든 머신러닝 문제 공략법](http://keunwoochoi.blogspot.kr/2016/08/blog-post.html)
