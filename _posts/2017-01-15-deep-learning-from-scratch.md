@@ -62,22 +62,22 @@ cost and loss functions are synonymous[^3]
 
 [^3]: <https://www.quora.com/What-is-the-difference-between-a-*cost-function*-and-a-*loss-function*-in-machine-learning>
 
-MSE: Mean Squared Error 정답과의 거리 제곱. 표준 편차와 유사  
-CEE: Cross Entropy Error 정답만 보는 자연로그 수식
+- MSE: Mean Squared Error 정답과의 거리 제곱. 표준 편차와 유사  
+- CEE: Cross Entropy Error 정답만 보는 자연로그 수식
 
 정확도는 step이 길지만 손실 함수는 매우 민감하게 반응한다. 따라서 손실 함수를 기준으로 해야 한다. step function을 활성화 함수로 사용하지 않는 것과 동일
 
 시그모이드의 미분(접선)은 어느 장소라도 0이 되지 않기 때문에 신경망 학습에 유리
 
-수치 미분: 아주 작은 차분으로 미분을 구함
-$$ (f(x+h) - f(x-h)) / 2*h $$
+수치 미분: 아주 작은 차분으로 미분을 구함  
 변수가 여럿인 함수에 대한 미분을 편미분
 
 중앙차분: http://blog.naver.com/mykepzzang/220072089756
+$$ f^{'}(x){\approx}{\frac {f(x+h)-f(x-h)}{2h}} $$
 
 andrew ng의 머신러닝 강좌를 보면 cost function으로 MSE의 1/2을 취하는데,
 http://mccormickml.com/2014/03/04/gradient-descent-derivation/
-자세한 소개가 있다. one half mean squared error
+자세한 소개가 있다. 계산을 쉽게 하기 위해 one half mean squared error
 https://www.reddit.com/r/mlclass/comments/l0ae8/can_somebody_explain_why_12m_was_added_in_the/?st=ixxlvm11&sh=1eca6ff1
 
 확률적 경사 하강법 stochastic gradient descent SGD
@@ -85,3 +85,11 @@ https://www.reddit.com/r/mlclass/comments/l0ae8/can_somebody_explain_why_12m_was
 기울기 gradient = 모든 편미분을 벡터로 정리
 
 이전에 가중치 매개 변수에 대한 손실함수 기울기는 수치 미분을 사용해 구하고 기울기의 10% 만큼 이동하도록 구현했음
+
+수치미분의 delta 값은 0.0001로 지정. 최종값은 1일때 기울기이므로 1보다 작도록. 범위가 클수록 해석적 미분의 값과 많이 차이남
+
+<img src="/images/2017/greek-letters.png" width="400" />[^4]
+
+[^4]: <https://docs.moodle.org/23/en/Using_TeX_Notation_2>
+
+cost function은 convex function 형태여야 한다.
