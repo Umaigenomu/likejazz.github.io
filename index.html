@@ -12,11 +12,13 @@ title: Home
       <h1 style="padding: 20px 10px; text-align: left">{{ this_year }}</h1>
     {% endif %}
 
+    {% unless post.invisible %}
     <h1 class="archive">
       <time datetime="{{ post.date | date_to_xmlschema }}" class="archive-date">{{ post.date | date: "%-m" }}월</time>
       <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
     </h1>
-
+    {% endunless %}
+    
     {% unless forloop.last %}
       {% if this_year != prev_year %}
         <h1 style="padding: 20px 10px; text-align: left">{{ prev_year }}</h1>

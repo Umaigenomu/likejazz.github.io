@@ -48,6 +48,8 @@ title: NLP를 위한 딥러닝 가이드
 - [제프리 힌튼 - 드롭아웃을 깨닫게 된 3번의 '아하'](http://keunwoochoi.blogspot.kr/2016/08/3.html)  
 딥러닝 본좌 제프리 힌튼의 드롭아웃 구현 이야기
 - [전상혁님의 머신러닝 스터디 자료](http://sanghyukchun.github.io/blog/categories/machine-learning/)
+- [Numerical Method, Engineering for Everyone](http://blog.naver.com/PostList.nhn?blogId=mykepzzang&categoryNo=16)  
+수치해석을 한글로 아주 잘 정리한 블로그
 
 ### 신경망
 - [Single-Layer Neural Networks and Gradient Descent](https://sebastianraschka.com/Articles/2015_singlelayer_neurons.html)  
