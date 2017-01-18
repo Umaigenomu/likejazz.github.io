@@ -144,7 +144,7 @@ $$ {\Delta}w_i = -\eta\frac{\partial E}{\partial w_i},$$
 기울기<sup>Gradient</sup> 모든 편미분을 벡터로 정리  
 
 ## 기울기 소실<sup>Gradient Vanishing</sup>
-신경망이 깊을때 활성화 함수를 통한 0 ~ 1 기울기 값은 매우 작은 값이고 역전파<sup>Backpropagation</sup>중에 배가되어 깊은 망에서 '소실<sup>Vanishing</sup>'되는 효과를 가져온다. ReLU와 LSTM 아키텍처를 사용하여 해결하는 방법이 일반적이다.
+신경망이 깊을때 활성화 함수를 통한 0 ~ 1 기울기 값은 매우 작은 값이고 역전파<sup>Backpropagation</sup>중에 배가되어 깊은 망에서 소실<sup>Vanishing</sup>되는 효과를 가져온다. ReLU와 LSTM 아키텍처를 사용하여 해결하는 방법이 일반적이다.
 
 ---
 
