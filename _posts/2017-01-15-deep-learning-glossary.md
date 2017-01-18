@@ -23,6 +23,14 @@ invisible: true
   - [층을 깊게 하는 이유](#section-2)
 - [References](#references)
 
+## 선형대수학
+<img src="https://www.mathsisfun.com/algebra/images/scalar-vector-matrix.gif" width="400" />[^1]
+
+<img src="/images/2017/greek-letters.png" width="400" />[^4]
+
+- 자연로그의 역함수 $$ e^x = exp(x) $$  
+- 자연상수 $$ e = 2.7182 $$
+
 ## Numpy
 {% highlight python %}
 A = np.array([[1,2,3],[4,5,6]])
@@ -47,15 +55,6 @@ print np.arange(0.0, 0.4, 0.1)
 - `*` in Numpy is element-wise multiplication.  
 - `np.dot`(=`tf.matmul`) is matrix multiplication.
 
----
-
-<img src="https://www.mathsisfun.com/algebra/images/scalar-vector-matrix.gif" width="400" />[^1]
-
-<img src="/images/2017/greek-letters.png" width="400" />[^4]
-
-- 자연로그의 역함수 $$ e^x = exp(x) $$  
-- 자연상수 $$ e = 2.7182 $$
-
 ## 신경망
 <img src="/images/2017/neuron.png" />[^6]  
 퍼셉트론은 활성화 함수로 계단 함수 사용. 이를 다른 함수로 변경하는 것이 신경망의 핵심. 활성화 함수는 비선형(시그모이드등)이어야 한다. 선형은 은닉층이 없는 네트워크로 표현가능하므로 의미가 없다.
@@ -68,10 +67,16 @@ print np.arange(0.0, 0.4, 0.1)
 <img src="http://nmhkahn.github.io/assets/NN/relu.jpg" />[^7]
 - Sigmoid $${\sigma}(x) = \frac{1}{1 + e^{-x}}$$ Xavier 초기값(표준편차 $${\frac{1}{\sqrt{n}}}$$)
 <img src="http://nmhkahn.github.io/assets/NN/sigmoid.jpg" />[^7]
-- $$tanh(x) = 2{\sigma}(2x) -1$$
+- $$tanh(x) = 2{\sigma}(2x) -1$$ 시그모이드로 간단히 표현할 수 있다.
 <img src="http://nmhkahn.github.io/assets/NN/tanh.jpg" />  
 시그모이드와 달리 함수값이 zero-centered 되어 있다.
 - Softmax 다중 분류
+
+초기값에 대해,
+
+- 표준편차<sup>stddev</sup> 1 정규분포: 활성화값 0,1에 다가감
+- 표준편차 0.01 정규분포: 가운데 몰림
+
 
 ## 손실 함수<sup>Cost or Loss or Error Functions</sup>
 
@@ -104,22 +109,20 @@ $$E=-{\sum_{k}t_k{\log{y_k}}}$$
 
 ---
 
-손실 함수로 학습하는 이유는 정확도는 step이 길지만 손실 함수는 매우 민감하게 반응. 활성화 함수로 step function을 사용하지 않는 것과 동일.
+손실 함수로 학습하는 이유는 정확도는 단계<sup>Step</sup>가 길지만 손실 함수는 매우 민감하게 반응. 활성화 함수로 계단 함수<sup>Step Function</sup>을 사용하지 않는 것과 동일.
 
 시그모이드의 미분(접선)은 어느 장소에도 0이 되지 않기 때문에 신경망 학습에 유리
 
 ## 미분
 - 수치 미분: 아주 작은 차분으로 미분을 구함  
 - 편미분: 변수가 여럿인 함수에 대한 미분
-- 중앙차분<sup>Centered Finite-Divided-Difference</sup>
+
+<img src="/images/2017/derivatives.png" width="400" />[^11]
+(a) 전진차분, (b) 후진차분, (c)중앙차분<sup>Centered Finite-Divided-Difference</sup>의 그래픽 표현 비교. 중앙차분이 실제미분과 가장 가까운 것을 확인할 수 있다.[^8]
 
 $$ f^{'}(x){\approx}{\frac {f(x+h)-f(x-h)}{2h}} $$
 
-[^8]
-
-<img src="/images/2017/centered-finite-divided-difference.png" width="500" />[^11]
-
-수치 미분의 $${\delta}$$ 값은 0.0001로 지정. 범위가 클수록 해석적 미분의 값과 차이남.
+수치 미분의 h, $${\delta}$$ 값은 0.0001로 지정. 범위가 클수록 해석적 미분의 값과 차이남.
 
 ## 최적화<sup>Optimization</sup>
 
@@ -144,28 +147,24 @@ $$ {\Delta}w_i = -\eta\frac{\partial E}{\partial w_i},$$
 기울기<sup>Gradient</sup> 모든 편미분을 벡터로 정리  
 
 ## 기울기 소실<sup>Gradient Vanishing</sup>
-신경망이 깊을때 활성화 함수를 통한 0 ~ 1 기울기 값은 매우 작은 값이고 역전파<sup>Backpropagation</sup>중에 배가되어 깊은 망에서 소실<sup>Vanishing</sup>되는 효과를 가져온다. ReLU와 LSTM 아키텍처를 사용하여 해결하는 방법이 일반적이다.
-
----
-
-- 표준편차<sup>stddev</sup> 1 정규분포: 활성화값 0,1에 다가감
-- 표준편차 0.01 정규분포: 가운데 몰림
+신경망이 깊을때 활성화 함수를 통한 기울기 값 0 ~ 1은 매우 작은 값이고 역전파<sup>Backpropagation</sup>중에 배가되어 깊은 망에서 소실<sup>Vanishing</sup>되는 효과를 가져온다. ReLU와 LSTM 아키텍처를 사용하여 해결하는 방법이 일반적이다.
 
 ## 역전파<sup>Backpropagation</sup>
 [^15]
 역전파를 사용하지 않고 기울기를 구하려면 모든 $$w_{i}$$ 값에 대해 수치 미분을 구해야 하며 따라서 모든 $$w_{i}$$에 대해 손실 함수를 계산해야 한다. 매우 느리다.
 
-역전파를 사용하면 $$W$$에 대한 수치 미분만 계산하면 되므로 엄청난 속도 개선 효과
+역전파를 사용하면 $$W$$에 대한 수치 미분만 계산하면 되므로 상당한 속도 개선 효과가 있다.
 
 ## 기울기 체크<sup>Gradient Check</sup>
-그러나 계산이 비교적 간편한 수치 미분과 달리 해석적 미분을 통한 역전파는 잘못 계산할 우려가 있으므로 두 값이 서로 일치하는지 확인하는 작업
+그러나 계산이 비교적 간편한 수치 미분과 달리 해석적 미분을 통한 역전파는 잘못 계산할 우려가 있으므로 두 값이 서로 일치하는지 확인하는 작업이 필요하다.
 
 ## 배치 정규화<sup>Batch Nomarlization</sup>
-fc와 ReLU 사이 BN 레이어 삽입. 데이타 분포 평균 0, 분산 1이 되도록 정규화. [논문 해석][13] 학습 속도를 높이는 효과
+fc와 ReLU 사이 BN 레이어 삽입. 데이타 분포 평균 0, 분산 1이 되도록 정규화. 학습 속도를 높이는 효과가 있다. [논문 참고][13] 
 
 ## 가중치 감소<sup>Weight Decay</sup>
 오버피팅을 줄이기 위해 큰 가중치에 대해 페널티  
-L2 정규화 법칙: 각 원소의 제곱을 더한 것의 제곱근 $$ W = {\sqrt{W_1^2+W_2^2+...+W_n^2}} $$  
+
+- L2 정규화 법칙: 각 원소의 제곱을 더한 것의 제곱근 $$ W = {\sqrt{W_1^2+W_2^2+...+W_n^2}} $$  
 
 '밑바닥부터 시작하는 딥러닝' 책에서는 손실 함수(E)에 $$ {\frac{\lambda}{2}W^{2}} $$ 더했다.
 
