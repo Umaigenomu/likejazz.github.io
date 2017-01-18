@@ -94,7 +94,7 @@ $$E={\frac{1}{k}}{\sum_{k}}(y_k-t_k)^2$$
 
 여기서 $$k$$는 학습 데이타 수
 
-앤드류 응의 머신러닝 [강좌를 보면 손실 함수로 MSE의 1/2][10]을 취하는데 [이에 대한 자세한 소개][9]. 계산을 쉽게 하기 위함이며 MSE 앞에 One Half를 붙인 One Half Mean Squared Error.
+앤드류 응의 머신러닝 강좌를 보면 [손실 함수로 MSE의 1/2][10]을 취하는데 [이에 대한 자세한 소개][9]. 계산을 쉽게 하기 위함이며 MSE 앞에 One Half를 붙인 One Half Mean Squared Error.
 
 - CEE<sup>Cross Entropy Error</sup>
 
@@ -144,7 +144,7 @@ $$ {\Delta}w_i = -\eta\frac{\partial E}{\partial w_i},$$
 기울기<sup>Gradient</sup> 모든 편미분을 벡터로 정리  
 
 ## 기울기 소실<sup>Gradient Vanishing</sup>
-신경망이 깊을때 0 ~ 1 활성화 함수를 통한 기울기는 매우 작은 값이고 역전파<sup>Backpropagation</sup>중에 배가되어 깊은 망에서 '소실<sup>Vanishing</sup>'되는 효과를 가져온다. ReLU와 LSTM 아키텍처를 사용하여 해결하는 방법이 일반적이다.
+신경망이 깊을때 활성화 함수를 통한 0 ~ 1 기울기 값은 매우 작은 값이고 역전파<sup>Backpropagation</sup>중에 배가되어 깊은 망에서 '소실<sup>Vanishing</sup>'되는 효과를 가져온다. ReLU와 LSTM 아키텍처를 사용하여 해결하는 방법이 일반적이다.
 
 ---
 
@@ -185,7 +185,7 @@ $$ w_i \leftarrow w_i-\eta\frac{\partial E}{\partial w_i}-\eta\lambda w_i $$
 '밑바닥부터 시작하는 딥러닝' 책에서는,
 
 - Learning Rate($${\eta}$$): $$0.001$$ ~ $$0.01$$
-- Weight Decay($${\lambda}$$): $$10^-8$$ ~ $$10^-6$$
+- Weight Decay($${\lambda}$$): $$10^{-8}$$ ~ $$10^{-6}$$
 
 ## Keras
 - Keras의 `input_dim`은 `input_shape`, x의 갯수
@@ -206,15 +206,15 @@ im2col 입력 데이타를 필터링(가중치 계산)하기 좋게 전개
 
 사물의 의미를 이해하도록 변화
 
-VGG16 AlexNet과 유사한 단순 구조로 인기 높다.  
+- VGG16: AlexNet과 유사한 단순 구조로 인기 높다.  
 3x3 작은 필터를 여러번 거쳐 큰 필터 대체 효과를 준다.
 
 ## 층을 깊게 하는 이유
 
-이론적 근거는 많이 부족  
-매개 변수 수가 줄어든다. 적은 매개 변수로 같은(혹은 그 이상) 수준의 표현력 달성  
-5x5 필터는 3x3 필터 2회로 대체 가능. 매개 변수가 적다.  
-층이 깊어지면 표현력<sup>Representaion</sup>이 좋아진다.
+- 이론적 근거는 많이 부족  
+- 적은 매개 변수로 같은(혹은 그 이상) 수준의 표현력 달성
+- 5x5 필터는 3x3 필터 2회로 대체 가능. 매개 변수 수가 줄어든다.  
+- 층이 깊어지면 표현력<sup>Representaion</sup>이 좋아진다.
 
 # References
 
