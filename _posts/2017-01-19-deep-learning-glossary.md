@@ -25,6 +25,7 @@ invisible: false
   - [가중치 감소<sup>Weight Decay</sup>](#supweight-decaysup)
   - [Keras](#keras)
   - [CNN](#cnn)
+    - [VGG16](#vgg16)
   - [층을 깊게 하는 이유](#section-4)
 - [References](#references)
 
@@ -71,7 +72,7 @@ print np.arange(0.0, 0.4, 0.1)
 8개 은닉층으로 구현한 XOR 신경망 구조에서 학습 가능 파라미터는 은닉층 24개(W 16, b 8), 출력층 9개(W 8, b 1). Keras에서는 `model.summary()`로 확인 가능.
 
 ### 층의 갯수와 크기 설정
-은닉층이 하나 일때 뉴런 갯수에 따른 의사 결정 영역<sup>Decision Regions, Decision Boundary</sup>은 아래와 같이 표현된다. 원의 색상을 분류하는 예제이며, 뉴런이 많을수록 표현력이 좋아진다.[^18]  
+은닉층이 하나 일때 뉴런 갯수에 따른 의사 결정 영역<sup>Decision Regions</sup>은 아래와 같이 표현된다. 원의 색상을 분류하는 예제이며, 뉴런이 많을수록 표현력이 좋아진다.[^18]  
 <img src="http://cs231n.github.io/assets/nn1/layer_sizes.jpeg" width="95%" />
 [ConvNetJS에서 실행 가능한 데모](http://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html) 제공
 
@@ -240,13 +241,14 @@ $$ w_i \leftarrow w_i-\eta\frac{\partial E}{\partial w_i}-\eta\lambda w_i $$
 - Keras의 Dense = 어파인<sup>Affine</sup> = Fully Connected(fc) Layer
 
 ## CNN
+
 $$ OH = {\frac {H+2P-FH}{S}} + 1 $$  
 $$ OW = {\frac {W+2P-FW}{S}} + 1 $$  
 입력 크기(H,W), 필터 크기(FH, FW), 출력 크기(OH,OW), 패딩 P, 스트라이드 S
 
 im2col 입력 데이타를 필터링(가중치 계산)하기 좋게 전개
 
-층이 깊어지면 더 복잡하고 추상화된 정보가 추출
+층이 깊어지면 더 복잡하고 추상화된 정보 추출
 
 1. 엣지 반응
 2. 텍스처 반응
@@ -254,12 +256,15 @@ im2col 입력 데이타를 필터링(가중치 계산)하기 좋게 전개
 
 사물의 의미를 이해하도록 변화
 
-- VGG16: AlexNet과 유사한 단순 구조로 인기 높다.  
-3x3 작은 필터를 여러번 거쳐 큰 필터 대체 효과를 준다.
+### VGG16
+
+<img src="https://www.cs.toronto.edu/~frossard/post/vgg16/vgg16.png" width="100%" />[^19]
+
+- AlexNet과 유사한 단순 구조로 인기
+- 3x3 작은 필터를 여러번 거쳐 큰 필터 대체 효과
 
 ## 층을 깊게 하는 이유
 
-- 이론적 근거는 많이 부족  
 - 적은 매개 변수로 같은(혹은 그 이상) 수준의 표현력 달성
 - 5x5 필터는 3x3 필터 2회로 대체 가능. 매개 변수 수가 줄어든다.  
 - 층이 깊어지면 표현력<sup>Representaion</sup>이 좋아진다.
@@ -283,3 +288,4 @@ im2col 입력 데이타를 필터링(가중치 계산)하기 좋게 전개
 [^16]: <http://sebastianruder.com/optimizing-gradient-descent/>
 [^17]: <http://cs231n.github.io/neural-networks-3/>
 [^18]: <http://cs231n.github.io/neural-networks-1/>
+[^19]: <https://www.cs.toronto.edu/~frossard/post/vgg16/>
