@@ -10,21 +10,22 @@ invisible: false
   - [선형대수학](#section)
   - [Numpy](#numpy)
   - [신경망](#section-1)
+    - [층의 갯수와 크기 설정](#section-2)
   - [활성화 함수<sup>Activation Function</sup>](#supactivation-functionsup)
   - [손실 함수<sup>Cost or Loss or Error Function</sup>](#supcost-or-loss-or-error-functionsup)
-  - [미분](#section-2)
+  - [미분](#section-3)
   - [최적화<sup>Optimization</sup>](#supoptimizationsup)
-    - [확률적 경사 하강법<sup>SGD, Stochastic Gradient Descent</sup>](#--supsgd-stochastic-gradient-descentsup)
+    - [확률적 경사 하강법<sup>SGD, Stochastic Gradient Descent</sup>](#supsgd-stochastic-gradient-descentsup)
     - [Adam<sup>Adaptive Moment Estimation</sup>](#adamsupadaptive-moment-estimationsup)
   - [기울기<sup>Gradient</sup>](#supgradientsup)
-  - [기울기 소실<sup>Gradient Vanishing</sup>](#-supgradient-vanishingsup)
+  - [기울기 소실<sup>Gradient Vanishing</sup>](#supgradient-vanishingsup)
   - [역전파<sup>Backpropagation</sup>](#supbackpropagationsup)
-  - [기울기 체크<sup>Gradient Check</sup>](#-supgradient-checksup)
-  - [배치 정규화<sup>Batch Nomarlization</sup>](#-supbatch-nomarlizationsup)
-  - [가중치 감소<sup>Weight Decay</sup>](#-supweight-decaysup)
+  - [기울기 체크<sup>Gradient Check</sup>](#supgradient-checksup)
+  - [배치 정규화<sup>Batch Nomarlization</sup>](#supbatch-nomarlizationsup)
+  - [가중치 감소<sup>Weight Decay</sup>](#supweight-decaysup)
   - [Keras](#keras)
   - [CNN](#cnn)
-  - [층을 깊게 하는 이유](#section-3)
+  - [층을 깊게 하는 이유](#section-4)
 - [References](#references)
 
 ## 선형대수학
@@ -63,11 +64,16 @@ print np.arange(0.0, 0.4, 0.1)
 - `np.dot`(=`tf.matmul`) is matrix multiplication.
 
 ## 신경망
-<img src="/images/2017/neuron.png" />[^6]  
+<img src="http://cs231n.github.io/assets/nn1/neuron.png" width="49%" style="margin-right: 10px; float: left" /><img src="http://cs231n.github.io/assets/nn1/neuron_model.jpeg" width="49%" />[^18]   
 퍼셉트론은 활성화 함수로 계단 함수 사용. 이를 다른 함수로 변경하는 것이 신경망의 핵심. 활성화 함수는 비선형(시그모이드등)이어야 한다. 선형은 은닉층이 없는 네트워크로 표현가능하기 때문
 
 <img src="/images/2017/neural-network.png" width="500" />
 8개 은닉층으로 구현한 XOR 신경망 구조에서 학습 가능 파라미터는 은닉층 24개(W 16, b 8), 출력층 9개(W 8, b 1). Keras에서는 `model.summary()`로 확인 가능.
+
+### 층의 갯수와 크기 설정
+은닉층이 하나 일때 뉴런 갯수에 따른 의사 결정 영역<sup>Decision Regions, Decision Boundary</sup>은 아래와 같이 표현된다. 원의 색상을 분류하는 예제이며, 뉴런이 많을수록 표현력이 좋아진다.[^18]  
+<img src="http://cs231n.github.io/assets/nn1/layer_sizes.jpeg" width="95%" />
+[ConvNetJS에서 실행 가능한 데모](http://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html) 제공
 
 ## 활성화 함수<sup>Activation Function</sup>
 - ReLU, He 초기값(표준편차 $${\sqrt{\frac{n}{2}}}$$), 편향(b)은 0으로 초기화하는게 일반적[^7]
@@ -276,3 +282,4 @@ im2col 입력 데이타를 필터링(가중치 계산)하기 좋게 전개
 [^15]: <https://tensorflow.blog/2016/12/27/%EC%97%AD%EC%A0%84%ED%8C%8C-%EC%A7%81%EC%A0%91-%EC%A7%9C%EB%B4%90%EC%95%BC-%ED%95%98%EB%82%98%EC%9A%94/>
 [^16]: <http://sebastianruder.com/optimizing-gradient-descent/>
 [^17]: <http://cs231n.github.io/neural-networks-3/>
+[^18]: <http://cs231n.github.io/neural-networks-1/>
