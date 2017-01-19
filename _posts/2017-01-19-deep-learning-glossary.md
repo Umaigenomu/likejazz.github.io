@@ -1,26 +1,29 @@
 ---
 layout: post
 title: 딥러닝 용어 정리
-invisible: true
+invisible: false
 ---
 
 *2017년 1월 15일 초안 작성*
 
+  - [선형대수학](#section)
   - [Numpy](#numpy)
-  - [신경망](#section)
-  - [활성화 함수<sup>Activation Function</sup>](#-supactivation-functionsup)
-  - [손실 함수<sup>Cost or Loss or Error Functions</sup>](#-supcost-or-loss-or-error-functionssup)
-  - [미분](#section-1)
+  - [신경망](#section-1)
+  - [활성화 함수<sup>Activation Function</sup>](#supactivation-functionsup)
+  - [손실 함수<sup>Cost or Loss or Error Function</sup>](#supcost-or-loss-or-error-functionsup)
+  - [미분](#section-2)
   - [최적화<sup>Optimization</sup>](#supoptimizationsup)
     - [확률적 경사 하강법<sup>SGD, Stochastic Gradient Descent</sup>](#--supsgd-stochastic-gradient-descentsup)
+    - [Adam<sup>Adaptive Moment Estimation</sup>](#adamsupadaptive-moment-estimationsup)
   - [기울기<sup>Gradient</sup>](#supgradientsup)
   - [기울기 소실<sup>Gradient Vanishing</sup>](#-supgradient-vanishingsup)
   - [역전파<sup>Backpropagation</sup>](#supbackpropagationsup)
+  - [기울기 체크<sup>Gradient Check</sup>](#-supgradient-checksup)
   - [배치 정규화<sup>Batch Nomarlization</sup>](#-supbatch-nomarlizationsup)
   - [가중치 감소<sup>Weight Decay</sup>](#-supweight-decaysup)
   - [Keras](#keras)
   - [CNN](#cnn)
-  - [층을 깊게 하는 이유](#section-2)
+  - [층을 깊게 하는 이유](#section-3)
 - [References](#references)
 
 ## 선형대수학
@@ -30,6 +33,9 @@ invisible: true
 
 - 자연로그의 역함수 $$ e^x = exp(x) $$  
 - 자연상수 $$ e = 2.7182 $$
+
+---
+[딥러닝 용어표](https://docs.google.com/spreadsheets/d/1ccwGiC01X-gs3PPcXPUz67W9rS6l994LD4AL18KF1_0/edit#gid=0)
 
 ## Numpy
 {% highlight python %}
@@ -63,7 +69,7 @@ print np.arange(0.0, 0.4, 0.1)
 8개 은닉층으로 구현한 XOR 신경망 구조에서 학습 가능 파라미터는 은닉층 24개(W 16, b 8), 출력층 9개(W 8, b 1). Keras에서는 `model.summary()`로 확인 가능.
 
 ## 활성화 함수<sup>Activation Function</sup>
-- ReLU, He 초기값(표준편차 $${\sqrt{\frac{n}{2}}}$$), 편향(b)은 0으로 초기화하는게 일반적[^12]
+- ReLU, He 초기값(표준편차 $${\sqrt{\frac{n}{2}}}$$), 편향(b)은 0으로 초기화하는게 일반적[^7]
 <img src="http://nmhkahn.github.io/assets/NN/relu.jpg" />[^7]
 - Sigmoid $${\sigma}(x) = \frac{1}{1 + e^{-x}}$$ Xavier 초기값(표준편차 $${\frac{1}{\sqrt{n}}}$$)
 <img src="http://nmhkahn.github.io/assets/NN/sigmoid.jpg" />[^7]
@@ -72,13 +78,13 @@ print np.arange(0.0, 0.4, 0.1)
 시그모이드와 달리 함수값이 zero-centered 되어 있다.
 - Softmax 다중 분류
 
-초기값에 대해,
+시그모이드의 초기값에 대해,
 
-- 표준편차<sup>stddev</sup> 1 정규분포: 활성화값 0,1에 다가감
-- 표준편차 0.01 정규분포: 가운데 몰림
+- 표준편차<sup>stddev</sup> 1 정규분포: 활성화값 0,1에 다가감. 기울기 소실 발생
+- 표준편차 0.01 정규분포: 가운데 몰림. 값이 치우치므로 표현력에 문제
 
 
-## 손실 함수<sup>Cost or Loss or Error Functions</sup>
+## 손실 함수<sup>Cost or Loss or Error Function</sup>
 
 Cost/Loss/Error 모두 동의어다.[^3]  
 
@@ -122,23 +128,55 @@ $$E=-{\sum_{k}t_k{\log{y_k}}}$$
 
 $$ f^{'}(x){\approx}{\frac {f(x+h)-f(x-h)}{2h}} $$
 
-수치 미분의 h, $${\delta}$$ 값은 0.0001로 지정. 범위가 클수록 해석적 미분의 값과 차이남.
+수치 미분의 h 즉, $${\delta}$$ 값은 0.0001로 지정. 범위가 클수록 해석적 미분의 값과 차이남.
 
 ## 최적화<sup>Optimization</sup>
 
 ### 확률적 경사 하강법<sup>SGD, Stochastic Gradient Descent</sup>
-미니 배치<sup>Mini-Batch</sup>를 이용한 batch GD를 SGD라 지칭  
+SGD는 일반적으로 미니 배치<sup>Mini-Batch</sup>를 사용하는 경우에 사용.
 이전에 가중치 매개 변수에 대한 손실 함수 기울기는 수치 미분을 사용해 구하고 기울기의 10%(학습률 0.1) 만큼 이동하도록 구현했음
 
 경사 하강법의 가중치 업데이트(기울기 방향 변화):
 
 $$ w_i \leftarrow w_i-\eta\frac{\partial E}{\partial w_i}$$
 
+다른 최적화 알고리즘
+
 - Momentum
 - AdaGrad
-- Adam
+- Adadelta
+- RMSprop
+
+### Adam<sup>Adaptive Moment Estimation</sup>
+최근에 주로 많이 사용하며 아래 수식으로 전개[^16]
+
+$$v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2.$$  
+$$m_t = \beta_1 m_{t-1} + (1 - \beta_1) g_t.$$
+
+- $$v_t$$: 과거 기울기 제곱의 평균
+- $${m_t}$$: 과거 기울기의 평균
+- $${\beta_1}$$와 $${\beta_2}$$는 1에 가까움
+
+$$\hat{m}_t = \dfrac{m_t}{1 - \beta^t_1}$$.  
+$$\hat{v}_t = \dfrac{v_t}{1 - \beta^t_2}$$.
+
+이제 Adadelta, RMSProp와 유사한 형태로 매개변수 업데이트
+
+$$\theta_{t+1} = \theta_{t} - \dfrac{\eta}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t.$$
+
+논문에서는 기본값으로 아래 값을 제안
+
+- $$\beta_1$$: 0.9
+- $$\beta_2$$: 0.999
+- $$\epsilon$$: $$10^{-8}$$
+
+각 알고리즘 시각화[^17]  
+<img src="http://cs231n.github.io/assets/nn3/opt2.gif" width="49%" style="margin-right: 10px; float: left" /><img src="http://cs231n.github.io/assets/nn3/opt1.gif" width="49%" />
+
+위 시나리오에서는 Adagrad, Adadelta, RMSprop, Adam(위 시각화에는 나와 있지 않으나 유사)이 가장 적합한 모습을 보여준다.
 
 ## 기울기<sup>Gradient</sup>
+
 $$ {\Delta}w_i = -\eta\frac{\partial E}{\partial w_i},$$
 
 - $${\eta}$$: 학습률<sup>Learning Rate</sup>
@@ -151,9 +189,9 @@ $$ {\Delta}w_i = -\eta\frac{\partial E}{\partial w_i},$$
 
 ## 역전파<sup>Backpropagation</sup>
 [^15]
-역전파를 사용하지 않고 기울기를 구하려면 모든 $$w_{i}$$ 값에 대해 수치 미분을 구해야 하며 따라서 모든 $$w_{i}$$에 대해 손실 함수를 계산해야 한다. 매우 느리다.
+역전파를 사용하지 않고 기울기를 구하려면 모든 $$w_{i}$$ 값에 대해 수치 미분을 구해야 하며 따라서 모든 $$w_{i}$$에 대해 손실 함수를 계산해야 하므로 매우 느리다.
 
-역전파를 사용하면 $$W$$에 대한 수치 미분만 계산하면 되므로 상당한 속도 개선 효과가 있다.
+역전파를 사용하지 않아도 구현에 문제 없으나 역전파를 사용하면 $$W$$에 대한 수치 미분만 계산하여 역으로 전달하므로 엄청난 속도 개선 효과가 있다.
 
 ## 기울기 체크<sup>Gradient Check</sup>
 그러나 계산이 비교적 간편한 수치 미분과 달리 해석적 미분을 통한 역전파는 잘못 계산할 우려가 있으므로 두 값이 서로 일치하는지 확인하는 작업이 필요하다.
@@ -162,9 +200,10 @@ $$ {\Delta}w_i = -\eta\frac{\partial E}{\partial w_i},$$
 fc와 ReLU 사이 BN 레이어 삽입. 데이타 분포 평균 0, 분산 1이 되도록 정규화. 학습 속도를 높이는 효과가 있다. [논문 참고][13] 
 
 ## 가중치 감소<sup>Weight Decay</sup>
-오버피팅을 줄이기 위해 큰 가중치에 대해 페널티  
+오버피팅을 줄이기 위해 큰 가중치에 대해 페널티
 
-- L2 정규화 법칙: 각 원소의 제곱을 더한 것의 제곱근 $$ W = {\sqrt{W_1^2+W_2^2+...+W_n^2}} $$  
+- L2 norm: $$a=(0.5,0.5)$$ 일때 $$\|a\|_2=\sqrt{0.5^2+0.5^2}=1/\sqrt{2}$$
+- L2 정규화<sup>L2 Regularization</sup> 법칙: L2 norm을 이용한 정규화 법칙. 즉, 각 원소 제곱합의 제곱근(표준 편차와 유사) $$W={\sqrt{W_1^2+W_2^2+...+W_n^2}}$$  
 
 '밑바닥부터 시작하는 딥러닝' 책에서는 손실 함수(E)에 $$ {\frac{\lambda}{2}W^{2}} $$ 더했다.
 
@@ -231,7 +270,8 @@ im2col 입력 데이타를 필터링(가중치 계산)하기 좋게 전개
 [9]: http://mccormickml.com/2014/03/04/gradient-descent-derivation/
 [10]: https://www.reddit.com/r/mlclass/comments/l0ae8/can_somebody_explain_why_12m_was_added_in_the/?st=ixxlvm11&sh=1eca6ff1
 [^11]: Numerical Methods for Engineers, Steven C. Chapra, McGraw Hill
-[^12]: <http://nmhkahn.github.io/NN>
 [13]: <https://shuuki4.wordpress.com/2016/01/13/batch-normalization-%EC%84%A4%EB%AA%85-%EB%B0%8F-%EA%B5%AC%ED%98%84/>
 [^14]: <http://stats.stackexchange.com/a/31334>
 [^15]: <https://tensorflow.blog/2016/12/27/%EC%97%AD%EC%A0%84%ED%8C%8C-%EC%A7%81%EC%A0%91-%EC%A7%9C%EB%B4%90%EC%95%BC-%ED%95%98%EB%82%98%EC%9A%94/>
+[^16]: <http://sebastianruder.com/optimizing-gradient-descent/>
+[^17]: <http://cs231n.github.io/neural-networks-3/>
