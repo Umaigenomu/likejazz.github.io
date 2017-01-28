@@ -69,7 +69,7 @@ print np.arange(0.0, 0.4, 0.1)
 퍼셉트론은 활성화 함수로 계단 함수 사용. 이를 다른 함수로 변경하는 것이 신경망의 핵심. 활성화 함수는 비선형(시그모이드등)이어야 한다. 선형은 은닉층이 없는 네트워크로 표현가능하기 때문
 
 <img src="/images/2017/neural-network.png" width="500" />
-8개 은닉층으로 구현한 XOR 신경망 구조에서 학습 가능 파라미터는 은닉층 24개(W 16, b 8), 출력층 9개(W 8, b 1). Keras에서는 `model.summary()`로 확인 가능.
+8개 은닉층으로 구현한 XOR 신경망 구조에서 학습 가능 파라미터는 은닉층 24개(W 16, b 8), 출력층 9개(W 8, b 1). Keras에서는 `model.summary()`로 확인 가능. XOR과 달리 sin 그래프 같은 비선형 결과는 오버피팅 되어 학습이 쉽지 않다.
 
 ### 층의 갯수와 크기 설정
 은닉층이 하나 일때 뉴런 갯수에 따른 의사 결정 영역<sup>Decision Regions</sup>은 아래와 같이 표현된다. 원의 색상을 분류하는 예제이며, 뉴런이 많을수록 표현력이 좋아진다.[^18]  
@@ -99,7 +99,7 @@ Cost/Loss/Error 모두 동의어다.[^3]
 - MSE<sup>Mean Squared Error</sup> 정답과의 거리 제곱 평균. 표준 편차와 유사  
 SSE는 Sum of Squared Errors이며 따라서 $$MSE={\frac{1}{n}}{\times}SSE$$ 이다.
 
-'밑바닥부터 시작하는 딥러닝'에서는 MSE로 표현했으나 *Mean*이 아닌 실제로는 경사 하강법<sup>Gradient Descent</sup> 수식, SSE에 $${\frac{1}{2}}$$ 값을 취한 형태로 손실 함수 사용:
+'밑바닥부터 시작하는 딥러닝'에서는 MSE로 표현했으나 *Mean* 이 아닌 실제로는 경사 하강법<sup>Gradient Descent</sup> 수식, SSE에 $${\frac{1}{2}}$$ 값을 취한 형태로 손실 함수 사용:
 
 $$E={\frac{1}{2}}{\sum_{k}}(y_k-t_k)^2$$
 
@@ -199,13 +199,13 @@ $$ {\Delta}w_i = -\eta\frac{\partial E}{\partial w_i},$$
 [^15]
 역전파를 사용하지 않고 기울기를 구하려면 모든 $$w_{i}$$ 값에 대해 수치 미분을 구해야 하며 따라서 모든 $$w_{i}$$에 대해 손실 함수를 계산해야 하므로 매우 느리다.
 
-역전파를 사용하지 않아도 구현에 문제 없으나 역전파를 사용하면 $$W$$에 대한 수치 미분만 계산하여 역으로 전달하므로 엄청난 속도 개선 효과가 있다.
+'밑바닥부터 시작하는 딥러닝' 책에서는 역전파를 사용하지 않고 전체 기울기를 계산하여 $$W, b$$를 한 번에 업데이트 하는 예제를 보여주는데 매우 느리다. 그러나 역전파를 사용하면 $$W$$에 대한 수치 미분만 계산하여 역으로 전달하므로 엄청난 속도 개선이 가능하다.
 
 ## 기울기 체크<sup>Gradient Check</sup>
 그러나 계산이 비교적 간편한 수치 미분과 달리 해석적 미분을 통한 역전파는 잘못 계산할 우려가 있으므로 두 값이 서로 일치하는지 확인하는 작업이 필요하다.
 
 ## 배치 정규화<sup>Batch Nomarlization</sup>
-fc와 ReLU 사이 BN 레이어 삽입. 데이타 분포 평균 0, 분산 1이 되도록 정규화. 학습 속도를 높이는 효과가 있다. [논문 참고][13] 
+fc와 ReLU 사이 BN 레이어 삽입. 데이타 분포 평균 0, 분산 1이 되도록 정규화. 학습 속도를 높이는 효과가 있다.[^13]
 
 ## 가중치 감소<sup>Weight Decay</sup>
 오버피팅을 줄이기 위해 큰 가중치에 대해 페널티
@@ -282,7 +282,7 @@ im2col 입력 데이타를 필터링(가중치 계산)하기 좋게 전개
 [9]: http://mccormickml.com/2014/03/04/gradient-descent-derivation/
 [10]: https://www.reddit.com/r/mlclass/comments/l0ae8/can_somebody_explain_why_12m_was_added_in_the/?st=ixxlvm11&sh=1eca6ff1
 [^11]: Numerical Methods for Engineers, Steven C. Chapra, McGraw Hill
-[13]: <https://shuuki4.wordpress.com/2016/01/13/batch-normalization-%EC%84%A4%EB%AA%85-%EB%B0%8F-%EA%B5%AC%ED%98%84/>
+[^13]: <https://shuuki4.wordpress.com/2016/01/13/batch-normalization-%EC%84%A4%EB%AA%85-%EB%B0%8F-%EA%B5%AC%ED%98%84/>
 [^14]: <http://stats.stackexchange.com/a/31334>
 [^15]: <https://tensorflow.blog/2016/12/27/%EC%97%AD%EC%A0%84%ED%8C%8C-%EC%A7%81%EC%A0%91-%EC%A7%9C%EB%B4%90%EC%95%BC-%ED%95%98%EB%82%98%EC%9A%94/>
 [^16]: <http://sebastianruder.com/optimizing-gradient-descent/>

@@ -1,2 +1,2 @@
 #!/bin/bash
-jekyll serve
+nohup jekyll serve &
