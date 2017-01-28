@@ -91,6 +91,11 @@ print np.arange(0.0, 0.4, 0.1)
 - 표준편차<sup>stddev</sup> 1 정규분포: 활성화값 0,1에 다가감. 기울기 소실 발생
 - 표준편차 0.01 정규분포: 가운데 몰림. 값이 치우치므로 표현력에 문제
 
+<img src="/images/2017/a-sgd.png" width="49%"  style="margin-right: 10px; float: left" />
+<img src="/images/2017/a2-sgd.png" width="49%" />
+
+<p style="clear: both"></p>
+SGD로 학습할때 $$a_{57}$$(임의의 뉴런)의 시그모이드 활성화값 그래프. 두 번 학습한 각각의 결과
 
 ## 손실 함수<sup>Cost or Loss or Error Function</sup>
 
@@ -147,6 +152,10 @@ SGD는 일반적으로 미니 배치<sup>Mini-Batch</sup>를 사용하는 경우
 경사 하강법의 가중치 업데이트(기울기 방향 변화):
 
 $$ w_i \leftarrow w_i-\eta\frac{\partial E}{\partial w_i}$$
+
+<img src="/images/2017/w-sgd.png" width="80%" />
+
+SGD로 학습할때 $$w_{1950}$$(임의의 가중치)의 값 변화 그래프. 항상 일정 방향이 아닌 여러번 기울기 방향이 변하는 모습을 확인할 수 있음.
 
 다른 최적화 알고리즘
 

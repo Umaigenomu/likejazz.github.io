@@ -9,28 +9,28 @@ title: 합성곱 신경망(CNN) 딥러닝을 이용한 한국어 문장 분류
 
 *2016년 12월 16일 초안 작성*
 
-  - [소개](#section)
-  - [내용](#section-1)
-    - [전처리(NLP Preprocessing)](#nlp-preprocessing)
-    - [데이타](#section-2)
-    - [모델](#section-3)
-    - [구현](#section-4)
-      - [EMBEDDING LAYER](#embedding-layer)
-      - [CONVOLUTION AND MAX-POOLING LAYERS](#convolution-and-max-pooling-layers)
-      - [DROPOUT LAYER](#dropout-layer)
-      - [SCORES AND PREDICTIONS](#scores-and-predictions)
-      - [LOSS AND ACCURACY](#loss-and-accuracy)
-      - [VISUALIZING THE NETWORK](#visualizing-the-network)
-      - [TRAINING PROCEDURE](#training-procedure)
-      - [INSTANTIATING THE CNN AND MINIMIZING THE LOSS](#instantiating-the-cnn-and-minimizing-the-loss)
-      - [SUMMARIES](#summaries)
-      - [INITIALIZING THE VARIABLES](#initializing-the-variables)
-      - [DEFINING A SINGLE TRAINING STEP](#defining-a-single-training-step)
-      - [TRAINING LOOP](#training-loop)
-      - [VISUALIZING RESULTS IN TENSORBOARD](#visualizing-results-in-tensorboard)
-      - [EXTENSIONS AND EXERCISES](#extensions-and-exercises)
-  - [코드](#section-5)
-  - [References](#references)
+- [소개](#section)
+- [내용](#section-1)
+  - [전처리(NLP Preprocessing)](#nlp-preprocessing)
+  - [데이타](#section-2)
+  - [모델](#section-3)
+  - [구현](#section-4)
+    - [Embedding Layer](#embedding-layer)
+    - [Convolution and Max-Pooling Layers](#convolution-and-max-pooling-layers)
+    - [Dropout Layer](#dropout-layer)
+    - [Scores and Predictions](#scores-and-predictions)
+    - [Loss and Accuracy](#loss-and-accuracy)
+    - [Visualizing the Network](#visualizing-the-network)
+    - [Training Procedure](#training-procedure)
+    - [Instantiating the CNN and Minimizing the Loss](#instantiating-the-cnn-and-minimizing-the-loss)
+    - [Summaries](#summaries)
+    - [Initializing the Variables](#initializing-the-variables)
+    - [Defining a Single Training Step](#defining-a-single-training-step)
+    - [Training Loop](#training-loop)
+    - [Visualizing Results in Tensorboard](#visualizing-results-in-tensorboard)
+    - [Extensions and Exercises](#extensions-and-exercises)
+- [코드](#section-5)
+- [References](#references)
 
 ## 소개
 
@@ -44,7 +44,7 @@ CNN 알고리즘은 주로 이미지의 특징을 추출하여 유사점을 찾�
 
 이를 겹겹이 쌓아올려 신경망을 구성하는데 위와 같이 이미지의 필터링된 합성곱(CONV), 활성화 함수(ReLU), 최대 풀링(POOL) 과정을 반복하여 특징 벡터를 형성하고 학습된 이미지와 비교하여 유사도를 판별한다. [Andrej Karpathy가 순수 JS로 구현한 CIFAR-10 시각화 데모](https://cs.stanford.edu/people/karpathy/convnetjs/demo/cifar10.html)는 각각의 출력이 어떻게 형성되는지 이해하는데 도움이 된다.
 
-그런데 CNN 알고리즘을 NLP에 적용하려는 노력이 있었고 의미 있는 결과를 낸 논문들이 다수 출간됐다.
+또한 CNN 알고리즘을 NLP에 적용하려는 노력이 있었고 의미 있는 결과를 낸 논문들이 다수 출간됐다.
 
 <img src="http://d3kbpzbmcynnmx.cloudfront.net/wp-content/uploads/2015/11/Screen-Shot-2015-11-06-at-12.05.40-PM.png" />
 
@@ -69,9 +69,9 @@ NLP 전처리를 위해서는 한글 형태소 분석기가 필수적인데 여�
 한국어로 미리 DHA 전처리 결과 100 문장을 학습 데이타로 제공했다. 평가 데이타는 10개 문장을 제공하여 10% 비율로 구성했다. 당연히 실제 서비스를 하려면 이보다 훨씬 더 풍부한 데이타가 필요하다. 앞서 [서울대 논문](https://bi.snu.ac.kr/Publications/Conferences/Domestic/KIISE2015W_JoHY.pdf)을 보면 대용량 분류를 위해 62만여개의 문장을 학습했다고 하며 결과가 더욱 정확하고 정교해지려면 학습 데이타는 당연히 많을수록 좋다.
 
 <img src="http://3qeqpr26caki16dnhd19sv6by6v.wpengine.netdna-cdn.com/wp-content/uploads/2016/08/Why-Deep-Learning-1024x742.png" />
-딥러닝에서 학습 데이타가 많을수록 좋다고 하는 [앤드류 응 교수의 슬라이드](http://www.slideshare.net/ExtractConf) 참고. 또한 원문의 알고리즘은 단어 사전에 없을 경우 동일한 벡터값으로 표현되기 때문에 정확도가 떨어진다. 이를 높이기 위해서는 모든 문장의 단어를 커버할 수 있을 정도로 학습하는게 좋다.
+딥러닝에서 학습 데이타는 많을수록 좋다고 하는 [앤드류 응의 슬라이드](http://www.slideshare.net/ExtractConf) 참고. 또한 원문의 알고리즘은 단어 사전에 없을 경우 동일한 벡터값으로 표현되기 때문에 정확도가 떨어진다. 따라서 이를 높이기 위해서는 모든 문장의 단어를 커버할 수 있을 정도로 학습하는게 좋다.
 
-문장 데이타는 어휘로 구분하여 색인하고 0에서 어휘 사이즈 만큼 맵핑한다. 따라서 각 문장은 정수 벡터가 된다.
+문장 데이타는 어휘로 구분하여 색인하고 0에서 전체 어휘 사이즈 만큼 맵핑한다. 각 문장은 정수 벡터가 된다.
 
 ### 모델
 
@@ -87,11 +87,11 @@ NLP 전처리를 위해서는 한글 형태소 분석기가 필수적인데 여�
 
 출간된 여러 논문을 살펴 보면 개념과 원리는 상세하게 소개하지만 어떻게 구현했는지는 언급하지 않는다. 사용한 프레임워크는 물론 단 한 줄의 코드도 제공하지 않기 때문에 동일한 환경을 구성하여 실험하기에는 어려움이 있다. 그런데 원문에서는 텐서플로우를 이용해 논문의 모델을 실제로 구현하는 방법을 소개하여 매우 유용하다. 실제 원문의 내용 대부분은 구현을 비롯한 코드 소개에 할애하고 있고 본 문서에서도 구현에 대해 보다 상세히 정리하여 소개하도록 한다. 본 문서는 원문의 많은 부분을 인용하였으므로 별도 인용 문구를 표시하진 않으나 대부분의 내용은 거의 유사함을 다시 한 번 일러둔다.
 
-#### EMBEDDING LAYER
+#### Embedding Layer
 
 첫 번째 레이어는 단어 색인을 저차원 벡터 표현로 매핑하는 임베디드 레이어로 필수적인 룩업 테이블이다. 앞서 김윤 박사의 논문[^fn-4]에는 word2vec으로 표현되어 있으나 여기서는 단순 룩업 테이블을 사용한다.
 
-#### CONVOLUTION AND MAX-POOLING LAYERS
+#### Convolution and Max-Pooling Layers
 
 이 부분이 가장 중요한 최대 풀링(max-pooling) 합성곱(convolution) 레이어를 만드는 부분이다. 각각 크기가 다른 필터를 사용하여 반복적으로 합성곱 텐서를 생성하고 이를 하나의 큰 특징 벡터로 병합한다.
 
@@ -119,24 +119,24 @@ for i, filter_size in enumerate(filter_sizes):
             padding='VALID',
             name="pool")
         pooled_outputs.append(pooled)
- 
+
 # Combine all the pooled features
 num_filters_total = num_filters * len(filter_sizes)
 self.h_pool = tf.concat(3, pooled_outputs)
 self.h_pool_flat = tf.reshape(self.h_pool, [-1, num_filters_total])
 {% endhighlight %}
 
-여기서, `W`는 필터 행렬이고, `h`는 합성곱 출력에 비선형성을 적용한 결과다. 각 필터는 전체 임베딩을 슬라이드 하지만 커버하는 단어 수에 따라 다르다. `VALID` 패딩은 엣지 패딩 없이 문장을 슬라이드 하여 `[1, sequence_length - filter_size + 1, 1, 1]` 모양의 좁은 합성곱을 수행함을 뜻한다. 각 필터 사이즈의 최대 풀링(max-pooling) 출력은 `[batch_size, 1, 1, num_filters]`가 되며 이것이 최종 특징에 대응하는 마지막 특징 벡터다. 모든 풀링 벡터는 `[batch_size, num_filters_total]` 모양을 갖는 하나의 긴 특징 벡터로 결합된다. `tf.reshape`에 `-1`을 사용하여 가능한 텐서플로우가 차원을 평평하게 만들도록 한다.
+여기서, `W`는 필터 행렬이고, `h`는 합성곱 출력에 비선형성(ReLU 활성화)을 적용한 결과다. 각 필터는 전체 임베딩을 슬라이드 하지만 커버하는 단어 수에 따라 다르다. `VALID` 패딩은 엣지 패딩 없이 문장을 슬라이드 하여 `[1, sequence_length - filter_size + 1, 1, 1]` 모양의 좁은 합성곱을 수행함을 뜻한다. 각 필터 사이즈의 최대 풀링(max-pooling) 출력은 `[batch_size, 1, 1, num_filters]`가 되며 이것이 최종 특징에 대응하는 마지막 특징 벡터다. 모든 풀링 벡터는 `[batch_size, num_filters_total]` 모양을 갖는 하나의 긴 특징 벡터로 결합된다. `tf.reshape`에 `-1`을 사용하여 가능한 텐서플로우가 차원을 평평하게 만들도록 한다.
 
-설명이 다소 어렵지만 시간을 내서 각각의 작업에 대한 출력 모양을 가능하면 시각화하고 이해하려고 노력할 필요가 있다. 이미지 CNN에 대한 시각화 자료는 대체로 많은 편이고 특히 [Andrej Karpathy가 순수 JS로 구현한 CIFAR-10 시각화 데모](https://cs.stanford.edu/people/karpathy/convnetjs/demo/cifar10.html)는 각각의 출력을 이해하는데 큰 도움이 될 것이다.
+설명이 다소 어렵지만 시간을 내서 각각의 작업에 대한 출력 모양을 가능하면 시각화하고 이해하려고 노력할 필요가 있다. 이미지 CNN에 대한 시각화 자료는 대체로 많은 편이고 특히 [Andrej Karpathy가 순수 JS로 구현한 CIFAR-10 시각화 데모](https://cs.stanford.edu/people/karpathy/convnetjs/demo/cifar10.html)는 각각의 출력을 이해하는데 큰 도움이 된다.
 
-#### DROPOUT LAYER
+#### Dropout Layer
 
 [드롭아웃](http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf)은 합성곱 신경망의 오버피팅을 방지하는 가장 유명하면서도 가장 흥미로운 방법이다. 드롭아웃 레이어는 뉴런의 일부를 확률적으로 '비활성화'한다. 이는 뉴런의 동시 적응을 방지하고 특징을 개별적으로 학습하도록 강제하여 사람이 그림을 맞출때 일부를 손으로 가린채 특징을 학습하여 맞추도록 하는 방식과 유사하다. 여기서는 드롭아웃을 학습 중에는 0.5(즉, 50%), 평가 중에는 1(당연히 비활성화)로 설정한다.
 
-#### SCORES AND PREDICTIONS
+#### Scores and Predictions
 
-최대 풀링(드롭아웃이 적용된 상태에서)으로 특징 벡터를 사용하여 행렬 곱셈을 수행하고 가장 높은 점수로 분류를 선택하는 예측을 수행한다. 원 점수를 정규화 확률로 변환하는 소프트맥스를 적용하지만 최종 예측 결과는 변하지 않는다. 
+최대 풀링(드롭아웃이 적용된 상태에서)으로 특징 벡터를 사용하여 행렬 곱셈을 수행하고 가장 높은 점수로 분류를 선택하는 예측을 수행한다. 원 점수를 정규화 확률로 변환하는 소프트맥스를 적용하지만 최종 예측 결과는 변하지 않는다.
 
 {% highlight python %}
 with tf.name_scope("output"):
@@ -146,7 +146,7 @@ with tf.name_scope("output"):
     self.predictions = tf.argmax(self.scores, 1, name="predictions")
 {% endhighlight %}
 
-#### LOSS AND ACCURACY
+#### Loss and Accuracy
 
 점수를 이용해 손실 함수를 정의한다. 손실은 망에서 발생하는 오류를 나타내는 척도이며 이를 최소화 하는게 우리의 목표다. 분류 문제에 대한 표준 손실 함수는 [cross-entropy loss](http://cs231n.github.io/linear-classify/#softmax)를 사용한다.
 
@@ -157,17 +157,17 @@ with tf.name_scope("loss"):
     self.loss = tf.reduce_mean(losses)
 {% endhighlight %}
 
-#### VISUALIZING THE NETWORK
+#### Visualizing the Network
 
 딥러닝은 레이어가 매우 복잡해질 수 있기 때문에 시각화가 중요하다. 텐서플로우에는 텐서보드라는 훌륭한 시각화 도구가 포함되어 있고 이를 이용해 시각화 할 수 있다. 자주 활용하여 각각의 레이어 입출력을 명확히 이해하는게 중요하다.
 
 <img src="http://d3kbpzbmcynnmx.cloudfront.net/wp-content/uploads/2015/12/Screen-Shot-2015-12-10-at-10.25.46-AM-1024x558.png" />
 
-#### TRAINING PROCEDURE
+#### Training Procedure
 
 이 부분은 텐서플로우의 세션과 그래프 작업에 대한 개념 이해가 필요하다. 아울러 딥러닝 자체보다 텐서플로우 프레임워크에 대한 부분이므로 자세한 사항은 원문을 참조하도록 하며 여기서는 간단히 넘어가도록 한다.
 
-#### INSTANTIATING THE CNN AND MINIMIZING THE LOSS
+#### Instantiating the CNN and Minimizing the Loss
 
 TextCNN 모델을 인스턴스화한 다음 망의 손실 함수를 최적화하는 방법을 정의한다. 텐서플로우에는 여러가지 옵티마이저가 내장되어 있는데 여기서는 [아담](https://arxiv.org/abs/1412.6980) 옵티마이저를 사용한다.
 
@@ -178,7 +178,7 @@ grads_and_vars = optimizer.compute_gradients(cnn.loss)
 train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
 {% endhighlight %}
 
-#### SUMMARIES
+#### Summaries
 
 텐서플로우에는 다양한 학습 및 평가 과정을 추적하고 시각화 하는 써머리(Summaries) 개념이 있다. 예를 들어 시간 경과에 따른 손실 및 정확도의 변화를 추적하고 싶을때 레이어 활성화 히스토그램 같은 더 복잡한 부분도 추적할 수 있다. 써머리는 직렬화 된 오브젝트이며 써머리라이터(SummaryWriter)를 사용해 디스크에 기록한다.
 
@@ -187,27 +187,27 @@ train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
 timestamp = str(int(time.time()))
 out_dir = os.path.abspath(os.path.join(os.path.curdir, "runs", timestamp))
 print("Writing to {}\n".format(out_dir))
- 
+
 # Summaries for loss and accuracy
 loss_summary = tf.scalar_summary("loss", cnn.loss)
 acc_summary = tf.scalar_summary("accuracy", cnn.accuracy)
- 
+
 # Train Summaries
 train_summary_op = tf.merge_summary([loss_summary, acc_summary])
 train_summary_dir = os.path.join(out_dir, "summaries", "train")
 train_summary_writer = tf.train.SummaryWriter(train_summary_dir, sess.graph_def)
- 
+
 # Dev summaries
 dev_summary_op = tf.merge_summary([loss_summary, acc_summary])
 dev_summary_dir = os.path.join(out_dir, "summaries", "dev")
 dev_summary_writer = tf.train.SummaryWriter(dev_summary_dir, sess.graph_def)
 {% endhighlight %}
 
-#### INITIALIZING THE VARIABLES
+#### Initializing the Variables
 
-모델을 학습하기 전에 그래프에서 변수를 초기화 해야 한다. `initialize_all_variables` 함수를 사용했으며 정의한 변수를 모두 초기화 하는 편리한 함수다. 현재는 deprecated 된 상태이므로 [이에 대한 간단한 패치를 제출](https://github.com/dennybritz/cnn-text-classification-tf/pull/52)했고 머지 되었다. 물론 변수의 초기화 프로그램을 수동으로 호출 할 수도 있는데 미리 훈련 된 값으로 임베딩을 초기화하려는 경우 유용하다.
+모델을 학습하기 전에 그래프에서 변수를 초기화 해야 한다. `initialize_all_variables` 함수를 사용했으며 정의한 변수를 모두 초기화 하는 편리한 함수다. 현재는 Deprecated 된 상태이므로 [이에 대한 간단한 패치를 제출](https://github.com/dennybritz/cnn-text-classification-tf/pull/52)했고 머지 되었다. 물론 변수의 초기화 프로그램을 수동으로 호출 할 수도 있는데 미리 훈련 된 값으로 임베딩을 초기화하려는 경우에 유용하다.
 
-#### DEFINING A SINGLE TRAINING STEP
+#### Defining a Single Training Step
 
 이제 데이타 배치 모델을 평가하고 모델 파라미터를 업데이트하는 학습 단계를 정의한다.
 
@@ -231,11 +231,11 @@ def train_step(x_batch, y_batch):
 
 평가 단계도 학습 단계와 유사하게 정의할 수 있다. 학습의 유효성을 검증하기 위해 평가 셋트의 손실 및 정확도 평가를 위한 유사한 기능을 작성하며, 차이점은 별도 학습 과정이 필요 없으며 드롭아웃을 비활성화 한다는 점 뿐이다.
 
-#### TRAINING LOOP
+#### Training Loop
 
 마지막으로 트레이닝 루프를 작성한다. 데이터 배치를 반복하고 주기적으로 모델을 평가하고 체크포인팅 한다. 기본 값은 100회당 한 차례 모델을 평가하도록 설정 되어 있으며 파라미터로 이 값을 조정할 수 있다.
 
-#### VISUALIZING RESULTS IN TENSORBOARD
+#### Visualizing Results in Tensorboard
 
 앞서 출력 디렉토리에 써머리를 저장하였는데, 텐서보드에 이 위치를 지정하여 그래프와 요약 정보를 시각화 할 수 있다. 앞서 언급했듯 시각화는 매우 중요하며 반드시 필요하다.
 
@@ -253,7 +253,7 @@ tensorboard --logdir /PATH_TO_CODE/runs/1449760558/summaries/
 - 평가 정확도가 학습 정확도보다 상당히 낮기 때문에 우리 망이 학습 데이타를 오버피팅 하는 것 처럼 보인다. 따라서 더 많은 데이타, 더 강력한 정규화 또는 더 적은 모델 파라미터가 필요하다. 예를 들어 마지막 레이어에 L2 패널티 가중치를 추가하여 실험했을때 논문과 유사하게 76% 까지 정확도를 높일 수 있었다.
 - 드롭아웃으로 인해 학습 데이타는 평가셋에 비해 훨씬 낮은 손실, 정확도로 시작된다.
 
-#### EXTENSIONS AND EXERCISES
+#### Extensions and Exercises
 
 이외에 모델 성능을 개선할 수 있는 유용한 케이스를 몇 가지 소개한다.
 
