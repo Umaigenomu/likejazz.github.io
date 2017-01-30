@@ -1,10 +1,10 @@
 ---
 layout: post
-title: OS X 설치 프로그램 정리
+title: macOS 설치 프로그램 정리
 ---
 
 <div class="message">
-이 글은 원래 요세미티 출시와 함께 맥북에 클린 인스톨을 했던 경험의 기록이다. 그러나 엘 캐피탄 출시와 함께 업데이트된 내용을 추가했고 이후 꾸준히 갱신하여 맥북 프로 터치바에 시에라 셋팅을 마친 기록까지 최종 정리했다.
+이 글은 원래 요세미티 출시와 함께 맥북에 클린 인스톨을 했던 경험의 기록이다. 그러나 엘 캐피탄 출시와 함께 업데이트된 내용을 추가했고 이후 꾸준히 갱신하여 맥북 프로 터치바에 시에라 셋팅을 마친 기록까지 최종 정리해 보았다.
 </div>
 
 *2017년 1월 20일 맥북 프로 터치바 셋팅*  
@@ -39,7 +39,7 @@ title: OS X 설치 프로그램 정리
 - 키보드 감도를 가장 짧게 조정
 - 트랙패드 '탭하여 클릭하기'가 기본 비활성화 되어 있다. 환경설정에서 클릭하여 활성화
 - 시에라에서는 Caps Lock 키가 한/영 변환 디폴트가 되었다. 그대로 사용하려 했으나 새끼 손가락이 너무 아프다. 다시 컴맨드+스페이스로 변경
-- 알림 센터(Notification Center)는 사용하지 않는다. 대시보드도 마찬가지. iOS에만 있어야 할 기능인데 억지로 OS X에 배치한 느낌이다.
+- 알림 센터(Notification Center)는 사용하지 않는다. 대시보드도 마찬가지. iOS에만 있어야 할 기능인데 억지로 macOS에 배치한 느낌이다.
 - 메뉴바 설정. 배터리 % 표시, 날짜 표시, 24시간제로 변경
 
 ### 인터넷
@@ -90,7 +90,7 @@ title: OS X 설치 프로그램 정리
 
 ### 이미지, 비디오
 - **Xee³(유료)** 빠른 속도 뿐만 아니라 편리한 브라우징이 돋보이는 최고의 이미지 뷰어
-- Pixelmator(유료)를 사용해오다 요즘은 다시 **포토샵** 사용 중. 간단한 편집시에는 좀 더 가벼운 도구를 사용하고 수정이 많이 필요한 경우에만 가끔 실행한다.
+- Pixelmator(유료)를 사용해오다 요즘은 다시 **포토샵(유료)** 사용 중. 간단한 편집시에는 좀 더 가벼운 도구를 사용하고 수정이 많이 필요한 경우에만 가끔 실행한다.
 - **Sketch(유료)** 요즘 웹 디자인은 Sketch가 대세라고. 아직 잘 사용하진 못하는 편으로 얼마전에 익힌 **Adobe XD** 를 많이 사용 중이다.
 - **GOM Player** 버전업이 중단되었지만 크게 불편함 없이 계속 사용 중
 - **Go for YouTube** 앱스토어에서 발견한 꿀 같은 메뉴바 앱이다. 유튜브를 음악 스트리밍 용도로 들을때 좋다.
@@ -102,7 +102,7 @@ title: OS X 설치 프로그램 정리
 - 콘솔에서 `gcc`를 입력하면 자동으로 XCode를 설치하겠냐는 메시지가 뜬다. 선택하여 설치.
   - Command Line Tools 설치가 진행된다. 이후에 XCode도 따로 설치. brew를 설치할때도 마찬가지로 Commend Line Tools 설치가 진행된다.
 - 개발 관련 디렉토리 생성. 지난 몇 년간 항상 `~/workspace`을 만들어 사용해오고 있으며, 요즘은 깃헙 프로젝트가 대부분이라 하위에 각 사이트별 URI 기준 디렉토리를 만들어 사용 중이다. 자바에서 net.daum 으로 시작하는 import 를 만드는 것과 비슷.
-- [Tower](http://likejazz.com/post/133433602285/sourcetree-tower)(유료). 최고의 git 클라이언트. 처음엔 그냥 GitHub 공식 클라이언트를 사용하다 git-flow 때문에 SourceTree를 사용하게 됐고, 이후 완성형에 가까운 Tower로 갈아타다. 다소 비싼게 유일한 흠이다.
+- **[Tower](http://likejazz.com/post/133433602285/sourcetree-tower)(유료)** 최고의 git 클라이언트. 처음엔 그냥 GitHub 공식 클라이언트를 사용하다 git-flow 때문에 SourceTree를 사용하게 됐고, 이후 완성형에 가까운 Tower로 갈아타다. 다소 비싼게 유일한 흠이다.
 - 어느덧 zsh & **oh my zsh** 가 대세가 됐다. 그간 무거워서 사용하지 않았으나 최근 플러그인 구조도 많이 가벼워지고 fish의 도무지 적응 안되는 문법으로 인해 다시 zsh 기반으로 이전
   - **fasd** 는 `brew install fasd`로 별도 설치. `.zshrc`의 `plugins` 설정에 fasd를 추가하면 편리한 aliases를 사용할 수 있다.
   - 플러그인은 **git history python fasd history-substring-search web-search** 를 사용 중이다. 히스토리 사이즈는 100000으로 늘리고, stackoverflow 검색기도 추가했다.
@@ -115,9 +115,9 @@ title: OS X 설치 프로그램 정리
 - **JetBrains IDE(유료)** [All Products Pack 연간 라이센스를 사용](http://likejazz.com/post/133725850005/jetbrains-all-products-pack)하고 있다. IntelliJ 뿐만 아니라 [CLion](http://likejazz.com/post/118649049333/clion-1-0), WebStorm, PhpStorm, PyCharm, AppCode등을 사용하는 [가장 즐겨쓰는 최고의 IDE](http://likejazz.com/post/112670720955/jetbrains-ide)다.
   - **JetBrains ToolBox** 사용하는 IDE가 많다보니 통합 관리할 수 있어 매우 편하다.
   - IntelliJ의 테마는 Darcula, Editor > General > Editor Tabs > Tab Appearance는 None으로 설정하여 탭은 사용하지 않는다. 대신 Autoscroll from source 설정을 하고 Editor > General > Appearance에서 Show whitespaces와 Show method separators는 활성화 한다.
-- [Android Studio](http://likejazz.com/post/92786243375/%EC%BD%94%EB%93%9C-%ED%95%9C-%EC%A4%84-%EC%97%86%EB%8A%94-%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B0%9C%EB%B0%9C-%EC%9D%B4%EC%95%BC%EA%B8%B0) 설치. IntelliJ에 여러가지 플러그인을 설치하다보면 느려지는 느낌이라 각각의 용도에 적합한 별도의 개발툴을 사용하는 편이다. Go를 위한 IDE로는 Gogland 베타 버전을 사용 중
+- **[Android Studio](http://likejazz.com/post/92786243375/%EC%BD%94%EB%93%9C-%ED%95%9C-%EC%A4%84-%EC%97%86%EB%8A%94-%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B0%9C%EB%B0%9C-%EC%9D%B4%EC%95%BC%EA%B8%B0)** 설치. IntelliJ에 여러가지 플러그인을 설치하다보면 느려지는 느낌이라 각각의 용도에 적합한 별도의 개발툴을 사용하는 편이다. Go를 위한 IDE로는 **Gogland** 베타 버전을 사용 중
   - Gogland에서 별도로 GOPATH 설정이 가능하나 콘솔에서도 사용하려면 전역 설정을 해주는게 편하다. `~/workspace/go`로 설정. Go 빌드를 위한 glide는 `brew install glide`로 설치
-- 코딩을 할때는 항상 JetBrains의 IDE를 사용하지만 리뷰 용도나 간단한 작업시에는 [Sublime Text 3](http://likejazz.com/post/102824813705/sublime-text) 를 사용한다. 그러다 [React Native 개발](http://dev.likejazz.com/post/145685053741/react-native)시 Atom + Nuclide를 사용해봤는데 생각외로 만족스러웠다. 이후 코드 편집기로 **Atom** 사용 빈도가 점점 늘고 있다. IntelliJ의 팬이기 때문에 단축키를 intellij-idea-keymap 플러그인으로 동일하게 맞춰 사용한다. vim도 쓰지만 역시 GUI와 마우스를 병행할때 최고의 개발 생산성을 발휘한다.
+- 코딩을 할때는 항상 JetBrains의 IDE를 사용하지만 리뷰 용도나 간단한 작업시에는 **[Sublime Text 3](http://likejazz.com/post/102824813705/sublime-text)** 를 사용한다. 그러다 [React Native 개발](http://dev.likejazz.com/post/145685053741/react-native)시 Atom + Nuclide를 사용해봤는데 생각외로 만족스러웠다. 이후 코드 편집기로 **Atom** 사용 빈도가 점점 늘고 있다. IntelliJ의 팬이기 때문에 단축키를 intellij-idea-keymap 플러그인으로 동일하게 맞춰 사용한다. vim도 쓰지만 역시 GUI와 마우스를 병행할때 최고의 개발 생산성을 발휘한다.
 - dotfiles 설정이 번거로운데 깃헙에 공개 형태로 출판도 해보았으나 여전히 관리하기 번거로움. 새 노트북을 셋팅할때는 gist에 비공개로 만들고 그걸 다시 새 노트북에서 붙여넣기 하는 방법으로 사용했다. 대표적으로 `/etc/paths`, 서브라임 설정/키맵, `/etc/hosts`, `.vimrc` 등.
 - 모든 키맵은 IntelliJ를 기준으로 한다. 예전에는 서브라임이 기준이었으나 이제는 간단한 에디터에서도 IntelliJ 키맵을 기본으로 설정한다.
 - 사내 시스템에 로그인 하기 위해 커버로스 설정
