@@ -29,7 +29,7 @@ title: NLP를 위한 딥러닝 가이드
 
 [^1]: [2012년 이미지넷에서 알파고까지… 딥 러닝의 모든 것](https://forums.geforce.co.kr/index.php?document_srl=222723&mid=news)
 
-## 문서 
+## 문서
 
 ### 이론, 튜토리얼
 - [스탠포드 CS 딥러닝 튜토리얼](http://deeplearning.stanford.edu/tutorial/)  
@@ -104,6 +104,9 @@ LSTM 문자 인식 과정에 어느 데이타 포인트가 영향을 주는지 �
 - [RNN Regularizations](http://nmhkahn.github.io/RNN-Regularizations)  
 한글로 정리한 RNN 정규화 문서
 - [LSTM 과 ResNet](http://tmmse.xyz/lstm-resnet/)
+- [Text Classification Improved by Integrating Bidirectional LSTM with Two-dimensional Max Pooling](https://arxiv.org/abs/1611.06639v1)  
+<img src="/images/2017/blstm-2dcnn.png" width="400" />
+BLSTM과 2DCNN으로 했을때 문장 분류 결과가 가장 좋았다는 중국 논문. 논문에 따르면 SST-2(Stanford Sentiment Treebank에 중립 리뷰 제거) 정확도가 89.5% 라고
 
 ### TensorFlow, Keras
 - [텐서플로우(TensorFlow)를 이용해 자연어를 처리하기(NLP)](http://solarisailab.com/archives/374)  
@@ -111,7 +114,7 @@ LSTM 문자 인식 과정에 어느 데이타 포인트가 영향을 주는지 �
 - [A noob’s guide to implementing RNN-LSTM using Tensorflow](http://monik.in/a-noobs-guide-to-implementing-rnn-lstm-using-tensorflow/)  
 LSTM RNN 텐서플로우 구현을 쉽게 정리
 - [Bidirectional LSTM for IMDB sentiment classification](https://transcranial.github.io/keras-js/#/imdb-bidirectional-lstm)  
-LSTM을 이용한 IMDB 댓글의 감정 분류를 js로 구현. 예전 Karpathy의 [ConvNetJS](http://cs.stanford.edu/people/karpathy/convnetjs/)는 CNN 이미지 처리에 특화되어 있고 학습 자체도 js에서 직접 해야 하는 한계가 있었는데 이 라이브러리는 서버의 Keras에서 학습을 진행하고 학습셋을 js에서 가져와 사용하므로 훨씬 유용하다. 
+LSTM을 이용한 IMDB 댓글의 감정 분류를 js로 구현. 예전 Karpathy의 [ConvNetJS](http://cs.stanford.edu/people/karpathy/convnetjs/)는 CNN 이미지 처리에 특화되어 있고 학습 자체도 js에서 직접 해야 하는 한계가 있었는데 이 라이브러리는 서버의 Keras에서 학습을 진행하고 학습셋을 js에서 가져와 사용하므로 훨씬 유용하다.
 - [Theano, Keras 튜토리얼 중국어 자료](http://blog.csdn.net/niuwei22007/article/category/5868745)  
 구글 번역기로 읽을만하다.
 - [Keras로 Multi Layer Perceptron 구현하기](http://iostream.tistory.com/111)  
@@ -144,7 +147,7 @@ Karpathy가 만든
 
 ## 책
 NLP를 위한 딥러닝을 실제 서비스에 적용하면서 매우 다양한 책을 구매하여 읽어보았다. 구매하여 읽었던 책 목록과 간략한 소감을 정리해본다.
-<img src="https://c1.staticflickr.com/1/297/32140552121_13bf164f4c_b.jpg" width="400" />
+<img src="/images/2017/32140552121_13bf164f4c_b.png" width="400" />
 
 - [마스터 알고리즘](http://book.daum.net/detail/book.do?bookid=KOR9791185459547)  
 인공지능으로 나아가는 마스터 알고리즘이 존재할 것이다 라는 전제하에 각 문파들의 각종 기술과 최고 수준의 필살기를 하나씩 소개하며 끄집어 내는 책. 비개발자를 위한 책이지만 각 알고리즘의 명칭을 들어본 적이 전혀 없다면 이해하기가 쉽지 않음. 이미 알고리즘과 머신러닝에 대해 잘 알고 있다면 재밌게 읽을 수 있다.
