@@ -12,6 +12,17 @@ invisible: true
 
 # Building Machine Learning Systems with Python
 
+- spline 모델
+- 과적합 방지를 위해 데이타를 쪼개어 선형으로 예측하는 것이 합리적
+- z-score
+<img src="http://stats.seandolinar.com/wp-content/uploads/2014/12/Normal_Z_Comparison.png" width="80%" />[^1]
+$$z = \frac{x - \mu}{\sigma}$$
+
+[^1]: <http://stats.seandolinar.com/calculating-z-scores-with-r/>
+
+- scikit-learn의 CountVectorizer. 단어를 세고 벡터로 표현
+
+
 ---
 
 # 마스터 알고리즘

@@ -40,6 +40,10 @@ invisible: false
 ---
 [딥러닝 용어표](https://docs.google.com/spreadsheets/d/1ccwGiC01X-gs3PPcXPUz67W9rS6l994LD4AL18KF1_0/edit#gid=0)
 
+---
+통계에 주로 사용되는 수식 LaTex 표현  
+[LaTex Equations](https://github.com/rasbt/pattern_classification/blob/master/resources/latex_equations.md)
+
 ## Numpy
 {% highlight python %}
 A = np.array([[1,2,3],[4,5,6]])
@@ -288,6 +292,12 @@ im2col 입력 데이타를 필터링(가중치 계산)하기 좋게 전개
 - 5x5 필터는 3x3 필터 2회로 대체 가능. 매개 변수 수가 줄어든다.  
 - 층이 깊어지면 표현력<sup>Representaion</sup>이 좋아진다.
 
+## RNN
+
+<img src="/images/2017/blstm-2dcnn.png" width="400" />
+BLSTM과 2DCNN으로 했을때 문장 분류 결과가 가장 좋았다는 중국 논문[^20]에 따르면 SST-2(Stanford Sentiment Treebank에 중립 리뷰 제거) 정확도가 89.5% 라고
+
+
 # References
 
 [^1]: <https://www.mathsisfun.com/algebra/scalar-vector-matrix.html>
@@ -308,3 +318,4 @@ im2col 입력 데이타를 필터링(가중치 계산)하기 좋게 전개
 [^17]: <http://cs231n.github.io/neural-networks-3/>
 [^18]: <http://cs231n.github.io/neural-networks-1/>
 [^19]: <https://www.cs.toronto.edu/~frossard/post/vgg16/>
+[^20]: [Text Classification Improved by Integrating Bidirectional LSTM with Two-dimensional Max Pooling](https://arxiv.org/abs/1611.06639v1)
