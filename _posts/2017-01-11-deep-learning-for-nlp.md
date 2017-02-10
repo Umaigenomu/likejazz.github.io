@@ -141,7 +141,7 @@ Karpathy의 Pong 강화학습 튜토리얼을 한글로 훌륭하게 번역
 
 ### 기타
 - [Arxiv Sanity Preserver](http://www.arxiv-sanity.com/)  
-Karpathy가 만든
+arXiv에 등록되는 수많은 논문을 분석하여 Top papers를 보기 좋게 정렬하여 보여준다. Karpathy가 만듬
 - [GitXiv](http://www.gitxiv.com/)  
 논문 구현을 깃헙 코드와 연동
 
