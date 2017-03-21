@@ -52,3 +52,6 @@
   - 복수의 Preprocessor와 Model을 연결하여 하나의 Model처럼 행동
   - Model 클래스가 제공하는 공통 메서드를 모두 제공
   - pipeline 내부에서 Preprocessor에서 자료를 계속 변형한 후 마지막으로 Model에 입력
+
+# 기타: matplotlib
+[matplotlib의 여러가지 플롯](https://www.datascienceschool.net/view-notebook/6e71dbff254542d9b0a054a7c98b34ec/)
