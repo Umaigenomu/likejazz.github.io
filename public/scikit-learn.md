@@ -13,6 +13,10 @@
 
 [^3]: https://www.datascienceschool.net/view-notebook/293ece8b0d124fbaa4d4d52bb8f1cb42/
 
+API 레퍼런스 참고[^4]
+
+[^4]: http://scikit-learn.org/stable/modules/classes.html
+
 - 자료 제공:
   - `sklearn.datasets`: 샘플 데이타
 - 자료 전처리:
@@ -53,5 +57,5 @@
   - Model 클래스가 제공하는 공통 메서드를 모두 제공
   - pipeline 내부에서 Preprocessor에서 자료를 계속 변형한 후 마지막으로 Model에 입력
 
-# 기타: matplotlib
+# matplotlib
 [matplotlib의 여러가지 플롯](https://www.datascienceschool.net/view-notebook/6e71dbff254542d9b0a054a7c98b34ec/)
