@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$GITHUB_PATH=/Users/kaonpark/workspace/github.com/likejazz
+GITHUB_PATH=/Users/kaonpark/workspace/github.com/likejazz
 
 # Wiki publishing
 cd ${GITHUB_PATH}/likejazz.github.io.wiki
