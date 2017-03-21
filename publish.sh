@@ -4,7 +4,7 @@ GITHUB_PATH=/Users/kaonpark/workspace/github.com/likejazz
 
 # Wiki publishing
 cd ${GITHUB_PATH}/likejazz.github.io.wiki
-git commit -a -m "Publishing" && git push
+git commit -a -m "Publishing" && git push origin master
 
 # Copy wiki docs to main repository and remove unnecessary files.
 cp * ${GITHUB_PATH}/likejazz.github.io/public/
