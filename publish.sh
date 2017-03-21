@@ -1,5 +1,16 @@
 #!/bin/bash
-cp /Users/kaonpark/workspace/github.com/likejazz/likejazz.github.io.wiki/* public/
-rm -rf public/_Footer.md
-rm -rf public/_Sidebar.md
-git add . && git commit -m "Publishing" && git push origin master
+
+$GITHUB_PATH=/Users/kaonpark/workspace/github.com/likejazz
+
+# Wiki publishing
+cd ${GITHUB_PATH}/likejazz.github.io.wiki
+git commit -a -m "Publishing" && git push
+
+# Copy wiki docs to main repository and remove unnecessary files.
+cp * ${GITHUB_PATH}/likejazz.github.io/public/
+cd ${GITHUB_PATH}/likejazz.github.io/public
+rm -rf _Sidebar.md _Footer.md
+
+# Github.io publishing
+cd ..
+git commit -a -m "Publishing" && git push origin master
