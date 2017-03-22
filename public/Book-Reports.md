@@ -47,7 +47,7 @@ ockham's razor: 자료와 일관된 가설들 중 가장 간단한 것을 선호
 
   [5]: https://en.wikipedia.org/wiki/Theory_X_and_Theory_Y
 
-## 6가지 습관
+6가지 습관
 - 자신을 들여다 볼 줄 안다.
 - 부하직원과의 공감대를 중요시한다.
 - 인간관계의 황금률<sup>Golden Rule</sup>을 지킨다.
@@ -91,6 +91,10 @@ PCA 주로 성분 분석
 
 거리는 대부분 유클리드 거리
 
+장바구니 분석 알고리즘
+- apriori
+  - minsupport
+  
 # 마스터 알고리즘
 머신러닝 다섯 종족  
 <img src="https://sebastianraschka.com/images/faq/classifier_categories/master_chart.jpg" width="47%" style="padding-right: 10px; float: left" /><img src="https://github.com/likejazz/likejazz.github.io/blob/master/images/2017/master-algorithm.png" width="47%" />
@@ -123,7 +127,8 @@ fig. Graph of exponential function `$$y=e^x$$`
 
 마르코프 네트워크  
 MLN 마르코프 논리 네트워크  
-마르코프 연쇄 몬테카를로
+마르코프 연쇄 몬테카를로  
+볼츠만 기계
 
 마스터 알고리즘은 아래 통합일 것
 - decision made tree
