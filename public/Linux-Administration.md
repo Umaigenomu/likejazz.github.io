@@ -1,7 +1,7 @@
-# Network Monitoring
+# Network Traffic Monitoring
 nload  
 `brew install nload`  
-How to run: nload -u H it didn’t work with device ‘en0’ and its reason is unknown.
+How to run: `nload -u H` it didn’t work with device ‘en0’ and its reason is unknown.
 
 <img src="http://docs.likejazz.com/images/2017/nload.png" width="50%" />
 
