@@ -1,3 +1,10 @@
+# Network Monitoring
+nload  
+`brew install nload`  
+How to run: nload -u H it didn’t work with device ‘en0’ and its reason is unknown.
+
+<img src="http://docs.likejazz.com/images/2017/nload.png" width="50%" />
+
 # 깃헙 폴링 재시작 스크립트
 깃헙을 폴링하다가 업데이트가 있을 경우 [Jekyll을 재시작하는 스크립트](https://gist.github.com/tracphil/91cf2c80aa6ce6a34555) 응용
 
