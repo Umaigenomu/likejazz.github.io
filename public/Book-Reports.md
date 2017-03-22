@@ -1,5 +1,19 @@
 여러가지 독서 후기를 정리한다.  
 
+# 통계의 힘(2013)
+BI. 콜레라 역학조사<sup>John Snow</sup> 현대의료 Evidence Based Medicine(EBM) 머니볼. p-값 오차값. 임의화 비교실험.
+
+리터러시<sup>Literacy</sup> 읽고 쓰는 능력  
+> Literacy is traditionally understood as the ability to read, write, and use arithmetic.
+
+OECD 학업 성취도(PISA) 순위
+
+프레이밍험 심장연구 1948
+- Logistic Regression. 
+
+표본 조사 결과는 +-표준 오차 범위  
+책에 나오는 '표준오차 산출식'과 standard error of the mean의 수식은 다르다. 확인 필요.
+
 # 헬로 데이터 과학
 "만약 나에게 문제 해결을 위해 한 시간이 주어진다면, 나는 55분 동안 문제에 대해 생각하고 5분 동안 해결책에 대해 생각하겠다." - 아인슈타인
 
@@ -70,7 +84,7 @@ sklearn.feature_selection 뛰어난 래퍼 클래스
 - 선형 PCA<sup>principal component analysis</sup> 선형 제한
 - 비선형 MDS<sup>multidimensional scaling</sup>
 
-PCA
+PCA 주로 성분 분석
 1. 데이터에서 평균값 빼서 데이터를 중심에
 1. 공분산<sup>covariance</sup> 매트릭스 계산
 1. 공분산의 고유벡터<sup>eigenvector</sup> 계산
@@ -104,13 +118,26 @@ PCA
 fig. Graph of exponential function `$$y=e^x$$`
 
 기호주의자
-- 키넥트 의사 결정 트리
+- 키넥트 의사 결정 트리(랜덤 포레스트)
 - 논리규칙으로 정의할 수 있는 개념은 빙산의 일각에 불과하다는 연결주의자의 주장  
+
+마르코프 네트워크  
+MLN 마르코프 논리 네트워크  
+마르코프 연쇄 몬테카를로
+
+마스터 알고리즘은 아래 통합일 것
+- decision made tree
+- MLP
+- Classifier system
+- naive bayes
+- SVM
+
+stacking  
 
 # 세계를 바꾼 17가지 방정식
 '세상을 바꾼'으로 번역하는게 더 적절할듯
 
-## 피타고라스 정리
+피타고라스 정리
 - 3-4-5 삼각형, 5-12-13 삼각형
 - 유클리드 증명: 피타고라스 정리 증명
 - 모든 삼각형은 두 개의 직각 삼각형으로 쪼갤 수 있다.
@@ -119,12 +146,17 @@ fig. Graph of exponential function `$$y=e^x$$`
   - 곡면이 얼마나 휘어 있는가를 재는 양
 - 삼각측량
 
-## 로그  
+로그  
 `$$\log{xy}=\log{x}+\log{y}$$`
 - 자연로그는 `$$e^x$$`의 함수
 - `$$10^x=4$$` 로그 계산법
 - `$$5^\frac{2}{3}=\sqrt[3]{5^2}{\approx}2.924$$`
 - 상용로그는 계산을 쉽게 하기 위함이므로 컴퓨터가 발달한 오늘날엔 더 이상 유용하지 않지만 개념적 이유로 과학에서 핵심적인 역할을 하고 있음
 
-## -1의 제곱근
+-1의 제곱근
 - 허수<sup>Imaginary Numbers</sup>
+
+맥스웰 방정식  
+전기장-자기장 친밀
+
+멘델레예프 주기율표
