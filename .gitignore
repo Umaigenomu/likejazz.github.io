@@ -3,3 +3,4 @@ _site
 nohup.out
 .DS_Store
 .idea
+.ipynb_checkpoints

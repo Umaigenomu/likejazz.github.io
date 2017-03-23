@@ -1,6 +1,6 @@
-여러가지 책을 직접 읽고 독서 후기를 정리한다. 어떤식으로 분류할지는 아직 미정.
+여러 책을 직접 읽고 독서 후기를 정리한다. 어떤식으로 분류할지 아직 미정.
 
-# 통계의 힘(2013)
+# 통계의 힘
 BI. 콜레라 역학조사<sup>John Snow</sup> 현대의료 Evidence Based Medicine(EBM) 머니볼. p-값 오차값. 임의화 비교실험.
 
 리터러시<sup>Literacy</sup> 읽고 쓰는 능력  
@@ -42,10 +42,8 @@ ockham's razor: 자료와 일관된 가설들 중 가장 간단한 것을 선호
 # 함께 일하고 싶은 팀장<sup>6 Habits of Highly Effective Bosses</sup>
 - 호손 효과
   - 변인에 따라 생산성이 변하지 않는다는 연구 결과이나 실제로는 실험 대상자가 관찰되고 있다는 사실을 인지하고 있었고 이 점이 연구결과에 영향을 끼치는 것을 뜻한다.
-- X 이론, Y 이론[5]
-  - W 이론: 서울대 이면우 교수가 주창. 대학 신입생때 학교 권장 도서로 읽었던 기억이 남.
-
-  [5]: https://en.wikipedia.org/wiki/Theory_X_and_Theory_Y
+- X 이론, Y 이론
+  - W 이론: 서울대 이면우 교수가 주창. 대학 신입생때 학교 권장 도서로 읽었던 기억.
 
 6가지 습관
 - 자신을 들여다 볼 줄 안다.
@@ -56,9 +54,10 @@ ockham's razor: 자료와 일관된 가설들 중 가장 간단한 것을 선호
 - 지혜롭게 비판한다.
 - 직원들의 다양한 스타일에 적응한다.
 
-2005년에 출판된 책으로 현 시점에 크게 색다르지 않으며 Y 이론 중심의 팀장 역할을 강조
+2005년에 출판된 책으로 현 시점에 크게 색다르지 않으며 Y 이론 중심의 팀장 역할을 강조.
 
 # 함수형 사고
+중간쯤 읽었으나 내용이 거의 기억 안남. 여전히 절차적에 익숙하고, 직접 실습하며 읽은게 아니라 그런듯.
 
 # Building Machine Learning Systems with Python
 - 상관 관계<sup>correlation coefficient</sup>
@@ -73,8 +72,7 @@ ockham's razor: 자료와 일관된 가설들 중 가장 간단한 것을 선호
 - scikit-learn의 CountVectorizer. 단어를 세고 벡터로 표현
 - add-one smoothing, additive smoothing, Laplace<sup>라플라스</sup> smoothing
 
-- 자연로그: e를 밑으로 하는 로그
-
+자연로그: e를 밑으로 하는 로그  
 불확실성 측정: Claude Shannon의 정보 엔트로피, 정보 엔트로피<sup>information entropy</sup>는 또는 섀넌 엔트로피<sup>Shannon entropy</sup> 확률이 낮을 수록 엔트로피는 증가한다.
 
 sklearn.feature_selection 뛰어난 래퍼 클래스
@@ -130,10 +128,10 @@ MLN 마르코프 논리 네트워크
 마르코프 연쇄 몬테카를로  
 볼츠만 기계
 
-마스터 알고리즘은 아래 통합일 것
-- decision made tree
+마스터 알고리즘은 아래 통합일 것이라 책에서 예상
+- decision made tree 의사 결정 트리
 - MLP
-- Classifier system
+- Classifier system 분류 시스템?
 - naive bayes
 - SVM
 
@@ -161,7 +159,5 @@ stacking
 -1의 제곱근
 - 허수<sup>Imaginary Numbers</sup>
 
-맥스웰 방정식  
-전기장-자기장 친밀
-
+맥스웰 방정식. 전기장-자기장 친밀  
 멘델레예프 주기율표
