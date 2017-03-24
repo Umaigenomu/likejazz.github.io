@@ -28,7 +28,7 @@ API 레퍼런스 참고[^4]
   - `sklearn.model_selection`: train_test_split, Hyper-parameter optimizers, Model validation, 예전 cross_validation의 모형 평가 포함.
   - `sklearn.pipeline`: make_pipeline, 전처리/특성선택/모델링을 연결하여 하나의 모델처럼 행동.
 - 모형 알고리즘:
-  - `sklearn.decomposition`: dimensionality reduction. PCA, ICA, LDA(Latent Dirichlet Allocation).
+  - `sklearn.decomposition`: dimensionality reduction. PCA, ICA, LDA(Latent Dirichlet Allocation)<sup>Andrew Ng, Michael Jordan</sup>
   - `sklearn.ensemble`: RandomForest, AdaBoost
   - `sklearn.linear_model`: LinearRegression, Perceptron
   - `sklearn.naive_bayes`: Gaussian/Multinomial/Bernoulli NB

@@ -1,3 +1,9 @@
+# Less is exponentially more
+['적은'것은 기하급수적으로 '많은'거다.](https://commandcenter.blogspot.kr/2012/06/less-is-exponentially-more.html)  
+Rob Pike의 Go over C/C++ 특징을 잘 정리한 컬럼  
+[Why Go?](https://dave.cheney.net/2017/03/20/why-go)  
+This article contains three salient reasons why I think Go is an important programming language.
+
 # Method Overloading in Go
 Go에는 메소드 오버로딩이 없다. 자바에서 매우 편리하게 사용하던 기능인데 [Go FAQ에 지원하지 않음이 명시](https://golang.org/doc/faq#overloading)되어 있음  
 - 타입 매칭(파라미터)이 없으면 메소드 전달이 단순화됨

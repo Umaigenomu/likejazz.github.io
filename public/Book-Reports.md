@@ -1,7 +1,12 @@
 여러 책을 직접 읽고 독서 후기를 정리한다. 어떤식으로 분류할지 아직 미정.
 
 # 통계의 힘
-BI. 콜레라 역학조사<sup>John Snow</sup> 현대의료 Evidence Based Medicine(EBM) 머니볼. p-값 오차값. 임의화 비교실험.
+Business Intelligence  
+
+콜레라 역학조사<sup>John Snow</sup>  
+최근접 이웃 알고리즘의 성공 사례(공식적으로 발명 되기 한 세기 전의)
+
+현대의료 Evidence Based Medicine(EBM) 머니볼. p-값 오차값. 임의화 비교실험.
 
 리터러시<sup>Literacy</sup> 읽고 쓰는 능력  
 > Literacy is traditionally understood as the ability to read, write, and use arithmetic.
@@ -15,7 +20,16 @@ OECD 학업 성취도(PISA) 순위
 책에 나오는 '표준오차 산출식'과 standard error of the mean의 수식은 다르다. 확인 필요.
 
 # 헬로 데이터 과학
-"만약 나에게 문제 해결을 위해 한 시간이 주어진다면, 나는 55분 동안 문제에 대해 생각하고 5분 동안 해결책에 대해 생각하겠다." - 아인슈타인
+> "만약 나에게 문제 해결을 위해 한 시간이 주어진다면, 나는 55분 동안 문제에 대해 생각하고 5분 동안 해결책에 대해 생각하겠다." - 아인슈타인
+
+탐색적 데이타 분석<sup>EDA: Exploratory Data Analysis</sup>  
+박스 플롯<sup>box and whisker plot</sup>  
+- 상위<sup>Upper Quartile</sup> 25%, 중앙값<sup>Median</sup>, 하위 25%(상위 75%)
+
+<img src="http://www.statcan.gc.ca/edu/power-pouvoir/ch12/img/5214889_02-eng.gif" width="50%" />
+
+바이올린 플롯: 박스 플롯과 유사하지만 각 면에 커널 밀도를 회전 표시한다.  
+<img src="http://www.datavizcatalogue.com/methods/images/top_images/SVG/violin_plot.svg" width="50%" />
 
 # 인공지능: 현대적 접근방식
 probability model  
@@ -34,9 +48,13 @@ likelihood weighting
 gibs sampling, 베이즈망에 적합  
 kalman filter  
 game theory  
-ockham's razor: 자료와 일관된 가설들 중 가장 간단한 것을 선호하라  
 가우스 분포
 - mixture of Gaussian 가우스 혼합 분포
+
+Occham's razor
+- 자료와 일관된 가설들 중 가장 간단한 것을 선호하라<sub>인공지능: 현대적 접근방식</sub>
+- 더 단순한 가설에 대한 선호<sub>마스터 알고리즘</sub>
+  - 실체들은 필요 이상으로 중복되어서는 안된다.
 
 
 # 함께 일하고 싶은 팀장<sup>6 Habits of Highly Effective Bosses</sup>
@@ -123,19 +141,32 @@ fig. Graph of exponential function `$$y=e^x$$`
 - 키넥트 의사 결정 트리(랜덤 포레스트)
 - 논리규칙으로 정의할 수 있는 개념은 빙산의 일각에 불과하다는 연결주의자의 주장  
 
-마르코프 네트워크  
-MLN 마르코프 논리 네트워크  
-마르코프 연쇄 몬테카를로  
+20세기 초 러시아의 수학자 안드레이 마르코프<sup>Andrei Markov</sup>
+- 마르코프 연쇄
+- 마르코프 네트워크  
+- 마르코프 논리 네트워크<sup>MLN</sup>
+- 마르코프 연쇄 몬테카를로<sup>Markov Chain Monte Carlo</sup>
+
 볼츠만 기계
 
-마스터 알고리즘은 아래 통합일 것이라 책에서 예상
+마스터 알고리즘은 아래 통합일 것이라 책에서 주장
 - decision made tree 의사 결정 트리
 - MLP
-- Classifier system 분류 시스템?
+- classifier system
 - naive bayes
 - SVM
 
-stacking  
+> 퍼셉트론의 역사에 나타난 역설적인 사건들 중에서 가장 슬픈 일은 프랭크 로젠블랫이 1969년 체사피크 만에서 보트 사고를 당해 자기 창조물의 둘째 장(민스키가 아니라 자신이 옳았다는)을 보지 못하고 죽은 사건일 것이다.
+p.194 <마스터 알고리즘>
+
+> 구글의 연구 부서장인 피터 노빅이 언젠가 나에게 나이브 베이즈 분류기는 구글에서 가장 널리 쓰이는 머신러닝이고 구글이 하는 일의 구석구석에 머신러닝이 적용된다고 말했다.
+p.252
+
+> SVM은 퍼셉트론의 일반형으로도 볼 수 있는데, 유형을 나누는 초평면의 경계는 특별한 유사성 측정(벡터 사이의 내적<sup>dot product</sup>. numpy도 `.dot` 사용)을 사용할 때 얻는 것이기 때문이다. 하지만 SVM은 다층 퍼셉트론과 비교하여 중요한 장점이 있었다. 가중치에는 국부 최적값이 많지 않고 단일한 최적값이 있으므로<sup>the weights have a single optimum instead of many local ones</sup> 신뢰성 있게 가중치를 찾기가 훨씬 더 쉽다. 이런 장점이 있으면서도 SVM의 비용은 다름 아닌 다층 퍼셉트론의 비용과 같았다. 서포트 벡터들은 실제적으로 하나의 은닉층처럼 작동하고 벡터들의 가중 평균은 출력 층처럼 작동한다.
+p.317
+
+> 나이브 베이즈 분류기가 단 하나의 단어만 알아보는 문서에 대하여 그 단어가 학습 데이터에서는 우연히 스포츠에 관한 문서에만 있었다면, 나이브 베이즈 분류기는 그 단어를 포함한 문서를 모두 스초츠에 관한 문서로 착각하기 시작한다. 하지만 마진 최대화 방식 덕택에 SVM은 차원이 매우 높을 때조차도 과적합 문제에서 벗어날 수 있다.
+p. 318
 
 # 세계를 바꾼 17가지 방정식
 '세상을 바꾼'으로 번역하는게 더 적절할듯
