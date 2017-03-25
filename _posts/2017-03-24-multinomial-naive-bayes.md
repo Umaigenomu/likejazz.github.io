@@ -28,7 +28,7 @@ scikit-learn의 나이브 베이즈 모듈인 `sklearn.naive_bayes`는 총 3가�
 <img src="http://strangenotions.com/wp-content/uploads/BayesTheorem-600x319.jpg" width="100%" />
 
 ### 다항 분포 나이브 베이즈
-다항 분포 나이브 베이즈의 수도(pseudo) 코드는 Introduction to Information Retreival(Manning et al. 2008) 책 챕터 13에 잘 나와 있다.
+다항 분포 나이브 베이즈의 수도(pseudo) 코드는 Introduction to Information Retrieval(Manning et al. 2008) 책 챕터 13에 잘 나와 있다.
 
 <img src="/images/2017/multinomialnb.png" width="70%" />
 
