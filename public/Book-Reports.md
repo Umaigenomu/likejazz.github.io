@@ -43,6 +43,11 @@ Numpy에도 '.sample' 함수 존재
 <img src="http://www.datavizcatalogue.com/methods/images/top_images/SVG/violin_plot.svg" width="50%" />
 
 # 인공지능: 현대적 접근방식
+AIMA [aima-python](https://github.com/aimacode/aima-python)
+- 1st 1995
+- 2nd 2003
+- 3rd 2009
+
 probability model  
 prob comes from
 - frequentist<sup>빈도주의자</sup>
