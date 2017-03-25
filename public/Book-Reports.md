@@ -19,7 +19,7 @@ OECD 학업 성취도(PISA) 순위
 표본 조사 결과는 +-표준 오차 범위  
 책에 나오는 '표준오차 산출식'과 standard error of the mean의 수식은 다르다. 확인 필요.
 
-소규모 임의화 실험의 중요성. 임의화 영어로?
+소규모 임의화 실험의 중요성. 임의화 샘플링을 의미하나. 한글로 보니 더 헷갈림.  
 A/B 테스트  
 Numpy에도 '.sample' 함수 존재  
 
@@ -30,7 +30,6 @@ Numpy에도 '.sample' 함수 존재
 
 카이제곱검정
 
-
 # 헬로 데이터 과학
 > "만약 나에게 문제 해결을 위해 한 시간이 주어진다면, 나는 55분 동안 문제에 대해 생각하고 5분 동안 해결책에 대해 생각하겠다." - 아인슈타인
 
@@ -40,7 +39,7 @@ Numpy에도 '.sample' 함수 존재
 
 <img src="http://www.statcan.gc.ca/edu/power-pouvoir/ch12/img/5214889_02-eng.gif" width="50%" />
 
-바이올린 플롯: 박스 플롯과 유사하지만 각 면에 커널 밀도를 회전 표시한다.  
+바이올린 플롯: 박스 플롯과 유사하지만 각 면에 커널 밀도를 회전 표시. 더 직관적일거라 생각했는데 막상 보니 복잡하여 헷갈림.  
 <img src="http://www.datavizcatalogue.com/methods/images/top_images/SVG/violin_plot.svg" width="50%" />
 
 # 인공지능: 현대적 접근방식
