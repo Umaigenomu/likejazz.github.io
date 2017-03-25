@@ -53,7 +53,7 @@ scikit-learn의 나이브 베이즈 모듈인 `sklearn.naive_bayes`는 총 3가�
 
 상기 수식은 여러 조건부 확률 $$ (P(t_k \| c),1 \leq k \leq n_d) $$ 이 곱해지므로 실수형 계산에서 언더플로우 현상이 발생할 수 있다. 이 문제를 개선하기 위해 각 조건부 확률의 로그 값을 구해서 곱하기 대신 더하기를 사용한다. (Manning et al. Introduction to IR. ch13)
 
-딥러닝에서 기울기 소실 문제(Vanishing Gradient Problem)와 유사한 문제로 보인다. scikit-learn 라이브러리는 최종 결과값을 지수 함수로 스케일링하여 처리한다.
+딥러닝에서 기울기 소실 문제<sup>Vanishing Gradient Problem</sup>와 유사한 문제다. scikit-learn 라이브러리는 `.predict_proba`에서, 계산한 로그 확률을 지수 함수로 스케일링하여 처리한다.
 
 ```python
 # 새로운 데이타의 조건부 확률 제곱의 곱에 클래스 사전 로그 확률의 지수 값을 함께 곱한다.
@@ -73,4 +73,4 @@ p / p.sum()
 
     array([ 0.55131629,  0.44868371])
 
-알고리즘을 전개하여 계산한 값이 scikit-learn 라이브러리의 확률 값과 동일함을 확인할 수 있다. 보다 상세한 내용은 [노트북에서 직접 확인](https://nbviewer.jupyter.org/github/likejazz/likejazz.github.io/blob/master/public/notebooks/multinomial-naive-bayes.ipynb) 가능하다.
+알고리즘을 전개하여 계산한 값이 scikit-learn 라이브러리의 예측값과 동일함을 확인할 수 있다. 보다 상세한 내용은 [노트북에서 직접 확인](https://nbviewer.jupyter.org/github/likejazz/likejazz.github.io/blob/master/public/notebooks/multinomial-naive-bayes.ipynb) 가능하다.
