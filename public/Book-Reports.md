@@ -1,6 +1,6 @@
 여러 책을 직접 읽고 독서 후기를 정리한다. 어떤식으로 분류할지 아직 미정.
 
-# Introduction to Information Retrieval
+# An Introduction to Information Retrieval
 Manning et al. 2008
 
 # 통계의 힘
@@ -17,7 +17,11 @@ Business Intelligence
 OECD 학업 성취도(PISA) 순위
 
 프레이밍험 심장연구 1948
-- Logistic Regression. 
+- Logistic Regression
+- 결과가 나온뒤 과거 추석 연구. 역학 연구(Cohort 연구). 미래에 대한 조사 방법
+
+Regression Analysis 회귀 분석  
+골턴: 평범(평균)으로의 회귀. 이유: 불규칙성
 
 표본 조사 결과는 +-표준 오차 범위  
 책에 나오는 '표준오차 산출식'과 standard error of the mean의 수식은 다르다. 확인 필요.
@@ -33,17 +37,13 @@ Numpy에도 '.sample' 함수 존재
 
 카이제곱검정
 
+비교 대조 분석<sup>case control</sup> 연구  
+병, 대조 층별 해석
+
 # 헬로 데이터 과학
 > "만약 나에게 문제 해결을 위해 한 시간이 주어진다면, 나는 55분 동안 문제에 대해 생각하고 5분 동안 해결책에 대해 생각하겠다." - 아인슈타인
 
 탐색적 데이타 분석<sup>EDA: Exploratory Data Analysis</sup>  
-박스 플롯<sup>box and whisker plot</sup>  
-- 상위<sup>Upper Quartile</sup> 25%, 중앙값<sup>Median</sup>, 하위 25%(상위 75%)
-
-<img src="http://www.statcan.gc.ca/edu/power-pouvoir/ch12/img/5214889_02-eng.gif" width="50%" />
-
-바이올린 플롯: 박스 플롯과 유사하지만 각 면에 커널 밀도를 회전 표시. 더 직관적일거라 생각했는데 막상 보니 복잡하여 헷갈림.  
-<img src="http://www.datavizcatalogue.com/methods/images/top_images/SVG/violin_plot.svg" width="50%" />
 
 # 인공지능: 현대적 접근방식
 AIMA [aima-python](https://github.com/aimacode/aima-python)  
@@ -51,29 +51,39 @@ AIMA [aima-python](https://github.com/aimacode/aima-python)
 - 2nd 2003
 - 3rd 2009
 
-probability model  
 prob comes from
 - frequentist<sup>빈도주의자</sup>
 - objectivist<sup>객관주의자</sup>
 - subjectivist<sup>주관주의자</sup>
 
 몬테카를로 알고리즘 = randomized sampling  
-- markov chain sampling  
-- markov chain monte carlo(MCMC)  
-- markov decision process(MDP)
-- HMM: Hidden Markov Model
+아래 <마스터 알고리즘> 참고  
+HMM: 가장 간단한 확률 모형
 
-likelihood weighting  
 gibs sampling, 베이즈망에 적합  
-kalman filter  
-game theory  
 가우스 분포
-- mixture of Gaussian 가우스 혼합 분포
+- mixture of Gaussian 가우스 혼합 분포. python/desmos 확인
 
 Occham's razor
 - 자료와 일관된 가설들 중 가장 간단한 것을 선호하라<sub>인공지능: 현대적 접근방식</sub>
 - 더 단순한 가설에 대한 선호<sub>마스터 알고리즘</sub>
   - 실체들은 필요 이상으로 중복되어서는 안된다.
+
+링크 분석 알고리즘
+- PageRank
+- HITS
+
+n-gram 인덱싱 다시 확인  
+F1 score  
+ch22 NLP references 정리
+
+LDA: 확률적 테스트 모형
+
+- 유클리드 거리
+- 맨해튼 거리
+
+IRF 머신러닝 BM25 개선  
+랭기지 모델
 
 
 # 함께 일하고 싶은 팀장<sup>6 Habits of Highly Effective Bosses</sup>
@@ -165,6 +175,7 @@ fig. Graph of exponential function `$$y=e^x$$`
 - 마르코프 네트워크  
 - 마르코프 논리 네트워크<sup>MLN</sup>
 - 마르코프 연쇄 몬테카를로<sup>Markov Chain Monte Carlo</sup>
+- HMM: Hidden Markov Model<sup>AI: MA</sup>
 
 볼츠만 기계
 
@@ -175,16 +186,16 @@ fig. Graph of exponential function `$$y=e^x$$`
 - naive bayes
 - SVM
 
-> 퍼셉트론의 역사에 나타난 역설적인 사건들 중에서 가장 슬픈 일은 프랭크 로젠블랫이 1969년 체사피크 만에서 보트 사고를 당해 자기 창조물의 둘째 장(민스키가 아니라 자신이 옳았다는)을 보지 못하고 죽은 사건일 것이다.
+> 퍼셉트론의 역사에 나타난 역설적인 사건들 중에서 가장 슬픈 일은 프랭크 로젠블랫이 1969년 체사피크 만에서 보트 사고를 당해 자기 창조물의 둘째 장(민스키가 아니라 자신이 옳았다는)을 보지 못하고 죽은 사건일 것이다.  
 p.194 <마스터 알고리즘>
 
-> 구글의 연구 부서장인 피터 노빅이 언젠가 나에게 나이브 베이즈 분류기는 구글에서 가장 널리 쓰이는 머신러닝이고 구글이 하는 일의 구석구석에 머신러닝이 적용된다고 말했다.
+> 구글의 연구 부서장인 피터 노빅이 언젠가 나에게 나이브 베이즈 분류기는 구글에서 가장 널리 쓰이는 머신러닝이고 구글이 하는 일의 구석구석에 머신러닝이 적용된다고 말했다.  
 p.252
 
-> SVM은 퍼셉트론의 일반형으로도 볼 수 있는데, 유형을 나누는 초평면의 경계는 특별한 유사성 측정(벡터 사이의 내적<sup>dot product</sup>. numpy도 `.dot` 사용)을 사용할 때 얻는 것이기 때문이다. 하지만 SVM은 다층 퍼셉트론과 비교하여 중요한 장점이 있었다. 가중치에는 국부 최적값이 많지 않고 단일한 최적값이 있으므로<sup>the weights have a single optimum instead of many local ones</sup> 신뢰성 있게 가중치를 찾기가 훨씬 더 쉽다. 이런 장점이 있으면서도 SVM의 비용은 다름 아닌 다층 퍼셉트론의 비용과 같았다. 서포트 벡터들은 실제적으로 하나의 은닉층처럼 작동하고 벡터들의 가중 평균은 출력 층처럼 작동한다.
+> SVM은 퍼셉트론의 일반형으로도 볼 수 있는데, 유형을 나누는 초평면의 경계는 특별한 유사성 측정(벡터 사이의 내적<sup>dot product</sup>. numpy도 `.dot` 사용)을 사용할 때 얻는 것이기 때문이다. 하지만 SVM은 다층 퍼셉트론과 비교하여 중요한 장점이 있었다. 가중치에는 국부 최적값이 많지 않고 단일한 최적값이 있으므로<sup>the weights have a single optimum instead of many local ones</sup> 신뢰성 있게 가중치를 찾기가 훨씬 더 쉽다. 이런 장점이 있으면서도 SVM의 비용은 다름 아닌 다층 퍼셉트론의 비용과 같았다. 서포트 벡터들은 실제적으로 하나의 은닉층처럼 작동하고 벡터들의 가중 평균은 출력 층처럼 작동한다.  
 p.317
 
-> 나이브 베이즈 분류기가 단 하나의 단어만 알아보는 문서에 대하여 그 단어가 학습 데이터에서는 우연히 스포츠에 관한 문서에만 있었다면, 나이브 베이즈 분류기는 그 단어를 포함한 문서를 모두 스포츠에 관한 문서로 착각하기 시작한다. 하지만 마진 최대화 방식 덕택에 SVM은 차원이 매우 높을 때조차도 과적합 문제에서 벗어날 수 있다.
+> 나이브 베이즈 분류기가 단 하나의 단어만 알아보는 문서에 대하여 그 단어가 학습 데이터에서는 우연히 스포츠에 관한 문서에만 있었다면, 나이브 베이즈 분류기는 그 단어를 포함한 문서를 모두 스포츠에 관한 문서로 착각하기 시작한다. 하지만 마진 최대화 방식 덕택에 SVM은 차원이 매우 높을 때조차도 과적합 문제에서 벗어날 수 있다.  
 p. 318
 
 # 세계를 바꾼 17가지 방정식
