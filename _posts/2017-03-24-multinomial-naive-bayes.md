@@ -32,7 +32,7 @@ scikit-learn의 나이브 베이즈 모듈인 `sklearn.naive_bayes`는 총 3가�
 
 <img src="/images/2017/multinomialnb.png" width="70%" />
 
-이 책은 전문이 PDF 형태로 온라인에 무료 공개 되어 있으며 다음 링크를 따라 확인할 수 있다. [IIR 챕터 13. Text classification and Naive Bayes(PDF)](https://nlp.stanford.edu/IR-book/pdf/13bayes.pdf)
+이 책은 전문이 PDF 형태로 온라인에 무료 공개 되어 있으며 다음 링크를 따라 확인할 수 있다. [Introduction to Information Retrieval 챕터 13. Text classification and Naive Bayes(PDF)](https://nlp.stanford.edu/IR-book/pdf/13bayes.pdf)
 
 [직접 계산을 진행한 노트북](https://nbviewer.jupyter.org/github/likejazz/likejazz.github.io/blob/master/public/notebooks/multinomial-naive-bayes.ipynb)은 링크에서 볼 수 있다. 모든 항목에 상세히 주석을 달았으므로 어렵지 않게 볼 수 있을 것이다.
 
@@ -51,7 +51,7 @@ scikit-learn의 나이브 베이즈 모듈인 `sklearn.naive_bayes`는 총 3가�
 이 확률 $$ P(t_k \| c) $$ 를 이용한 최대 사후 클래스 수식은 아래와 같다.
 <img src="/images/2017/max-post-class.png" width="70%" />
 
-상기 수식은 여러 조건부 확률 $$ (P(t_k \| c),1 \leq k \leq n_d) $$ 이 곱해지므로 실수형 계산에서 언더플로우 현상이 발생할 수 있다. 이 문제를 개선하기 위해 각 조건부 확률의 로그 값을 구해서 곱하기 대신 더하기를 사용한다. (Manning et al. Introduction to IR. ch13)
+상기 수식은 여러 조건부 확률 $$ (P(t_k \| c),1 \leq k \leq n_d) $$ 이 곱해지므로 실수형 계산에서 언더플로우 현상이 발생할 수 있다. 이 문제를 개선하기 위해 각 조건부 확률의 로그 값을 구해서 곱하기 대신 더하기를 사용한다. (Manning et al. Introduction to Information Retrieval. ch13)
 
 딥러닝에서 기울기 소실 문제<sup>Vanishing Gradient Problem</sup>와 유사한 문제인데, 대신 scikit-learn 라이브러리는 `.predict_proba`에서 예측 확률을 표현할때는 전체 로그 확률을 빼주고 지수 함수로 스케일링하여 백분율로 표현한다.
 
