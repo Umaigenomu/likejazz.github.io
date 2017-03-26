@@ -1,5 +1,8 @@
 여러 책을 직접 읽고 독서 후기를 정리한다. 어떤식으로 분류할지 아직 미정.
 
+# Introduction to Information Retrieval
+Manning et al. 2008
+
 # 통계의 힘
 Business Intelligence  
 
@@ -43,7 +46,7 @@ Numpy에도 '.sample' 함수 존재
 <img src="http://www.datavizcatalogue.com/methods/images/top_images/SVG/violin_plot.svg" width="50%" />
 
 # 인공지능: 현대적 접근방식
-AIMA [aima-python](https://github.com/aimacode/aima-python)
+AIMA [aima-python](https://github.com/aimacode/aima-python)  
 - 1st 1995
 - 2nd 2003
 - 3rd 2009
