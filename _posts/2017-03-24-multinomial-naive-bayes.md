@@ -32,7 +32,8 @@ scikit-learn의 나이브 베이즈 모듈인 `sklearn.naive_bayes`는 총 3가�
 
 <img src="/images/2017/multinomialnb.png" width="70%" />
 
-이 책은 전문이 PDF 형태로 온라인에 무료 공개 되어 있으며 다음 링크를 따라 확인할 수 있다. [Introduction to Information Retrieval 챕터 13. Text classification and Naive Bayes(PDF)](https://nlp.stanford.edu/IR-book/pdf/13bayes.pdf)
+이 책은 전문이 PDF 형태로 온라인에 무료 공개 되어 있으며 다음 링크를 따라 확인할 수 있다.  
+[Introduction to Information Retrieval. ch13. Text classification and Naive Bayes(PDF)](https://nlp.stanford.edu/IR-book/pdf/13bayes.pdf)
 
 [직접 계산을 진행한 노트북](https://nbviewer.jupyter.org/github/likejazz/likejazz.github.io/blob/master/public/notebooks/multinomial-naive-bayes.ipynb)은 링크에서 볼 수 있다. 모든 항목에 상세히 주석을 달았으므로 어렵지 않게 볼 수 있을 것이다.
 
