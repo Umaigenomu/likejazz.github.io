@@ -49,10 +49,10 @@ scikit-learn의 나이브 베이즈 모듈인 `sklearn.naive_bayes`는 총 3가�
     array([[ 0.21428571,  0.35714286,  0.28571429,  0.14285714],
            [ 0.17647059,  0.23529412,  0.35294118,  0.23529412]])
 
-이 확률 $$ P(t_k \| c) $$ 를 이용한 최대 사후 클래스 수식은 아래와 같다.
+이 확률 $$ P(t_k \mid c) $$ 를 이용한 최대 사후 클래스 수식은 아래와 같다.
 <img src="/images/2017/max-post-class.png" width="70%" />
 
-상기 수식은 여러 조건부 확률 $$ (P(t_k \| c),1 \leq k \leq n_d) $$ 이 곱해지므로 실수형 계산에서 언더플로우 현상이 발생할 수 있다. 이 문제를 개선하기 위해 각 조건부 확률의 로그 값을 구해서 곱하기 대신 더하기를 사용한다. (Manning et al. Introduction to Information Retrieval. ch13)
+상기 수식은 여러 조건부 확률 $$ (P(t_k \mid c),1 \leq k \leq n_d) $$ 이 곱해지므로 실수형 계산에서 언더플로우 현상이 발생할 수 있다. 이 문제를 개선하기 위해 각 조건부 확률의 로그 값을 구해서 곱하기 대신 더하기를 사용한다. (Manning et al. Introduction to Information Retrieval. ch13)
 
 딥러닝에서 기울기 소실 문제<sup>Vanishing Gradient Problem</sup>와 유사한 문제인데, 대신 scikit-learn 라이브러리는 `.predict_proba`에서 예측 확률을 표현할때는 전체 로그 확률을 빼주고 지수 함수로 스케일링하여 백분율로 표현한다.
 
