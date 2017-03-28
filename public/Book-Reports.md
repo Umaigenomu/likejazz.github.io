@@ -1,5 +1,23 @@
 여러 책을 직접 읽고 독서 후기를 정리한다. 어떤식으로 분류할지 아직 미정.
 
+# 밑바닥부터 시작하는 데이타 과학
+NumPy도 사용하지 않고 모두 직접 구현. 그러나 어차피 계산은 math 팩키지를 이용하는데 이외에도 일부 내부 팩키지들을 이용하는데 오히려 더 번거로움만 가중시키는 느낌.
+
+통계  
+공분산 covariance  
+두 변수가 각각 평균에서 얼마나 멀이 떨어져 있는지
+
+상관 관계 correlation  
+공분산 / 표준 편차. range: -1 ~ +1
+
+이상치 제거  
+심슨의 역설 simpson's paradox. cause confounding variables.
+
+중심극한정리 central limit theorem  
+별도 정리  
+p-value  
+차원 축소
+
 # An Introduction to Information Retrieval
 Manning et al. 2008
 
@@ -61,8 +79,7 @@ prob comes from
 HMM: 가장 간단한 확률 모형
 
 gibs sampling, 베이즈망에 적합  
-가우스 분포
-- mixture of Gaussian 가우스 혼합 분포. python/desmos 확인
+mixture of Gaussian 가우스 혼합 분포. python/desmos 확인
 
 Occham's razor
 - 자료와 일관된 가설들 중 가장 간단한 것을 선호하라<sub>인공지능: 현대적 접근방식</sub>
@@ -74,7 +91,6 @@ Occham's razor
 - HITS
 
 n-gram 인덱싱 다시 확인  
-F1 score  
 ch22 NLP references 정리
 
 LDA: 확률적 테스트 모형
@@ -105,6 +121,18 @@ IRF 머신러닝 BM25 개선
 
 # 함수형 사고
 중간쯤 읽었으나 내용이 거의 기억 안남. 여전히 절차적에 익숙하고, 직접 실습하며 읽은게 아니라 그런듯.
+
+> 사용하는 언어의 주된 패러다임이 객체지향이라면, 모든 문제의 해법을 객체지향적으로 찾게 마련이다. 하지만 대부분의 현대 언어들은 다중 패러다임을 갖고 있다. 다시 말하자면, 이 언어들은 객체지향형, 메타객체형, 함수형 등의 패러다음을 다 지원한다. 문제에 적합한 패러다임을 사용하는 법을 배우는 것이 더 좋은 개발자로 진화하는 길 중의 하나이다.  
+p. 147
+
+디츨러<sup>Terry Dietzler</sup>의 법칙  
+
+> 4세대 언어는 80%는 쉽게 만들지만 10%는 어렵고 10%는 불가능하다. 하지만 사용자는 항상 100%를 원하기 때문에, 이 프로젝트들은 결국 실패한다.  
+
+결국 모두 범용 언어로 회귀
+
+도날드 누스가 10페이지가 넘는 파스칼로 짠 고빈도 단어 추출 문제를 6줄의 쉘 스크립트로 해결  
+[more-shell-less-egg](http://www.leancrew.com/all-this/2011/12/more-shell-less-egg/)
 
 # Building Machine Learning Systems with Python
 - 상관 관계<sup>correlation coefficient</sup>
