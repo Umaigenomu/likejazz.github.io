@@ -3,8 +3,8 @@
 permalink:           "/:title/"
 
 # Setup
-title:               Sang-Kil Park
-tagline:             The missing Papers
+title:               The Missing Papers
+tagline:             Sang-Kil Park
 url:                 http://docs.likejazz.com
 paginate:            1
 baseurl:             ""
