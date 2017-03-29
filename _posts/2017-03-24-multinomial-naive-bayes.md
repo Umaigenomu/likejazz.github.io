@@ -42,12 +42,15 @@ scikit-learn의 나이브 베이즈 모듈인 `sklearn.naive_bayes`는 총 3가�
 
 ```python
 (fc + clf.alpha) / 
-    (np.repeat(fc.sum(axis=1)[:, np.newaxis], 4, axis=1) 
+    (np.repeat(fc.sum(axis=1)[:,
+        np.newaxis], 4, axis=1) 
         + clf.alpha * X.shape[1])
 ```
 
-    array([[ 0.21428571,  0.35714286,  0.28571429,  0.14285714],
-           [ 0.17647059,  0.23529412,  0.35294118,  0.23529412]])
+    array([[ 0.21428571,  0.35714286,  
+            0.28571429,  0.14285714],
+           [ 0.17647059,  0.23529412,  
+            0.35294118,  0.23529412]])
 
 이 확률 $$ P(t_k \mid c) $$ 를 이용한 최대 사후 클래스 수식은 아래와 같다.
 <img src="/images/2017/max-post-class.png" width="70%" />
@@ -57,12 +60,16 @@ scikit-learn의 나이브 베이즈 모듈인 `sklearn.naive_bayes`는 총 3가�
 딥러닝에서 기울기 소실 문제<sup>Vanishing Gradient Problem</sup>와 유사한 문제인데, 대신 scikit-learn 라이브러리는 `.predict_proba`에서 예측 확률을 표현할때는 전체 로그 확률을 빼주고 지수 함수로 스케일링하여 백분율로 표현한다.
 
 ```python
-# 새로운 데이타의 조건부 확률 제곱의 로그 합에 클래스 사전 로그 확률을 더한다.
+# 새로운 데이타의 조건부 확률 제곱의 로그 합에
+# 클래스 사전 로그 확률을 더한다.
 # 다항 분포(Multinomial Distribution) 적용
 # 예를 들어 문장 분류에서 이 값은 문서의 단어 수
-# IIR 책의 수도 코드는 여기까지의 argmax로 예측을 수행하며, scikit-learn도 동일하다.
-# 그러나 예측 확률을 표현하기 위해서는 아래 추가 작업을 진행한다.
-log_p = np.log(theta ** x_new).sum(axis=1) + clf.class_log_prior_
+# IIR 책의 수도 코드는 여기까지의 argmax로 예측을
+# 수행하며, scikit-learn도 동일하다.
+# 그러나 예측 확률을 표현하기 위해서는 아래 추가
+# 작업을 진행한다.
+log_p = np.log(theta ** x_new).
+    sum(axis=1) + clf.class_log_prior_
 log_p
 ```
 
@@ -70,7 +77,8 @@ log_p
 
 ```python
 # 이 값에 전체 로그 확률을 빼고 지수 함수를 구하면,
-# scikit-learn의 예측 확률과 동일한 백분율로 나타냄을 확인할 수 있다.
+# scikit-learn의 예측 확률과 동일한 백분율로 
+# 나타냄을 확인할 수 있다.
 np.exp(log_p - log_prob_x)
 ```
 

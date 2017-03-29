@@ -6,23 +6,11 @@ title: Home
 <div class="posts">
   {% for post in site.posts %}
   <article class="post">
-    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-    {% capture prev_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
-    {% if forloop.first %}
-      <h1 style="padding: 20px 10px; text-align: left">{{ this_year }}</h1>
-    {% endif %}
-
     {% unless post.invisible %}
     <h1 class="archive">
-      <time datetime="{{ post.date | date_to_xmlschema }}" class="archive-date">{{ post.date | date: "%-m" }}월</time>
+      <time datetime="{{ post.date | date_to_xmlschema }}" class="archive-date">{{ post.date | date: "%b %Y" }}</time>
       <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
     </h1>
-    {% endunless %}
-    
-    {% unless forloop.last %}
-      {% if this_year != prev_year %}
-        <h1 style="padding: 20px 10px; text-align: left">{{ prev_year }}</h1>
-      {% endif %}
     {% endunless %}
   </article>
   {% endfor %}
