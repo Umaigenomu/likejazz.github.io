@@ -48,7 +48,7 @@ Regression Analysis 회귀 분석
 
 소규모 임의화 실험의 중요성. 임의화 샘플링을 의미하나. 한글로 보니 더 헷갈림.  
 A/B 테스트  
-Numpy에도 '.sample' 함수 존재  
+Numpy에도 `.sample` 함수 존재  
 
 임의화의 한계  
 1. 현실
