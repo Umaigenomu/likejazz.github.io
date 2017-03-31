@@ -20,6 +20,18 @@ NumPy도 사용하지 않고 모두 직접 구현. 그러나 어차피 계산은
 p-value  
 차원 축소
 
+통계적 추론 statistical inference
+- 모수적 방법 parametic method, 중심극한정리 central limit theorem, 표본분포 sampling distribution 의 표준편차는 표준에러 standard error
+- 비모수적 방법 non-parametic method, resampling method
+- 신뢰구간=표본평균+-신뢰도상수*표준에러
+- 표준에러=표본의표준편차/sqrt{표본크기}
+- 가설 hypothesis, 가설 검정 hypothesis testing
+- 대립가설: 우리가 증명하고자 하는 명제
+- 귀무가설: 우리가 부정하려는 명제
+- 우리가 관찰한 표본평균 및 이보다 더 극단적인 값이 주어진 가설하에서 관찰될 확률을 유의성 significance 혹은 p-value로 정의
+
+[Science Isn’t Broken](https://fivethirtyeight.com/features/science-isnt-broken/) 연구자들은 주장하는 명제에 부합하는 통계를 산출하기 마련이다.
+
 # An Introduction to Information Retrieval
 Manning et al. 2008
 
