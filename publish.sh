@@ -9,6 +9,13 @@ echo "-------------------------"
 cd ${GITHUB_PATH}/likejazz.github.io.wiki
 git commit -a -m "Publishing" && git push origin master
 
+# jupyter-notebooks publishing
+echo "-----------------------------"
+echo "jupyter-notebooks Publishing"
+echo "-----------------------------"
+cd ${GITHUB_PATH}/jupyter-notebooks
+git add . && git commit -m "Publishing" && git push origin master
+
 # Github.io publishing
 echo "-------------------------"
 echo "Github.io Publishing"
