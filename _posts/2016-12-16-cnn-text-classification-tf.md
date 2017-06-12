@@ -21,7 +21,6 @@ title: 합성곱 신경망(CNN) 딥러닝을 이용한 한국어 문장 분류
     - [Scores and Predictions](#scores-and-predictions)
     - [Loss and Accuracy](#loss-and-accuracy)
     - [Visualizing the Network](#visualizing-the-network)
-    - [Training Procedure](#training-procedure)
     - [Instantiating the CNN and Minimizing the Loss](#instantiating-the-cnn-and-minimizing-the-loss)
     - [Summaries](#summaries)
     - [Initializing the Variables](#initializing-the-variables)
@@ -162,10 +161,6 @@ with tf.name_scope("loss"):
 딥러닝은 레이어가 매우 복잡해질 수 있기 때문에 시각화가 중요하다. 텐서플로우에는 텐서보드라는 훌륭한 시각화 도구가 포함되어 있고 이를 이용해 시각화 할 수 있다. 자주 활용하여 각각의 레이어 입출력을 명확히 이해하는게 중요하다.
 
 <img src="http://d3kbpzbmcynnmx.cloudfront.net/wp-content/uploads/2015/12/Screen-Shot-2015-12-10-at-10.25.46-AM-1024x558.png" />
-
-#### Training Procedure
-
-이 부분은 텐서플로우의 세션과 그래프 작업에 대한 개념 이해가 필요하다. 아울러 딥러닝 자체보다 텐서플로우 프레임워크에 대한 부분이므로 자세한 사항은 원문을 참조하도록 하며 여기서는 간단히 넘어가도록 한다.
 
 #### Instantiating the CNN and Minimizing the Loss
 
