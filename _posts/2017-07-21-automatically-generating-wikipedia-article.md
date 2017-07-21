@@ -13,7 +13,7 @@ title: ! '위키피디어 글 자동 생성: 구조 중심 접근'
 
 논문의 주제는 위키피디어의 글을 자동으로 생성하는 내용입니다. 도메인에 특화된 템플릿을 선정하고 주제별 검색 결과를 꽂아서 보여주는 방식이 최종 결과가 문서냐 검색 결과냐의 차이만 있을뿐 [서치라이트](https://s.kakao.com)의 구조와 매우 유사합니다. 좀 지난(2009년) 논문이긴 해도 당시 퍼셉트론을 이용해 파라미터를 학습하고 이를 통해 각각의 주제에서 발췌를 결합하여 새로운 문서를 만들어 냈습니다. 코드도 공개되어 있는데 퍼셉트론을 파이썬 코딩으로 직접 구현했습니다. 지금은 좋은 딥러닝 라이브러리가 많으니 논문의 코드 보다 훨씬 더 쉽게 구현할 수 있을거 같네요.
 
-* 논문: Automatically Generating Wikipedia Article: A Structure-Aware Approach, Christina and Regina, 2009 <http://www.aclweb.org/anthology/P09-1024>
+* 논문: Automatically Generating Wikipedia Article: A Structure-Aware Approach, C Sauper and R Barzilay, 2009 <http://www.aclweb.org/anthology/P09-1024>
 * 코드: <https://github.com/csauper/wikipedia>
 * 자동으로 생성된 위키피디어 문서: <http://people.csail.mit.edu/csauper/?page_id=64>
 * 위키피디어 히스토리에서 조회한 예전에 실제로 생성한 문서 내용: <https://en.wikipedia.org/w/index.php?title=3-M_syndrome&oldid=221932230>
