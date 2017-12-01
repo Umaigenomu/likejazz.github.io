@@ -30,29 +30,29 @@ GNU grep을 만든 Mike Haertel이 [why GNU grep is fast](http://lists.freebsd.o
 
 ![image](https://33.media.tumblr.com/2003356869d9d8e53f07525cc42d3616/tumblr_inline_n7z77oZld31qzgoac.jpg)
 
-사실 알고리즘이 전부인 코드라 이번에는 코딩보다는 알고리즘을 이해하는데 대부분의 시간을 할애했다. 워낙에 유명한 알고리즘이다 보니 예제 코드도 포럼, GitHub 뿐만 아니라 gist 에 까지 여러가지가 있는데 대부분은 C&amp;P 한 것에 불과하고(함수명이 모두 동일) 그 중 일부는 잘못된 코드도 있었다.
+사실 알고리즘이 전부인 코드라 이번에는 코딩보다는 알고리즘을 이해하는데 대부분의 시간을 할애했다. 워낙에 유명한 알고리즘이다 보니 예제 코드도 포럼, GitHub 뿐만 아니라 gist에 여러가지가 있는데 대부분은 C&P 한 것에 불과하고(함수명이 모두 동일) 그 중 일부는 잘못된 코드도 더러 있었다.
 
 *   1977년 출판된 원본 논문 PDF: [A Fast String Searching Algorithm](http://www.akira.ruc.dk/~keld/teaching/algoritmedesign_f05/Artikler/09/Boyer77.pdf)
 
 그나마 위키피디어에 있는 샘플이 논문에 가장 가까웠고, 실제로 위키피디어 C 코드는 변수명을 `string`, `stringlen`, `pat`, `patlen` 그리고 rule 테이블을 `delta1`, `delta2`로 명시하는등 논문과 명칭이 동일하고 논문에 명시된 알고리즘과 동일한 순서대로 작성되어 있다.
 
-원래 논문은 PDP-10 어셈블리로 구현되었으며(1977년에 쓰여진) 위키피디어에 C로 작성한 코드외에 python과 java 버전은 엉뚱하게도 논문과 다른 순서로 작성되어 있다. 애당초 이번에는 성능에 포커싱해 C 구현외에 다른 언어는 생각 해보지도 않았기에 망설임없이 C 코드를 fork해서 구현했다.
+원래 논문은 PDP-10 어셈블리로 구현되었으며(1977년에 쓰여진) 위키피디어에 C로 작성한 코드외에는 python과 java 버전은 엉뚱하게도 논문과 다른 순서로 작성되어 있다. 애당초 이번에는 성능에 포커싱해 C 구현외에 다른 언어는 생각 해보지도 않았기에 망설임없이 C 코드를 fork해서 구현했다.
 
-그렇게 해서 이번에도 아래와 같은 결과를 완성했다.
+그렇게 해서 아래와 같은 결과를 완성했다.
 
 ![](https://33.media.tumblr.com/cd17538fecd89306a93bf0b295708f73/tumblr_inline_n7z82875Wy1qzgoac.png)
 
-애당초 고성능이 가장 큰 목표이기에 shift 횟수와, match 판단을 위해 몇 개의 문자열(chars)을 비교했는지(compared)를 디버그로 출력하도록 했다. `#define DEBUG`를 하면 디버그가 출력되며 기본적으로 `define`한 상태로 커밋했다.
+애당초 고성능이 가장 큰 목표이기에 shift 횟수와, match 판단을 위해 몇 개의 문자열<sup>chars</sup>을 비교했는지<sup>compared</sup>를 디버그로 출력하도록 했다. `#define DEBUG`를 하면 디버그가 출력되며 기본적으로 `define`한 상태로 커밋했다.
 
-chars compared 값이 적을수록 더 최적화된 연산을 수행했다고 보면 된다. 물론&nbsp;여기에는 원래 계산해야 하는 preprocessing. 즉, delta table 계산 시간은 빠져있다. 각 예문별 연산 확인시 참고하기 바란다.
+chars compared 값이 적을수록 더 최적화된 연산을 수행했다고 보면 된다. 물론 여기에는 원래 계산해야 하는 preprocessing. 즉, delta table 계산 시간은 빠져있다. 각 예문별 연산 확인시 참고하기 바란다.
 
 이번에도 주말을 활용했는데 마침 바닷가로 캠핑을 가기로 한 날이라 노트북을 들고갈지 한참 고민을 했다.
 
 ![](https://33.media.tumblr.com/d5f16684ca98441fea4b105e4d55646b/tumblr_inline_n7z8fgUBuS1qzgoac.jpg)
 
-결국 가져갔고 바닷가에선 열심히 수영하고 놀아주고 애들 잘때 밤에, 낮에 애들 놀때 틈틈히 코딩했는데 다행히 만족스런 결과물을 얻을 수 있었다.
+결국 가져갔고 바닷가에선 열심히 수영하면서 놀아주고 애들 잘때 밤에, 낮에 애들 놀때 틈틈히 코딩했는데 다행히 만족스런 결과물을 얻을 수 있었다.
 
-사실 문자열 검색 같은 부분은 이미 좋은 라이브러리가 많이 나와있기 때문에 실제로 구현할 일은 거의 없다. 이번이 마지막이 될지도 모르는데, 덕분에 깊이 있게 짚어보고 넘어 갈 수 있는 좋은 기회였다.
+사실 문자열 검색 같은 부분은 이미 좋은 라이브러리가 많이 나와있기 때문에 실제로 구현할 일이 거의 없다. 어쩌면 이번이 마지막이 될지도 모르는 일인데 깊이 있게 짚어보고 넘어 갈 수 있는 좋은 기회였다.
 
 ## GitHub
 - [보이어-무어 문자열 검색 - GitHub](https://github.com/likejazz/boyer-moore-string-search)
