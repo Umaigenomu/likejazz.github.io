@@ -4,63 +4,56 @@
   {% include head.html %}
 
   <body>
-
-<dt-header>
-<div class="content l-page">
-  <a href="/" class="logo">
-
-  {% include sakura.html %}
-
-    The Missing Papers
-  </a>
-  <div class="nav">
-    <a href="http://likejazz.com/about">About</a>
-    <a href="http://likejazz.com">Blog</a>
+  <dt-header>
+  <div class="content l-page">
+    <a href="/" class="logo">
+      The Missing Papers
+    </a>
+    <div class="nav">
+      <a href="http://likejazz.com/about">About</a>
+      <a href="http://likejazz.com">Blog</a>
+    </div>
   </div>
-</div>
-</dt-header>
+  </dt-header>
 
-<div class="container content">
-  <main>
+  <div class="container content">
+    <main>
 
-<div style="padding: 10px 0; vertical-align: text-top;">
+    <div style="padding: 10px 0; vertical-align: text-top;">
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- docs -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1774358055784224"
-     data-ad-slot="5364121181"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- docs -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-1774358055784224"
+        data-ad-slot="5364121181"
+        data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
-</div>
+    </div>
 
-  {{ content }}
+    {{ content }}
 
-<div style="margin-bottom: 2rem"></div>
+    <div style="margin-bottom: 2rem"></div>
 
-  </main>
-</div>
-
-<dt-footer>
-<div class="l-page">
-  <div class="description">
-  <a href="/" class="logo">
-
-  {% include sakura.html %}
-
-    The Missing Papers
-  </a>
-  is a collection of Papers I have written.<br />
-  &copy; 2000 - <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>
-  <a href="http://likejazz.com/about">Sang-Kil Park</a> Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-nc/4.0/deed.ko">CC BY-NC 4.0</a>.<br />
-  This site design was brought from <a href="http://distill.pub">Distill</a>.
+    </main>
   </div>
-</div>
-</dt-footer>
+
+  <dt-footer>
+  <div class="l-page">
+    <div class="description">
+    <a href="/" class="logo">
+      The Missing Papers
+    </a>
+    is a collection of Papers I have written.<br />
+    &copy; 2000 - <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>
+    <a href="http://likejazz.com/about">Sang-Kil Park</a> Except where otherwise noted, content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-nc/4.0/deed.ko">CC BY-NC 4.0</a>.<br />
+    This site design was brought from <a href="http://distill.pub">Distill</a>.
+    </div>
+  </div>
+  </dt-footer>
 
   </body>
 </html>
