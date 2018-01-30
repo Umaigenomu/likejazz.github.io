@@ -67,7 +67,7 @@ Go는 C++, Java와 마찬가지로 해시 테이블을 구현한 `map`을 built-
 >
 > <https://golang.org/doc/faq#builtin_maps>
 
-`map`은 `string` 만큼이나 중요한 자료 구조이고 따라서 직접 견고한 형태로 만든 단일 구현이 훨씬 더 잇점이 높다고 판단했다. 다른 언어와 마찬가지로 [성능을 위해 thread-safe 하지 않도록 구현](https://golang.org/doc/faq#atomic_maps)하였는데, 이는 쉽지 않은 결정이었다고 한다. 초기에 자바가 모두 synchronized로 구현했다가 다시 자료형을 새로 만든 점도 영향을 끼쳤을듯 하다. 따라서 thread-safe가 필요한 경우 C++ 처럼 mutex를 통해 lock을 걸어 직접 처리해야 한다.
+`map`은 `string` 만큼이나 중요한 자료 구조이고 따라서 직접 견고한 형태로 만든 단일 구현이 훨씬 더 잇점이 높다고 판단했다. 다른 언어와 마찬가지로 성능을 위해 thread-safe 하지 않도록 구현하였는데, 이는 [쉽지 않은 결정](https://golang.org/doc/faq#atomic_maps)이었다고 한다. 초기에 자바가 모두 synchronized로 구현했다가 다시 자료형을 새로 만든 점도 영향을 끼쳤을듯 하다. 따라서 thread-safe가 필요한 경우 C++ 처럼 mutex를 통해 lock을 걸어 직접 처리해야 한다.
 
 #### Python
 파이썬의 내부 자료 구조인 `dict`는 해시 테이블로 구현되어 있다. 다른 언어와는 달리 파이썬은 모든 자료 구조가 thread-safe 하고 대부분의 명령이 atomic 하다. 이는 CPython GIL의 영향인데 덕분에 파이썬은 번거로운 동시성 관리에서 해방되었지만, 반면에 한 쓰레드만 실행이 되는 기이한 구조가 되었다.
