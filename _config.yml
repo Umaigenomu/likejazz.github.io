@@ -30,3 +30,7 @@ github:
 # Custom Gems
 gems:
   - jekyll-redirect-from
+
+# Sitemaps
+plugins:
+  - jekyll-sitemap
