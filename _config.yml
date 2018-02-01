@@ -6,7 +6,6 @@ permalink:           "/:title/"
 title:               The Missing Papers
 tagline:             Sang-Kil Park
 url:                 http://docs.likejazz.com
-paginate:            1
 baseurl:             ""
 
 # Assets
@@ -28,9 +27,6 @@ github:
   repo:              https://github.com/poole/poole
 
 # Custom Gems
-gems:
-  - jekyll-redirect-from
-
-# Sitemaps
 plugins:
+  - jekyll-redirect-from
   - jekyll-sitemap
