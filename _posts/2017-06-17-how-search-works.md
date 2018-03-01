@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 검색은 어떻게 동작하나요
+tags: [Information Retreival]
 ---
 
 <div class="message">
@@ -8,6 +9,13 @@ Code.org에서 검색이 동작하는 원리에 대해 알기 쉽게 소개한 �
 </div>
 
 *2017년 6월 17일 초안 작성*
+
+<!-- TOC -->
+
+- [내용](#내용)
+- [정리](#정리)
+
+<!-- /TOC -->
 
 ## 내용
 

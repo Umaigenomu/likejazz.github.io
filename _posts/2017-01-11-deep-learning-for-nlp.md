@@ -1,6 +1,7 @@
 ---
 layout: post
 title: NLP를 위한 딥러닝 가이드
+tags: [Machine Learning]
 ---
 
 <div class="message">

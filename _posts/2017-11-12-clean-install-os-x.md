@@ -1,22 +1,19 @@
 ---
 layout: post
 title: macOS 설치 프로그램 정리
+tags: Productivity
 ---
 
 <div class="message">
 이 글은 원래 요세미티 출시와 함께 맥북에 클린 인스톨을 했던 경험의 기록이다. 그러나 엘 캐피탄 출시와 함께 업데이트된 내용을 추가했고 이후 꾸준히 갱신하여 맥북 프로 터치바에 하이 시에라를 설치한 기록까지 정리해 보았다.
 </div>
 
-- *2017년 11월 12일 하이 시에라 설치*  
-- *2017년 1월 20일 맥북 프로 터치바 셋팅*  
-- *2016년 6월 22일 최신 내용 반영*  
-- *2015년 11월 26일 엘 캐피탄 업데이트*  
-- *2015년 5월 19일 1차 개정*  
-- *2014년 10월 23일 초안 작성*
-
-<img src="/images/2017/touchbar.jpg" width="99%" />  
-<img src="https://c2.staticflickr.com/8/7333/27218763503_715ebb8a06_b.jpg" width="49%" align="left" style="margin-right: 10px" /><img src="https://farm8.staticflickr.com/7673/17228888583_65c885c6d5_b.jpg" width="49%" />
-*2017년 1월 맥북 프로 터치바(상단), 2016년 6월(하단 좌), 2015년(하단 우)의 모습*
+*2017년 11월 12일 하이 시에라 설치*  
+*2017년 1월 20일 맥북 프로 터치바 셋팅*  
+*2016년 6월 22일 최신 내용 반영*  
+*2015년 11월 26일 엘 캐피탄 업데이트*  
+*2015년 5월 19일 1차 개정*  
+*2014년 10월 23일 초안 작성*  
 
 <!-- TOC -->
 
@@ -33,6 +30,12 @@ title: macOS 설치 프로그램 정리
     - [자료](#자료)
 
 <!-- /TOC -->
+
+<img src="/images/2017/touchbar.jpg" width="99%" />  
+<img src="https://c2.staticflickr.com/8/7333/27218763503_715ebb8a06_b.jpg" width="49%" align="left" style="margin-right: 10px" /><img src="https://farm8.staticflickr.com/7673/17228888583_65c885c6d5_b.jpg" width="49%" />
+2017년 1월 맥북 프로 터치바(상단)  
+2016년 6월(하단 좌)  
+2015년(하단 우)의 모습
 
 ## 내용
 ### 기본 설정

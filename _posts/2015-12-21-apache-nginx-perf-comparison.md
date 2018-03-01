@@ -1,11 +1,19 @@
 ---
 layout: post
 title: Apache 와 Nginx 의 PHP 성능 비교
+tags: [Network & Internet]
 ---
 
 <div class="message">
 이벤트 방식인 Nginx 는 프로세스/쓰레드 방식인 Apache 에 비해 월등한 성능을 보이는 것으로 알려져 있다. 실제로 Static 파일들 CS, JSS 의 경우엔 두드러져 보이는데, 그렇다면 CGI 도 이에 해당되는지 특히 PHP 의 경우를 예로 들어 살펴본다.
 </div>
+
+- [내용](#내용)
+    - [PHP](#php)
+    - [사양](#사양)
+    - [성능 테스트](#성능-테스트)
+    - [전통적인 CGI](#전통적인-cgi)
+- [결론](#결론)
 
 ## 내용
 
@@ -94,7 +102,7 @@ PHP 를 웹으로 서빙하는 케이스는 크게 3 종류로 나눌 수 있다
       <td>Bash</td>
       <td>870 TPS</td>
       <td>
-      {% highlight bash %}
+{% highlight bash %}
 #!/bin/bash
 echo "Content-type: text/html"
 echo ''
@@ -103,7 +111,7 @@ echo '<body>'
 echo '<h1>CGI Bash Example</h1>'
 echo '</body>'
 echo '</html>'
-      {% endhighlight %}
+{% endhighlight %}
       </td>
     </tr>
     <tr>

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 합성곱 신경망(CNN) 딥러닝을 이용한 한국어 문장 분류
+tags: [Machine Learning]
 ---
 
 <div class="message">

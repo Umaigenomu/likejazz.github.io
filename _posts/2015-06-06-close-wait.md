@@ -1,13 +1,27 @@
 ---
 layout: post
 title: CLOSE_WAIT 문제 해결
+tags: [Network & Internet]
 ---
 
 <div class="message">
 서버 부하 테스트 중 CLOSE_WAIT 상태에서 더 이상 커넥션을 맺지 못하고 행업 상태에 빠지는 서버를 분석하고 원인을 찾아 문제를 해결한다.
 </div>
 
-- *2015년 5월 23일 초안 작성*
+*2015년 5월 23일 초안 작성*
+
+<!-- TOC -->
+
+- [내용](#내용)
+    - [현상](#현상)
+    - [TCP 상태](#tcp-상태)
+    - [CLOSE_WAIT 재현](#close_wait-재현)
+    - [CLOSE_WAIT 종료](#close_wait-종료)
+    - [원인](#원인)
+- [해결](#해결)
+    - [References](#references)
+
+<!-- /TOC -->
 
 ## 내용
 

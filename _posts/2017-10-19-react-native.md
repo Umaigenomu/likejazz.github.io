@@ -1,6 +1,7 @@
 ---
 layout: post
 title: React Native 개발 경험 정리
+tags: [Mobile Development]
 ---
 
 <div class="message">
@@ -9,6 +10,18 @@ title: React Native 개발 경험 정리
 
 *2017년 10월 19일 편집 및 게시*  
 *2016년 6월 10일 초안 작성*
+
+<!-- TOC -->
+
+- [내용](#내용)
+    - [개요](#개요)
+    - [native 빌드](#native-빌드)
+    - [디버깅](#디버깅)
+    - [Nuclide IDE](#nuclide-ide)
+    - [XML 처리](#xml-처리)
+    - [어려운 점](#어려운-점)
+
+<!-- /TOC -->
 
 ## 내용
 
