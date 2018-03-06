@@ -14,7 +14,7 @@ tags: [Machine Learning]
 <!-- TOC -->
 
 - [내용](#내용)
-    - [나이브 베이즈](#나이브-베이즈)
+    - [나이브 베이즈 모듈](#나이브-베이즈-모듈)
     - [뉴스 분류](#뉴스-분류)
     - [확률 모델](#확률-모델)
         - [다항 분포 나이브 베이즈](#다항-분포-나이브-베이즈)
@@ -24,7 +24,7 @@ tags: [Machine Learning]
 <!-- /TOC -->
 
 ## 내용
-### 나이브 베이즈
+### 나이브 베이즈 모듈
 scikit-learn의 나이브 베이즈 모듈인 `sklearn.naive_bayes`는 총 3가지 나이브 베이즈 분류기를 제공한다.
 1. Gaussian Naive Bayes
 1. Multinomial Naive Bayes
