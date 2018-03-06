@@ -19,6 +19,7 @@ tags: [Machine Learning]
     - [확률 모델](#확률-모델)
         - [다항 분포 나이브 베이즈](#다항-분포-나이브-베이즈)
         - [베르누이 나이브 베이즈](#베르누이-나이브-베이즈)
+- [정리](#정리)
 
 <!-- /TOC -->
 
@@ -118,3 +119,10 @@ array([0.72480181, 0.27519819])
 출현 빈도<sup>occurences</sup>를 반영하는 다항 분포와 달리 베르누이의 확률 값은 다르게 나오지만, 앞서 언급한 대로 나이브 베이즈의 확률 추정은 정교하지 않으며, 대신 판별 성능이 좋다. 즉, 판별 값은 여전히 동일함을 확인할 수 있다.
 
 베르누이는 수십개 이하의 작은 모델로도 상당한 성능을 보이며, 개념 이동<sup>concept drift</sup>(예를 들어 미국의 대통령이 오바마에서 트럼프로 변한 것 같은)에도 잘 적응한다. 다만, 빈도 수를 반영하지 않으므로 이 같은 특성에 따른 적절한 모델을 잘 선택하는 것이 중요하다.
+
+## 정리
+계산을 직접 진행한 주피터 노트북은 각각 아래와 같다.
+
+- [나이브 베이즈 확률 모델 계산](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/multinomial-naive-bayes.ipynb)
+- [뉴스 카테고리 분류 실험](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/news-classification.ipynb)
+- [뉴스 카테고리 분류 나이브 베이즈 간 비교 실험](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/news-classification-nb.ipynb)
