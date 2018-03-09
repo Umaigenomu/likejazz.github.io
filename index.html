@@ -4,17 +4,19 @@ title: Home
 ---
 
 <div class="archive">
-  {% for tag in site.tags %}
-    <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
-    {% for post in tag[1] %}
-    <article class="post">
-      {% unless post.invisible %}
-      <h1>
-        <time datetime="{{ post.date | date_to_xmlschema }}" class="archive-date">{{ post.date | date: "%b %d, %Y" }}</time>
-        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-      </h1>
-      {% endunless %}
-    </article>
+
+  {% for tag in site.tags reversed %}
+    <h2 id="{{ tag[0] | slugify }}">{{ tag | first }}</h2>
+      {% for post in tag[1] %}
+      <article class="post">
+        {% unless post.invisible %}
+        <h1>
+          <time datetime="{{ post.date | date_to_xmlschema }}" class="archive-date">{{ post.date | date: "%b %d, %Y" }}</time>
+          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </h1>
+        {% endunless %}
+      </article>
     {% endfor %}
   {% endfor %}
+
 </div>
