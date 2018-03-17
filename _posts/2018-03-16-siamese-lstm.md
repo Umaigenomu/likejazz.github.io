@@ -19,6 +19,7 @@ tags: [Machine Learning]
         - [모델](#모델)
         - [Keras 커스텀 레이어](#keras-커스텀-레이어)
     - [학습 결과](#학습-결과)
+    - [Production을 위해](#production을-위해)
 - [참고](#참고)
 
 <!-- /TOC -->
@@ -106,7 +107,7 @@ for word, index in vocabs.items():
 
 이는 구글의 word2vec 모델(압축해서 1.6G)을 로딩하는 시간인데, Production에는 이 부분의 최적화가 필요하다. 이후 불용어<sup>Stopwords</sup>를 제외하고, 모든 단어를 일련 번호로 표현하여 별도의 Pandas 컬럼에 업데이트 한다.
 
-임베딩에는 word2vec의 300차원 임베딩이 들어가는데, 초기값은 랜덤하게 설정한다. 즉, 불용어를 제외한, 구글의 word2vec 모델에 존재하지 않는 단어는 랜덤하게 임베딩된다.
+임베딩에는 word2vec의 300차원 임베딩이 들어가는데, 초기값은 랜덤하게 설정한다. 즉, 불용어를 제외한, word2vec 모델에 존재하지 않는 단어는 랜덤하게 임베딩된다.
 
 #### 모델
 ```python
@@ -154,7 +155,7 @@ class ManDist(Layer):
 MATLAB에 맨하탄 거리를 계산하는 같은 메소드 명이 있어 동일하게 `ManDist` 레이어로 명명하여 맨하탄 거리를 계산했다. save 한 모델을 `load_model` 할때는 동일한 커스텀 레이어를 다시 지정해 주어야 모델 계산이 진행된다. 따라서 `util.py`에 별도로 정의했고 train/predict 모두 같은 모델을 `import` 하여 사용한다.
 
 ### 학습 결과
-그렇게 50 epochs(NVIDIA Tesla P40 GPU x 2, batch size=2048)를 진행한 결과는 아래와 같다.
+그렇게 50 epochs(NVIDIA Tesla P40 GPU x 2, batch size=1024*2)를 진행한 결과는 아래와 같다.
 ```
 Epoch 50/50
 363861/363861 [==============================] - 12s 33us/step - loss: 0.1172 - acc: 0.8486 - val_loss: 0.1315 - val_acc: 0.8229
@@ -168,7 +169,8 @@ Validation 셋으로 **82.29%**의 정확도가 나왔다.
 
 학습에는 NVIDIA Tesla P40 GPU 2장을 사용했는데, LSTM의 Sequential하게 처리되는 특성상 CPU에 비해 학습 속도가 높지 않다. 이 경우 배치 사이즈를 키우고 epochs를 늘리는 방향으로 GPU utilization을 높일 수 있다. 배치 사이즈가 커져도 속도 향상이 거의 없는 CPU와 달리 GPU는 배치 사이즈에 따른 속도 향상이 선형적으로 증가한다. 다만, [라지 배치에서는 모델의 품질 문제](https://stats.stackexchange.com/questions/164876/tradeoff-batch-size-vs-number-of-iterations-to-train-a-neural-network/236393#236393)가 있다고 하니 주의가 필요하다. 여기서는 배치 사이즈를 임의로 크게 하여 GPU의 잇점을 최대한 살리도록 했다.
 
-추후에 Production을 위해서는 각 문장의 LSTM 결과를 캐싱하고 near-duplicates 알고리즘을 사용하여 후보군을 골라내어 확률이 높은 문장을 대상으로 비교 횟수를 줄이고, Keras로 빌드한 모델은 C++에서 디코딩하여 CPU로 서비스 하는 형태가 되면 좋을 것 같다.
+### Production을 위해
+추후에 Production을 위해서는 각 문장의 LSTM 결과를 캐싱하고 near-duplicates 알고리즘을 사용하여 후보군을 골라내어 확률이 높은 문장을 대상으로 비교 횟수를 줄이고, 임베딩을 최적화하고 Keras로 빌드한 모델은 C++에서 디코딩하여 CPU로 서비스 할 수 있도록 구성하면 훨씬 더 효울을 높일 수 있을 것 같다.
 
 ## 참고
 - 코드 참고: [likejazz/Siamese-LSTM](https://github.com/likejazz/Siamese-LSTM)
