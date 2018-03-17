@@ -36,7 +36,7 @@ tags: [Machine Learning]
 
 <img src="https://cloud.githubusercontent.com/assets/9861437/20479493/6ea8ad12-b004-11e6-89e4-53d4d354d32e.png" />
 
-similarity function은 단순한 구성으로, $e^{-x}$ 곡선을 따르도록 되어 있다. 즉, 거리가 0에 가까울 수록 결과는 1이 되고, 거리가 커질수록 결과는 0에 무한히 가까워 진다. 레이블 또한 의미론적으로 유사한 문장은 1이 부여되어 있고, 다른 문장은 0이 부여되어 별도의 activation function 없이 이 값을 일치시키는 형태로 레이어가 구성된다. cost function은 이 차이에 대한 MSE를 사용한다.
+similarity function은 단순한 구성으로, $$e^{-x}$$ 곡선을 따르도록 되어 있다. 즉, 거리가 0에 가까울 수록 결과는 1이 되고, 거리가 커질수록 결과는 0에 무한히 가까워 진다. 레이블 또한 의미론적으로 유사한 문장은 1이 부여되어 있고, 다른 문장은 0이 부여되어 별도의 activation function 없이 이 값을 일치시키는 형태로 레이어가 구성된다. cost function은 이 차이에 대한 MSE를 사용한다.
 
 기존에 주로 사용하던 유클리드 거리는 크게 두 가지 문제가 있다고 한다.
 
