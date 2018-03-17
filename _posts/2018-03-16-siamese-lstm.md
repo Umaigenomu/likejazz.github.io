@@ -45,7 +45,7 @@ tags: [Machine Learning]
 
 <img src="https://user-images.githubusercontent.com/1250095/37522462-572c2de8-2967-11e8-9bd0-d40a6d7e40b5.png" width="70%" />
 
-MsLSTM은 실제 연결 강도와 매우 유사함을 확인할 수 있다. Richard Socher 쪽에서 나온 논문인 Tree-LSTM과도 비교하는데, 당연히 이번에도 MaLSTM의 결과가 더 좋았다고 한다.
+MaLSTM은 실제 연결 강도와 매우 유사함을 확인할 수 있다. Richard Socher 쪽에서 나온 논문인 Tree-LSTM과도 비교하는데, 당연히 이번에도 MaLSTM의 결과가 더 좋았다고 한다.
 
 <img src="https://user-images.githubusercontent.com/1250095/37522514-85677910-2967-11e8-8878-e60ef7cf0fad.png" width="70%" />
 
@@ -102,7 +102,7 @@ for word, index in vocabs.items():
 
 첫 실행시 시간이 다소 걸린다.
 
-이는 구글의 word2vec 모델(압축해서 1.5G)을 로딩하는 시간인데, Production에는 이 부분의 최적화가 필요하다. 이후 불용어<sup>Stopwords</sup>를 제외하고, 모든 단어를 일련 번호로 표현하여 별도의 Pandas 컬럼에 업데이트 한다.
+이는 구글의 word2vec 모델(압축해서 1.6G)을 로딩하는 시간인데, Production에는 이 부분의 최적화가 필요하다. 이후 불용어<sup>Stopwords</sup>를 제외하고, 모든 단어를 일련 번호로 표현하여 별도의 Pandas 컬럼에 업데이트 한다.
 
 임베딩에는 word2vec의 300차원 임베딩이 들어가는데, 초기값은 랜덤하게 설정한다. 즉, 불용어를 제외한, 구글의 word2vec 모델에 존재하지 않는 단어는 랜덤하게 임베딩된다.
 
@@ -122,7 +122,7 @@ LSTM 자체가 워낙에 학습 속도가 늦기 때문인데, NVIDIA Tesla P40�
 Zero Padding은 앞<sup>pre</sup>에 뒀는데, 인풋 데이터가 left, right 양쪽 모두 동일한 사이즈로 고정되어야 하는 만큼 Zero Padding을 뒤에 두면 vanishing gradients가 우려되어 앞으로 처리했고, 논문 구현도 같은 방식으로 되어 있다.
 
 #### Keras 커스텀 레이어
-맨하탄 거리를 계산하기 위해 Keras의 커스텀 레이어도 만들었다.
+맨하탄 거리를 계산하기 위해 Keras의 커스텀 레이어를 만들었다.
 
 ```python
 class ManDist(Layer):
@@ -152,25 +152,14 @@ class ManDist(Layer):
 MATLAB에 맨하탄 거리를 계산하는 같은 메소드 명이 있어 동일하게 `ManDist` 레이어로 명명하여 맨하탄 거리를 계산했다. save 한 모델을 `load_model` 할때는 동일한 커스텀 레이어를 다시 지정해 주어야 모델 계산이 진행된다. 따라서 `util.py`에 별도로 정의했고 train/predict 모두 같은 모델을 `import` 하여 사용한다.
 
 ### 학습 결과
-그렇게 20 epochs를 진행해본 결과는 아래와 같다.
+그렇게 150 epochs를 진행해본 결과는 아래와 같다.
 ```
-Epoch 15/20
-363861/363861 [==============================] - 142s 391us/step - loss: 0.1179 - acc: 0.8467 - val_loss: 0.1325 - val_acc: 0.8211
-Epoch 16/20
-363861/363861 [==============================] - 143s 393us/step - loss: 0.1170 - acc: 0.8485 - val_loss: 0.1324 - val_acc: 0.8201
-Epoch 17/20
-363861/363861 [==============================] - 142s 391us/step - loss: 0.1161 - acc: 0.8504 - val_loss: 0.1317 - val_acc: 0.8216
-Epoch 18/20
-363861/363861 [==============================] - 149s 409us/step - loss: 0.1152 - acc: 0.8514 - val_loss: 0.1316 - val_acc: 0.8213
-Epoch 19/20
-363861/363861 [==============================] - 148s 408us/step - loss: 0.1144 - acc: 0.8526 - val_loss: 0.1313 - val_acc: 0.8229
-Epoch 20/20
-363861/363861 [==============================] - 149s 409us/step - loss: 0.1137 - acc: 0.8539 - val_loss: 0.1315 - val_acc: 0.8217
+363861/363861 [==============================] - 162s 444us/step - loss: 0.0857 - acc: 0.8993 - val_loss: 0.1345 - val_acc: 0.8225
 Training time finished.
-20 epochs in      2920.21
+150 epochs in     22965.92
 ```
 
-Validation 셋으로 **82.17%**의 정확도가 나왔다. 
+Validation 셋으로 **82.25%**의 정확도가 나왔다. 
 
 정확도는 Keras의 디폴트인 0.5를 기준으로 true/false만 판단하는데 그렇게 한 것 치고는 나쁘지 않다. odds ratio를 높게 설정한다던지 해서 out of domain 처리를 하면 훨씬 더 정확도를 높일 수 있을 것 같다. 참고로 학습 데이터인 Quora의 Question Pairs는 40만개 학습셋이 제공되었고, 이 중 10% 비율을 Validation에 할당하여 4만개로 평가 했다.
 
