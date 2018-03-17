@@ -154,18 +154,21 @@ class ManDist(Layer):
 MATLAB에 맨하탄 거리를 계산하는 같은 메소드 명이 있어 동일하게 `ManDist` 레이어로 명명하여 맨하탄 거리를 계산했다. save 한 모델을 `load_model` 할때는 동일한 커스텀 레이어를 다시 지정해 주어야 모델 계산이 진행된다. 따라서 `util.py`에 별도로 정의했고 train/predict 모두 같은 모델을 `import` 하여 사용한다.
 
 ### 학습 결과
-그렇게 150 epochs를 진행해본 결과는 아래와 같다.
+그렇게 50 epochs(NVIDIA Tesla P40 GPU x 2, batch size=2048)를 진행해본 결과는 아래와 같다.
 ```
-363861/363861 [==============================] - 162s 444us/step - loss: 0.0857 - acc: 0.8993 - val_loss: 0.1345 - val_acc: 0.8225
+Epoch 50/50
+363861/363861 [==============================] - 12s 33us/step - loss: 0.1172 - acc: 0.8486 - val_loss: 0.1315 - val_acc: 0.8229
 Training time finished.
-150 epochs in     22965.92
+50 epochs in       601.24
 ```
 
-Validation 셋으로 **82.25%**의 정확도가 나왔다. 
+Validation 셋으로 **82.29%**의 정확도가 나왔다. 
 
 정확도는 Keras의 디폴트인 0.5를 기준으로 true/false만 판단하는데 그렇게 한 것 치고는 나쁘지 않다. odds ratio를 높게 설정한다던지 해서 out of domain 처리를 하면 훨씬 더 정확도를 높일 수 있을 것 같다. 참고로 학습 데이터인 Quora의 Question Pairs는 40만개 학습셋이 제공되었고, 이 중 10% 비율을 Validation에 할당하여 4만개로 평가 했다.
 
-추후에 서비스를 위해서는 각 문장의 LSTM 결과를 캐싱하고 near-duplicates 알고리즘을 사용하여 후보군을 골라내어 확률이 높은 문장만을 대상으로 빠르게 비교하고, Keras로 빌드한 모델은 C++에서 디코딩하여 CPU로 서비스 하는 형태가 되면 더할 나위가 없을 것 같다.
+학습에는 NVIDIA Tesla P40 GPU 2장을 사용했는데, LSTM의 Sequential하게 처리되는 특성상 CPU에 비해 학습 속도가 높지 않다. 이 경우 배치 사이즈를 키우고 epochs를 늘리는 방향으로 GPU utilization을 더 높일 수 있다. 배치 사이즈가 커져도 속도 향상이 거의 없는 CPU와 달리 GPU는 배치 사이즈에 따른 속도 향상이 선형적으로 증가한다. 다만, [라지 배치에서는 모델의 품질 문제](https://stats.stackexchange.com/questions/164876/tradeoff-batch-size-vs-number-of-iterations-to-train-a-neural-network/236393#236393)가 있다고 하니 주의가 필요하다.
+
+추후에 서비스를 위해서는 각 문장의 LSTM 결과를 캐싱하고 near-duplicates 알고리즘을 사용하여 후보군을 골라내어 확률이 높은 문장을 대상으로 비교 횟수를 줄이고, Keras로 빌드한 모델은 C++에서 디코딩하여 CPU로 서비스 하는 형태가 되면 좋을 것 같다.
 
 ## 참고
 - 코드 참고: [likejazz/Siamese-LSTM](https://github.com/likejazz/Siamese-LSTM)
