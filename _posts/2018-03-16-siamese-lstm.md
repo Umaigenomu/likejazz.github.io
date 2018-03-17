@@ -24,7 +24,7 @@ tags: [Machine Learning]
 <!-- /TOC -->
 
 ## 내용
-[Siamese Recurrent Architectures for Learning Sentence Similarity](http://www.mit.edu/~jonasm/info/MuellerThyagarajan_AAAI16.pdf) 논문을 읽어보고 구현한 결과를 간단히 정리한다.
+[Siamese Recurrent Architectures for Learning Sentence Similarity](http://www.mit.edu/~jonasm/info/MuellerThyagarajan_AAAI16.pdf) 논문을 읽어보고 구현한 결과를 정리한다. 코드를 구현한 깃헙은 아래 링크에 있다.
 
 - 코드 참고: [likejazz/Siamese-LSTM](https://github.com/likejazz/Siamese-LSTM)
 
@@ -36,16 +36,18 @@ tags: [Machine Learning]
 
 <img src="https://cloud.githubusercontent.com/assets/9861437/20479493/6ea8ad12-b004-11e6-89e4-53d4d354d32e.png" />
 
+similarity function은 단순한 구성으로, $e^{-x}$ 곡선을 따르도록 되어 있다. 즉, 거리가 0에 가까울 수록 결과는 1이 되고, 거리가 커질수록 결과는 0에 무한히 가까워 진다. 레이블 또한 의미론적으로 유사한 문장은 1이 부여되어 있고, 다른 문장은 0이 부여되어 별도의 activation function 없이 이 값을 일치시키는 형태로 레이어가 구성된다. cost function은 이 차이에 대한 MSE를 사용한다.
+
 기존에 주로 사용하던 유클리드 거리는 크게 두 가지 문제가 있다고 한다.
 
-1. 유사도를 판단하는 문제에 L2를 사용하면 objective function이 원치 않는 고원 형태(undesirable plateaus)가 될 수 있다. (Chopra, Hadsell, and LeCun, 2005) 즉, 학습이 늦고 global minima를 찾기가 힘들어 진다.
-1. 학습 초기 단계에서 L2는 유클리드 거리의 vanishing gradients로 인한 에러를 보정하기 어렵다. 의미적으로 잘못 판단된 문장을 보정하는게 어렵다고 한다.
+1. 유사도를 판단하는 문제에 L2를 사용하면 objective function이 원치 않는 고원 형태<sup>undesirable plateaus</sup>가 될 수 있다. (Chopra, Hadsell, and LeCun, 2005) 즉, 학습이 늦고 global minima를 찾기 힘들어 진다.
+1. 학습 초기 단계에 L2는 유클리드 거리의 vanishing gradients로 인한 에러를 보정하기 어렵다. 의미적으로 잘못 판단된 문장을 보정하는게 어렵다고 한다.
 
-다양한 실험을 통해 맨하탄 거리를 사용하는 방법이 코사인 유사도 등을 사용하는 것 보다 결과가 더 좋았다고 하는데, 아래는 SICK 데이터셋에 포함된 연결 강도와 MaLSTM(맨 우측)의 비교다.
+논문에서는 다양한 실험을 했고, 맨하탄 거리를 사용하는 것이 코사인 유사도 등을 사용하는 것 보다 결과가 더 좋았다고 한다. 아래는 SICK 데이터셋에 포함된 연결 강도와 MaLSTM(맨 우측)의 비교다.
 
 <img src="https://user-images.githubusercontent.com/1250095/37522462-572c2de8-2967-11e8-9bd0-d40a6d7e40b5.png" width="70%" />
 
-MaLSTM은 실제 연결 강도와 매우 유사함을 확인할 수 있다. Richard Socher 쪽에서 나온 논문인 Tree-LSTM과도 비교하는데, 당연히 이번에도 MaLSTM의 결과가 더 좋았다고 한다.
+MaLSTM은 실제 연결 강도와 매우 유사함을 확인할 수 있다. Richard Socher쪽에서 나온 논문인 Tree-LSTM과도 비교하는데, 당연히 이번에도 MaLSTM의 결과가 더 좋았다고 한다.
 
 <img src="https://user-images.githubusercontent.com/1250095/37522514-85677910-2967-11e8-8878-e60ef7cf0fad.png" width="70%" />
 
@@ -55,7 +57,7 @@ Tree-LSTM은 부정의 의미를 판별하지 못한 문장도 MaLSTM이 제대�
 
 텐서플로 구현이 논문과 함께 공개되었는데, 코드가 다소 지저분하고 정리되지 않아 단순한 모델임에도 불구하고 실험해보기가 쉽지 않았다. 논문을 함께 쓴 인도 학생도 깃헙을 공개했는데, 그쪽은 더 지저분.
 
-차라리 Kaggle의 Quora Competition 쪽의 커널이 깔끔하게 잘 정리된게 많아서 그쪽을 계속 살펴보다가 누군가 [미디엄에 Keras 구현](https://medium.com/mlreview/implementing-malstm-on-kaggles-quora-question-pairs-competition-8b31b0b16a07)을 올렸고 그걸 가장 많이 참조했다. 정말 알기쉽게 잘 설명한 글로 추천한다. Production을 목표로 하기 위해 Keras의 커스텀 레이어도 처음으로 만들어 봤고(생각보다 어렵지 않았다) train/predict를 구분하고, 코드를 좀 더 정리해봤다.
+Kaggle의 Quora Competition 쪽의 커널이 깔끔하게 잘 정리된게 많아서 그쪽을 계속 살펴보다가 한 데이터 과학자가 [미디엄에 Keras 구현](https://medium.com/mlreview/implementing-malstm-on-kaggles-quora-question-pairs-competition-8b31b0b16a07)을 올렸고 그걸 가장 많이 참조했다. 정말 알기쉽게 잘 설명하고 있다. Production을 목표로 하기 위해 Keras의 커스텀 레이어도 처음으로 만들어 봤고(생각보다 어렵지 않았다) train/predict를 구분하고, 코드를 좀 더 정리해봤다.
 
 ### 코드
 
