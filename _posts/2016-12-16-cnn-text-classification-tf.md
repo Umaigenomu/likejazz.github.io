@@ -35,7 +35,7 @@ tags: [Machine Learning]
 
 ## 소개
 
-CNN 알고리즘은 주로 이미지의 특징을 추출하여 유사점을 찾는 이미지 판단에 사용되었다. 합성곱(Convolution)이 핵심으로 매트릭스에 적용하는 슬라이딩 윈도우 함수를 생각하면 이해하기 쉽다.[^fn-1]
+CNN 알고리즘은 주로 이미지의 특징을 추출하여 유사점을 찾는 이미지 판단에 사용되었다. 합성곱<sup>convolution</sup>이 핵심으로 매트릭스에 적용하는 슬라이딩 윈도우 함수를 생각하면 이해하기 쉽다.[^fn-1]
 
 <img src="http://deeplearning.stanford.edu/wiki/images/6/6c/Convolution_schematic.gif" />
 
@@ -55,7 +55,7 @@ CNN 알고리즘은 주로 이미지의 특징을 추출하여 유사점을 찾�
 
 ## 내용
 
-개념과 원리만 소개하는 여타 논문과 달리 원문에서는 텐서플로우를 이용해 직접 실행 가능한 코드를 제공한다. [원본 코드는 깃헙](https://github.com/dennybritz/cnn-text-classification-tf)에 있으며 이를 [포크(fork)하여 몇몇 부분은 직접 개선](https://github.com/likejazz/cnn-text-classification-tf)했다. 특히 본 문서에서는 영어가 아닌 [한국어 문장 분류를 위해 패치한 버전](https://github.com/likejazz/cnn-text-classification-tf)을 활용하도록 한다. 아울러 원문에는 긍정/부정의 이중 분류만 가능하도록 되어 있으나 마침 [makinada라는 사용자가 다중 분류가 가능하도록 PR을 제공](https://github.com/dennybritz/cnn-text-classification-tf/pull/50)했고 본 문서를 작성하는 현 시점에 아직 업스트림에 머지 되진 않았으나 개선 버전에는 미리 적용하여 수정을 거쳐 실제 사용해 보기로 한다.
+개념과 원리만 소개하는 여타 논문과 달리 원문에서는 텐서플로우를 이용해 직접 실행 가능한 코드를 제공한다. [원본 코드는 깃헙](https://github.com/dennybritz/cnn-text-classification-tf)에 있으며 이를 [포크하여 몇몇 부분은 직접 개선](https://github.com/likejazz/cnn-text-classification-tf)했다. 특히 본 문서에서는 영어가 아닌 [한국어 문장 분류를 위해 패치한 버전](https://github.com/likejazz/cnn-text-classification-tf)을 활용하도록 한다. 아울러 원문에는 긍정/부정의 이중 분류만 가능하도록 되어 있으나 마침 [makinada라는 사용자가 다중 분류가 가능하도록 PR을 제공](https://github.com/dennybritz/cnn-text-classification-tf/pull/50)했고 본 문서를 작성하는 현 시점에 아직 업스트림에 머지 되진 않았으나 개선 버전에는 미리 적용하여 수정을 거쳐 실제 사용해 보기로 한다.
 
 ### 전처리(NLP Preprocessing)
 
@@ -63,14 +63,14 @@ CNN 알고리즘은 주로 이미지의 특징을 추출하여 유사점을 찾�
 
 <img src="https://c1.staticflickr.com/1/330/31620677756_2dc2c91a72_o.png">[^fn-5]
 
-NLP 전처리를 위해서는 한글 형태소 분석기가 필수적인데 여기서는 카카오 내부에서 사용중인 사내 형태소 분석기인 DHA를 사용했다. 우수한 형태소 분석기이지만 아쉽게도 사내 솔루션이며 외부에 공개되지 않는다. 따라서 더 이상 소개할 수 없는 점 양해 바란다. 대신 [KoNLPy](http://konlpy.org/ko/latest/)등의 오픈소스 형태소 분석기를 활용하면 유사한 결과를 얻을 수 있을 것이다.
+NLP 전처리를 위해서는 한글 형태소 분석기가 필수적인데 여기서는 카카오 내부에서 사용중인 사내 형태소 분석기인 DHA를 사용했다. 우수한 형태소 분석기이지만 아쉽게도 사내 솔루션이며 외부에 공개되지 않는다. 대신 [KoNLPy](http://konlpy.org/ko/latest/)등의 오픈소스 형태소 분석기를 활용하면 유사한 결과를 얻을 수 있을 것이다.
 
 ### 데이터
 
 한국어로 미리 형태소 분석 결과 100 문장을 학습 데이터로 제공했다. 평가 데이터는 10개 문장을 제공하여 10% 비율로 구성했다. 당연히 실제로 서비스를 하려면 이보다 훨씬 더 많은 데이타가 필요하며, 여기서는 간단한 진행 과정을 소개하기 위한 용도로 매우 적은 데이터만 사용하도록 한다. 앞서 [서울대 논문](https://bi.snu.ac.kr/Publications/Conferences/Domestic/KIISE2015W_JoHY.pdf)을 보면 대용량 분류를 위해 62만개의 문장을 학습했다고 하며, 결과가 더욱 정확하고 정교해지려면 학습 데이터는 당연히 많을수록 좋다.
 
 <img src="http://3qeqpr26caki16dnhd19sv6by6v.wpengine.netdna-cdn.com/wp-content/uploads/2016/08/Why-Deep-Learning-1024x742.png" />
-*딥러닝에서 학습 데이타는 많을수록 좋다고 하는 [앤드류 응의 슬라이드](http://www.slideshare.net/ExtractConf)*
+*딥러닝에서 학습 데이터는 많을수록 좋다고 설명하는 [앤드류 응의 슬라이드](http://www.slideshare.net/ExtractConf)*
 
 또한 원문의 알고리즘은 단어 사전에 없을 경우 동일한 벡터값으로 표현되기 때문에 정확도가 떨어진다. 따라서 정확도를 높이기 위해서는 모든 문장의 단어를 커버할 수 있을 정도로 충분히 학습하는게 좋다.
 
@@ -96,7 +96,7 @@ NLP 전처리를 위해서는 한글 형태소 분석기가 필수적인데 여�
 
 #### Convolution and Max-Pooling Layers
 
-이 부분이 가장 중요한 맥스 풀링, 합성곱<sup>convolution</sup> 레이어를 만드는 부분이다. 각각 크기가 다른 필터를 사용하여 반복적으로 합성곱 텐서를 생성하고 이를 하나의 큰 피쳐 벡터로 병합한다.
+이 부분이 가장 중요한 맥스 풀링, 합성곱 레이어를 만드는 부분이다. 각각 크기가 다른 필터를 사용하여 반복적으로 합성곱 텐서를 생성하고 이를 하나의 큰 피쳐 벡터로 병합한다.
 
 {% highlight python %}
 pooled_outputs = []
@@ -129,13 +129,13 @@ self.h_pool = tf.concat(3, pooled_outputs)
 self.h_pool_flat = tf.reshape(self.h_pool, [-1, num_filters_total])
 {% endhighlight %}
 
-여기서, `W`는 필터 행렬이고, `h`는 합성곱 출력에 비선형성(ReLU 활성화)을 적용한 결과다. 각 필터는 전체 임베딩을 슬라이드 한다. `VALID` 패딩은 엣지 패딩 없이 문장을 슬라이드 하여 `[1, sequence_length - filter_size + 1, 1, 1]` 크기로 좁은<sup>narrow</sup> 합성곱을 수행함을 의미한다. 각 필터 사이즈의 맥스 풀링(max-pooling) 출력은 `[batch_size, 1, 1, num_filters]`가 되며 이것이 최종 피쳐에 대응하는 마지막 피쳐 벡터다. 모든 풀링 벡터는 `[batch_size, num_filters_total]` 모양을 갖는 하나의 긴 피쳐 벡터로 결합된다. `tf.reshape`에 `-1`을 사용하여 텐서플로우가 차원을 평평하게 만들도록 한다.
+여기서, `W`는 필터 행렬이고, `h`는 합성곱 출력에 비선형성(ReLU)을 적용한 결과다. 각 필터는 전체 임베딩을 슬라이드 한다. `VALID` 패딩은 엣지 패딩 없이 문장을 슬라이드 하여 `[1, sequence_length - filter_size + 1, 1, 1]` 크기로 좁은<sup>narrow</sup> 합성곱을 수행함을 의미한다. 각 필터 사이즈의 맥스 풀링 출력은 `[batch_size, 1, 1, num_filters]`가 되며 이것이 최종 피쳐에 대응하는 마지막 피쳐 벡터다. 모든 풀링 벡터는 `[batch_size, num_filters_total]` 모양을 갖는 하나의 긴 피쳐 벡터로 결합된다. `tf.reshape`에 `-1`을 사용하여 텐서플로우가 차원을 평평하게 만들도록 한다.
 
-설명이 다소 어렵지만 가능하면 출력 형태<sup>shape</sup를 시각화하고 이해하면 도움이 된다. 이미지 CNN에 대한 시각화 자료는 대체로 많은 편이고 특히 [Andrej Karpathy가 순수 JS로 구현한 CIFAR-10 시각화 데모](https://cs.stanford.edu/people/karpathy/convnetjs/demo/cifar10.html)는 각각의 출력을 이해하는데 큰 도움이 된다.
+설명이 다소 어렵지만 가능하면 출력 형태<sup>shape</sup>를 시각화하고 이해하면 도움이 된다. 이미지 CNN에 대한 시각화 자료는 대체로 많은 편이고 특히 [Andrej Karpathy가 순수 JS로 구현한 CIFAR-10 시각화 데모](https://cs.stanford.edu/people/karpathy/convnetjs/demo/cifar10.html)는 각각의 출력을 이해하는데 큰 도움이 된다.
 
 #### Dropout Layer
 
-[드롭아웃](http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf)은 합성곱 신경망의 오버피팅을 방지하는 가장 유명하면서도 가장 흥미로운 방법이다. 드롭아웃 레이어는 뉴런의 일부를 확률적으로 '비활성화'한다. 이는 뉴런의 상호 적응을 방지하고 피쳐를 개별적으로 학습하도록 강제하여 사람이 그림을 맞출때 일부를 손으로 가린채 특징을 학습하여 맞추도록 하는 방식과 유사하게 동작한다. 여기서는 드롭아웃을 학습 중에는 0.5(즉, 50%), 평가 중에는 1로 비활성화(당연히)한다.
+[드롭아웃](http://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf)은 합성곱 신경망의 오버피팅을 방지하는 가장 유명하면서도 가장 흥미로운 방법이다. 드롭아웃 레이어는 뉴런의 일부를 확률적으로 '비활성화'한다. 이는 뉴런의 상호 적응을 방지하고 피쳐를 개별적으로 학습하도록 강제하여 사람이 그림을 맞출때 일부를 손으로 가린채 특징을 학습하여 맞추도록 하는 방식과 유사하게 동작한다. 여기서는 드롭아웃을 학습 중에는 0.5, 평가 중에는 1로 비활성화(당연히)한다.
 
 #### Scores and Predictions
 
@@ -179,7 +179,7 @@ train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
 
 #### Summaries
 
-텐서플로우에는 다양한 학습 및 평가 과정을 추적하고 시각화 하는 써머리(Summaries) 개념이 있다. 예를 들어 시간 경과에 따른 손실 및 정확도의 변화를 추적하고 싶을때 레이어 활성화 히스토그램 같은 더 복잡한 부분도 추적할 수 있다. 써머리는 시리얼라이즈드 오브젝트이며 써머리라이터(SummaryWriter)를 사용해 디스크에 기록한다.
+텐서플로우에는 다양한 학습 및 평가 과정을 추적하고 시각화 하는 써머리<sup>Summaries</sup> 개념이 있다. 예를 들어 시간 경과에 따른 손실 및 정확도의 변화를 추적하고 싶을때 레이어 활성화 히스토그램 같은 더 복잡한 부분도 추적할 수 있다. 써머리는 시리얼라이즈드 오브젝트이며 써머리라이터<sup>SummaryWriter</sup>를 사용해 디스크에 기록한다.
 
 {% highlight python %}
 # Output directory for models and summaries
@@ -232,7 +232,7 @@ def train_step(x_batch, y_batch):
 
 #### Training Loop
 
-마지막으로 트레이닝 루프를 작성한다. 데이터 배치를 반복하고 주기적으로 모델을 평가하고 체크포인팅 한다. 기본 값은 100회당 한 차례 모델을 평가하도록 설정되어 있으며, 파라미터로 이 값을 조정할 수 있다.
+마지막으로 트레이닝 루프를 작성한다. 데이터 배치를 반복하고 주기적으로 모델을 평가하고 체크포인팅 한다. 기본 값은 100회당 한 차례 모델을 평가하도록 설정되어 있으며, 파라미터로 조정할 수 있다.
 
 #### Visualizing Results in Tensorboard
 
