@@ -11,10 +11,12 @@ tags: [Machine Learning]
 *2018년 3월 24일 문장 편집*  
 *2016년 12월 16일 초안 작성*
 
+<!-- TOC -->
+
 - [소개](#소개)
 - [내용](#내용)
     - [전처리(NLP Preprocessing)](#전처리nlp-preprocessing)
-    - [데이타](#데이타)
+    - [데이터](#데이터)
     - [모델](#모델)
     - [구현](#구현)
         - [Embedding Layer](#embedding-layer)
@@ -33,17 +35,19 @@ tags: [Machine Learning]
 - [코드](#코드)
 - [References](#references)
 
+<!-- /TOC -->
+
 ## 소개
 
-CNN 알고리즘은 주로 이미지의 특징을 추출하여 유사점을 찾는 이미지 판단에 사용되었다. 합성곱<sup>convolution</sup>이 핵심으로 매트릭스에 적용하는 슬라이딩 윈도우 함수를 생각하면 이해하기 쉽다.[^fn-1]
+CNN 알고리즘은 주로 이미지의 특징을 추출하여 유사점을 찾는 이미지 판단에 사용된다. 합성곱<sup>convolution</sup>이 핵심으로 매트릭스에 적용하는 슬라이딩 윈도우 함수를 생각하면 이해하기 쉽다.[^fn-1]
 
 <img src="http://deeplearning.stanford.edu/wiki/images/6/6c/Convolution_schematic.gif" />
 
-왼쪽 매트릭스가 흑백 이미지를 표현한다면 각 엔트리는 1 픽셀의 0 검정, 1 흰색으로 간주할 수 있고 슬라이딩 윈도우는 3x3 필터를 사용하여 매트릭스의 엘리먼트 값을 곱셈하여 합산한다. 그 결과 전체 매트릭스에 필터를 슬라이딩 하여 각 요소의 전체 합성곱을 얻는다.
+왼쪽 매트릭스가 흑백 이미지를 표현한다면 각 엔트리는 1 픽셀의 0 검정, 1 흰색으로 간주할 수 있고 슬라이딩 윈도우는 3x3 필터를 사용하여 매트릭스의 엘리먼트 와이즈 곱셈하여 합산한다. 그 결과 전체 매트릭스에 필터를 슬라이딩한 각 엘리먼트 전체 합성곱을 얻는다.
 
 <img src="http://cs231n.github.io/assets/cnn/convnet.jpeg">
 
-이를 겹겹이 쌓아올려 신경망을 구성하는데 위와 같이 이미지의 필터링된 합성곱(CONV), 활성화 함수(ReLU), 맥스 풀링(POOL) 과정을 반복하여 피쳐 벡터를 형성하고 학습된 이미지와 비교하여 유사도를 판별한다. [Andrej Karpathy가 순수 JS로 구현한 CIFAR-10 시각화 데모](https://cs.stanford.edu/people/karpathy/convnetjs/demo/cifar10.html)는 각각의 출력이 어떻게 형성되는지 이해하는데 큰 도움이 된다.
+이를 겹겹이 쌓아올려 신경망을 구성하는데 위와 같이 이미지의 필터링된 합성곱(CONV), 활성화 함수(ReLU), 맥스 풀링(POOL) 과정을 반복하여 피쳐 벡터를 형성하고 학습된 이미지와 비교하여 유사도를 판별한다. [Andrej Karpathy가 순수 JS로 구현한 CIFAR-10 시각화 데모](https://cs.stanford.edu/people/karpathy/convnetjs/demo/cifar10.html)는 각각의 출력이 어떻게 형성되는지 이해하는데 많은 도움이 된다.
 
 이미지 뿐만 아니라 NLP에도 CNN 알고리즘을 적용하려는 노력이 있었고, 의미 있는 결과를 낸 논문들이 다수 출판됐다.
 
@@ -59,7 +63,7 @@ CNN 알고리즘은 주로 이미지의 특징을 추출하여 유사점을 찾�
 
 ### 전처리(NLP Preprocessing)
 
-먼저 입력값은 형태소 분석기를 통해 전처리된 어휘를 사용 한다. 원본 코드는 클린징 처리만 하여 그대로 사용하는데 영어를 기준으로 작성되어 있어 한글의 경우 이 코드가 모든 한글을 날려버리므로 사용할 수 없다. 또한 한글은 조사등의 복잡한 언어 구조상 NLP 전처리 작업이 효율적이기 때문에 미리 처리하도록 한다. 한글로 작성된 아래 논문[^fn-5]에도 NLP 전처리를 미리 진행하는 형태로 모식도가 설계되어 있음을 확인할 수 있다.
+먼저 입력값은 형태소 분석기를 통해 전처리된 어휘를 사용 한다. 원본 코드는 클린징 처리만 하여 그대로 사용하는데, 영어를 기준으로 구현되어 있어 한글의 경우 이 코드가 모든 한글을 날려버리므로 사용할 수 없다. 또한 한글은 조사등의 복잡한 언어 구조상 NLP 전처리 작업이 효율적이기 때문에 미리 처리하도록 한다. 한글로 작성된 아래 논문[^fn-5]에도 NLP 전처리를 미리 진행하는 형태로 모식도가 설계되어 있음을 확인할 수 있다.
 
 <img src="https://c1.staticflickr.com/1/330/31620677756_2dc2c91a72_o.png">[^fn-5]
 
@@ -67,14 +71,14 @@ NLP 전처리를 위해서는 한글 형태소 분석기가 필수적인데 여�
 
 ### 데이터
 
-한국어로 미리 형태소 분석 결과 100 문장을 학습 데이터로 제공했다. 평가 데이터는 10개 문장을 제공하여 10% 비율로 구성했다. 당연히 실제로 서비스를 하려면 이보다 훨씬 더 많은 데이타가 필요하며, 여기서는 간단한 진행 과정을 소개하기 위한 용도로 매우 적은 데이터만 사용하도록 한다. 앞서 [서울대 논문](https://bi.snu.ac.kr/Publications/Conferences/Domestic/KIISE2015W_JoHY.pdf)을 보면 대용량 분류를 위해 62만개의 문장을 학습했다고 하며, 결과가 더욱 정확하고 정교해지려면 학습 데이터는 당연히 많을수록 좋다.
+한국어로 미리 형태소 분석 결과 100 문장을 학습 데이터로 제공했다. 평가 데이터는 10개 문장을 제공하여 10% 비율로 구성했다. 당연히 실제로 서비스를 하려면 이보다 훨씬 더 많은 데이터가 필요하며, 여기서는 간단한 진행 과정을 소개하기 위한 용도로 매우 적은 데이터만 사용하도록 한다. 앞서 [서울대 논문](https://bi.snu.ac.kr/Publications/Conferences/Domestic/KIISE2015W_JoHY.pdf)을 보면 대용량 분류를 위해 62만개의 문장을 학습했다고 하며, 결과가 더욱 정확하고 정교해지려면 학습 데이터는 당연히 많을수록 좋다.
 
 <img src="http://3qeqpr26caki16dnhd19sv6by6v.wpengine.netdna-cdn.com/wp-content/uploads/2016/08/Why-Deep-Learning-1024x742.png" />
 *딥러닝에서 학습 데이터는 많을수록 좋다고 설명하는 [앤드류 응의 슬라이드](http://www.slideshare.net/ExtractConf)*
 
 또한 원문의 알고리즘은 단어 사전에 없을 경우 동일한 벡터값으로 표현되기 때문에 정확도가 떨어진다. 따라서 정확도를 높이기 위해서는 모든 문장의 단어를 커버할 수 있을 정도로 충분히 학습하는게 좋다.
 
-문장 데이타는 어휘로 구분하여 색인하고 0에서 전체 어휘 사이즈 만큼 맵핑한다. 각 문장은 정수 벡터가 된다.
+문장 데이터는 어휘로 구분하여 색인하고 0에서 전체 어휘 사이즈 만큼 맵핑한다. 각 문장은 정수 벡터가 된다.
 
 ### 모델
 
@@ -98,7 +102,7 @@ NLP 전처리를 위해서는 한글 형태소 분석기가 필수적인데 여�
 
 이 부분이 가장 중요한 맥스 풀링, 합성곱 레이어를 만드는 부분이다. 각각 크기가 다른 필터를 사용하여 반복적으로 합성곱 텐서를 생성하고 이를 하나의 큰 피쳐 벡터로 병합한다.
 
-{% highlight python %}
+```python
 pooled_outputs = []
 for i, filter_size in enumerate(filter_sizes):
     with tf.name_scope("conv-maxpool-%s" % filter_size):
@@ -127,7 +131,7 @@ for i, filter_size in enumerate(filter_sizes):
 num_filters_total = num_filters * len(filter_sizes)
 self.h_pool = tf.concat(3, pooled_outputs)
 self.h_pool_flat = tf.reshape(self.h_pool, [-1, num_filters_total])
-{% endhighlight %}
+```
 
 여기서, `W`는 필터 행렬이고, `h`는 합성곱 출력에 비선형성(ReLU)을 적용한 결과다. 각 필터는 전체 임베딩을 슬라이드 한다. `VALID` 패딩은 엣지 패딩 없이 문장을 슬라이드 하여 `[1, sequence_length - filter_size + 1, 1, 1]` 크기로 좁은<sup>narrow</sup> 합성곱을 수행함을 의미한다. 각 필터 사이즈의 맥스 풀링 출력은 `[batch_size, 1, 1, num_filters]`가 되며 이것이 최종 피쳐에 대응하는 마지막 피쳐 벡터다. 모든 풀링 벡터는 `[batch_size, num_filters_total]` 모양을 갖는 하나의 긴 피쳐 벡터로 결합된다. `tf.reshape`에 `-1`을 사용하여 텐서플로우가 차원을 평평하게 만들도록 한다.
 
@@ -141,24 +145,24 @@ self.h_pool_flat = tf.reshape(self.h_pool, [-1, num_filters_total])
 
 맥스 풀링(드롭아웃이 적용된 상태에서)으로 피쳐 벡터를 사용하여 행렬 곱셈을 수행하고 가장 높은 점수로 분류를 선택하는 예측을 수행한다. 원 점수를 정규화 확률로 변환하는 소프트맥스를 적용하지만 최종 예측 결과는 변하지 않는다.
 
-{% highlight python %}
+```python
 with tf.name_scope("output"):
     W = tf.Variable(tf.truncated_normal([num_filters_total, num_classes], stddev=0.1), name="W")
     b = tf.Variable(tf.constant(0.1, shape=[num_classes]), name="b")
     self.scores = tf.nn.xw_plus_b(self.h_drop, W, b, name="scores")
     self.predictions = tf.argmax(self.scores, 1, name="predictions")
-{% endhighlight %}
+```
 
 #### Loss and Accuracy
 
 점수를 이용해 손실 함수를 정의한다. 손실은 망에서 발생하는 오류를 나타내는 척도이며 이를 최소화 하는게 우리의 목표다. 분류 문제에 대한 표준 손실 함수는 [cross-entropy loss](http://cs231n.github.io/linear-classify/#softmax)를 사용한다.
 
-{% highlight python %}
+```python
 # Calculate mean cross-entropy loss
 with tf.name_scope("loss"):
     losses = tf.nn.softmax_cross_entropy_with_logits(self.scores, self.input_y)
     self.loss = tf.reduce_mean(losses)
-{% endhighlight %}
+```
 
 #### Visualizing the Network
 
@@ -170,18 +174,18 @@ with tf.name_scope("loss"):
 
 TextCNN 모델을 인스턴스화한 다음 망의 손실 함수를 최적화하는 방법을 정의한다. 텐서플로우에는 여러가지 옵티마이저가 내장되어 있는데 여기서는 [아담](https://arxiv.org/abs/1412.6980) 옵티마이저를 사용한다.
 
-{% highlight python %}
+```python
 global_step = tf.Variable(0, name="global_step", trainable=False)
 optimizer = tf.train.AdamOptimizer(1e-4)
 grads_and_vars = optimizer.compute_gradients(cnn.loss)
 train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
-{% endhighlight %}
+```
 
 #### Summaries
 
 텐서플로우에는 다양한 학습 및 평가 과정을 추적하고 시각화 하는 써머리<sup>Summaries</sup> 개념이 있다. 예를 들어 시간 경과에 따른 손실 및 정확도의 변화를 추적하고 싶을때 레이어 활성화 히스토그램 같은 더 복잡한 부분도 추적할 수 있다. 써머리는 시리얼라이즈드 오브젝트이며 써머리라이터<sup>SummaryWriter</sup>를 사용해 디스크에 기록한다.
 
-{% highlight python %}
+```python
 # Output directory for models and summaries
 timestamp = str(int(time.time()))
 out_dir = os.path.abspath(os.path.join(os.path.curdir, "runs", timestamp))
@@ -200,7 +204,7 @@ train_summary_writer = tf.train.SummaryWriter(train_summary_dir, sess.graph_def)
 dev_summary_op = tf.merge_summary([loss_summary, acc_summary])
 dev_summary_dir = os.path.join(out_dir, "summaries", "dev")
 dev_summary_writer = tf.train.SummaryWriter(dev_summary_dir, sess.graph_def)
-{% endhighlight %}
+```
 
 #### Initializing the Variables
 
@@ -208,9 +212,9 @@ dev_summary_writer = tf.train.SummaryWriter(dev_summary_dir, sess.graph_def)
 
 #### Defining a Single Training Step
 
-이제 데이타 배치 모델을 평가하고 모델 파라미터를 업데이트하는 학습 단계를 정의한다.
+이제 데이터 배치 모델을 평가하고 모델 파라미터를 업데이트하는 학습 단계를 정의한다.
 
-{% highlight python %}
+```python
 def train_step(x_batch, y_batch):
     """
     A single training step
@@ -226,7 +230,7 @@ def train_step(x_batch, y_batch):
     time_str = datetime.datetime.now().isoformat()
     print("{}: step {}, loss {:g}, acc {:g}".format(time_str, step, loss, accuracy))
     train_summary_writer.add_summary(summaries, step)
-{% endhighlight %}
+```
 
 평가 단계도 학습 단계와 유사하게 정의할 수 있다. 학습의 유효성을 검증하기 위해 평가 셋트의 손실 및 정확도 평가를 위한 유사한 기능을 작성하며, 차이점은 별도 학습 과정이 필요 없으며 드롭아웃을 비활성화 한다는 점 뿐이다.
 
@@ -238,26 +242,26 @@ def train_step(x_batch, y_batch):
 
 앞서 출력 디렉토리에 써머리를 저장하였는데, 텐서보드에 이 위치를 지정하여 그래프와 요약 정보를 시각화 할 수 있다. 앞서 여러차례 언급했듯 시각화는 매우 중요하다.
 
-{% highlight bash %}
+```
 tensorboard --logdir /PATH_TO_CODE/runs/1449760558/summaries/
-{% endhighlight %}
+```
 
-예제를 통한 학습 결과의 시각화는 아래와 같다. 한국어 학습 데이타는 규모가 작으므로 여기서는 참고를 위해 원문의 학습 그래프를 소개하도록 한다.
+예제를 통한 학습 결과의 시각화는 아래와 같다. 한국어 학습 데이터는 규모가 작으므로 여기서는 참고를 위해 원문의 학습 그래프를 소개하도록 한다.
 
-기본 파라미터(128 차원 임베딩, 3,4,5 필터 사이즈, 드롭아웃 0.5, 필터 사이즈별 128개 필터)의 학습 결과(파란선이 학습 데이타, 빨간선은 평가 데이타)이며 아래와 같다.
+기본 파라미터(128 차원 임베딩, 3,4,5 필터 사이즈, 드롭아웃 0.5, 필터 사이즈별 128개 필터)의 학습 결과(파란선이 학습 데이터, 빨간선은 평가 데이터)이며 아래와 같다.
 <img src="http://d3kbpzbmcynnmx.cloudfront.net/wp-content/uploads/2015/12/Screen-Shot-2015-12-11-at-6.29.14-AM-1024x347.png" />
 <img src="http://d3kbpzbmcynnmx.cloudfront.net/wp-content/uploads/2015/12/Screen-Shot-2015-12-11-at-6.27.48-AM-1024x350.png" />
 
 - 배치 사이즈가 작기 때문에 학습 결과가 부드럽지 않다. 더 큰 배치를 사용하거나 전체 학습 결과로 평가한다면 좀 더 부드러운 파란색 선을 얻을 수 있을 것이다.
-- 평가 정확도가 학습 정확도보다 상당히 낮기 때문에 우리 망이 학습 데이타를 오버피팅 하는 것 처럼 보인다. 따라서 더 많은 데이타, 더 강력한 정규화 또는 더 적은 모델 파라미터가 필요하다. 예를 들어 마지막 레이어에 L2 패널티 가중치를 추가하여 실험했을때는 논문과 유사하게 76% 까지 정확도를 높일 수 있었다.
-- 드롭아웃으로 인해 학습 데이타는 평가셋에 비해 훨씬 낮은 손실, 정확도로 시작된다.
+- 평가 정확도가 학습 정확도보다 상당히 낮기 때문에 우리 망이 학습 데이터를 오버피팅 하는 것 처럼 보인다. 따라서 더 많은 데이터, 더 강력한 정규화 또는 더 적은 모델 파라미터가 필요하다. 예를 들어 마지막 레이어에 L2 패널티 가중치를 추가하여 실험했을때는 논문과 유사하게 76% 까지 정확도를 높일 수 있었다.
+- 드롭아웃으로 인해 학습 데이터는 평가셋에 비해 훨씬 낮은 손실, 정확도로 시작된다.
 
 #### Extensions and Exercises
 
-이외에 모델 성능을 개선할 수 있는 몇 가지 팁을 아래에 정리한다.
+이외에도 모델 성능을 개선할 수 있는 몇 가지 팁을 정리해보면 아래와 같다.
 
 - 사전 훈련된 word2vec 벡터를 사용하여 임베딩을 초기화한다.
-- 오버피팅 방지를 위해 망에 L2 정규화를 추가하고 드롭아웃 비율 증가를 실험한다. 참고로 코드에는 이미 L2 정규화 옵션이 포함되어 있으나 기본값으로 비활성화 한 상태다.
+- 오버피팅 방지를 위해 신경망에 L2 정규화를 추가하고 드롭아웃 비율 증가를 실험한다. 참고로 코드에는 L2 정규화 옵션이 이미 포함되어 있으나 기본값으로 비활성화 한 상태다.
 - 가중치 업데이트 및 레이어 액션에 대한 히스토그램 써머리를 추가하고 텐서보드에서 시각화한다.
 
 ## 코드
