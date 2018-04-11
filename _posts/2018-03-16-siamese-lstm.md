@@ -30,10 +30,12 @@ tags: [Machine Learning]
 - 코드 참고: [likejazz/Siamese-LSTM](https://github.com/likejazz/Siamese-LSTM)
 
 ### Kaggle's Quora Question Pairs
-유사한 질문을 찾아내는 알고리즘을 고민하고 있던 중 마침 Kaggle에서 Quora의 유사 질문을 찾는 Competition을 진행했다는 것을 알게 됐다. Competition의 목표가 우리가 원하는 결과와 거의 유사했고, 여기에 올라온 다양한 접근 방법은 많은 도움이 되었다. 물론 1등 모델을 사용하면 성능은 가장 좋겠지만 무려 300여개의 앙상블로 구현했다고 하니, 역시나 상위권은 지나치게 impractical 했다.
+유사한 질문을 찾아내는 알고리즘을 고민하고 있던 중 마침 Kaggle에서 Quora의 유사 질문을 찾는 Competition을 진행했다는 것을 알게 됐다. Competition의 목표가 우리가 원하는 결과와 거의 유사했고, 여기에 올라온 다양한 접근 방법은 많은 도움이 되었다. 물론 1등 모델을 사용하면 성능은 가장 좋겠지만 무려 300여개의 앙상블로 구현했다고 하니, 상위권은 지나치게 impractical 했다.
 
 ### MaLSTM
-재밌는 점은 상위권 대부분이 가르키는 모델이 있었는데, 바로 이 문서에서 리뷰할 논문에 나온 모델, 즉 MaLSTM 모델을 언급한다. MaLSTM은 맨하탄 거리<sup>Manhattan distance</sup>를 사용한 LSTM이라는 뜻인데, 무엇보다 모델이 매우 단순하여 실용적이다. LSTM 50개를 사용한게 전부인데, 여기서 핵심은 Siamese LSTM 네트워크에 맨하탄 메트릭<sup>Manhattan metric</sup>을 사용했다는 점이다.
+<img src="https://user-images.githubusercontent.com/1250095/38629567-5dcebe9e-3def-11e8-8c85-de15b8a16d73.jpeg" />
+
+재밌는 점은 상위권 대부분이 가르키는 모델이 있었는데, 바로 이 문서에서 리뷰할 논문에 나온 모델, 즉 MaLSTM 모델을 언급한다. 논문을 출력까지 하여 꼼꼼히 살펴보았고, MaLSTM은 맨하탄 거리<sup>Manhattan distance</sup>를 사용한 LSTM이라는 뜻인데, 무엇보다 모델이 단순하여 매우 실용적이다. LSTM 50개를 사용한게 전부인데, 여기서 핵심은 Siamese LSTM 네트워크에 맨하탄 메트릭<sup>Manhattan metric</sup>을 사용했다는 점이다.
 
 <img src="https://cloud.githubusercontent.com/assets/9861437/20479493/6ea8ad12-b004-11e6-89e4-53d4d354d32e.png" />
 
