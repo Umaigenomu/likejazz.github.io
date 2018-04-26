@@ -13,9 +13,7 @@ tags: [Mobile Development]
 
 ## 내용
 
-*참고:  
-아래 내용은 2014년 여름 기준이며,  
-현재는 개발 도구 및 버전이 많이 변경 되었습니다.*
+*참고: 아래 내용은 2014년 여름 기준이며 현재는 개발 도구 및 버전이 많이 변경 되었습니다.*
 
 <img src="https://31.media.tumblr.com/80af5408aa9b6ce288937cde4e54247a/tumblr_inline_n98vm0WqsZ1qzgoac.jpg" />
 

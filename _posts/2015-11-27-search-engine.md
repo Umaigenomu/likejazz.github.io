@@ -11,13 +11,6 @@ tags: [Information Retreival]
 *2015년 11월 27일 1차 개정*  
 *2014년 6월 23일 초안 작성*  
 
-<!-- TOC -->
-
-- [내용](#내용)
-- [GitHub](#github)
-
-<!-- /TOC -->
-
 ## 내용
 
 검색 엔진을 만들었다.
@@ -49,5 +42,4 @@ fork 하기로 했다. 이후 전체 구조를 그림을 그리면서 파악해�
 3. 훌륭한 GitHub  
 읽기만 하는 것과 직접 써보는 것은 또 다른 문제였다. 여러번 읽기만 하면서 느끼지 못했던 부분들을 직접 써보면서, 커밋하고 푸쉬하면서, 깃헙이 얼마나 편리하고 얼마나 훌륭한 도구인지 새삼 느낄 수 있었다. 몰랐던 새로운 기능들도 많이 알게 됐다.
 
-## GitHub
-- [Simple Search Engine - GitHub](https://github.com/likejazz/simple-search-engine)
+[likejazz/simple-search-engine - GitHub](https://github.com/likejazz/simple-search-engine)

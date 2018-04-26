@@ -265,8 +265,7 @@ tensorboard --logdir /PATH_TO_CODE/runs/1449760558/summaries/
 - 가중치 업데이트 및 레이어 액션에 대한 히스토그램 써머리를 추가하고 텐서보드에서 시각화한다.
 
 ## 코드
-
-- [한국어 문장 분류 버전 깃헙](https://github.com/likejazz/cnn-text-classification-tf)
+[likejazz/cnn-text-classification-tf - GitHub](https://github.com/likejazz/cnn-text-classification-tf)
 
 ## References
 

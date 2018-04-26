@@ -14,16 +14,12 @@ tags: [Network & Internet]
 <!-- TOC -->
 
 - [내용](#내용)
-    - [동기](#동기)
     - [패턴 적용](#패턴-적용)
     - [공개](#공개)
-    - [GitHub](#github)
 
 <!-- /TOC -->
 
 ## 내용
-
-### 동기
 
 오래된 URL을 신규 URL로 변경해주는 작업이 필요 했다. 서버의 핸들러 또는 HTML 템플릿을 수정하지 않고 자동으로 임의의 변환된 결과를 얻어와 개발 생산성을 향상 시키고 싶었다. 원래 이런 용도로 외부 바이너리를 실행할 수 있는 **mod_ext_filter**, 정규식을 설정해서 치환하는 **mod_substitute** 가 있지만 좀 더 성능을 높여보고자 **mod_substitute** 를 기반으로 정규식을 걷어내고 패턴을 모듈에 내장하여 함께 컴파일 했다. 굳이 아파치 모듈을 직접 만든 이유는 고성능 때문이며 따라서 모든 패턴을 내장하여 함께 빌드한 것 또한 고성능이란 최종 목적에 잘 부합하는 방식이기도 하다.
 
@@ -48,5 +44,4 @@ add_pattern(p, dcfg, "//t4.search.daumcdn.net/", spdy_addr);
 
 원래 다른 모듈명으로 사내 CDN 주소 변경 용도로 만들었으나 정리하여 오픈소스로 공개한다. 공개하면서 일부 코드를 함께 정리했는데, 정리한 부분은 다시 사내 버전에 반영 하면서 상호 개선 효과를 얻을 수 있었다. 소스 코드는 단일 C 파일로 작성되어 있으며 [README](https://github.com/likejazz/mod-url-replace/blob/master/README.md) 에 이용 방법과 설치 방법을 상세히 기술했다.
 
-### GitHub
-[아파치 모듈 mod_url_replace - GitHub](https://github.com/likejazz/mod-url-replace)
+[likejazz/mod-url-replace - GitHub](https://github.com/likejazz/mod-url-replace)

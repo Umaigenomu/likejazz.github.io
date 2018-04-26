@@ -14,7 +14,6 @@ tags: [Mobile Development]
 <!-- TOC -->
 
 - [내용](#내용)
-    - [개요](#개요)
     - [native 빌드](#native-빌드)
     - [디버깅](#디버깅)
     - [Nuclide IDE](#nuclide-ide)
@@ -25,11 +24,7 @@ tags: [Mobile Development]
 
 ## 내용
 
-*참고:  
-아래 내용은 2016년 여름 기준이며,  
-현재는 개발 도구 및 버전이 변경되었을 수 있습니다.*
-
-### 개요
+*참고: 아래 내용은 2016년 여름 기준이며 현재는 개발 도구 및 버전이 변경되었을 수 있습니다.*
 
 AngularJS(2010)에 이어 React(2013) 등장. One-way data flow([Angular is known for it’s powerful two-way data-binding](https://toddmotto.com/one-way-data-binding-in-angular-1-5/)), Virtual DOM(고성능) 을 주요 기능으로 소개. 2015년 React Native 등장. 역사가 길지 않지만 폭발적인 인기를 끌고 있다. HTML을 완전히 사용할 수 있는건 아니지만 디자인 레이아웃은 HTML/CSS와 유사한 형태로 구현한다. 제한적인 컴포넌트를 사용하며 API를 이용하면 추가도 가능하다. JSX라는 js에 XML syntax를 추가한 preprocessor 단계를 사용한다. iOS/안드로이드 다른 구현이 존재한다.
 
@@ -55,4 +50,4 @@ JSON 파싱이 디폴트로 편리하게 가능한 것과 달리 XML 파싱은 �
 
 ### 어려운 점
 
-생각처럼 모든 HTML 컴포넌트들이 한 번에 딱딱 붙는건 아니었다. 마음에 드는 형태로 보이게 하려면 여러차례 수정을 해야 했고 특히 HTML 만으로는 어디를 수정해야 되는지 명확히 파악하기 힘들었다. 네이티브를 알고 있는 상태에서는 오히려 더 헷갈렸다.
+생각처럼 모든 HTML 컴포넌트들이 한 번에 찰싹 붙는건 아니었다. 마음에 드는 형태로 보이게 하려면 여러차례 수정을 해야 했고 특히 HTML 만으로는 어디를 수정해야 되는지 명확히 파악하기 힘들었다. 네이티브를 알고 있는 상태에서는 오히려 더 헷갈리는 부분이 많았다.

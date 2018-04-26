@@ -13,15 +13,13 @@ tags: [Network & Internet]
 <!-- TOC -->
 
 - [내용](#내용)
-    - [소개](#소개)
     - [서비스](#서비스)
     - [개선 사항](#개선-사항)
-    - [참고](#참고)
+    - [기타](#기타)
 
 <!-- /TOC -->
 
 # 내용
-## 소개
 
 우리 회사는 10여년 전 부터 carrot이라는 성능 측정 도구를 만들어 부하 테스트를 진행해왔다. carrot은 지정한 만큼의 thread를 생성해 해당 thread가 쉬지 않고 동기(synchronous)로 socket 통신을 하면서 타겟 서버의 성능을 측정할 수 있게 하는 성능 측정 도구다.
 
@@ -63,7 +61,7 @@ timeout에는 두 가지가 있는데 Connection-Timeout은 socket 통신이 연
 - WebSocketd에서 구동될때 segfault 발생하던 버그 패치
 - transfer-encoding chunked 모드를 제대로 처리못하던 버그 패치
 
-## 참고
+## 기타
 
 이 서비스는 단순히 carrot을 웹 서비스로 구현한 것 외에도 추가 패치를 진행했고 웹에서 실시간 통신을 위한 [WebSocketd](http://websocketd.com/), 실시간 그래프를 그리기 위해 [Smoothie Charts](http://smoothiecharts.org/)를 활용했다. 아울러 서비스는 PHP와 Bootstrap으로 구현했으며 모든 소스는 사내 깃헙에 공개했다.
 
