@@ -24,7 +24,7 @@ tags: [Machine Learning]
 <!-- /TOC -->
 
 ## 내용
-[Siamese Recurrent Architectures for Learning Sentence Similarity](http://www.mit.edu/~jonasm/info/MuellerThyagarajan_AAAI16.pdf) 논문을 읽어보고 구현한 결과를 정리한다. 코드를 구현한 깃헙은 아래 링크에 있다.
+[Siamese Recurrent Architectures for Learning Sentence Similarity](http://www.mit.edu/~jonasm/info/MuellerThyagarajan_AAAI16.pdf) 논문을 읽어보고 구현한 결과를 정리한다. 코드를 구현한 깃헙은 아래 링크를 참조한다.
 
 [likejazz/Siamese-LSTM - GitHub](https://github.com/likejazz/Siamese-LSTM)
 
@@ -32,7 +32,7 @@ tags: [Machine Learning]
 유사한 질문을 찾아내는 알고리즘을 고민하고 있던 중 마침 Kaggle에서 Quora의 유사 질문을 찾는 Competition을 진행했다는 것을 알게 됐다. Competition의 목표가 우리가 원하는 결과와 거의 유사했고, 여기에 올라온 다양한 접근 방법은 많은 도움이 되었다. 물론 1등 모델을 사용하면 성능은 가장 좋겠지만 무려 300여개의 앙상블로 구현했다고 하니, 상위권은 지나치게 impractical 했다.
 
 ### MaLSTM
-재밌는 점은 상위권 대부분이 가르키는 모델이 있었는데, 바로 이 문서에서 리뷰할 논문에 나온 모델, MaLSTM 모델을 언급한다. 논문은 출력까지 하여 가능한 꼼꼼히 살펴봤다.
+재밌는 점은 상위권 대부분이 가르키는 모델이 있었는데, 바로 이 문서에서 리뷰할 논문에 나온 모델, MaLSTM 모델을 언급한다.
 
 <img src="https://user-images.githubusercontent.com/1250095/38629567-5dcebe9e-3def-11e8-8c85-de15b8a16d73.jpeg" width="70%" />
 
