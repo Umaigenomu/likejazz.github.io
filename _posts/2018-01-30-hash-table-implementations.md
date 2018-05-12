@@ -30,7 +30,7 @@ tags: [Algorithms & Data Structure]
 
 ## 내용
 ### 해시 테이블
-해시 테이블은 해시 함수를 이용해 인덱스를 버킷 또는 슬롯의 배열로 계산하는 자료 구조로 둘 이상의 키에 동일한 인덱스 충돌<sup>collision</sup>이 발생할 경우에 처리 방법에 따라 크게 두 가지 형태로 나뉜다.
+해시 테이블은 해시 함수를 이용해 인덱스를 버킷 또는 슬롯의 배열로 계산하는 자료 구조로 둘 이상의 키에 동일한 인덱스 충돌<sup>collision</sup>이 발생할 경우 처리 방법에 따라 크게 두 가지 형태로 나뉜다.
 
 #### Separate chaining
 Separate chaning은 충돌 발생시 링크드 리스트로 연결<sup>chaining</sup>하는 방식으로 검색/삽입/삭제 모두 평균적으로 `O(1)` 상수항에 수행되어 매우 효율적이다.
@@ -50,7 +50,7 @@ Open addressing은 충돌 발생시 탐사<sup>probing</sup>를 통해 빈 공�
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Hash_table_average_insertion_time.png/724px-Hash_table_average_insertion_time.png" width="70%" />
 
-초기에는 성능이 좋지만 0.8 이후부터 성능이 급격히 떨어지며, 1 이상은 저장할 수 없다.
+초기에는 성능이 좋지만 0.8 이후부터 급격히 성능이 떨어지며, 1 이상은 저장할 수 없다.
 
 ### 해시 함수 
 
