@@ -33,24 +33,24 @@ tags: [Algorithms & Data Structure]
 해시 테이블은 해시 함수를 이용해 인덱스를 버킷 또는 슬롯의 배열로 계산하는 자료 구조로 둘 이상의 키에 동일한 인덱스 충돌<sup>collision</sup>이 발생할 경우 처리 방법에 따라 크게 두 가지 형태로 나뉜다.
 
 #### Separate chaining
-Separate chaning은 충돌 발생시 링크드 리스트로 연결<sup>chaining</sup>하는 방식으로 검색/삽입/삭제 모두 평균적으로 `O(1)` 상수항에 수행되어 매우 효율적이다.
+Separate chaning은 충돌 발생시 링크드 리스트로 연결<sup>chaining</sup>하는 방식으로 검색/삽입/삭제 모두 평균적으로 `O(1)` 상수항에 수행되어 매우 효율적이고 공간의 제약이 없다.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Hash_table_5_0_1_1_1_1_1_LL.svg/450px-Hash_table_5_0_1_1_1_1_1_LL.svg.png" />
 
 ([위키피디어](https://en.wikipedia.org/wiki/Hash_table))
 
-가장 널리 쓰이는 방식이며, 대부분의 프로그래밍 언어에서도 이 방식으로 구현되어 있다.
+가장 널리 쓰이는 방식이며, 대부분의 프로그래밍 언어에서는 이 방식으로 구현되어 있다.
 
 #### Open addressing
 Open addressing은 충돌 발생시 탐사<sup>probing</sup>를 통해 빈 공간을 찾아나서는 방식이며 탐사에는 일반적으로 Linear probing, Quadratic probing, Double hashing을 사용한다.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Hash_table_5_0_1_1_1_1_0_SP.svg/450px-Hash_table_5_0_1_1_1_1_0_SP.svg.png" />
 
-예컨데 가장 단순한 Linear probing의 경우 충돌이 발생할때 마다 한 칸씩(고정폭으로 대개 1을 사용한다) 아래로 빈 공간을 찾아 탐색에 나선다. 그림 처럼 빈 공간이 많다면 금방 자리를 잡게 되지만 그렇지 않을 경우 아래로 계속 탐사를 진행하므로 효율성이 많이 떨어진다.
+가장 단순한 Linear probing의 경우 충돌이 발생할때 마다 한 칸씩(고정폭으로 대개 1을 사용한다) 아래로 빈 공간을 찾아 탐색에 나선다. 그림 처럼 빈 공간이 많다면 금방 자리를 잡게 되지만 그렇지 않을 경우 아래로 계속 탐사를 진행하므로 효율성이 많이 떨어진다.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Hash_table_average_insertion_time.png/724px-Hash_table_average_insertion_time.png" width="70%" />
 
-초기에는 성능이 좋지만 0.8 이후부터 급격히 성능이 떨어지며, 1 이상은 저장할 수 없다.
+초기에는 성능이 좋지만 0.8 이후부터 급격히 성능이 떨어지며, 체이닝과 달리 1 이상은 저장할 수 없는 제약이 있다.
 
 ### 해시 함수 
 
