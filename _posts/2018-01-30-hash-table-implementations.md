@@ -33,7 +33,7 @@ tags: [Algorithms & Data Structure]
 해시 테이블은 해시 함수를 이용해 인덱스를 버킷 또는 슬롯의 배열로 계산하는 자료 구조로 둘 이상의 키에 동일한 인덱스 충돌<sup>collision</sup>이 발생할 경우에 처리 방법에 따라 크게 두 가지 형태로 나뉜다.
 
 #### Separate chaining
-Separate chaning은 충돌 발생시 링크드 리스트로 연결<sup>chaining</sup>하는 방식으로 검색/삽입/삭제 모두 평균적으로 `O(1)` 상수항에 수행되어 매우 효율적이며, 최악의 경우 `O(n)`에 수행된다.
+Separate chaning은 충돌 발생시 링크드 리스트로 연결<sup>chaining</sup>하는 방식으로 검색/삽입/삭제 모두 평균적으로 `O(1)` 상수항에 수행되어 매우 효율적이다.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Hash_table_5_0_1_1_1_1_1_LL.svg/450px-Hash_table_5_0_1_1_1_1_1_LL.svg.png" />
 
@@ -54,7 +54,7 @@ Open addressing은 충돌 발생시 탐사<sup>probing</sup>를 통해 빈 공�
 
 ### 해시 함수 
 
-해시 테이블의 성능은 얼마나 인덱스 충돌을 최소화 하느냐에 달려있다. 따라서 해시 함수를 잘 설계하여 충돌을 최소화 하는 것이 무엇보다 중요하다. Java의 경우 소수인 31의 곱셈합으로 구현되어 있다.
+해시 테이블의 성능은 얼마나 인덱스 충돌을 최소화 하느냐에 달려있다. 최악의 경우 `O(n)`에 수행되며, 따라서 해시 함수를 잘 설계하여 충돌을 최소화 하는 것이 무엇보다 중요하다. Java의 경우 소수인 31의 곱셈합으로 구현되어 있다.
 
 ```
 hashCode = 31*hashCode + (e==null ? 0 : e.hashCode());
