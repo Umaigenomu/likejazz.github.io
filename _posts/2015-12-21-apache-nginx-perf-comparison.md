@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Apache 와 Nginx 의 PHP 성능 비교
+title: Apache와 Nginx의 PHP 성능 비교
 tags: [Network & Internet]
 ---
 
