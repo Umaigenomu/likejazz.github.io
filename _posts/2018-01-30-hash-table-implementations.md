@@ -14,25 +14,47 @@ tags: [Algorithms & Data Structure]
 
 - [내용](#내용)
     - [해시 테이블](#해시-테이블)
-    - [C++](#c)
-    - [Java](#java)
-    - [기타 다른 언어](#기타-다른-언어)
-        - [Go](#go)
-        - [Python](#python)
-        - [C](#c)
+        - [Separate chaining](#separate-chaining)
+        - [Open addressing](#open-addressing)
+    - [해시 함수](#해시-함수)
+    - [언어별 구현](#언어별-구현)
+        - [C++](#c)
+        - [Java](#java)
+        - [기타 다른 언어](#기타-다른-언어)
+            - [Go](#go)
+            - [Python](#python)
+            - [C](#c)
 - [정리](#정리)
 
 <!-- /TOC -->
 
 ## 내용
 ### 해시 테이블
-해시 테이블은 해시 함수를 이용해 버킷 또는 슬롯 배열의 인덱스를 계산한 다음, 둘 이상의 키에 동일한 인덱스 충돌<sup>collision</sup>이 발생할 경우 링크드 리스트로 연결<sup>chaining</sup>하는 자료 구조로 검색/삽입/삭제 모두 평균적으로 `O(1)` 상수항에 수행되는 매우 효율적인 자료 구조다. 
+해시 테이블은 해시 함수를 이용해 인덱스를 버킷 또는 슬롯의 배열로 계산하는 자료 구조로 둘 이상의 키에 동일한 인덱스 충돌<sup>collision</sup>이 발생할 경우에 처리 방법에 따라 크게 두 가지 형태로 나뉜다.
+
+#### Separate chaining
+Separate chaning은 충돌 발생시 링크드 리스트로 연결<sup>chaining</sup>하는 방식으로 검색/삽입/삭제 모두 평균적으로 `O(1)` 상수항에 수행되어 매우 효율적이며, 최악의 경우 `O(n)`에 수행된다.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Hash_table_5_0_1_1_1_1_1_LL.svg/450px-Hash_table_5_0_1_1_1_1_1_LL.svg.png" />
 
-<sup>(위키피디어)</sup>
+([위키피디어](https://en.wikipedia.org/wiki/Hash_table))
 
-그러나 최악의 경우 모두 `O(n)`에 수행되는데, 이는 해시 함수의 성능에 영향을 받는다. 따라서 해시 함수를 잘 설계하여 인덱스 충돌을 최소화 하는 것이 중요하다. Java의 경우 소수인 31의 곱셈합으로 구현되어 있다.
+가장 널리 쓰이는 방식이며, 대부분의 프로그래밍 언어에서도 이 방식으로 구현되어 있다.
+
+#### Open addressing
+Open addressing은 충돌 발생시 탐사<sup>probing</sup>를 통해 빈 공간을 찾아나서는 방식이며 탐사에는 일반적으로 Linear probing, Quadratic probing, Double hashing을 사용한다.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Hash_table_5_0_1_1_1_1_0_SP.svg/450px-Hash_table_5_0_1_1_1_1_0_SP.svg.png" />
+
+예컨데 가장 단순한 Linear probing의 경우 충돌이 발생할때 마다 한 칸씩(고정폭으로 대개 1을 사용한다) 아래로 빈 공간을 찾아 탐색에 나선다. 그림 처럼 빈 공간이 많다면 금방 자리를 잡게 되지만 그렇지 않을 경우 아래로 계속 탐사를 진행하므로 효율성이 많이 떨어진다.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Hash_table_average_insertion_time.png/724px-Hash_table_average_insertion_time.png" width="70%" />
+
+초기에는 성능이 좋지만 0.8 이후부터 성능이 급격히 떨어지며, 1 이상은 저장할 수 없다.
+
+### 해시 함수 
+
+해시 테이블의 성능은 얼마나 인덱스 충돌을 최소화 하느냐에 달려있다. 따라서 해시 함수를 잘 설계하여 충돌을 최소화 하는 것이 무엇보다 중요하다. Java의 경우 소수인 31의 곱셈합으로 구현되어 있다.
 
 ```
 hashCode = 31*hashCode + (e==null ? 0 : e.hashCode());
@@ -46,20 +68,21 @@ hashCode = 31*hashCode + (e==null ? 0 : e.hashCode());
 
 그렇다면 각 프로그래밍 언어에서는 해시 테이블을 어떻게 구현하고 있는지 살펴보자.
 
-### C++
+### 언어별 구현
+#### C++
 C++은 STL 컨테이너로 `std::map`을 제공한다. 그러나 특이하게도 트리 형태로, 좀 더 정확히는 red-black tree를 사용하는 self balancing tree 알고리즘을 사용한다. 이 말은 해시 테이블을 사용하지 않고 내부적으로 정렬된 상태로 삽입된다는 얘긴데, 이는 [역사적인 이유](https://stackoverflow.com/a/22666011/3513266) 때문이기도 하다. 뒤에서 살펴보겠지만 Java 또한 역사적인 이유로 컬렉션 명이 변경된 전례가 있다.
 
 C++11에 뒤늦게 해시 테이블 구현이 추가되었다. `hash_map`이라는 이름이 이미 다양한 라이브러리에서 사용 중이라 `std::unordered_map`이라는 이름으로 추가되었다. 하지만 default 처럼 보이지 않는 긴 명칭을 갖고 있다 보니 C++에서는 여전히 해시 테이블 기반이 아닌 트리 기반의 `std::map`이 주로 쓰이는 특이한 상황에 놓여 있다.
 
 thread-safe 하지 않으며, C++ STL 컨테이너는 별도의 thread-safe 한 자료 구조를 제공하지 않는다. mutex를 통한 reader/writer lock을 직접 구현해 사용해야 한다.
 
-### Java
+#### Java
 Java는 `HashMap`에서 해시 테이블을 구현하고 있다. 그러나 초기에 이미 `HashTable`이 존재했었고, C++ STL 컨테이너와 명칭과 용도가 동일한 `Vector` 또한 존재했다. 하지만 멀티 코어가 흔하지 않던 시절에 자바 플랫폼 초기에는 과도한 synchronized를 적용하는 경향이 있었는데(Effective Java, 2008) 이로 인해 이후에 `HashTable`은 `HashMap`으로, `Vector`는 `ArrayList`로 대체되었다. 하위 호환성을 중요시 여기는 언어의 부득이한 결정 사항이기도 하며, 같은 이유로 `StringBuffer` 또한 `StringBuilder`로 대체되기도 했다.
 
 thread-safe가 필요한 경우에는 구식이 된 `HashTable`이 아닌, 필요한 부분에만 synchronized를 적용해 성능을 최적화 한 `ConcurrentHashMap`을 사용해야 한다.
 
-### 기타 다른 언어
-#### Go
+#### 기타 다른 언어
+##### Go
 Go는 C++, Java와 마찬가지로 해시 테이블을 구현한 `map`을 built-in으로 지원하며 이유는 FAQ에 잘 명시되어 있다.
 
 > **Why are maps built in?**
@@ -70,7 +93,7 @@ Go는 C++, Java와 마찬가지로 해시 테이블을 구현한 `map`을 built-
 
 `map`은 `string` 만큼이나 중요한 자료 구조이고 따라서 직접 견고한 형태로 만든 단일 구현이 훨씬 더 잇점이 높다고 판단했다. 다른 언어와 마찬가지로 성능을 위해 thread-safe 하지 않도록 구현하였는데, 이는 [쉽지 않은 결정](https://golang.org/doc/faq#atomic_maps)이었다고 한다. 초기에 자바가 모두 synchronized로 구현했다가 다시 자료형을 새로 만든 점도 영향을 끼쳤을듯 하다. 따라서 thread-safe가 필요한 경우 C++ 처럼 mutex를 통해 lock을 걸어 직접 처리해야 한다.
 
-#### Python
+##### Python
 파이썬의 내부 자료 구조인 `dict`는 해시 테이블로 구현되어 있다. 다른 언어와는 달리 파이썬은 모든 자료 구조가 thread-safe 하고 대부분의 명령이 atomic 하다. 이는 CPython GIL의 영향인데 덕분에 파이썬은 번거로운 동시성 관리에서 해방되었지만, 반면에 한 쓰레드만 실행이 되는 기이한 구조가 되었다.
 
 <img src="/images/2018/hash-table/1516923234642.png" />
@@ -79,7 +102,7 @@ Go는 C++, Java와 마찬가지로 해시 테이블을 구현한 `map`을 built-
 
 파이썬에서 성능을 최적화 하기 위해서는 GIL로 인해 [멀티 쓰레드가 아닌 멀티 프로세스](https://opensource.com/article/17/4/grok-gil)의 관점으로 접근해야 한다.
 
-#### C
+##### C
 C에는 기본으로 제공하는 해시 테이블 자료 구조가 없다. 이는 현대 프로그래밍에서 특별한 이유가 없는 한 더 이상 C로 신규 개발을 해서는 안되는 중요한 이유 중 하나이기도 하다. C의 표준 위원회는 C의 기본 정신<sup>spirit</sup>과 전통을 유지하는 방향으로 결정을 내리고 있으며, 본질적으로 C 언어가 밑바탕이 되는 철학을 유지하고 있다.
 
 그러나 [써드 파티 해시 테이블 구현](https://gist.github.com/tonious/1377667/374b9601a72faf7402d3909c75b002f9061992a3)은 다양하게 존재하며, C에서는 이처럼 해시 테이블을 사용하기 위해 별도 구현을 참고하여 직접 구현해 사용해야 한다.
