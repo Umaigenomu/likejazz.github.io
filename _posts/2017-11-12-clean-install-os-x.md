@@ -32,7 +32,7 @@ tags: Productivity
 <!-- /TOC -->
 
 <img src="/images/2017/touchbar.jpg" width="99%" />  
-<img src="https://c2.staticflickr.com/8/7333/27218763503_715ebb8a06_b.jpg" width="49%" align="left" style="margin-right: 10px" /><img src="https://farm8.staticflickr.com/7673/17228888583_65c885c6d5_b.jpg" width="49%" />
+<img src="https://c2.staticflickr.com/8/7333/27218763503_715ebb8a06_b.jpg" width="49%" align="left" style="margin-right: 10px" /><img src="https://farm8.staticflickr.com/7673/17228888583_65c885c6d5.jpg" width="49%" />
 *2017년 1월 맥북 프로 터치바(상단)*  
 *2016년 6월(하단 좌)*  
 *2015년(하단 우)의 모습*

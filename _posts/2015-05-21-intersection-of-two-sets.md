@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java 의 두 Set 교집합 최적화
+title: Java의 두 Set 교집합 최적화
 tags: [General Programming]
 ---
 
