@@ -73,7 +73,7 @@ C++11에 뒤늦게 해시 테이블 구현이 추가되었다. `hash_map`이라�
 thread-safe 하지 않으며, C++ STL 컨테이너는 별도의 thread-safe 한 자료 구조를 제공하지 않는다. mutex를 통한 reader/writer lock을 직접 구현해 사용해야 한다.
 
 ### Java
-Java는 `HashMap`에서 해시 테이블을 구현하고 있다. 그러나 초기에 이미 `HashTable`이 존재했었고, C++ STL 컨테이너와 명칭과 용도가 동일한 `Vector` 또한 존재했다. 하지만 멀티 코어가 흔하지 않던 시절에 자바 플랫폼 초기에는 과도한 synchronized를 적용하는 경향이 있었는데(Effective Java, 2008) 이로 인해 이후에 `HashTable`은 `HashMap`으로, `Vector`는 `ArrayList`로 대체되었다. 하위 호환성을 중요시 여기는 언어의 부득이한 결정 사항이기도 하며, 같은 이유로 `StringBuffer` 또한 `StringBuilder`로 대체되기도 했다.
+Java는 `HashMap`에서 해시 테이블을 구현하고 있다. (Java 7 이하 기준이며 8 이상에서는 트리와 함께 사용하는 하이브리드 방식을 택하고 있다.) 그러나 초기에 이미 `HashTable`이 존재했었고, C++ STL 컨테이너와 명칭과 용도가 동일한 `Vector` 또한 존재했다. 멀티 코어가 흔하지 않던 시절에 자바 플랫폼 초기에는 과도한 synchronized를 적용하는 경향이 있었는데(Effective Java, 2008) 이로 인해 이후에 `HashTable`은 `HashMap`으로, `Vector`는 `ArrayList`로 대체되었다. 하위 호환성을 중요시 여기는 언어의 부득이한 결정 사항이기도 하며, 같은 이유로 `StringBuffer` 또한 `StringBuilder`로 대체되기도 했다.
 
 thread-safe가 필요한 경우에는 구식이 된 `HashTable`이 아닌, 필요한 부분에만 synchronized를 적용해 성능을 최적화 한 `ConcurrentHashMap`을 사용해야 한다.
 
