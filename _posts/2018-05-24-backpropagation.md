@@ -14,7 +14,7 @@ tags: [Machine Learning]
 <!-- TOC -->
 
 - [내용](#내용)
-    - [역전파 계산](#역전파-계산)
+    - [역전파<sup>backpropagation</sup> 계산](#역전파backpropagation-계산)
         - [연쇄 법칙<sup>chain rule</sup>](#연쇄-법칙chain-rule)
         - [델타 룰<sup>delta rule</sup>](#델타-룰delta-rule)
         - [주피터 노트북](#주피터-노트북)
@@ -29,7 +29,7 @@ tags: [Machine Learning]
 > 역전파 코드를 직접 만들어 봐야할 이유가 지적 호기심이나 더 나은 역전파 알고리즘을 만들기 위해서가 아니라 역전파를 알아야 뉴럴 네트워크를 만들 때 오류를 범하지 않고 디버깅을 하는데 도움을 주기 때문입니다.  
 [역전파, 직접 짜봐야 하나요?](https://tensorflow.blog/2016/12/27/%EC%97%AD%EC%A0%84%ED%8C%8C-%EC%A7%81%EC%A0%91-%EC%A7%9C%EB%B4%90%EC%95%BC-%ED%95%98%EB%82%98%EC%9A%94/)
 
-### 역전파 계산
+### 역전파<sup>backpropagation</sup> 계산
 $$w_{jk}$$에 대한 에러 함수<sup>error function</sup>의 미분은 아래와 같다. (신경망 첫걸음, 2016)
 
 $$\frac{\partial{E}}{\partial{w_{jk}}}=\frac{\partial}{\partial{w_{jk}}}(t_k-o_k)^2$$
