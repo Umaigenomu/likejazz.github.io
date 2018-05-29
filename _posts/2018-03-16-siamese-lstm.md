@@ -12,7 +12,7 @@ tags: [Machine Learning]
 
 <!-- TOC -->
 
-- [내용](#내용)
+- [본문](#본문)
     - [Kaggle's Quora Question Pairs](#kaggles-quora-question-pairs)
     - [MaLSTM](#malstm)
     - [코드](#코드)
@@ -23,7 +23,7 @@ tags: [Machine Learning]
 
 <!-- /TOC -->
 
-## 내용
+## 본문
 [Siamese Recurrent Architectures for Learning Sentence Similarity](http://www.mit.edu/~jonasm/info/MuellerThyagarajan_AAAI16.pdf) 논문을 읽어보고 구현한 결과를 정리한다. 코드를 구현한 깃헙은 아래 링크를 참조한다.
 
 [likejazz/Siamese-LSTM - GitHub](https://github.com/likejazz/Siamese-LSTM)

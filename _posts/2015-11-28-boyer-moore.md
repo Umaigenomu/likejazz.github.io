@@ -11,7 +11,7 @@ tags: [Algorithms & Data Structure]
 *2015년 11월 27일 1차 개정*  
 *2014년 7월 1일 초안 작성*  
 
-## 내용
+## 본문
 
 [검색엔진을 만든](http://docs.likejazz.com/search-engine/) 직후였다.
 

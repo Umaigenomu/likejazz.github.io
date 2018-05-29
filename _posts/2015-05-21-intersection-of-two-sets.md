@@ -12,7 +12,7 @@ tags: [General Programming]
 
 <!-- TOC -->
 
-- [내용](#내용)
+- [본문](#본문)
     - [Straight up Java(JDK)](#straight-up-javajdk)
     - [Guava](#guava)
     - [No intermediate HashSet(NIH)](#no-intermediate-hashsetnih)
@@ -20,7 +20,7 @@ tags: [General Programming]
 
 <!-- /TOC -->
 
-## 내용
+## 본문
 
 두 문서의 유사도를 계산하는 [w-shingling 알고리즘](http://en.wikipedia.org/wiki/W-shingling)은 A/B 두 문서의 슁글(shingle) 사이즈를 아래와 같이 간단한 교집합(intersection)과 합집합(union)으로 유사도를 표현한다.
 

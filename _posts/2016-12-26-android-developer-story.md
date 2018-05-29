@@ -11,9 +11,9 @@ tags: [Mobile Development]
 *2016년 12월 26일 편집 및 게시*  
 *2014년 7월 25일 초안 작성*
 
-## 내용
+## 본문
 
-*참고: 아래 내용은 2014년 여름 기준이며 현재는 개발 도구 및 버전이 많이 변경 되었습니다.*
+*참고: 아래 내용은 2014년 여름 기준이며 현재는 개발 도구 및 버전이 변경 되었습니다.*
 
 <img src="https://31.media.tumblr.com/80af5408aa9b6ce288937cde4e54247a/tumblr_inline_n98vm0WqsZ1qzgoac.jpg" />
 

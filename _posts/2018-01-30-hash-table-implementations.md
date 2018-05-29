@@ -13,7 +13,7 @@ tags: [Algorithms & Data Structure]
 
 <!-- TOC -->
 
-- [내용](#내용)
+- [본문](#본문)
     - [해시 테이블](#해시-테이블)
         - [Separate chaining(with linked lists)](#separate-chainingwith-linked-lists)
         - [Open addressing](#open-addressing)
@@ -27,7 +27,7 @@ tags: [Algorithms & Data Structure]
 
 <!-- /TOC -->
 
-## 내용
+## 본문
 ### 해시 테이블
 해시 테이블은 해시 함수를 이용해 인덱스를 버킷 또는 슬롯의 배열로 계산하는 자료 구조로 둘 이상의 키에 동일한 인덱스 충돌<sup>collision</sup>이 발생할 경우 해결 방법에 따라 크게 두 가지 형태로 나뉜다.
 

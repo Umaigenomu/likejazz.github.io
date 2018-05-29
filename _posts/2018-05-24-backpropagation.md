@@ -13,7 +13,7 @@ tags: [Machine Learning]
 
 <!-- TOC -->
 
-- [내용](#내용)
+- [본문](#본문)
     - [역전파<sup>backpropagation</sup> 계산](#역전파backpropagation-계산)
         - [연쇄 법칙<sup>chain rule</sup>](#연쇄-법칙chain-rule)
         - [델타 룰<sup>delta rule</sup>](#델타-룰delta-rule)
@@ -23,7 +23,7 @@ tags: [Machine Learning]
 
 <!-- /TOC -->
 
-## 내용
+## 본문
 [Yes you should understand backprop](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b)
 
 > 역전파 코드를 직접 만들어 봐야할 이유가 지적 호기심이나 더 나은 역전파 알고리즘을 만들기 위해서가 아니라 역전파를 알아야 뉴럴 네트워크를 만들 때 오류를 범하지 않고 디버깅을 하는데 도움을 주기 때문입니다.  

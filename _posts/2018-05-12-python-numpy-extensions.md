@@ -12,7 +12,7 @@ tags: [General Programming]
 
 <!-- TOC -->
 
-- [내용](#내용)
+- [본문](#본문)
     - [Python](#python)
     - [NumPy](#numpy)
     - [C++ Extension](#c-extension)
@@ -27,7 +27,7 @@ tags: [General Programming]
 
 <!-- /TOC -->
 
-## 내용
+## 본문
 ### Python
 표준 편차를 구하는 파이썬 코드는 아래와 같이 작성할 수 있다.
 

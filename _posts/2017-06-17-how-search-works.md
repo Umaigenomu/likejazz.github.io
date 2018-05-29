@@ -12,12 +12,12 @@ Code.org에서 검색이 동작하는 원리에 대해 알기 쉽게 소개한 �
 
 <!-- TOC -->
 
-- [내용](#내용)
+- [본문](#본문)
 - [정리](#정리)
 
 <!-- /TOC -->
 
-## 내용
+## 본문
 
 <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FCode.org%2Fvideos%2F1360366930726273%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 

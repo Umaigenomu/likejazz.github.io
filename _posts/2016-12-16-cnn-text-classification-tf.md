@@ -14,7 +14,7 @@ tags: [Machine Learning]
 <!-- TOC -->
 
 - [소개](#소개)
-- [내용](#내용)
+- [본문](#본문)
     - [전처리(NLP Preprocessing)](#전처리nlp-preprocessing)
     - [데이터](#데이터)
     - [모델](#모델)
@@ -57,7 +57,7 @@ CNN 알고리즘은 주로 이미지의 특징을 추출하여 유사점을 찾�
 
 아울러 [김윤 박사가 문장 분류에 CNN을 적용한 논문](https://arxiv.org/abs/1408.5882)을 발표했고 좋은 결과를 보였다. 이를 참고하여 구현한 문서가 [IMPLEMENTING A CNN FOR TEXT CLASSIFICATION IN TENSORFLOW](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/)이며 여기서는 '원문'으로 표기하며 본 문서에 소개하는 대부분의 내용과 코드는 원문을 참조하여 작성했음을 미리 밝혀둔다.
 
-## 내용
+## 본문
 
 여타 논문과 달리 원문에서는 텐서플로우를 이용해 직접 실행 가능한 코드를 제공한다. [원본 코드는 깃헙](https://github.com/dennybritz/cnn-text-classification-tf)에 있으며 이를 [포크하여 몇몇 부분은 직접 개선](https://github.com/likejazz/cnn-text-classification-tf)했다. 특히 본 문서에서는 영어가 아닌 [한국어 문장 분류를 위해 패치한 버전](https://github.com/likejazz/cnn-text-classification-tf)을 활용하도록 한다. 아울러 원문에는 긍정/부정의 이중 분류만 가능하도록 되어 있으나 마침 [makinada라는 사용자가 다중 분류가 가능하도록 PR을 제공](https://github.com/dennybritz/cnn-text-classification-tf/pull/50)했고 본 문서를 작성하는 현 시점에 아직 업스트림에 머지 되진 않았으나 개선 버전에는 미리 적용하여 수정을 거쳐 실제 사용해 보기로 한다.
 
