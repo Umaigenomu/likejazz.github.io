@@ -8,8 +8,10 @@ tags: [Mobile Development]
 프로토타이핑 용도로 앱을 만들일이 있어 React Native를 사용해 봤다. 소문대로 HTML을 이용한 쉬운 네이티브 개발이 인상적이었다. 특히 간단한 구분을 통해 안드로이드/아이폰 모두를 지원하고, 사용자가 만든 다양한 컴포넌트를 골라 쓸 수 있는 것 또한 매력적이었다. 물론 아쉬운 점도 없잖아 있었는데 여기에는 실제로 개발하면서 경험했던 내용들을 정리해본다.
 </div>
 
+<small>
 *2017년 10월 19일 편집 및 게시*  
 *2016년 6월 10일 초안 작성*
+</small>
 
 ## 본문
 *참고: 아래 내용은 2016년 여름 기준이며 현재는 개발 도구 및 버전이 변경 되었습니다.*
@@ -22,7 +24,7 @@ tags: [Mobile Development]
 
 - 시행착오를 줄여주는 [강력한 디버깅 툴 제공](https://facebook.github.io/react-native/docs/debugging.html). 디버깅 툴의 기능을 알아갈수록 개발 시간이 점점 단축됐다. `^ + ⌘ + Z` 디버깅 메뉴. Hot Reloading에 매우 만족했다. 그러나 UI가 아닌 전체 코드의 변경사항을 보려면 전체 reload가 필요하다. 결국 Live Reload만 사용하게 됐다. Remote JS Debugging은 별도 크롬 브라우저에서 콘솔 창(개발자 모드)으로 디버깅이 가능한 최고의 기능이며 이 기능을 활용하고 부터 개발 생산성이 획기적으로 향상됐다.
 
-- Nuclide IDE 환경은 매우 좋다. 리액트를 위한 최적의 환경을 제공한다. 크롬으로 보는 것도 편리하지만 디버깅 윈도우를 우측에 띄울 수 있어 매우 편하다. React Native server도 Nuclide 내에서 바로 띄울 수있다. 덩달아 Atom에도 익숙해졌다. [단축키를 IntelliJ 기준으로 맞춘]w(https://atom.io/packages/intellij-idea-keymap) 이후 더욱 편해졌다. Atom을 주로 사용하다보니 상당히 트렌디한 느낌이다. 반면 Sublime Text는 점점 트렌드에서 밀리는 느낌.
+- Nuclide IDE 환경은 매우 좋다. 리액트를 위한 최적의 환경을 제공한다. 크롬으로 보는 것도 편리하지만 디버깅 윈도우를 우측에 띄울 수 있어 매우 편하다. React Native server도 Nuclide 내에서 바로 띄울 수있다. 덩달아 Atom에도 익숙해졌다. [단축키를 IntelliJ 기준으로 맞춘](https://atom.io/packages/intellij-idea-keymap) 이후 더욱 편해졌다. Atom을 주로 사용하다보니 상당히 트렌디한 느낌이다. 반면 Sublime Text는 점점 트렌드에서 밀리는 느낌.
 
 - 디버거는 하나의 도구만 붙을 수 있다. 따라서 크롬/Nuclide 동시 디버깅은 불가능하며 Nuclide에 붙이는게 편하다. 크롬에서 이미 보고 있다면 Nuclide에 붙지 않는데, 별도 오류 메시지가 없어서 한동안 원인 파악이 힘들었다.
 
