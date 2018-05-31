@@ -8,7 +8,9 @@ tags: [Machine Learning]
 유사한 질문을 찾아내는 알고리즘을 고민하고 있던 중 마침 Kaggle에서 Quora의 유사 질문을 찾는 Quora Question Pairs Competition을 알게 되었고, 여기에서 평가가 매우 좋은 Siamese LSTM 네트워크를 이용한 문장의 의미론적 유사도를 판별하는 논문을 살펴보고 구현을 진행해본다.
 </div>
 
+<small>
 *2018년 3월 16일 초안 작성*
+</small>
 
 <!-- TOC -->
 

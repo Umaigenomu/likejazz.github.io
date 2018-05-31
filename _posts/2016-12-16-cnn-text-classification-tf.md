@@ -8,8 +8,10 @@ tags: [Machine Learning]
 문장을 분류하는 기술은 기존 머신 러닝의 네이브 베이즈(Naive Bayes)와 서포트 벡터 머신(Support Vector Machine)이 널리 쓰여왔다. 특히 서포트 벡터 머신은 비교적 간편한 방법으로 고성능의 분류를 수행할 수 있어 딥러닝 이전까지 널리 쓰였다. 여기서는 서포트 벡터 머신의 성능을 뛰어 넘는 딥러닝 알고리즘인 합성곱 신경망(Convolutional Neural Networks / CNN / ConvNets)을 이용하여 한국어 문장 분류를 진행하고, 과정을 정리하여 소개해 보도록 한다.
 </div>
 
+<small>
 *2018년 3월 24일 문장 편집*  
 *2016년 12월 16일 초안 작성*
+</small>
 
 <!-- TOC -->
 
