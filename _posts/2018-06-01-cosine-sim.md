@@ -360,7 +360,7 @@ tweet - soccer 	 0.12092277504145588
 tweet - tennis 	 0.10235426703816686
 ```
 
-길이를 정규화한 유클리드 거리 계산 결과도 축구 문서가 가장 높은, 동일한 패턴을 보이며 우리의 직관과 일치하는 만족스런 결과를 보여준다.
+길이를 정규화한 유클리드 거리 계산 결과도 축구 문서가 가장 높은 동일한 패턴을 보이며 이는 우리의 직관과 일치하는 만족스런 결과를 보여준다.
 
 ## 참고
 전체 코드를 포함한 주피터 노트북으로 직접 계산해본 결과는 [euclidean-v-cosine.ipynb](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/data-science/euclidean-v-cosine.ipynb)에서 확인할 수 있으며, 원문은 [Euclidean vs. Cosine Distance](https://cmry.github.io/notes/euclidean-v-cosine)에서 볼 수 있다.
