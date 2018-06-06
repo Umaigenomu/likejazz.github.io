@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 코드 한 줄 없는 안드로이드 개발 이야기
-tags: [Mobile Development]
+tags: [Programming & Development]
 ---
 
 <div class="message">

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: NumPy와 C++ Extensions의 성능 비교
-tags: [General Programming]
+tags: [Programming & Development]
 ---
 
 <div class="message">
