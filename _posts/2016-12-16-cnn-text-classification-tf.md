@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 딥러닝을 이용한 한국어 문장 분류
+title: CNN을 이용한 한국어 문장 분류
 tags: [Machine Learning]
 ---
 
