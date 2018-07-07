@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 역전파 계산
-tags: [Machine Learning]
+title: Backpropagation 계산
+tags: [Deep Learning for NLP]
 ---
 
 <div class="message">

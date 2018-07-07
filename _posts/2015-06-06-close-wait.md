@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CLOSE_WAIT 문제 해결
-tags: [Network & Internet]
+tags: [Programming & Development]
 ---
 
 <div class="message">
