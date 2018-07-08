@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ! '문자열 검색: 보이어 무어 알고리즘'
-tags: [Algorithms & Data Structure]
+tags: ["Algorithms, Data Structure"]
 ---
 
 <div class="message">

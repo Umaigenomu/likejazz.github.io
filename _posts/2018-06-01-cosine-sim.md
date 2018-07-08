@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 코사인 유사도의 의미
-tags: [Algorithms & Data Structure]
+tags: ["Algorithms, Data Structure"]
 ---
 
 <div class="message">

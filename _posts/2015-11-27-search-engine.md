@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 검색 엔진 개발 후기
-tags: [Programming & Development]
+tags: ["Programming, Development"]
 ---
 
 <div class="message">

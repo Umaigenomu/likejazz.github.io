@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Java의 두 Set 교집합 최적화
-tags: [Programming & Development]
+tags: ["Programming, Development"]
 ---
 
 <div class="message">

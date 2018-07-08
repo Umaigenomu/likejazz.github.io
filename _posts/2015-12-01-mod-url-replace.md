@@ -1,7 +1,7 @@
 ---
 layout: post
 title: URL 자동 변환 아파치 모듈
-tags: [Programming & Development]
+tags: ["Programming, Development"]
 ---
 
 <div class="message">

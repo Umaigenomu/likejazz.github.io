@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Siamese LSTM을 이용한 Quora 질문 유사도 판별
-tags: [Deep Learning for NLP]
+tags: ["Deep Learning, NLP"]
 ---
 
 <div class="message">
@@ -22,7 +22,7 @@ tags: [Deep Learning for NLP]
         - [Keras 커스텀 레이어](#keras-커스텀-레이어)
     - [학습 결과](#학습-결과)
     - [Production](#production)
-- [코드](#코드)
+- [코드](#코드-1)
 
 <!-- /TOC -->
 
@@ -181,4 +181,5 @@ Validation 셋으로 **82.29%**의 정확도가 나왔다.
 - Keras로 빌드한 모델을 C++로 디코딩하여 CPU로 서비스 한다.
 
 ## 코드
-[likejazz/Siamese-LSTM - GitHub](https://github.com/likejazz/Siamese-LSTM)
+전체 코드는 아래에서 확인할 수 있다.
+- [Siamese-LSTM - GitHub](https://github.com/likejazz/Siamese-LSTM)
