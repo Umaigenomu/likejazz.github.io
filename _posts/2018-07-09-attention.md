@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Attention Mechanism 정리
+title: Attention Mechanism 시각화
 tags: ["Deep Learning, NLP"]
 ---
 
 <div class="message">
-Seq2Seq는 시퀀스 데이터를 처리하는데 좋은 결과를 보여주지만 여전히 입력 시퀀스가 길 경우 장기 의존성<sup>long tern dependencies</sup> 문제가 있다. 어텐션 메커니즘<sup>Attention Mechanism</sup>은 이 문제를 해결하는데 좋은 성능을 보여주며, 무엇보다 쉽게 시각화 가능하다는 장점이 있다.
+Seq2Seq는 시퀀스 데이터를 처리하는데 좋은 결과를 보여주지만 여전히 입력 시퀀스가 길 경우 장기 의존성<sup>long tern dependencies</sup> 문제가 있다. 어텐션 메커니즘<sup>Attention Mechanism</sup>은 이 문제를 해결하는데 좋은 성능을 보여주며, 무엇보다 쉽게 시각화가 가능하다는 장점이 있다.
 </div>
 
 <small>
@@ -148,26 +148,26 @@ attention_mul = merge([lstm_out, a_probs], name='attention_mul', mode='mul')
 <img width="70%" src="https://cdn-images-1.medium.com/max/1200/1*kHUNMl5vCvMu4MjyxE-sfw.png">
 
 #### 시각화
-GPU를 사용해 학습했고, 100번의 epochs로 loss를 0.01 이내로 떨어트렸다. 이 모델을 사용한 결과를 시각화 해본다.
+GPU를 사용해 학습했고, 100번의 epochs로 loss를 0.01 이내로 떨어트렸다. 아래 명령으로 시각화가 가능하다.
 
 ```python
 python3 visualize.py -e 'Saturday Jun 8, 2019'
 ```
 
-어텐션 메커니즘의 결과는 아래와 같다.
+결과는 아래와 같다.
 
-<img src="https://user-images.githubusercontent.com/1250095/42423083-156bef0c-832f-11e8-8c6c-78d8f2555f79.png">
+<img src="https://user-images.githubusercontent.com/1250095/42425036-95211390-8351-11e8-96ee-f2a25c3864e4.jpeg">
 
 2019를 예측하기 위해 "1", "9"는 입력의 마지막에 영향을 받으며, "0", "6"은 Jun의 끝 부분에 영향을 받는다. "0", "8" 또한 day를 의미하는 8,에 제대로 영향 받고 있음을 확인할 수 있다. 아울러 요일 정보인 "Saturday"는 출력에 거의 영향을 끼치지 못함을 확인할 수 있다.
 
 ### Addition Task 적용
-이번에는 [이전 글에서 실험](/seq2seq)한 Addition Task에 Attention을 적용해보고 결과를 비교해보도록 한다. 이번에는 직접 구현 보다는 Keras 모델로 미리 만들어둔 라이브러리를 사용하도록 한다.
+이번에는 [이전 글에서 실험](/seq2seq)한 Addition Task에 Attention을 적용해보고 결과를 비교해보도록 한다. 이번에는 직접 구현 보다는 Keras 모델로 미리 만들어둔 라이브러리를 사용 해보도록 한다.
 
 ```
 pip install git+https://github.com/farizrahman4u/seq2seq.git
 ```
 
-지난 번 Seq2Seq를 구현할때는 시퀀스 단위의 states를 따로 활용하지 않았지만(아래 라이브러리에서 SimpleSeq2Seq 구현) 여기서는 논문[^fn-5]대로 각 시퀀스의 states를 활용하며(라이브러리에서 Seq2Seq 구현) 이를 구현하기 위해 RecurrentShop 이라는 프레임워크를 별도로 사용한다. 현재 이 프레임워크는 Seq2Seq 구현과 충돌하므로 이를 패치한 버전으로 설치한다.
+지난 번 Seq2Seq를 구현할때는 시퀀스 단위의 states를 따로 활용하지 않았지만(아래 라이브러리에서 SimpleSeq2Seq 구현) 여기서는 논문[^fn-5]대로 각 시퀀스의 states를 활용하며(라이브러리에서 Seq2Seq 구현) 이를 구현하기 위해 RecurrentShop 이라는 프레임워크를 별도로 사용한다. 현재 이 프레임워크는 Seq2Seq 구현에서 오류가 발생하므로 이를 패치한 아래 버전을 설치한다.
 
 ```
 git clone https://github.com/kklemon/recurrentshop
@@ -184,10 +184,10 @@ python3 setup.py install
 | Seq2Seq(논문[^fn-5] 구현) | 0.7643, 0.7604 |
 | AttentionSeq2Seq | 0.7430, 0.7297 |
 
-Addition Task는 시퀀스가 길지 않은 모델이며, 따라서 Attention 보다는 Seq2Seq를 논문대로 구현했을때 가장 좋은 학습 성능을 보인다.
+Addition Task는 시퀀스가 길지 않은 모델이며, 이 때문인지 Attention 보다는 Seq2Seq를 논문대로 구현했을때 가장 좋은 학습 성능을 보인다.
 
 ## 정리
-Attention은 매우 좋은 성능을 보여주며, 특히 쉽게 시각화가 가능하다는 장점이 있다. 이 때문에 최근의 딥러닝 NLP 연구는 주로 Attention을 중심으로 이뤄지고 있으며, Scaled Dot-Product Attention, Self Attention, Multi-Headed Attention, Multi-Dimensional Attention, Re-Attention등 다양한 변형<sup>variants</sup>이 등장하고 있는 상황이다. 작년에는 CNN도 RNN도 사용하지 않은, [Attention으로만 NMT를 구현한 Transformer 모델](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.WzMk-RIzYmp)이 등장해 주목을 받았으며,근래 NMT의 대부분은 Transformer 모델로 구현되어 있다.
+Attention은 매우 좋은 성능을 보여주며, 특히 쉽게 시각화가 가능하다는 장점이 있다. 이 때문에 최근의 딥러닝 NLP 연구는 주로 Attention을 중심으로 이뤄지고 있으며 Scaled Dot-Product Attention, Self Attention, Multi-Headed Attention, Multi-Dimensional Attention, Re-Attention등 [다양한 변형<sup>variants</sup>이 등장](https://github.com/dsindex/blog/wiki/%5Battention%5D-NLP-with-attention)하고 있는 상황이다. 작년에는 CNN도 RNN도 사용하지 않은, [Attention 만으로 NMT를 구현한 Transformer 모델](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.WzMk-RIzYmp)이 등장해 주목을 받았으며, 근래 NMT의 대부분은 Transformer 모델로 구현되어 있다.
 
 ## 코드
 이 문서에서 사용한 코드는 아래에서 각각 확인할 수 있다.
