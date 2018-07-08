@@ -148,7 +148,7 @@ attention_mul = merge([lstm_out, a_probs], name='attention_mul', mode='mul')
 <img width="70%" src="https://cdn-images-1.medium.com/max/1200/1*kHUNMl5vCvMu4MjyxE-sfw.png">
 
 #### 시각화
-GPU를 사용해 100번의 epochs로 loss를 0.01 이내로 떨어트렸고, 아래 입력값에 대한 결과를 확인해본다.
+GPU를 사용해 학습했고, 100번의 epochs로 loss를 0.01 이내로 떨어트렸다. 이 모델을 사용한 결과를 시각화 해본다.
 
 ```python
 python3 visualize.py -e 'Saturday Jun 8, 2019'
@@ -184,10 +184,10 @@ python3 setup.py install
 | Seq2Seq(논문[^fn-5] 구현) | 0.7643, 0.7604 |
 | AttentionSeq2Seq | 0.7430, 0.7297 |
 
-Addition Task는 시퀀스가 길지 않은 모델이며, 따라서 Attention 보다는 Seq2Seq를 논문대로 구현했을때 가장 좋은 학습 성능을 보여준다.
+Addition Task는 시퀀스가 길지 않은 모델이며, 따라서 Attention 보다는 Seq2Seq를 논문대로 구현했을때 가장 좋은 학습 성능을 보인다.
 
 ## 정리
-Attention은 매우 좋은 성능을 보여주며, 특히 쉽게 시각화가 가능하다는 장점이 있다. 이 때문에 최근의 딥러닝 NLP 연구는 주로 Attention을 중심으로 이뤄지고 있으며, Scaled Dot-Product Attention, Self Attention, Multi-Headed Attention, Multi-Dimensional Attention, Re-Attention등 다양한 변형<sup>variants</sup>이 등장하고 있는 상황이다. 작년에는 CNN도 RNN도 사용하지 않은, [Attention으로만 NMT를 구현한 Transformer 모델](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.WzMk-RIzYmp)이 등장하기도 했다.
+Attention은 매우 좋은 성능을 보여주며, 특히 쉽게 시각화가 가능하다는 장점이 있다. 이 때문에 최근의 딥러닝 NLP 연구는 주로 Attention을 중심으로 이뤄지고 있으며, Scaled Dot-Product Attention, Self Attention, Multi-Headed Attention, Multi-Dimensional Attention, Re-Attention등 다양한 변형<sup>variants</sup>이 등장하고 있는 상황이다. 작년에는 CNN도 RNN도 사용하지 않은, [Attention으로만 NMT를 구현한 Transformer 모델](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.WzMk-RIzYmp)이 등장해 주목을 받았으며,근래 NMT의 대부분은 Transformer 모델로 구현되어 있다.
 
 ## 코드
 이 문서에서 사용한 코드는 아래에서 각각 확인할 수 있다.
