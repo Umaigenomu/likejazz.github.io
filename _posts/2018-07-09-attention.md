@@ -143,12 +143,12 @@ attention_mul = merge([lstm_out, a_probs], name='attention_mul', mode='mul')
             return yt, [yt, st]
 ```
 
-`return_probabilities=True`일때는 어텐션 메커니즘의 결과 까지만 리턴하며, 최종 결과는 LSTM을 구현한 결과를 리턴한다. 여기서는 LSTM을 직접 구현하였는데, 형태는 동일하지만 입력값으로 $$y_{t-1}$$, $$s_{t-1}$$, $$c_t$$를 받는다는 차이가 있다.
+`return_probabilities=True`일때는 어텐션 메커니즘의 결과 까지만 리턴하며, 최종 결과는 LSTM과 유사한 계산 결과를 리턴한다. 여기서는 LSTM을 직접 구현하였는데, 형태는 유사하지만 입력값으로 $$y_{t-1}$$, $$s_{t-1}$$, $$c_t$$를 받는다는 차이가 있다.
 
 <img width="70%" src="https://cdn-images-1.medium.com/max/1200/1*kHUNMl5vCvMu4MjyxE-sfw.png">
 
 #### 시각화
-GPU를 사용해 학습했고, 100번의 epochs로 loss를 0.01 이내로 떨어트렸다. 아래 명령으로 시각화가 가능하다.
+GPU를 이용해 학습했고, 100번의 epochs로 loss를 0.01 이내로 떨어트렸다. 아래 명령으로 "Saturday Jun 8, 2019"를 시각화 해본다.
 
 ```python
 python3 visualize.py -e 'Saturday Jun 8, 2019'
@@ -158,10 +158,10 @@ python3 visualize.py -e 'Saturday Jun 8, 2019'
 
 <img src="https://user-images.githubusercontent.com/1250095/42425036-95211390-8351-11e8-96ee-f2a25c3864e4.jpeg">
 
-2019를 예측하기 위해 "1", "9"는 입력의 마지막에 영향을 받으며, "0", "6"은 Jun의 끝 부분에 영향을 받는다. "0", "8" 또한 day를 의미하는 8,에 제대로 영향 받고 있음을 확인할 수 있다. 아울러 요일 정보인 "Saturday"는 출력에 거의 영향을 끼치지 못함을 확인할 수 있다.
+2019를 예측하기 위해 "1", "9"는 입력의 마지막에 영향을 받으며, "0", "6"은 Jun의 끝 부분에 영향을 받는다. "0", "8" 또한 day를 의미하는 "8,"에 영향 받고 있다. 그러나 요일 정보인 "Saturday"는 출력에 거의 영향을 끼치지 못함을 확인할 수 있다.
 
 ### Addition Task 적용
-이번에는 [이전 글에서 실험](/seq2seq)한 Addition Task에 Attention을 적용해보고 결과를 비교해보도록 한다. 이번에는 직접 구현 보다는 Keras 모델로 미리 만들어둔 라이브러리를 사용 해보도록 한다.
+이번에는 [이전 글에서 실험](/seq2seq)한 Addition Task에 Attention을 적용해보고 결과를 비교해보도록 한다. 이번에는 직접 구현하기 보다는 Keras 모델로 미리 만들어둔 라이브러리를 사용 해보도록 한다.
 
 ```
 pip install git+https://github.com/farizrahman4u/seq2seq.git
@@ -184,7 +184,7 @@ python3 setup.py install
 | Seq2Seq(논문[^fn-5] 구현) | 0.7643, 0.7604 |
 | AttentionSeq2Seq | 0.7430, 0.7297 |
 
-Addition Task는 시퀀스가 길지 않은 모델이며, 이 때문인지 Attention 보다는 Seq2Seq를 논문대로 구현했을때 가장 좋은 학습 성능을 보인다.
+Addition Task는 시퀀스가 길지 않은 모델이며, 이 때문인지 Attention 보다는 Seq2Seq를 논문대로 구현했을때 좀 더 좋은 학습 성능을 보인다.
 
 ## 정리
 Attention은 매우 좋은 성능을 보여주며, 특히 쉽게 시각화가 가능하다는 장점이 있다. 이 때문에 최근의 딥러닝 NLP 연구는 주로 Attention을 중심으로 이뤄지고 있으며 Scaled Dot-Product Attention, Self Attention, Multi-Headed Attention, Multi-Dimensional Attention, Re-Attention등 [다양한 변형<sup>variants</sup>이 등장](https://github.com/dsindex/blog/wiki/%5Battention%5D-NLP-with-attention)하고 있는 상황이다. 작년에는 CNN도 RNN도 사용하지 않은, [Attention 만으로 NMT를 구현한 Transformer 모델](https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.WzMk-RIzYmp)이 등장해 주목을 받았으며, 근래 NMT의 대부분은 Transformer 모델로 구현되어 있다.
