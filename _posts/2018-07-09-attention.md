@@ -39,7 +39,7 @@ Seq2Seq는 시퀀스 데이터를 처리하는데 좋은 결과를 보여주지�
 
 <img width="50%" src="http://www.wildml.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-30-at-1.16.08-PM.png" />
 
-위 NMT 모델에서 $$y$$는 디코더가 생성한 번역 결과, $$x$$는 입력 문장이며 양방향<sup>bidirectional</sup> RNN이다. 중요한 점은 출력 단어 $$y_t$$가 마지막 상태 뿐만 아니라 입력 상태의 모든 조합을 참조하고 있다는 점이며, 여기서 $$a$$는 각 출력이 어떤 입력 상태를 더 많이 참조하는지에 대한 가중치로, $$\alpha$$의 합은 1로 normalized 된. 즉, softmax 값을 사용한다.
+위 NMT 모델에서 $$y$$는 디코더가 생성한 번역 결과, $$x$$는 입력 문장이며 양방향<sup>bidirectional</sup> RNN이다. 중요한 점은 출력 단어 $$y_t$$가 마지막 상태 뿐만 아니라 입력 상태의 모든 조합을 참조하고 있다는 점이며, 여기서 $$\alpha$$는 각 출력이 어떤 입력 상태를 더 많이 참조하는지에 대한 가중치로, $$\alpha$$의 합은 1로 normalized 된. 즉, softmax 값을 사용한다.
 
 $$\alpha _{ ij }=\frac { exp\left( { e }_{ ij } \right)  }{ \sum _{ k=1 }^{ { T }_{ x } }{ exp\left( { e }_{ ik } \right)  }  }$$
 
