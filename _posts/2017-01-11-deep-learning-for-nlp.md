@@ -1,7 +1,7 @@
 ---
 layout: post
 title: NLP를 위한 딥러닝 가이드
-tags: ["Deep Learning, NLP"]
+tags: ["Deep Learning for NLP/NLU"]
 ---
 
 <div class="message">

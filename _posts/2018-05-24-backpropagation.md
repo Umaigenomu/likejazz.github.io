@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Backpropagation 계산
-tags: ["Deep Learning, NLP"]
+tags: ["Deep Learning for NLP/NLU"]
 ---
 
 <div class="message">
@@ -21,7 +21,7 @@ tags: ["Deep Learning, NLP"]
         - [델타 룰<sup>delta rule</sup>](#델타-룰delta-rule)
         - [주피터 노트북](#주피터-노트북)
     - [히든 레이어의 역전파](#히든-레이어의-역전파)
-        - [주피터 노트북](#주피터-노트북-1)
+- [참고](#참고)
 
 <!-- /TOC -->
 
@@ -32,7 +32,7 @@ tags: ["Deep Learning, NLP"]
 [역전파, 직접 짜봐야 하나요?](https://tensorflow.blog/2016/12/27/%EC%97%AD%EC%A0%84%ED%8C%8C-%EC%A7%81%EC%A0%91-%EC%A7%9C%EB%B4%90%EC%95%BC-%ED%95%98%EB%82%98%EC%9A%94/)
 
 ### 역전파<sup>backpropagation</sup> 계산
-$$w_{jk}$$에 대한 에러 함수<sup>error function</sup>의 미분은 아래와 같다. (신경망 첫걸음, 2016)
+에러 $$E$$를 SSE로 정의하고, 각각의 가중치 $$W$$를 $$w_{jk}$$로 정의할때, $$w_{jk}$$에 대한 에러 $$E$$의 편미분은 아래와 같다.
 
 $$\frac{\partial{E}}{\partial{w_{jk}}}=\frac{\partial}{\partial{w_{jk}}}(t_k-o_k)^2$$
 
@@ -98,7 +98,8 @@ $$\frac{\partial{E}}{\partial{w_{jk}}}=-(t_k-o_k){sigmoid(\sum_{j}w_{jk}}{o_j})(
 
 초기에 코드를 구현하면서 누락했는데 따라서 출력 레이어 활성화의 미분이 적용되지 않았으나 그래도 계산 결과만 다를뿐 비율은 행 별로 동일했으며, 재밌게도 학습도 제대로 됐다. 따라서 논문에서 실수로 수식을 생략해도 알아차리기 어려우며 대부분의 논문, 문서에선 의도적으로 생략하는 경우도 잦으므로 주의가 필요하다.
 
-#### 주피터 노트북
-[주피터로 역전파 그래디언트 체킹을 계산](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/backpropagation.ipynb)했다.
-
-계산이 정확한데도 [cs231n의 그래디언트 체킹 기준](http://cs231n.github.io/neural-networks-3/#gradcheck)을 맞추지 못한 점은 아쉬운 부분이다.
+## 참고
+- 신경망 첫걸음, 2016
+- [그래디언트 체킹을 계산한 주피터 노트북](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/backpropagation.ipynb)
+- [cs231n의 그래디언트 체킹 기준](http://cs231n.github.io/neural-networks-3/#gradcheck)  
+계산이 정확한데도 체킹 기준을 맞추지 못한 점은 아쉬운 부분이다.
