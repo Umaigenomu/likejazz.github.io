@@ -5,7 +5,7 @@ tags: ["Deep Learning for NLP/NLU"]
 ---
 
 <div class="message">
-Seq2Seq는 시퀀스 데이터를 처리하는데 좋은 결과를 보여주지만 여전히 입력 시퀀스가 길 경우 장기 의존성<sup>long tern dependencies</sup> 문제가 있다. 어텐션 메커니즘<sup>Attention Mechanism</sup>은 이 문제를 해결하는데 좋은 성능을 보여주며, 무엇보다 쉽게 시각화가 가능하다는 장점이 있다.
+Seq2Seq는 시퀀스 데이터를 처리하는데 좋은 결과를 보여주지만 여전히 입력 시퀀스가 길 경우 장기 의존성<sup>long term dependencies</sup> 문제가 있다. 어텐션 메커니즘<sup>Attention Mechanism</sup>은 이 문제를 해결하는데 좋은 성능을 보여주며, 무엇보다 쉽게 시각화가 가능하다는 장점이 있다.
 </div>
 
 <small>
@@ -35,7 +35,7 @@ Seq2Seq는 시퀀스 데이터를 처리하는데 좋은 결과를 보여주지�
 그러나, 입력 시퀀스가 매우 길 경우에는 장기 의존성<sup>long term dependencies</sup> 문제가 있다. 일반적으로 LSTM은 이 문제를 잘 처리 한다고 알려져 있지만 실제로는 여전히 문제가 있다. 이 때문에 입력 시퀀스를 뒤집을 경우 디코더에서 인코더의 관련 부분까지 경로를 단축하여, 보다 좋은 성능을 보여주기도 한다. (Sutskever et al., 2014)[^fn-2] 또한 입력 시퀀스를 두 번 반복하면 네트워크가 더 잘 기억<sup>memorize</sup>하는데 도움을 주기도 한다. (Zaremba, Sutskever, 2014)[^fn-1]
 
 ### Attention
-어텐션 메커니즘은 모델로 하여금 '중요한 부분만 집중<sup>attention</sup>하게 만들자'가 핵심 아이디어다.[^fn-3] 디코더가 출력을 생성할때 각 단계별로 입력 시퀀스의 각기 다른 부분을 집중하게 할 수 있게 한다. 즉, 하나의 고정된 컨텍스트 벡터로 인코딩 하는 대신 출력의 각 단계별로 컨텍스트 벡터를 생성하는 방법을 학습한다. 이는 모델이 입력 시퀀스와 지금까지 생성한 결과를 통해 무엇에 집중(!)할 것인지를 학습한다.[^fn-4]
+어텐션 메커니즘은 모델로 하여금 '중요한 부분만 집중<sup>attention</sup>하게 만들자'가 핵심 아이디어다.[^fn-6] 디코더가 출력을 생성할때 각 단계별로 입력 시퀀스의 각기 다른 부분을 집중하게 할 수 있게 한다. 즉, 하나의 고정된 컨텍스트 벡터로 인코딩 하는 대신 출력의 각 단계별로 컨텍스트 벡터를 생성하는 방법을 학습한다. 이는 모델이 입력 시퀀스와 지금까지 생성한 결과를 통해 무엇에 집중(!)할 것인지를 학습한다.[^fn-4]
 
 <img width="50%" src="http://www.wildml.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-30-at-1.16.08-PM.png" />
 
@@ -201,3 +201,4 @@ Attention은 매우 좋은 성능을 보여주며, 특히 쉽게 시각화가 �
 [^fn-3]: [어텐션 매커니즘](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/10/06/attention/)
 [^fn-4]: [Attention and Memory in Deep Learning and NLP](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
 [^fn-5]: [Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation](https://arxiv.org/abs/1406.1078)
+[^fn-6]: [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473)
