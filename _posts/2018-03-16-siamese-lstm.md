@@ -29,7 +29,7 @@ tags: ["Deep Learning for NLP/NLU"]
 ## 본문
 [Siamese Recurrent Architectures for Learning Sentence Similarity](http://www.mit.edu/~jonasm/info/MuellerThyagarajan_AAAI16.pdf) 논문을 읽어보고 구현한 결과를 정리한다. 코드를 구현한 깃헙은 아래 링크를 참조한다.
 
-[likejazz/Siamese-LSTM - GitHub](https://github.com/likejazz/Siamese-LSTM)
+[Siamese-LSTM - GitHub](https://github.com/likejazz/Siamese-LSTM)
 
 ### Kaggle's Quora Question Pairs
 유사한 질문을 찾아내는 알고리즘을 고민하고 있던 중 마침 Kaggle에서 Quora의 유사 질문을 찾는 Competition을 진행했다는 것을 알게 됐다. Competition의 목표가 우리가 원하는 결과와 거의 유사했고, 여기에 올라온 다양한 접근 방법은 많은 도움이 되었다. 물론 1등 모델을 사용하면 성능은 가장 좋겠지만 무려 300여개의 앙상블로 구현했다고 하니, 상위권은 지나치게 impractical 했다.
