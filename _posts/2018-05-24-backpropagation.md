@@ -79,7 +79,7 @@ $$\frac{\partial{E}}{\partial{w_{jk}}}=-(t_k-o_k){sigmoid(\sum_{j}w_{jk}}{o_j})(
 <img src="https://2.bp.blogspot.com/-JMU0Mek7a_M/WGlAGVBCg6I/AAAAAAAAAfs/RXrTnOqCfB4VB4LhfNXA400q9ADEVUxeQCLcB/s640/formula_11_cc.png" />
 
 #### 주피터 노트북
-[주피터로 미분 계산을 검증](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/linear-algebra-transpose-differential.ipynb)했다.
+[주피터로 미분 계산을 검증](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/data-science/linear-algebra-transpose-differential.ipynb)했다.
 
 ### 히든 레이어의 역전파
 히든 레이어의 경우 이전 레이어의 미분을 모두 적용해야 하므로 좀 더 복잡하다. 행렬 연산이 반드시 필요한 이유이기도 한다. 행렬의 전치<sup>transpose</sup>로 미분 계산을 한다.
@@ -100,6 +100,6 @@ $$\frac{\partial{E}}{\partial{w_{jk}}}=-(t_k-o_k){sigmoid(\sum_{j}w_{jk}}{o_j})(
 
 ## 참고
 - 신경망 첫걸음, 2016
-- [그래디언트 체킹을 계산한 주피터 노트북](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/backpropagation.ipynb)
+- [그래디언트 체킹을 계산한 주피터 노트북](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/deep-learning/backpropagation.ipynb)
 - [cs231n의 그래디언트 체킹 기준](http://cs231n.github.io/neural-networks-3/#gradcheck)  
 계산이 정확한데도 체킹 기준을 맞추지 못한 점은 아쉬운 부분이다.

@@ -22,7 +22,8 @@ tags: Productivity
     - [현실](#현실)
     - [12개일때 결과 분포](#12개일때-결과-분포)
 - [TL;DR](#tldr)
-- [정리하며](#정리하며)
+- [정리](#정리)
+- [코드](#코드)
 
 <!-- /TOC -->
 
@@ -109,7 +110,7 @@ tags: Productivity
     - 도착점이 오른쪽에 치우쳐 있는 경우 출발점은 가능한 왼쪽으로 멀리 택한다.
     - 도착점이 왼쪽에 치우쳐 있는 경우 출발점은 가능한 오른쪽으로 멀리 택한다.
 
-## 정리하며
+## 정리
 이제 여러분은 더 이상 점심을 사지 않아도 된다. 
 
 물론 처음 한 두번은 우연히 걸릴지도 모르겠지만 1년 내내 사다리 게임으로 점심을 사기로 정했다면, 그리고 여러분이 여기 나온 내용을 충분히 숙지하고 사다리 게임을 했다면, 큰 수의 법칙에 따라 여러분은 1년 동안 점심을 가장 적게 산 사람으로 기억될 것이다.
@@ -120,4 +121,5 @@ tags: Productivity
   
 ([통계학과 생명 보험](http://ko.experiments.wikidok.net/wp-d/58edc62ac2cbe22d642c28e2/View))
 
-[직접 계산한 주피터 노트북은 링크를 참고](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/ghost-leg-probabilities.ipynb)한다.
+## 코드
+[주피터 노트북 코드](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/data-science/ghost-leg-probabilities.ipynb)

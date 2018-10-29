@@ -34,12 +34,12 @@ scikit-learn의 나이브 베이즈 모듈인 `sklearn.naive_bayes`는 총 3가�
 
 이 중 연속적인 값을 지닌 데이터를 처리하는 용도로 가우스 분포를 활용하는 가우시안을 제외한, 문서 분류에 사용하는 다항 분포<sup>Multinomial</sup>와 베르누이<sup>Bernoulli</sup>모델을 살펴보고 실제로 알고리즘을 계산하면서 검증해보도록 한다.
 
-참고로 알고리즘의 계산 결과는 [주피터 노트북에서 확인](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/multinomial-naive-bayes.ipynb)할 수 있다.
+참고로 알고리즘의 계산 결과는 [주피터 노트북에서 확인](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/machine-learning/multinomial-naive-bayes.ipynb)할 수 있다.
 
 ### 뉴스 분류
-먼저, 캐글(Kaggle)의 뉴스 데이타를 이용, 뉴스 제목으로 카테고리를 분류하는 실험을 진행해봤다. [평가가 가장 좋았던 커널을 fork하여 하나씩 진행](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/news-classification.ipynb)해보니 랜덤 포레스트에서 84%를 기록. 디시젼 트리만 해도 80%가 넘는 나쁘지 않은 수치를 기록했다. [CNN 딥러닝이 80% 언저리에서 계속 고전](http://docs.likejazz.com/cnn-text-classification-tf/)했던걸 생각해보면 훨씬 빠르게 유사 혹은 능가하는 정확도를 기록한 셈이다. 놀랍게도 **다항 분포 나이브 베이즈는 90%가 넘는 정확도를 기록**했는데 속도 또한 다른 알고리즘과 비교가 안될 정도로 빠르다.
+먼저, 캐글(Kaggle)의 뉴스 데이타를 이용, 뉴스 제목으로 카테고리를 분류하는 실험을 진행해봤다. [평가가 가장 좋았던 커널을 fork하여 하나씩 진행](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/machine-learning/news-classification.ipynb)해보니 랜덤 포레스트에서 84%를 기록. 디시젼 트리만 해도 80%가 넘는 나쁘지 않은 수치를 기록했다. [CNN 딥러닝이 80% 언저리에서 계속 고전](http://docs.likejazz.com/cnn-text-classification-tf/)했던걸 생각해보면 훨씬 빠르게 유사 혹은 능가하는 정확도를 기록한 셈이다. 놀랍게도 **다항 분포 나이브 베이즈는 90%가 넘는 정확도를 기록**했는데 속도 또한 다른 알고리즘과 비교가 안될 정도로 빠르다.
 
-[나이브 베이즈 간 비교도 진행](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/news-classification-nb.ipynb)을 했고 연속적인 데이터를 처리하는 용도로 성격이 다른 가우시안을 제외한, 다항 분포와 베르누이가 비슷한 성능을 보였고 다항 분포가 근소한 차이로 더 나은 성능을 보였다. 물론 이는 데이타의 특성이 반영된 결과로 다항 분포가 항상 좋은건 아니다. 그러나 18세기에 등장한 이 간단한 수식이 21세기에도 여전히 최고의 알고리즘 이라는 사실에는 그저 놀라울 따름이다.
+[나이브 베이즈 간 비교도 진행](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/machine-learning/news-classification-nb.ipynb)을 했고 연속적인 데이터를 처리하는 용도로 성격이 다른 가우시안을 제외한, 다항 분포와 베르누이가 비슷한 성능을 보였고 다항 분포가 근소한 차이로 더 나은 성능을 보였다. 물론 이는 데이타의 특성이 반영된 결과로 다항 분포가 항상 좋은건 아니다. 그러나 18세기에 등장한 이 간단한 수식이 21세기에도 여전히 최고의 알고리즘 이라는 사실에는 그저 놀라울 따름이다.
 
 <img src="http://strangenotions.com/wp-content/uploads/BayesTheorem-600x319.jpg" width="100%" />
 
@@ -48,7 +48,7 @@ scikit-learn의 나이브 베이즈 모듈인 `sklearn.naive_bayes`는 총 3가�
 
 <img src="https://user-images.githubusercontent.com/1250095/37017922-c1df3e92-2155-11e8-801d-0b2d0de6c6d8.jpeg" />
 
-[주피터 노트북에서 사용](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/multinomial-naive-bayes.ipynb)한 학습 데이터를 기준으로 프로퍼티를 정리하면 아래와 같다.
+[주피터 노트북에서 사용](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/machine-learning/multinomial-naive-bayes.ipynb)한 학습 데이터를 기준으로 프로퍼티를 정리하면 아래와 같다.
 
 | 프로퍼티 | 값 |
 |--------|---|
@@ -130,6 +130,6 @@ array([0.72480181, 0.27519819])
 ## 정리
 계산을 직접 진행하여 검증한 주피터 노트북은 각각 아래와 같다.
 
-- [나이브 베이즈 확률 모델 계산](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/multinomial-naive-bayes.ipynb)
-- [뉴스 카테고리 분류 실험](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/news-classification.ipynb)
-- [뉴스 카테고리 분류 나이브 베이즈 간 비교 실험](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/news-classification-nb.ipynb)
+- [나이브 베이즈 확률 모델 계산](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/machine-learning/multinomial-naive-bayes.ipynb)
+- [뉴스 카테고리 분류 실험](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/machine-learning/news-classification.ipynb)
+- [뉴스 카테고리 분류 나이브 베이즈 간 비교 실험](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/machine-learning/news-classification-nb.ipynb)
