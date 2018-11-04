@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 검색 엔진 개발 후기
+title: 검색 엔진 프로토타이핑
 tags: ["Programming, Development"]
 ---
 
