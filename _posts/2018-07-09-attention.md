@@ -37,9 +37,9 @@ Seq2Seq는 시퀀스 데이터를 처리하는데 좋은 결과를 보여주지�
 ### Attention
 어텐션 메커니즘은 모델로 하여금 '중요한 부분만 집중<sup>attention</sup>하게 만들자'가 핵심 아이디어다.[^fn-6] 디코더가 출력을 생성할때 각 단계별로 입력 시퀀스의 각기 다른 부분을 집중하게 할 수 있게 한다. 즉, 하나의 고정된 컨텍스트 벡터로 인코딩 하는 대신 출력의 각 단계별로 컨텍스트 벡터를 생성하는 방법을 학습한다. 이는 모델이 입력 시퀀스와 지금까지 생성한 결과를 통해 무엇에 집중(!)할 것인지를 학습한다.[^fn-4]
 
-<img width="50%" src="http://www.wildml.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-30-at-1.16.08-PM.png" />
+<img width="40%" src="https://user-images.githubusercontent.com/1250095/53686217-b939a780-3d67-11e9-8542-b9f06c0908b6.png">
 
-위 NMT 모델에서 $$y$$는 디코더가 생성한 번역 결과, $$x$$는 입력 문장이며 양방향<sup>bidirectional</sup> RNN이다. 중요한 점은 출력 단어 $$y_t$$가 마지막 상태 뿐만 아니라 입력 상태의 모든 조합을 참조하고 있다는 점이며, 여기서 $$\alpha$$는 각 출력이 어떤 입력 상태를 더 많이 참조하는지에 대한 가중치로, $$\alpha$$의 합은 1로 normalized 된. 즉, softmax 값을 사용한다.
+Attention을 최초로 제안한 위 NMT 모델에서 $$y$$는 디코더가 생성한 번역 결과, $$x$$는 입력 문장이며 양방향<sup>bidirectional</sup> RNN이다. 중요한 점은 출력 단어 $$y_t$$가 마지막 상태 뿐만 아니라 입력 상태의 모든 조합을 참조하고 있다는 점이며, 여기서 $$\alpha$$는 각 출력이 어떤 입력 상태를 더 많이 참조하는지에 대한 가중치로, $$\alpha$$의 합은 1로 normalized 된. 즉, softmax 값을 사용한다.
 
 $$\alpha _{ ij }=\frac { exp\left( { e }_{ ij } \right)  }{ \sum _{ k=1 }^{ { T }_{ x } }{ exp\left( { e }_{ ik } \right)  }  }$$
 
