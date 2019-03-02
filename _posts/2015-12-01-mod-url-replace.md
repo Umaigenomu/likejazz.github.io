@@ -5,7 +5,7 @@ tags: ["Programming, Development"]
 ---
 
 <div class="message">
-오래된 URL을 신규 URL로 자동으로 변환해주는 아파치 모듈을 만들었다.
+오래된 URL을 신규 URL로 자동으로 변환해주는 아파치 모듈을 만들어 레거시 코드의 수정 없이 신규 URL로 리다이렉트 하여 개발 생산성을 높여보도록 한다.
 </div>
 
 *2015년 12월 1일 1차 개정*  
