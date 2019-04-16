@@ -15,6 +15,10 @@ sass:
   sass_dir:          _sass
   style:            :compressed
 
+collections:
+  wiki:
+    output: true
+
 # About/contact
 author:
   name:              Sang-Kil Park
@@ -33,3 +37,13 @@ plugins:
   - jekyll-paginate
   - jekyll-redirect-from
   - jekyll-sitemap
+
+# Exclude these files from your production _site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+  - runme.sh
+

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<article class="post">
+  <img style="position: absolute; right: 10px; width: 20%" src="https://user-images.githubusercontent.com/1250095/40884116-b9b526da-6748-11e8-81e5-de850f76640f.png">
+  <h1 class="post-title">{{ page.title }}</h1>
+  {{ content }}
+</article>
+
+<hr>
+
+<small style="font-size: 0.5em">
+{% for w in site.wiki %}
+  <a href="{{ w.url }}">{{ w.title }}</a> ·
+{% endfor %}
+</small>
