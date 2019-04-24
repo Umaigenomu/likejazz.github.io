@@ -15,7 +15,6 @@ title: NLP
     - [Attention](#attention)
     - [Memory-based networks](#memory-based-networks)
     - [Pretrained language models](#pretrained-language-models)
-- [Sent2Vec](#sent2vec)
 
 <!-- /TOC -->
 
@@ -59,10 +58,3 @@ In 2014, Sutskever et al. proposed sequence-to-sequence learning.
 
 ## Pretrained language models
 language models only require unlabelled text; training can thus scale to billions of tokens, new domains, and new languages. Pretrained language models were first proposed in 2015 (Dai & Le, 2015). Improvements with language model embeddings(ELMo) has archieved over state-of-the-art (Peters et al., 2018). [potential of pretrained language models](https://thegradient.pub/nlp-imagenet/)
-
-# Sent2Vec
-sent2vec fasttext 구현에서 5.5G 짜리 모델을 `load_model()`하는데 메모리가 모자라니(docker에서 4G만 할당한 상태) 로딩 중 `Killed` 메시지가 나오며 그냥 죽어버린다. 어떠한 예외처리도 되어 있지 않고 오류도 없이 그냥 죽어 당황스럽다. 메모리가 점점 차오르는 상황은 `free -m`으로 확인 가능하다. 1G 정도 차는데 6초 정도 소요됐다.
-
-gensim은 `mmap` 옵션이 있어 다른 프로세스에서 메모리를 공유할 수 있는데 반해 fasttext는 그 기능이 없어 프로세스 마다 각각 메모리를 점유하므로 큰 모델의 경우 멀티 프로세스로 서비스가 어렵다.
-
-Text Classification을 [word2vec 중심으로 실험](http://nadbordrozd.github.io/blog/2016/05/20/text-classification-with-word2vec/) 해보니 SVC(linear kernel SVM)이 가장 성능이 좋고, word2vec이 그 다음을 차지했다고 한다.

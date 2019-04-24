@@ -38,7 +38,14 @@ title: Sent2Vec
 - `line[w]`가 target이다. 여기서는 context가 된다. boundary는 cbow와 마찬가지로 최대 윈도우 사이즈 내에서 랜덤하게 지정된다. seed가 따로 정의되지 않았기 때문에 학습마다 매 번 동일한 랜덤 값이 부여된다.
 
 ## Sent2Vec
+sent2vec fasttext 구현에서 5.5G 짜리 모델을 `load_model()`하는데 메모리가 모자라니(docker에서 4G만 할당한 상태) 로딩 중 `Killed` 메시지가 나오며 그냥 죽어버린다. 어떠한 예외처리도 되어 있지 않고 오류도 없이 그냥 죽어 당황스럽다. 메모리가 점점 차오르는 상황은 `free -m`으로 확인 가능하다. 1G 정도 차는데 6초 정도 소요됐다.
+
+gensim은 `mmap` 옵션이 있어 다른 프로세스에서 메모리를 공유할 수 있는데 반해 fasttext는 그 기능이 없어 프로세스 마다 각각 메모리를 점유하므로 큰 모델의 경우 멀티 프로세스로 서비스가 어렵다.
+
+Text Classification을 [word2vec 중심으로 실험](http://nadbordrozd.github.io/blog/2016/05/20/text-classification-with-word2vec/) 해보니 SVC(linear kernel SVM)이 가장 성능이 좋고, word2vec이 그 다음을 차지했다고 한다.
+
 - `getNgrams()`는 cbow, skipgram을 위한 char ngram 함수이고 `addNgrams()`는 sent2vec을 위한 토큰 ngram 생성 함수다.
 - negative sampling에서 unsupervised는 label이 존재하지 않을 것 같다.
+
 ### word n-grams
 ngram 확장이 (0,2), (0,6) 일때 마지막 (0,6)이 (2,6)과 같은 값을 갖는걸 확인할 수 있었다. 이는 hash collision으로 일종의 버그로 추측되며, 3 이상일때 문제가 발생한다.

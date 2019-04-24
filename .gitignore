@@ -4,3 +4,5 @@ nohup.out
 .DS_Store
 .idea
 .ipynb_checkpoints
+.jekyll-metadata
+Gemfile.lock
