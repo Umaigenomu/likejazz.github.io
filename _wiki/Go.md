@@ -41,6 +41,7 @@ func main() {
 ```
 
 2. 채널을 이용하면 서로 통신할 수 있다.
+
 ```go
 func printNumbers(w chan bool) {
         ..
