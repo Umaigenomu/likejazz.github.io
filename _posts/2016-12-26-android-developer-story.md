@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 코드 한 줄 없는 안드로이드 개발 이야기
+title: 안드로이드 개발 경험 정리
 tags: ["Programming, Development"]
 ---
 
