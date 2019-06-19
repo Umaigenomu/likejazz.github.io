@@ -57,7 +57,7 @@ CNN 알고리즘은 주로 이미지의 특징을 추출하여 유사점을 찾�
 
 위 이미지는 [A Sensitivity Analysis of (and Practitioners' Guide to) Convolutional Neural Networks for Sentence Classification](https://arxiv.org/abs/1510.03820) 논문에 등장한 문장 분류를 위한 합성곱 신경망(CNN) 아키텍처다. 초기에 단어를 벡터로 임베딩하는 과정이 진행되어야 함을 제외하면 이미지 분류와 크게 다르지 않다. 3개의 필터 사이즈 2,3,4를 각 두 개씩 총 6개를 문장 매트릭스에 합성곱을 수행하고 피쳐 맵을 생성한다. 이후 각 맵에 대해 맥스 풀링을 진행하여 각 피쳐 맵으로부터 가장 큰 수를 남긴다. 이들 6개 맵에서 단변량<sup>univariate</sup> 벡터가 생성되고, 이들 6개 피쳐는 두 번째 레이어를 위한 피쳐 벡터로 연결한다. 최종적으로 소프트맥스 레이어는 피쳐 값을 받아 문장을 분류한다. 여기서는 이진<sup>binary</sup> 분류를 가정했고 따라서 두 가지 가능한 출력 상태를 묘사했다.[^fn-1]
 
-아울러 [김윤 박사가 문장 분류에 CNN을 적용한 논문](https://arxiv.org/abs/1408.5882)을 발표했고 좋은 결과를 보였다. 이를 참고하여 구현한 문서가 [IMPLEMENTING A CNN FOR TEXT CLASSIFICATION IN TENSORFLOW](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/)이며 여기서는 '원문'으로 표기하며 본 문서에 소개하는 대부분의 내용과 코드는 원문을 참조하여 작성했음을 미리 밝혀둔다.
+아울러 [Yoon Kim이 문장 분류에 CNN을 적용한 논문](https://arxiv.org/abs/1408.5882)을 발표했고 좋은 결과를 보였다. 이를 참고하여 구현한 문서가 [IMPLEMENTING A CNN FOR TEXT CLASSIFICATION IN TENSORFLOW](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/)이며 여기서는 '원문'으로 표기하며 본 문서에 소개하는 대부분의 내용과 코드는 원문을 참조하여 작성했음을 미리 밝혀둔다.
 
 ## 본문
 
