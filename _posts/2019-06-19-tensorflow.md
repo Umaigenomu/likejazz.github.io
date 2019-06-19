@@ -4,7 +4,7 @@ title: TensorFlow 추론 최적화
 ---
 
 <div class="message">
-TensorFlow는 1.1 이후 하이 레벨 추상화 API인 Estimators를 제공하며, 이를 이용해 여러가지 실험을 손쉽게 진행할 수 있다. 그러나 Estimator는 추론<sup>inferences</sup>시 매 번 그래프를 동적으로 생성하며, 따라서 이를 최적화 하기 위한 여러가지 방안에 대해 살펴본다.
+TensorFlow는 1.1 이후 하이 레벨 추상화 API인 Estimators를 제공하며, 이를 이용해 여러가지 실험을 손쉽게 진행할 수 있다. 그러나 Estimator는 추론<sup>inferences</sup>시 매 번 그래프를 동적으로 생성한다. 따라서 이를 최적화 하기 위한 여러가지 방안에 대해 살펴본다.
 </div>
 
 <small>
@@ -86,7 +86,7 @@ Result for output key scores:
 [-3.9668984]
 ```
 
-만약 이미 서빙이 구동 중인 상태라면 Out of Memory로 predict가 진행되지 않는다.
+하지만 만약 이미 서빙이 구동 중인 상태라면 GPU의 Out of Memory로 predict가 진행되지 않는다.
 
 ### Docker
 TensorFlow Serving을 구동하는 방법으로 Docker를 이용한 방법이 권장된다. 상기 예제의 Iris 모델은 아래와 같이 Docker 명령으로 실행한다. 포트 8500은 gRPC, 8501은 REST API를 제공한다.
@@ -153,9 +153,9 @@ translation = stub.Predict(request).outputs['outputs'].int_val
 ```
 
 #### REST API
-직접 모델 서버를 구성할때와 달리 Docker로 구동한 상태에서는 REST API 호출이 어려웠다. Iris 모델 예제에서 input tensor type이 `DT_STRING` 인데 직접 JSON을 만들어야 해서 `curl` 페이로드를 만드는 방식이 다소 혼란스럽다. [SO에 질문](https://stackoverflow.com/questions/54820451/how-can-i-query-to-rest-api-runs-on-tensorflow-model-server)을 올렸고, [다른 질문에 답변](https://stackoverflow.com/a/54475463)도 달렸으나 모두 제대로 동작하지 않았다.
+직접 모델 서버를 구성할때와 달리 Docker로 구동한 상태에서는 REST API 호출이 어렵다. Iris 모델 예제에서 input tensor type이 `DT_STRING` 인데 직접 JSON을 만들어야 해서 `curl` 페이로드를 만드는 방식이 다소 혼란스럽다. [SO에 질문](https://stackoverflow.com/questions/54820451/how-can-i-query-to-rest-api-runs-on-tensorflow-model-server)을 올렸고, [다른 질문에 답변](https://stackoverflow.com/a/54475463)도 달렸으나 모두 제대로 동작하지 않았다.
 
-약 한달 후 SO에 답변이 달렸고 문제가 해결됐다. 파라미터를 `examples`로 지정하는게 핵심이다.
+한 달 후 SO에 답변이 달렸고 문제가 해결됐다. 파라미터를 `examples`로 지정해 문제가 해결됐다.
 ```
 POST http://tensorflow-serving.pg1.krane.xx:9001/v1/models/default:classify
 Content-Type: application/json
