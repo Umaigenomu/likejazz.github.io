@@ -32,7 +32,7 @@ tags: ["Deep Learning for NLP/NLU"]
 [역전파, 직접 짜봐야 하나요?](https://tensorflow.blog/2016/12/27/%EC%97%AD%EC%A0%84%ED%8C%8C-%EC%A7%81%EC%A0%91-%EC%A7%9C%EB%B4%90%EC%95%BC-%ED%95%98%EB%82%98%EC%9A%94/)
 
 ### 역전파<sup>backpropagation</sup> 계산
-에러 $$E$$를 SSE로 정의하고, 각각의 가중치 $$W$$를 $$w_{jk}$$로 정의할때, $$w_{jk}$$에 대한 에러 $$E$$의 편미분은 아래와 같다.
+에러 $$E$$를 SSE로 정의하고, 각각의 가중치 $$W$$를 $$w_{jk}$$로 정의할때, $$w_{jk}$$에 대한 에러 $$E$$의 편미분은 아래와 같다.
 
 $$\frac{\partial{E}}{\partial{w_{jk}}}=\frac{\partial}{\partial{w_{jk}}}(t_k-o_k)^2$$
 
