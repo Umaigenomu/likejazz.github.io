@@ -27,9 +27,7 @@ tags: ["Deep Learning for NLP/NLU"]
 <!-- /TOC -->
 
 ## 본문
-[Siamese Recurrent Architectures for Learning Sentence Similarity](http://www.mit.edu/~jonasm/info/MuellerThyagarajan_AAAI16.pdf) 논문을 읽어보고 구현한 결과를 정리한다. 코드를 구현한 깃헙은 아래 링크를 참조한다.
-
-[Siamese-LSTM - GitHub](https://github.com/likejazz/Siamese-LSTM)
+[Siamese Recurrent Architectures for Learning Sentence Similarity](http://www.mit.edu/~jonasm/info/MuellerThyagarajan_AAAI16.pdf) 논문을 읽어보고 구현한 결과를 정리한다.
 
 ### Kaggle's Quora Question Pairs
 유사한 질문을 찾아내는 알고리즘을 고민하고 있던 중 마침 Kaggle에서 Quora의 유사 질문을 찾는 Competition을 진행했다는 것을 알게 됐다. Competition의 목표가 우리가 원하는 결과와 거의 유사했고, 여기에 올라온 다양한 접근 방법은 많은 도움이 되었다. 물론 1등 모델을 사용하면 성능은 가장 좋겠지만 무려 300여개의 앙상블로 구현했다고 하니, 상위권은 지나치게 impractical 했다.
@@ -64,7 +62,7 @@ Tree-LSTM은 부정의 의미를 판별하지 못한 문장도 MaLSTM이 제대�
 
 텐서플로 구현이 논문과 함께 공개되었는데, 코드가 다소 지저분하고 정리되지 않아 단순한 모델임에도 불구하고 실험해보기가 쉽지 않았다. 논문을 함께 쓴 인도 학생도 깃헙을 공개했는데, 그쪽은 더 지저분.
 
-Kaggle의 Quora Competition 쪽의 커널이 깔끔하게 잘 정리된게 많아서 그쪽을 계속 살펴보다가 한 데이터 과학자가 [미디엄에 Keras 구현](https://medium.com/mlreview/implementing-malstm-on-kaggles-quora-question-pairs-competition-8b31b0b16a07)을 올렸고 그걸 가장 많이 참조했다. 정말 알기쉽게 잘 설명하고 있다. Production을 목표로 하기 위해 Keras의 커스텀 레이어도 처음으로 만들어 봤고(생각보다 어렵지 않았다) train/predict를 구분하고, 코드를 좀 더 정리해봤다.
+Kaggle의 Quora Competition 쪽의 커널이 깔끔하게 잘 정리된게 많아서 그쪽을 계속 살펴보다가 한 데이터 과학자가 [미디엄에 Keras 구현](https://medium.com/mlreview/implementing-malstm-on-kaggles-quora-question-pairs-competition-8b31b0b16a07)을 올렸고 그걸 가장 많이 참조했다. 정말 알기쉽게 잘 설명하고 있다. Production을 목표로 하기 위해 Keras의 커스텀 레이어도 처음으로 만들어 봤고(생각보다 어렵지 않다) train/predict를 구분하고, 코드를 좀 더 정리해봤다.
 
 ### 코드
 
