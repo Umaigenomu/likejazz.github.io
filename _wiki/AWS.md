@@ -5,10 +5,15 @@ title: AWS
 
 <!-- TOC -->
 
+- [서비스 운영이 쉬워지는 AWS 인프라 구축 가이드 <sub>2019</sub>](#서비스-운영이-쉬워지는-aws-인프라-구축-가이드-2019)
 - [AWS 기반 서버리스 아키텍처 <sub>2017, 2018</sub>](#aws-기반-서버리스-아키텍처-2017-2018)
 - [예제를 통해 쉽게 따라하는 아마존 웹 서비스 <sub>2017</sub>](#예제를-통해-쉽게-따라하는-아마존-웹-서비스-2017)
 
 <!-- /TOC -->
+
+# 서비스 운영이 쉬워지는 AWS 인프라 구축 가이드 <sub>2019</sub>
+목차:  
+EC2, Auto Scailing, DNS, Code Deploy, 비밀 값 관리(Vault by HashiCorp), CloudWatch, Beanstalk, CodePipeline
 
 # AWS 기반 서버리스 아키텍처 <sub>2017, 2018</sub>
 목차:  
