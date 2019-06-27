@@ -5,7 +5,7 @@ tags: ["Algorithms, Data Structure"]
 ---
 
 <div class="message">
-일반적으로 문서간의 유사도를 비교할 때는 코사인 유사도<sup>cosine similarity</sup>를 주로 사용한다. 이 글에서는 그 동안 습관적으로 사용해오던 코사인 유사도의 의미를 수식과 함께 예제를 통해 정확히 이해해보도록 한다.
+일반적으로 문서간의 유사도를 비교할 때는 코사인 유사도<sup>cosine similarity</sup>를 주로 사용한다. 여기서는 그 동안 습관적으로 사용해오던 코사인 유사도의 의미를 수식과 함께 예제를 통해 살펴보도록 한다.
 </div>
 
 <small>

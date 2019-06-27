@@ -79,7 +79,7 @@ $$\frac{\partial{E}}{\partial{w_{jk}}}=-(t_k-o_k){sigmoid(\sum_{j}w_{jk}}{o_j})(
 <img src="https://2.bp.blogspot.com/-JMU0Mek7a_M/WGlAGVBCg6I/AAAAAAAAAfs/RXrTnOqCfB4VB4LhfNXA400q9ADEVUxeQCLcB/s640/formula_11_cc.png" />
 
 #### 주피터 노트북
-[주피터 노트북에서 미분 계산](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/data-science/linear-algebra-transpose-differential.ipynb)을 직접 진행해보았으니 도움이 되길 바란다.
+[주피터 노트북에서 미분 계산](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/data-science/linear-algebra-transpose-differential.ipynb)을 직접 정리했다.
 
 ### 히든 레이어의 역전파
 히든 레이어의 경우 이전 레이어의 미분을 모두 적용해야 하므로 좀 더 복잡하다. 행렬 연산이 반드시 필요한 이유이기도 한다. 여기서는 행렬의 전치<sup>transpose</sup>로 미분 계산을 진행한다.
@@ -94,7 +94,7 @@ $$\frac{\partial{E}}{\partial{w_{jk}}}=-(t_k-o_k){sigmoid(\sum_{j}w_{jk}}{o_j})(
 
 <img src="https://user-images.githubusercontent.com/1250095/36209903-6a45dfee-11e0-11e8-97a7-390df2a85545.jpeg" width="50%" />
 
-무엇보다 직접 계산하면서 값을 맞춰 보는게 가장 좋다. 연쇄 법칙을 정리해보면 활성화, 여기서는 시그모이드 미분이 필요함을 알 수 있으며, 시그모이드의 미분인 $$sigmoid(net_o)(1 - sigmoid(net_o))$$ 를 $$\partial{E}$$에 포함해야 되며, 기존 에러 편미분과 함께 가중치를 곱해서 이전 레이어로 역전파해야 그래디언트 체킹이 성공하게 된다.
+무엇보다 직접 계산하면서 값을 맞춰 보면 이해가 쉽다. 연쇄 법칙을 정리해보면 활성화, 여기서는 시그모이드 미분이 필요함을 알 수 있으며, 시그모이드의 미분인 $$sigmoid(net_o)(1 - sigmoid(net_o))$$ 를 $$\partial{E}$$에 포함해야 되며, 기존 에러 편미분과 함께 가중치를 곱해서 이전 레이어로 역전파해야 그래디언트 체킹이 성공하게 된다.
 
 초기에 코드를 구현하면서 누락하여 출력 레이어 활성화의 미분이 적용되지 않았으나 그래도 계산 결과만 다를뿐 비율은 행 별로 동일했으며, 재밌게도 학습 또한 제대로 진행됐다. 논문에서도 실수로 수식을 빠트리는 경우가 많으며, 의도적으로 생략하는 경우도 잦으므로 주의가 필요하다.
 

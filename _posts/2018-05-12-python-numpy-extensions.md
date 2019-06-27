@@ -227,6 +227,6 @@ Cython w/ threads로는 1.84초에 완료되어 25% 정도 성능 개선 효과�
 아울러 직접 모든 wrapper를 작성하는 일은 많은 고난이 뒤따르기 때문에 성능을 약간 타협하여 Cython 또는 pybind11를 택하는 편이 최적의 선택이다. 그 중에서도 Cython의 성능이 돋보이며, C++ 연동 방식은 pybind11가 좀 더 우아한 편이지만 오토 컨버전의 성능 이슈는 하루빨리 해결되어야 할 과제다.
 
 ## 참고
-이 문서에서 사용한 표준 편차를 구하는 함수와 최초 C++ 구현은 [Speeding up Python and NumPy: C++ing the Way](https://medium.com/coding-with-clarity/speeding-up-python-and-numpy-c-ing-the-way-3b9658ed78f4)를 참조했으며 이를 fork 하여 C++ wrapper를 개선하고 Cython, pybind11 바인딩을 추가했다. 전체 코드는 아래 깃헙에 올려 두었다.
+이 문서에서 사용한 표준 편차를 구하는 함수와 최초 C++ 구현은 [Speeding up Python and NumPy: C++ing the Way](https://medium.com/coding-with-clarity/speeding-up-python-and-numpy-c-ing-the-way-3b9658ed78f4)를 참조했으며 이를 fork 하여 C++ wrapper를 개선하고 Cython, pybind11 바인딩을 추가했다. 전체 코드는 아래 깃헙에 있다
 
-[likejazz/PythonCExtensions - GitHub](https://github.com/likejazz/PythonCExtensions)
+* [likejazz/PythonCExtensions - GitHub](https://github.com/likejazz/PythonCExtensions)
