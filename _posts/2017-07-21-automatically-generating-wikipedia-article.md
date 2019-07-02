@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ! '위키피디어 글 자동 생성: 구조 중심 접근'
-tags: ["Algorithms, Data Structure"]
+tags: ["Machine Learning"]
 ---
 
 <div class="message">
