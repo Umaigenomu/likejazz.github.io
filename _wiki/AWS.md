@@ -11,6 +11,8 @@ title: AWS
 
 <!-- /TOC -->
 
+# AWS 머신 러닝 <sub>2017, 2018</sub>
+
 # 서비스 운영이 쉬워지는 AWS 인프라 구축 가이드 <sub>2019</sub>
 목차:  
 EC2, Auto Scailing, DNS, Code Deploy, 비밀 값 관리(Vault by HashiCorp), CloudWatch, Beanstalk, CodePipeline
