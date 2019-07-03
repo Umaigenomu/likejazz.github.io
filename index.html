@@ -40,7 +40,7 @@ title: Home
   <div class="grid grid-pad">
     <div class="col-1-2">
       <div class="content">
-        {% assign t = 'Machine Learning' %}
+        {% assign t = 'Machine Learning, Statistics' %}
         <h3>{{ t }}</h3>
         {% for post in site.posts %}
           {% if post.tags contains t %}
@@ -73,7 +73,7 @@ title: Home
   <div class="grid grid-pad">
     <div class="col-1-2">
       <div class="content">
-        {% assign t = 'Programming, Development' %}
+        {% assign t = 'Software Development' %}
         <h3>{{ t }}</h3>
         {% for post in site.posts %}
           {% if post.tags contains t %}
@@ -119,6 +119,24 @@ title: Home
         {% endfor %}
       </div>
     </div>
+    <div class="col-1-2">
+      <div class="content">
+        {% assign t = 'Information Retrieval' %}
+        <h3>{{ t }}</h3>
+        {% for post in site.posts %}
+          {% if post.tags contains t %}
+          <p>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+            <small style="font-size: 0.5em"><span class="post-meta">{{ post.date | date: date_format }}</span></small>
+          </p>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-pad">
     <div class="col-1-2">
       <div class="content">
         {% assign t = 'Productivity' %}

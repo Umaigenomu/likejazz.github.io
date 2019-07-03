@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 검색은 어떻게 동작하나요
-tags: [Productivity]
+tags: ["Information Retrieval"]
 ---
 
 <div class="message">

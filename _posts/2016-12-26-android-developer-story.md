@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 안드로이드 개발 경험 정리
-tags: ["Programming, Development"]
+tags: ["Software Development"]
 ---
 
 <div class="message">
