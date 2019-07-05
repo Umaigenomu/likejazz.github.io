@@ -22,9 +22,9 @@ title: Activation, Cost Functions
 <!-- /TOC -->
 
 # Activation Functions
-- ReLU, He 초기값(표준편차 <img src="http://chart.apis.google.com/chart?cht=tx&chl={\sqrt{\frac{n}{2}}}" />), 편향(b)은 0으로 초기화하는게 일반적이다. [참고](http://nmhkahn.github.io/NN)
-- Sigmoid <img src="http://chart.apis.google.com/chart?cht=tx&chl={\sigma}(x)=\frac{1}{1%2Be^{-x}}" /> Xavier 초기값(표준편차 <img src="http://chart.apis.google.com/chart?cht=tx&chl={\frac{1}{\sqrt{n}}}" />)
-- <img src="http://chart.apis.google.com/chart?cht=tx&chl=tanh(x)=2{\sigma}(2x)-1" /> *tanch*, 시그모이드로 간단히 표현할 수 있다.
+- ReLU, He 초기값(표준편차 $${\sqrt{\frac{n}{2}}}$$), 편향(b)은 0으로 초기화하는게 일반적이다. [참고](http://nmhkahn.github.io/NN)
+- Sigmoid $${\sigma}(x)=\frac{1}{1+e^{-x}}$$ Xavier 초기값(표준편차 $${\frac{1}{\sqrt{n}}}$$)
+- $$tanh(x)=2{\sigma}(2x)-1$$ *tanch*, 시그모이드로 간단히 표현할 수 있다.
     - 시그모이드와 달리 함수값이 zero-centered 되어 있다.
 
 ## 세상에서 가장 중요한 곡선: 시그모이드
@@ -74,7 +74,7 @@ Regression에는 SSE가 사용되고 멀티클래스 분류에는 Cross Entropy 
 
 다클래스 분류에도 이진 분류와 같이 신경망이 구현하는 함수를 각 클래스의 사후확률에 대한 함수로 간주하고, 그러한 확률 모형을 기반으로 훈련 데이터에 대한 신경망 파라미터의 우도를 평가하여 그 우도를 최대화한다. 이 우도에 로그를 취하여 부호를 반전한 것을 오차 함수로 삼는다. (딥러닝 제대로 시작하기, 2015)
 
-<img src="http://chart.apis.google.com/chart?cht=tx&chl=E=-{\sum_{k}t_k{\log{y_k}}}" />
+$$E=-{\sum_{k}t_k{\log{y_k}}}$$
 
 정보 이론에 나오는 수식으로, 디시젼 트리를 구할때도 사용한다.  
 relative entropy  
@@ -105,7 +105,7 @@ softmax의 cross-entropy는 아래 설명하는 *LogSumExp* 패턴이 나타난�
 ## mean_squared_error
 <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/67b9ac7353c6a2710e35180238efe54faf4d9c15" />
 
-SSE는 Sum of Squared Errors이며 따라서 <img src="http://chart.apis.google.com/chart?cht=tx&chl=MSE={\frac{1}{n}}{\times}SSE" /> 이다.
+SSE는 Sum of Squared Errors이며 따라서 $$MSE={\frac{1}{n}}{\times}SSE$$ 이다.
 
 앤드류 응 머신러닝 강좌를 보면 [Cost Function으로 MSE의 1/2](https://www.reddit.com/r/mlclass/comments/l0ae8/can_somebody_explain_why_12m_was_added_in_the/?st=ixxlvm11&sh=1eca6ff1)을 취하는데 [이에 대한 자세한 소개](http://mccormickml.com/2014/03/04/gradient-descent-derivation/). 미분시 상수항이 떨어지므로 계산을 쉽게 하기 위함이며 MSE 앞에 One Half를 붙인 One Half Mean Squared Error로 부른다.
 
