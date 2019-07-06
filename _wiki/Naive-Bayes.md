@@ -30,12 +30,12 @@ title: Naive Bayes
 p.243 『마스터 알고리즘』 <sub>2015, 2016</sub>
 
 ### 결합 확률<sup>joint probabilities</sup>
-<img src="http://chart.apis.google.com/chart?cht=tx&chl=P(A,B)=P(A\bigcap{B})=P(A|B)P(B)" />
+$$P(A,B)=P(A\bigcap{B})=P(A|B)P(B)$$
 
 결합 사건 A와 B의 확률은 위와 같이 곱하기 법칙<sup>product rule</sup>이라고도 부른다.
 
 ### 조건부 확률<sup>conditional probability</sup>
-<img src="http://chart.apis.google.com/chart?cht=tx&chl=P(A|B)=\frac{P(A,B)}{P(B)}" />
+$$P(A|B)=\frac{P(A,B)}{P(B)}$$
 
 `P(B) > 0` 이어야 한다.
 ### 계산
@@ -46,7 +46,7 @@ p.243 『마스터 알고리즘』 <sub>2015, 2016</sub>
 ### "naive" means
 > In simple terms, a naive Bayes classifier assumes that the presence (or absence) of a particular feature of a class is unrelated to the presence (or absence) of any other feature, given the class variable. For example, a fruit may be considered to be an apple if it is red, round, and about 4" in diameter. Even if these features depend on each other or upon the existence of the other features, a naive Bayes classifier considers all of these properties to independently contribute to the probability that this fruit is an apple.
 
-[출처](https://stackoverflow.com/a/10614801/3513266)
+([source](https://stackoverflow.com/a/10614801/3513266))
 
 ### 나이브 베이즈가 성공적인 이유
-[논문](https://scholar.google.co.kr/scholar?num=50&newwindow=1&dcr=0&um=1&ie=UTF-8&lr&cites=8190045656011597473)(Domingos, Pazzani, 1997)에서 나이브 베이즈가 성공적인 이유는 사후 확률의 우수함이 아니라 `argmax_y P(Y|X)`의 우수함 때문이라 말한다. 심지어 Y를 최대화하기 위한 목적에서 베이즈 룰의 사용을 피할 수 있는데, 이는 교정되지 않은 우도를 교정되지 않은 사후 확률로만 변형하기 때문이다. (머신 러닝, 피처 플래치, 2012) 이 논문의 1저자인 Domingos는 『마스터 알고리즘』 을 쓴 페드로 도밍고스 교수다.
+[논문](https://scholar.google.co.kr/scholar?num=50&newwindow=1&dcr=0&um=1&ie=UTF-8&lr&cites=8190045656011597473)(Domingos, Pazzani, 1997)에서 나이브 베이즈가 성공적인 이유는 사후 확률의 우수함이 아니라 `argmax_y P(Y|X)`의 우수함 때문이라 말한다. 심지어 Y를 최대화하기 위한 목적에서 베이즈 룰의 사용을 피할 수 있는데, 이는 교정되지 않은 우도를 교정되지 않은 사후 확률로만 변형하기 때문이다. (머신 러닝, 피처 플래치, 2012) 이 논문의 1저자인 Domingos는 『마스터 알고리즘』을 쓴 페드로 도밍고스 교수다.
