@@ -8,6 +8,7 @@ title: LeetCode
 
 <!-- /TOC -->
 
+- 101 Symmetric Tree ([Python](https://gist.github.com/likejazz/9c327720c22d6e85543083e28870040e))
 - 125 Valid Palindrome ([C](https://gist.github.com/likejazz/695450de31396904a1ca2149a16bb7ed), [Python](https://gist.github.com/likejazz/90aeeff3d57179c81087557954df224b))
 - 207 Course Schedule ([Python](https://gist.github.com/likejazz/2cddecc91afc45c38ad29f423ef4901a))
 - 200 Number of Islands ([Python](https://gist.github.com/likejazz/674fcc8c057274dd4e1565132bc29012))
