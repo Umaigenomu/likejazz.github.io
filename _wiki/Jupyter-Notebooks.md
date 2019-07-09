@@ -29,7 +29,7 @@ title: Jupyter Notebooks
 - [nnlm.py](https://github.com/likejazz/jupyter-notebooks/blob/master/deep-learning/nlp/nnlm.py) Implementation of Paper "A Neural Probabilistic Language Model(Bengio et al., 2003)"
 - [word2vec.py](https://github.com/likejazz/jupyter-notebooks/blob/master/deep-learning/nlp/word2vec.py)
 - [vector-representation-of-words.ipynb](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/deep-learning/nlp/vector-representation-of-words.ipynb)
-- [sentimental-analysis-word2vec-keras.ipynb](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/deep-learning/nlp/sentimental-analysis-word2vec-keras.ipynbs)
+- [sentimental-analysis-word2vec-keras.ipynb](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/deep-learning/nlp/sentimental-analysis-word2vec-keras.ipynb)
 - [imdb-sentimental-analysis-rnn.ipynb](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/deep-learning/nlp/imdb-sentimental-analysis-rnn.ipynb)
 - [uci-news.py](https://github.com/likejazz/jupyter-notebooks/blob/master/deep-learning/nlp/uci-news.py) Multi-Class Classification with CNN on the UCI News dataset.
 - [lstm-seq2seq.py](https://github.com/likejazz/jupyter-notebooks/blob/master/deep-learning/nlp/lstm-seq2seq.py) Basic Character-Level Seq2Seq Model
