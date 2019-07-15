@@ -35,7 +35,7 @@ title: Jupyter Notebooks
 - [lstm-seq2seq.py](https://github.com/likejazz/jupyter-notebooks/blob/master/deep-learning/nlp/lstm-seq2seq.py) Basic Character-Level Seq2Seq Model
 - [elmo.py](https://github.com/likejazz/jupyter-notebooks/blob/master/deep-learning/nlp/elmo.py) Sentimental Analysis with ELMo Embeddings.
 - [allennlp-tutorial.py](https://github.com/likejazz/jupyter-notebooks/blob/master/deep-learning/nlp/allennlp-tutorial.py) AllenNLP Tutorial
-- [cnn-classification.py](https://github.com/likejazz/jupyter-notebooks/blob/master/deep-learning/nlp/cnn-classification.py) Text Classification with CNN/TensorBoard
+- [cnn-classification.py](https://github.com/likejazz/jupyter-notebooks/blob/master/deep-learning/tensorboard/cnn-classification.py) Text Classification with CNN/TensorBoard
 - [bert.py](https://github.com/likejazz/jupyter-notebooks/blob/master/deep-learning/nlp/bert.py) Example codes for BERT article.
 
 ## Conventional Machine Learning
@@ -71,4 +71,5 @@ title: Jupyter Notebooks
 - [prob-with-permutations.py](https://github.com/likejazz/jupyter-notebooks/blob/master/data-science/prob-with-permutations.py) Probabilities with Duplicate Permutations.
 - [euclidean-v-cosine.ipynb](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/data-science/euclidean-v-cosine.ipynb) Euclidean Distance vs. Cosine Similarity
 - [calc-entropy.ipynb](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/data-science/calc-entropy.ipynb) Entropy graph when one probability is high.
-- [circular-queue.ipynb (C++)](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/data-science/circular-queue.ipynb)
+### C++ w/ Cling
+- [circular-queue.ipynb](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/data-science/circular-queue.ipynb)
