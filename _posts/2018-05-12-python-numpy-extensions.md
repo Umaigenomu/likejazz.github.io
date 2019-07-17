@@ -229,4 +229,4 @@ Cython w/ threads로는 1.84초에 완료되어 25% 정도 성능 개선 효과�
 ## 참고
 이 문서에서 사용한 표준 편차를 구하는 함수와 최초 C++ 구현은 [Speeding up Python and NumPy: C++ing the Way](https://medium.com/coding-with-clarity/speeding-up-python-and-numpy-c-ing-the-way-3b9658ed78f4)를 참조했으며 이를 fork 하여 C++ wrapper를 개선하고 Cython, pybind11 바인딩을 추가했다. 전체 코드는 아래 깃헙에 있다
 
-* [likejazz/PythonCExtensions - GitHub](https://github.com/likejazz/PythonCExtensions)
+* [PythonCExtensions - GitHub](https://github.com/likejazz/PythonCExtensions)

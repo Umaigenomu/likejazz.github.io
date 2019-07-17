@@ -55,4 +55,4 @@ chars compared 값이 적을수록 더 최적화된 연산을 수행했다고 �
 
 사실 문자열 검색 같은 부분은 이미 좋은 라이브러리가 많이 나와있기 때문에 실제로 구현할 일이 거의 없다. 어쩌면 이번이 마지막이 될지도 모르는 일인데 깊이 있게 짚어보고 넘어 갈 수 있는 좋은 기회였다.
 
-[likejazz/boyer-moore-string-search - GitHub](https://github.com/likejazz/boyer-moore-string-search)
+- [boyer-moore-string-search - GitHub](https://github.com/likejazz/boyer-moore-string-search)

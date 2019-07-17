@@ -42,6 +42,6 @@ add_pattern(p, dcfg, "//t4.search.daumcdn.net/", spdy_addr);
 
 ### 공개
 
-원래 다른 모듈명으로 사내 CDN 주소 변경 용도로 만들었으나 정리하여 오픈소스로 공개한다. 공개하면서 일부 코드를 함께 정리했는데, 정리한 부분은 다시 사내 버전에 반영 하면서 상호 개선 효과를 얻을 수 있었다. 소스 코드는 단일 C 파일로 작성되어 있으며 [README](https://github.com/likejazz/mod-url-replace/blob/master/README.md) 에 이용 방법과 설치 방법을 상세히 기술했다.
+원래 다른 모듈명으로 사내 CDN 주소 변경 용도로 만들었으나 정리하여 오픈소스로 공개한다. 공개하면서 일부 코드를 함께 정리했는데, 정리한 부분은 다시 사내 버전에 반영 하면서 상호 개선 효과를 얻을 수 있었다. 소스 코드는 단일 C 파일로 작성되어 있으며 [README](https://github.com/likejazz/mod-url-replace/blob/master/README.md)에 이용 방법과 설치 방법을 기술했다.
 
-[likejazz/mod-url-replace - GitHub](https://github.com/likejazz/mod-url-replace)
+- [mod-url-replace - GitHub](https://github.com/likejazz/mod-url-replace)

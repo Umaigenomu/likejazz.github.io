@@ -192,8 +192,8 @@ Attention은 매우 좋은 성능을 보여주며, 특히 쉽게 시각화가 �
 ## 코드
 이 문서에서 사용한 코드는 아래에서 각각 확인할 수 있다.
 - [attention_lstm](https://github.com/likejazz/jupyter-notebooks/blob/master/deep-learning/attention_lstm.py)
-- [Visualize Attention with Keras](https://github.com/likejazz/jupyter-notebooks/tree/master/keras-attention)
 - [addition_seq2seq](https://github.com/likejazz/jupyter-notebooks/blob/master/deep-learning/addition_seq2seq.py)
+- [Visualize Attention with Keras](https://github.com/likejazz/jupyter-notebooks/tree/master/deep-learning/keras-attention)
 
 ## References
 [^fn-1]: [Learning to Execute](https://arxiv.org/abs/1410.4615)
