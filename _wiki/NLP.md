@@ -5,6 +5,7 @@ title: NLP
 
 <!-- TOC -->
 
+- [NLU](#nlu)
 - [Neural History of NLP](#neural-history-of-nlp)
     - [Neural language models](#neural-language-models)
     - [Multi-task learning](#multi-task-learning)
@@ -16,6 +17,14 @@ title: NLP
 - [LM Perplexity](#lm-perplexity)
 
 <!-- /TOC -->
+
+# NLU
+문장 이해의 3가지 요소
+1. 구문 분석 <sup>syntactic analysis(parsing)</sup>
+1. 의미 분석 <sup>semantic analysis</sup>
+1. 실용(화용) 분석 <sup>pragmatic analysis</sup>: 어떠한 문장(음성으로 말하는 어문)이 나타내는 의미를 알기 위해 다시 해석되는 과정. 관용적으로 하는 이야기를 재해석해서 이해하는 것.
+
+<img src="https://www.tutorialspoint.com/artificial_intelligence/images/steps_in_nlp.jpg" width="20%"> ([AI - Natural Language Processing](https://www.tutorialspoint.com/artificial_intelligence/artificial_intelligence_natural_language_processing))
 
 # Neural History of NLP
 <img src="https://pbs.twimg.com/media/DobzavEXsAEkBVc?format=jpg" />
