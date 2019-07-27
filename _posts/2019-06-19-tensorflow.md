@@ -1,7 +1,7 @@
 ---
 layout: post
 title: TensorFlow 추론 최적화
-tags: ["Deep Learning"]
+tags: ["Deep Learning for Natural Language Processing"]
 ---
 
 <div class="message">
