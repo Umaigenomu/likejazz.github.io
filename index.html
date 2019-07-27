@@ -7,7 +7,7 @@ title: Home
   <div class="grid grid-pad">
     <div class="col-1-2">
       <div class="content">
-        {% assign t = 'Natural Language Processing' %}
+        {% assign t = 'Deep Learning for Natural Language Processing' %}
         <h3>{{ t }}</h3>
         {% for post in site.posts %}
           {% if post.tags contains t %}
@@ -20,24 +20,6 @@ title: Home
         {% endfor %}
       </div>
     </div>
-    <div class="col-1-2">
-      <div class="content">
-        {% assign t = 'Deep Learning' %}
-        <h3>{{ t }}</h3>
-        {% for post in site.posts %}
-          {% if post.tags contains t %}
-          <p>
-            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-            <small style="font-size: 0.5em"><span class="post-meta">{{ post.date | date: date_format }}</span></small>
-          </p>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-
-  <div class="grid grid-pad">
     <div class="col-1-2">
       <div class="content">
         {% assign t = 'Machine Learning, Statistics' %}
@@ -53,6 +35,9 @@ title: Home
         {% endfor %}
       </div>
     </div>
+  </div>
+
+  <div class="grid grid-pad">
     <div class="col-1-2">
       <div class="content">
         {% assign t = 'Algorithms, Data Structure' %}
@@ -68,9 +53,6 @@ title: Home
         {% endfor %}
       </div>
     </div>
-  </div>
-
-  <div class="grid grid-pad">
     <div class="col-1-2">
       <div class="content">
         {% assign t = 'Software Development' %}
@@ -86,6 +68,9 @@ title: Home
         {% endfor %}
       </div>
     </div>
+  </div>
+
+  <div class="grid grid-pad">
     <div class="col-1-2">
       <div class="content">
         {% assign t = 'Performance Optimization' %}
@@ -101,9 +86,6 @@ title: Home
         {% endfor %}
       </div>
     </div>
-  </div>
-
-  <div class="grid grid-pad">
     <div class="col-1-2">
       <div class="content">
         {% assign t = 'Network Programming' %}
@@ -119,6 +101,9 @@ title: Home
         {% endfor %}
       </div>
     </div>
+  </div>
+
+  <div class="grid grid-pad">
     <div class="col-1-2">
       <div class="content">
         {% assign t = 'Information Retrieval' %}
@@ -134,9 +119,6 @@ title: Home
         {% endfor %}
       </div>
     </div>
-  </div>
-
-  <div class="grid grid-pad">
     <div class="col-1-2">
       <div class="content">
         {% assign t = 'Productivity' %}
@@ -153,7 +135,7 @@ title: Home
       </div>
     </div>
   </div>
-  
+
 </div><!-- end #home -->
 
 <!-- Wiki links -->
