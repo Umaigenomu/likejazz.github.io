@@ -19,7 +19,7 @@ title: Hadoop, Spark
 
 # 설치
 ## Hadoop Client
-~클라우데라에 상세한 [설치 문서](https://www.cloudera.com/documentation/enterprise/latest/topics/cdh_ig_cdh5_install.html)가 있다.~ 링크 깨짐. CentOS에서 yum으로 설치하고 싶었는데, 클라우데라에서 제공하는 repo가 있다. repo 등록 후 클라이언트 설치는 아래 명령으로 간단히 가능하다.
+<strike>클라우데라에 상세한 [설치 문서](https://www.cloudera.com/documentation/enterprise/latest/topics/cdh_ig_cdh5_install.html)가 있다.</strike> 링크 깨짐. CentOS에서 yum으로 설치하고 싶었는데, 클라우데라에서 제공하는 repo가 있다. repo 등록 후 클라이언트 설치는 아래 명령으로 간단히 가능하다.
 
 ```	
 sudo yum clean all; sudo yum install hadoop-client
@@ -30,7 +30,7 @@ sudo yum clean all; sudo yum install hadoop-client
 native hadoop jar 오류가 발생했는데, 맥에서는 별도로 패치해서 바이너리 빌드가 필요했다. 에러가 보이지 않도록 log4j.properties에서 `log4j.logger.org.apache.hadoop.util.NativeCodeLoader=ERROR` 설정 했다.
 
 ## Standalone 소스 설치
-~[이 문서](https://www.cloudera.com/documentation/enterprise/5-5-x/topics/cdh_ig_yumrepo_local_create.html)에 있는 repo를 설치하고 `sudo yum install hadoop-conf-pseudo`로 설치했다.~ 사용자 su 변경 문제로 설치에 실패했다.
+<strike>[이 문서](https://www.cloudera.com/documentation/enterprise/5-5-x/topics/cdh_ig_yumrepo_local_create.html)에 있는 repo를 설치하고 `sudo yum install hadoop-conf-pseudo`로 설치했다.</strike> 사용자 su 변경 문제로 설치에 실패했다.
 
 Spark를 소스 설치하고, Hadoop 또한 [예전 문서](https://archive.cloudera.com/cdh5/cdh/5/hadoop/hadoop-project-dist/hadoop-common/SingleCluster.html#Standalone_Operation)를 참고해 소스 설치했다. 옛날 문서지만 오히려 더 직관적이어서 수월했다.
 
