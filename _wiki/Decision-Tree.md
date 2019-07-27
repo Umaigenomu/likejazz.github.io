@@ -42,7 +42,7 @@ $$ \textit{Gini}: \mathit{Gini}(E) = 1 - \sum_{j=1}^{c}p_j^2 $$
 
 $$ \textit{Entropy}: H(E) = -\sum_{j=1}^{c}p_j\log p_j $$
 
-수식대로 계산해보면 균등하게 분류될수록 Gini impurity가 높다. 한쪽으로 쏠릴 수록 Gini impurity가 낮다. e.g. {0.5, 0.5} = 0.5, {0.1, 0.9} = 0.18. *A perfect separation results in a Gini score of 0.* 기본적으로 Gini impurity와 Entropy는 거의 동일하다.
+수식대로 계산해보면 균등하게 분류될수록 Gini impurity가 높다. 한쪽으로 쏠릴 수록 Gini impurity가 낮다. e.g. {0.5, 0.5} = 0.5, {0.1, 0.9} = 0.18. *A perfect separation results in a Gini score of 0.* 기본적으로 Gini impurity와 Entropy는 동일한 패턴을 보인다.
 
 ## 응용
 테러리스트 구분에 Decision Trees를 사용했다. 신용카드 사기 검출과 얼굴 인식에는 신경망을 이용했다. (넘버스 2017)
