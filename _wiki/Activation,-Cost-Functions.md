@@ -22,13 +22,13 @@ title: Activation, Cost Functions
 <!-- /TOC -->
 
 # Activation Functions
-- ReLU, He 초기값(표준편차 $${\sqrt{\frac{n}{2}}}$$), 편향(b)은 0으로 초기화하는게 일반적이다. [참고](http://nmhkahn.github.io/NN)
+- ReLU, He 초기값(표준편차 $${\sqrt{\frac{n}{2}}}$$), 편향(b)은 0으로 초기화하는게 일반적이다. ([참고](http://nmhkahn.github.io/NN))
 - Sigmoid $${\sigma}(x)=\frac{1}{1+e^{-x}}$$ Xavier 초기값(표준편차 $${\frac{1}{\sqrt{n}}}$$)
 - $$tanh(x)=2{\sigma}(2x)-1$$ *tanch*, 시그모이드로 간단히 표현할 수 있다.
     - 시그모이드와 달리 함수값이 zero-centered 되어 있다.
 
 ## 세상에서 가장 중요한 곡선: 시그모이드
-> 헤밍웨이의 소설 『태양은 다시 떠오른다』에서 마이크 켐벨은 어떻게 파산했느냐는 질문에 간단히 대답한다. "두가지 상황이 있었다. 서서히 그러다가 갑자기 파산했다." 미애학자 폴 사포는 S자 곡선 찾기로 미래를 예측한다. 당신이 샤워기 물의 온도를 딱 맞추지 못할 때, 즉 처음에는 너무 차갑다가 너무 뜨겁게 바뀔 때는 S자 곡선을 탓하라.  
+> 헤밍웨이의 소설 『태양은 다시 떠오른다』에서 마이크 켐벨은 어떻게 파산했느냐는 질문에 간단히 대답한다. "두가지 상황이 있었다. 서서히 그러다가 갑자기 파산했다." 미래학자 폴 사포는 S자 곡선 찾기로 미래를 예측한다. 당신이 샤워기 물의 온도를 딱 맞추지 못할 때, 즉 처음에는 너무 차갑다가 너무 뜨겁게 바뀔 때는 S자 곡선을 탓하라.  
 p.183 『마스터 알고리즘』 <sub>2015, 2016</sub>
 
 시그모이드의 초기값에 대해,  
@@ -72,15 +72,15 @@ Cost/Loss/Error 모두 [같은 의미](https://www.quora.com/What-is-the-differe
 ## Cross Entropy Error
 Regression에는 SSE가 사용되고 멀티클래스 분류에는 Cross Entropy Error를 사용한다. 출력층을 Softmax로 하고 총합은 항상 1이 된다. 
 
-다클래스 분류에도 이진 분류와 같이 신경망이 구현하는 함수를 각 클래스의 사후확률에 대한 함수로 간주하고, 그러한 확률 모형을 기반으로 훈련 데이터에 대한 신경망 파라미터의 우도를 평가하여 그 우도를 최대화한다. 이 우도에 로그를 취하여 부호를 반전한 것을 오차 함수로 삼는다. (딥러닝 제대로 시작하기, 2015)
+멀티클래스 분류에도 이진 분류와 같이 신경망이 구현하는 함수를 각 클래스의 사후확률에 대한 함수로 간주하고, 그러한 확률 모형을 기반으로 훈련 데이터에 대한 신경망 파라미터의 우도를 평가하여 그 우도를 최대화한다. 이 우도에 로그를 취하여 부호를 반전한 것을 오차 함수로 삼는다. (딥러닝 제대로 시작하기, 2015)
 
 $$E=-{\sum_{k}t_k{\log{y_k}}}$$
 
-정보 이론에 나오는 수식으로, 디시젼 트리를 구할때도 사용한다.  
+Entropy는 Decision Tree를 ID3로 구현할때도 사용한다.  
 relative entropy  
 = cross entropy  
 = kullback-leibler divergence  
-완전히 똑같은 두 함수의 상대 엔트로피는 0이다.
+완전히 똑같은 두 함수의 relative entropy는 0이다.
 
 For discrete p and q this means:  
 <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0cb6da032ab424eefdca0884cd4113fe578f4293" />  

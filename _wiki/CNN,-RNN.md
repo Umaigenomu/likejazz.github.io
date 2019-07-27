@@ -1,6 +1,6 @@
 ---
 layout: wiki 
-title: 딥러닝 응용
+title: CNN, RNN
 ---
 
 <!-- TOC -->
