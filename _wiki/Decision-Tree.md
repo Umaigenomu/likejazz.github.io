@@ -17,7 +17,7 @@ title: Decision Tree
 # 개요
 > One model for performing decision tree analysis was created by J. Ross Quinlan at the University of Sydney and presented in his book Machine Learning, vol.1, no. 1, in <strike>1975</strike> (10). His first algorithm for decision tree creation was called the Iterative Dichotomiser 3 (ID3). ([A Brief History of Decision Tree Analysis](http://amsdecisiontreeanalysis.weebly.com/history.html))
 
-책 출간 연도가 1975로 되어 있는데, [책 정보](https://link.springer.com/article/10.1007/BF00116251)에 따르면 1986년이 맞다. ([책 본문 PDF](http://hunch.net/~coms-4771/quinlan.pdf)) 위키피디어에도 1986으로 기입되어 있다. Quinlan은 첫 ID3 이후 C4.5(1993), [C5.0](https://www.rulequest.com/see5-unix.html) 상업적 모델로 발전 시켰다. C5.0은 책 『Applied Predictive Modeling』에도 나온다. 번역서는 『실전 예측 분석 모델링』
+책 출간 연도가 1975로 되어 있는데, [책 정보](https://link.springer.com/article/10.1007/BF00116251)에 따르면 1986년이 맞다. ([책 본문 PDF](http://hunch.net/~coms-4771/quinlan.pdf)) 위키피디어에도 1986으로 기입되어 있다. Quinlan은 첫 ID3 이후 C4.5(1993), [C5.0](https://www.rulequest.com/see5-unix.html) 상업적 모델로 발전 시켰다. C5.0은 책 『Applied Predictive Modeling』에도 나온다. 번역서는 『실전 예측 분석 모델링』 p.429 CART 부터 C4.5, PART등을 다룬다. p.446 까지
 
 노드에 포함된 모든 example들이 원하는 y값에 대해 같은 y값을 가지고 있을때 pure하다. 아래는 [타이타닉 데이타  분석 결과](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/machine-learning/titanic.ipynb). dtreeviz가 보다 직관적이다.
 
@@ -72,3 +72,19 @@ scikit-learn의 random forest에서 `tree.tree_.threshold[x]`의 값을 직접 �
 p.384 『마스터 알고리즘』 <sub>2015, 2016</sub>
 
 이전 예측기가 만든 잔여 오차<sup>residual error</sup>에 새로운 예측기를 학습시킨다. Decision Trees를 기반 예측기로 하는 회귀 문제 풀이를 gradient tree boosting 또는 gradient boosted regression tree(GBRT)라고 한다.
+
+## Adaboost 그림
+(연도 표기)
+
+부스팅은 모든 분류 기법에 적용할 수 있지만, 트리의 가지를 거의 두지 않음으로써 트리 깊이에 제약을 두어 약 분류기로 만들 수 있기 때문에 분류 트리를 부스터에 가장 많이 쓴다. 브레이먼(1998)은 부스팅에 왜 분류 트리가 적합한지를 설명했다. 분류 트리는 편향성이 낮고, 분산이 높은 기법으로 트리 앙상블을 통해 분산을 낮출 수 있으므로 이 결과 편향성과 분산 모두 낮은 결과를 구한다. (p.451 실전 예측 분석 모델링, 2013, 2018)
+
+## C5.0
+C5.0은 퀸란의 C4.5 분류 모델에 부스팅이나 각 오차별로 각각 다른 비용을 매기는 방식 등의 기능을 추가해서 개선한 버전이다.
+
+'실전 예측 분석 모델링'책에 나온 보조금 지원 모델의 모델별 성능 분포
+[그림]
+
+# 유전 알고리즘 genetic algorithm, GA
+(Holland, 1975; Goldberg, 1989)
+이 최적화 방안은 집단 생물학에서는 진화 이론을 기반으로 하며, 복잡한 다변량 함수에서 최적의 해법을 찾는 데 효과를 보여왔다. (p.568 실전 예측 분석 모델링)
+[그림]
