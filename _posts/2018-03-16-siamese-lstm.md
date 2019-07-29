@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Siamese LSTM을 이용한 Quora 질문 유사도 판별
-tags: ["Deep Learning for Natural Language Processing"]
+tags: ["Deep Learning for NLP"]
 ---
 
 <div class="message">

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Backpropagation 계산
-tags: ["Deep Learning for Natural Language Processing"]
+tags: ["Deep Learning for NLP"]
 ---
 
 <div class="message">
