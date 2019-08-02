@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Google Test 설치 및 실행
+title: Google Test 튜토리얼
 tags: ["Software Development"]
 ---
 
 <div class="message">
-C++ 신규 프로젝트를 진행하면서, Google Test를 처음부터 빌드하고 설치하는 과정을 정리한다.
+C++ 신규 프로젝트를 진행하면서, Google Test를 빌드하고 설치한 과정을 정리한다.
 </div>
 
 <small>
@@ -94,8 +94,8 @@ int main(int argc, char **argv) {
 */
 ```
 
-`std::vector`에 대한 값은 위 코드 처럼 [Google Mock을 사용](https://stackoverflow.com/a/2797990)해 비교할 수 있다.
+`std::vector`에 대한 값은 위 코드 처럼 [Google Mock을 사용](https://stackoverflow.com/a/2797990)하면 비교할 수 있다. Mock 오브젝트 생성 외에도 이 처럼 다른 용도로 활용이 가능하다.
 
 ## 기타
-`ASSERT`와 `EXPECT`는 실패 발생시 진행 여부에 차이가 있으며, [일반적으로 `EXPECT`를 사용](https://stackoverflow.com/a/2565309)한다.
+`ASSERT`와 `EXPECT`는 실패 발생시 계속 진행 여부에 차이가 있으며, [일반적으로 `EXPECT`를 사용](https://stackoverflow.com/a/2565309)한다.
 > Usually `EXPECT_*` are preferred, as they allow more than one failures to be reported in a test. However, you should use `ASSERT_*` if it doesn't make sense to continue when the assertion in question fails.
