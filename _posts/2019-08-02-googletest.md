@@ -65,9 +65,10 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(googletest/include)
 link_directories(googletest/lib)
 
-add_executable(sentsplit main.cpp)
+set(SOURCE_FILES split_sentence.cpp)
 
-add_executable(testcase test_sentence.cpp split_sentence.cpp)
+add_executable(sentsplit main.cpp ${SOURCE_FILES})
+add_executable(testcase test_sentence.cpp ${SOURCE_FILES})
 target_link_libraries(testcase gtest gtest_main gmock)
 ```
 
