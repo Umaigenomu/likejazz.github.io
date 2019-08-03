@@ -13,11 +13,9 @@ tags: ["Algorithms, Data Structure"]
 
 ## 본문
 
-[검색엔진을 만든](http://docs.likejazz.com/search-engine/) 직후였다.
+[검색엔진을 만든](http://docs.likejazz.com/search-engine/) 직후였다. 한참동안 검색 기능을 테스트 하다 우연히 데이타 파일을 직접 grep 해봤다. 그런데, 내가 만든 엔진보다 grep이 훨씬 더 빨랐다. 물론 grep은 단순히 검색된 문자열을 순서대로 나열하는 것이고 엔진은 가중치가 높은 순으로 랭킹을 거친다는 차이가 있지만 그래도 검색 엔진이 모든 문자열을 일일이 검색하는 것보다 훨씬 더 느리다는 점은 다소 굴욕적이다.
 
-한참동안 검색 기능을 테스트 하다가 우연히 데이타 파일을 직접 grep 해봤는데 이럴수가. 내가 만든 엔진보다 grep이 더 빨랐다. 물론 grep은 단순히 검색된 문자열을 순서대로 나열하는 것이고 엔진은 가중치가 높은 순으로 랭킹을 거친다는 차이가 있지만 그래도 엔진이 문자열 검색보다 더 느리다는건 굴욕이다.
-
-GNU grep을 만든 Mike Haertel이 [why GNU grep is fast](http://lists.freebsd.org/pipermail/freebsd-current/2010-August/019310.html)에서 밝힌 바에 따르면 GNU grep은 보이어-무어(Boyer-Moore) 알고리즘을 사용한다. 물론 이외에도 여러가지 hacks를 적용해 성능을 극대화했지만, 우선 그 근간이 되는 보이어-무어 알고리즘부터 구현해보기로 한다.
+GNU grep을 만든 Mike Haertel이 [why GNU grep is fast](http://lists.freebsd.org/pipermail/freebsd-current/2010-August/019310.html)에서 밝힌 바에 따르면 GNU grep은 보이어-무어(Boyer-Moore) 알고리즘을 사용한다고 한다. 물론 이외에도 여러가지 hacks를 적용해 성능을 극대화했지만, 우선 근간이 되는 보이어-무어 알고리즘부터 구현해보기로 한다.
 
 [보이어-무어(Boyer-Moore) 알고리즘](http://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string_search_algorithm)은 크게 세 가지 rule로 구성된다.
 
@@ -37,22 +35,22 @@ GNU grep을 만든 Mike Haertel이 [why GNU grep is fast](http://lists.freebsd.o
 
 그나마 위키피디어에 있는 샘플이 논문에 가장 가까웠고, 실제로 위키피디어 C 코드는 변수명을 `string`, `stringlen`, `pat`, `patlen` 그리고 rule 테이블을 `delta1`, `delta2`로 명시하는등 논문과 명칭이 동일하고 논문에 명시된 알고리즘과 동일한 순서대로 작성되어 있다.
 
-원래 논문은 PDP-10 어셈블리로 구현되었으며(1977년에 쓰여진) 위키피디어에 C로 작성한 코드외에는 python과 java 버전은 엉뚱하게도 논문과 다른 순서로 작성되어 있다. 애당초 이번에는 성능에 포커싱해 C 구현외에 다른 언어는 생각 해보지도 않았기에 망설임없이 C 코드를 fork해서 구현했다.
+원래 논문은 PDP-10 어셈블리로 구현되었으며(1977년에 쓰여진) 위키피디어에 C로 작성한 코드외에는 Python과 Java 버전은 엉뚱하게도 논문과 다른 순서로 작성되어 있다. 애당초 이번에는 성능에 포커싱해 C 구현외에 다른 언어는 생각 해보지도 않았기에 망설임없이 C 코드를 fork해서 구현했다.
 
-그렇게 해서 아래와 같은 결과를 완성했다.
+그렇게 해서 아래와 같은 결과를 얻었다.
 
 ![](https://33.media.tumblr.com/cd17538fecd89306a93bf0b295708f73/tumblr_inline_n7z82875Wy1qzgoac.png)
 
 애당초 고성능이 가장 큰 목표이기에 shift 횟수와, match 판단을 위해 몇 개의 문자열<sup>chars</sup>을 비교했는지<sup>compared</sup>를 디버그로 출력하도록 했다. `#define DEBUG`를 하면 디버그가 출력되며 기본적으로 `define`한 상태로 커밋했다.
 
-chars compared 값이 적을수록 더 최적화된 연산을 수행했다고 보면 된다. 물론 여기에는 원래 계산해야 하는 preprocessing. 즉, delta table 계산 시간은 빠져있다. 각 예문별 연산 확인시 참고하기 바란다.
+chars compared 값이 적을수록 더 최적화된 연산을 수행했다고 보면 된다. 물론 여기에는 원래 계산해야 하는 preprocessing 즉, delta table 계산 시간은 빠져있다. 이 점은 각 예문별 연산 확인시 참고하기 바란다.
 
-이번에도 주말을 활용했는데 마침 바닷가로 캠핑을 가기로 한 날이라 노트북을 들고갈지 한참 고민을 했다.
+이번에도 주말을 활용했는데 마침 바닷가에 캠핑을 가기로 한 날이라 노트북을 들고가서 좀 더 수정해야 할지 한참을 고민했다.
 
 ![](https://33.media.tumblr.com/d5f16684ca98441fea4b105e4d55646b/tumblr_inline_n7z8fgUBuS1qzgoac.jpg)
 
-결국 가져갔고 바닷가에선 열심히 수영하면서 놀아주고 애들 잘때 밤에, 낮에 애들 놀때 틈틈히 코딩했는데 다행히 만족스런 결과물을 얻을 수 있었다.
+노트북을 가져갔고 바닷가에선 열심히 수영하면서 놀아주고 애들 잘때 밤에, 낮에 애들 놀때 틈틈히 코딩했다. 다행히 만족스런 결과물을 얻을 수 있었다.
 
-사실 문자열 검색 같은 부분은 이미 좋은 라이브러리가 많이 나와있기 때문에 실제로 구현할 일이 거의 없다. 어쩌면 이번이 마지막이 될지도 모르는 일인데 깊이 있게 짚어보고 넘어 갈 수 있는 좋은 기회였다.
+사실 문자열 검색은 이미 좋은 라이브러리가 많이 나와있기 때문에 실제로 구현할 일이 거의 없다. 어쩌면 이번이 마지막이 될지도 모르는 일인데 깊이 있게 짚어보고 넘어 갈 수 있는 좋은 기회였다.
 
 - [boyer-moore-string-search - GitHub](https://github.com/likejazz/boyer-moore-string-search)
