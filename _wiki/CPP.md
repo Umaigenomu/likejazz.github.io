@@ -209,20 +209,23 @@ $ echo "" | g++ -xc - -v -E
 ...
 ```
 
-# Google Test 적용
-`brew search gtest`를 했더니 system-wide로 설치하지 말고 project에 vendoring하라는 경고가 나오며 진행되지 않음. 그러나 공식 깃헙에는 설치 문서도 없고(아마도 해당 프로젝트내에 디렉토리를 단순히 삽입만 하면 되겠지만) [설치 가이드를 최근에 정리한 블로그](http://hack.limbicmedia.ca/installing-google-test/)를 보고 소스에서 `make; make install`로 설치. brew는 하지 말라고 했지만 결국 system-wide로 설치한 셈.
-
-샘플 실행은 `g++`로 `-lgtest -lpthread` 링커 옵션 두 개를 사용하는데 CLion에서 쓰기 위해 [SO 문서](https://stackoverflow.com/questions/11783932/how-to-add-linker-or-compile-flag-in-cmake-file) 참조하여 cmake 문법으로 CMakeLists.txt에 적용.
-
-```
-set(GCC_COVERAGE_LINK_FLAGS    "-lpthread -lgtest")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
-```
-
-CLion 2017.2에서 행업이 발생했다.
-
 # Memory Allocation
 - `memset` sets the bytes in a block of memory to a specific value.
 - `malloc` allocates a block of memory.
   - `mmap`: In this respect an anonymous mapping is similar to malloc, and is used in some malloc implementations for certain allocations. 엔진에서는 이걸로 메모리를 할당한다.
 - `calloc`, same as malloc. Only difference is that it initializes the bytes to zero.
+
+# 모던 C++로 배우는 함수형 프로그래밍 2017, 2018
+- 모던 C++와 친숙해지기
+- 함수형 프로그래밍에서 함수 다루기   
+First order function, pure function, currying등 함수형 프로그래밍의 핵심을 다룸
+- 함수에 불변 객체 사용하기.  
+Mutable을 immutable로 바꾸는 방법. 이를 위해 First order와 pure function 적용
+- 재귀 함수 호출.  
+Recursion은 iteration으로 구현할 수 있지만 recursion이 보다 함수형에 가깝다. 
+- 지연 평가로 실행 늦추기.  
+지연 실행 및 캐시와 메모이제이션 소개
+- 메타프로그래밍으로 코드 최적화
+- 동시성을 이용한 병렬 실행.  
+데드락을 방지하기 위한 동기화 기법
+- 함수형 방식으로 코드 작성하기
