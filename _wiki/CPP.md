@@ -26,8 +26,8 @@ title: C++
 - [기타](#기타)
 - [SFINAE](#sfinae)
 - [include 기본 경로](#include-기본-경로)
-- [Google Test 적용](#google-test-적용)
 - [Memory Allocation](#memory-allocation)
+- [모던 C++로 배우는 함수형 프로그래밍 2017, 2018](#모던-c로-배우는-함수형-프로그래밍-2017-2018)
 
 <!-- /TOC -->
 
@@ -216,16 +216,16 @@ $ echo "" | g++ -xc - -v -E
 - `calloc`, same as malloc. Only difference is that it initializes the bytes to zero.
 
 # 모던 C++로 배우는 함수형 프로그래밍 2017, 2018
-- 모던 C++와 친숙해지기
-- 함수형 프로그래밍에서 함수 다루기   
-First order function, pure function, currying등 함수형 프로그래밍의 핵심을 다룸
-- 함수에 불변 객체 사용하기.  
-Mutable을 immutable로 바꾸는 방법. 이를 위해 First order와 pure function 적용
-- 재귀 함수 호출.  
-Recursion은 iteration으로 구현할 수 있지만 recursion이 보다 함수형에 가깝다. 
-- 지연 평가로 실행 늦추기.  
+- 모던 C++ 소개: range-based for loop  
+- 함수형 프로그래밍에서 함수 다루기  
+first order function, pure function, currying등 함수형 프로그래밍의 핵심을 다룬다.
+- 함수에 불변 객체 사용하기  
+mutable을 immutable로 바꾸는 방법. 이를 위해 first order와 pure function 적용
+- 재귀 함수 호출  
+recursion은 iteration으로 구현할 수 있지만 recursion이 보다 함수형에 가깝다. 
+- 지연 평가로 실행 늦추기  
 지연 실행 및 캐시와 메모이제이션 소개
 - 메타프로그래밍으로 코드 최적화
-- 동시성을 이용한 병렬 실행.  
+- 동시성을 이용한 병렬 실행  
 데드락을 방지하기 위한 동기화 기법
 - 함수형 방식으로 코드 작성하기
