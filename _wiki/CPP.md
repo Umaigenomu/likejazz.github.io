@@ -27,7 +27,7 @@ title: C++
 - [SFINAE](#sfinae)
 - [include 기본 경로](#include-기본-경로)
 - [Memory Allocation](#memory-allocation)
-- [모던 C++로 배우는 함수형 프로그래밍 2017, 2018](#모던-c로-배우는-함수형-프로그래밍-2017-2018)
+- [모던 C++로 배우는 함수형 프로그래밍 <sub>2017, 2018</sub>](#모던-c로-배우는-함수형-프로그래밍-2017-2018)
 
 <!-- /TOC -->
 
@@ -155,11 +155,11 @@ double *square_ptr(double d) {
 이 포인터는 스코프를 벗어난 지역 주소를 갖는다. **로컬 변수가 리턴 됐다는 경고**가 발생한다.
 
 ## 포인터 vs 참조
-구글 가이드는 [함수 인자로 포인터 아니면 상수형 참조자만 쓴다.](http://minjang.github.io/2016/03/21/talk-with-stroustrup/)
+구글 가이드는 함수 인자로 포인터 또는 상수형 참조자만 쓴다.
 ```
 void Foo(const string &in, string *out);
 ```
-그러나 비야네는 포인터를 쓰지 말고 가능하면 스마트 포인터와 참조자를 쓸 것을 권유한다.
+그러나 [비야네는 포인터를 쓰지 말고 가능하면 스마트 포인터와 참조자를 쓸 것을 권유](http://minjang.github.io/2016/03/21/talk-with-stroustrup/)한다.
 
 포인터를 사용할 수 밖에 없는 유일한 상황은 가리키는 대상을 바꾸어야만 할 때 뿐이다. (전문가를 위한 C++, 2011)
 
@@ -215,7 +215,7 @@ $ echo "" | g++ -xc - -v -E
   - `mmap`: In this respect an anonymous mapping is similar to malloc, and is used in some malloc implementations for certain allocations. 엔진에서는 이걸로 메모리를 할당한다.
 - `calloc`, same as malloc. Only difference is that it initializes the bytes to zero.
 
-# 모던 C++로 배우는 함수형 프로그래밍 2017, 2018
+# 모던 C++로 배우는 함수형 프로그래밍 <sub>2017, 2018</sub>
 - 모던 C++ 소개: range-based for loop  
 - 함수형 프로그래밍에서 함수 다루기  
 first order function, pure function, currying등 함수형 프로그래밍의 핵심을 다룬다.
