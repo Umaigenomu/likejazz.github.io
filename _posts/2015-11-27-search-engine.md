@@ -40,4 +40,5 @@ C++로 Write from Scratch 를 생각했으나 그러기엔 시련이 너무 많�
 3. 훌륭한 GitHub  
 읽기만 하는 것과 직접 사용해보는 것은 다른 문제였다. 여러번 읽기만 하면서 느끼지 못했던 부분들을, 직접 사용해보면서 커밋하고 푸쉬하면서, 깃헙이 얼마나 편리하고 얼마나 훌륭한 도구인지 새삼 깨닫게 됐다. 몰랐던 새로운 기능들도 많이 알게 됐다.
 
+소스 코드를 포함한 깃헙 주소는 아래와 같다.
 - [simple-search-engine - GitHub](https://github.com/likejazz/simple-search-engine)

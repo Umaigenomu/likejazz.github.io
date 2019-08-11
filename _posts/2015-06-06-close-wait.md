@@ -8,7 +8,9 @@ tags: ["Network Programming"]
 서버 부하 테스트 중 CLOSE_WAIT 상태에서 더 이상 커넥션을 맺지 못하고 행업 상태에 빠지는 서버를 분석하고 원인을 찾아 문제를 해결한다.
 </div>
 
+<small>
 *2015년 5월 23일 초안 작성*
+</small>
 
 <!-- TOC -->
 

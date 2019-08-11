@@ -12,7 +12,9 @@ tags: ["Deep Learning for NLP"]
 <p>특히 비전 인식을 제외한 NLP로 주제를 제한하고 수식과 알고리즘부터 시작하여 밑바닥부터 시작하는(from scratch) 구현, 도구(TensorFlow, Keras)를 활용한 서비스를 위한 구현까지 단계별로 정리해볼 예정이다. 기존 awesome lists와 유사한 형태로 상세한 부연 설명을 곁들여 NLP를 위한 딥러닝을 구현하는데 도움이 되도록 한다.</p>
 </div>
 
+<small>
 *2017년 1월 11일 초안 작성*
+</small>
 
 - [문서](#section)
   - [이론, 튜토리얼](#section-1)

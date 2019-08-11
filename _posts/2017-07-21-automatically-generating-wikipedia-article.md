@@ -8,7 +8,9 @@ tags: ["Machine Learning, Statistics"]
 <a href="https://s.kakao.com/">서치라이트</a>를 개선하면서 프로젝트 초기에 Automatically Generating Wikipedia Article: A Structure-Aware Approach, 2009 논문을 읽었습니다. 무척 인상적인 내용이라 최근에 끝까지 꼼꼼하게 읽어 봤는데요. 아무래도 한글로 읽는게 편해서 초벌 번역만 하여 소개해봅니다. 원래 직역체를 싫어해서 문장을 많이 다듬는 편인데요. 이번에는 빨리 보고 이해하는게 목적이라 어색한 단어 정도만 다듬고 대부분의 문장 구조는 그대로 뒀습니다. 논문을 번역하여 소개하고, 이에 앞서 간략히 논문의 주제와 소감, 참고 자료 등도 함께 얘기해봅니다.
 </div>
 
+<small>
 *2017년 7월 21일 초안 작성*
+</small>
 
 <!-- TOC -->
 

@@ -8,7 +8,9 @@ tags: Productivity
 Software Engineering at Google 논문을 읽고 내용 중 핵심적인 부분을 간추려 정리해본다.
 </div>
 
+<small>
 *2017년 3월 10일 초안 작성*
+</small>
 
 <!-- TOC -->
 
