@@ -84,7 +84,7 @@ Java에는 **Generics**가 있으며, C++과 달리 하나의 컴파일된 코�
 ### Template Metaprogramming
 C++ 컴파일러는 **컴파일 타임**에 클래스 템플릿을(클래스 메타 코드) 이용해 실제 클래스(클래스 정의 코드)를 생성한다.
 
-![](https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/06/templates-cpp.jpg)
+<img src="https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/06/templates-cpp.jpg" width="50%">
 
 C++는 Generic Programming 테크닉을 구현하기 위해 템플릿을 사용하는데, 템플릿은 런타임이 아닌 컴파일 타임에 일부 코드를 사전 평가 하는 방법인 템플릿 메타프로그래밍<sup>template metaprogramming</sup>에도 사용된다.
 
