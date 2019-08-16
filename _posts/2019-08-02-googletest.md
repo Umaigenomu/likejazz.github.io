@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Google Test 튜토리얼
+title: Google Test
 tags: ["Software Development"]
 ---
 
@@ -86,13 +86,11 @@ TEST(Sentence, Sentence_Input_Test) {
                 testing::ElementsAre("ABC"));
 }
 
-/*
 // If you use `gtest_main`, you do not need the main() function below.
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
-*/
 ```
 
 `std::vector`에 대한 값은 위 코드 처럼 [Google Mock을 사용](https://stackoverflow.com/a/2797990)하면 비교할 수 있다. Mock 오브젝트 생성 외에도 이 처럼 다른 용도로 활용이 가능하다.
