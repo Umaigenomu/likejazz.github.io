@@ -55,25 +55,25 @@ $ make
 메인 프로젝트의 CMakeLists.txt에는 `include`와 `lib` 경로를 설정해준다. `link_directories`를 지정하면 `LD_LIBRARY_PATH`를 지정한 것과 유사한 역할을 한다.
 
 ```cmake
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 2.8)
 project(sentence_splitter_cpp)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 
-include_directories(googletest/include)
-link_directories(googletest/lib)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/googletest/include)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/googletest/lib)
 
-set(SOURCE_FILES split_sentence.cpp)
+set(SOURCE_FILES sentence_splitter.cpp)
 
 add_executable(sentsplit main.cpp ${SOURCE_FILES})
 add_executable(testcase test_sentence.cpp ${SOURCE_FILES})
 target_link_libraries(testcase gtest gtest_main gmock)
 ```
 
-메인 바이너리는 Google Test를 포함하지 않는 가벼운 바이너리를 생성하고, Google Test는 전용 바이너리를 만들어 라이브러리 링킹을 함께 한다. 이 중 `gtest_main`은 `main()` 함수 없이도 목업을 만들어주는 역할을 한다. 따라서 아래 코드 처럼 `main()` 함수 생략(주석 처리)이 가능하다.
+메인 바이너리는 Google Test를 포함하지 않는 가벼운 바이너리를 생성하고, Google Test는 전용 바이너리를 만들어 라이브러리 링킹을 함께 한다. 이 중 `gtest_main`은 `main()` 함수 없이도 목업을 만들어주는 역할을 한다. 따라서 아래 코드의 주석 처럼 `main()` 함수 생략이 가능하다.
 
 ## 코드
-최종적으로 테스트케이스를 포함한 test_sentence.cpp의 코드는 아래와 같다.
+테스트케이스를 포함한 test_sentence.cpp의 코드는 아래와 같다.
 ```c++
 #include "split_sentence.h"
 #include "gtest/gtest.h"
