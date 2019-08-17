@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 안드로이드 개발 경험 정리
+title: 안드로이드 개발 정리
 tags: ["Software Development"]
 ---
 
@@ -12,8 +12,6 @@ tags: ["Software Development"]
 *2016년 12월 26일 편집 및 게시*  
 *2014년 7월 25일 초안 작성*
 </small>
-
-## 본문
 
 *참고: 아래 내용은 2014년 여름 기준이며 현재는 개발 도구 및 버전이 변경 되었습니다.*
 

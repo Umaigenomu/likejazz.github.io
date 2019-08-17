@@ -14,8 +14,8 @@ tags: ["Performance Optimization"]
 
 <!-- TOC -->
 
-- [본문](#본문)
-    - [Python](#python)
+- [코드](#코드)
+- [구현](#구현)
     - [NumPy](#numpy)
     - [C++ Extension](#c-extension)
     - [Cython](#cython)
@@ -29,8 +29,7 @@ tags: ["Performance Optimization"]
 
 <!-- /TOC -->
 
-## 본문
-### Python
+## 코드
 표준 편차를 구하는 파이썬 코드는 아래와 같이 작성할 수 있다.
 
 ```python
@@ -43,6 +42,7 @@ def standard_deviation(lst):
     return math.sqrt(variance / len(lst))
 ```
 
+## 구현
 ### NumPy
 NumPy로는 매우 간단하게 한 줄로 처리 가능하다. 
 

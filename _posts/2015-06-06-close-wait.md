@@ -14,22 +14,21 @@ tags: ["Network Programming"]
 
 <!-- TOC -->
 
-- [본문](#본문)
-    - [현상](#현상)
+- [서론](#서론)
+- [현상](#현상)
     - [TCP 상태](#tcp-상태)
     - [CLOSE_WAIT 재현](#close_wait-재현)
     - [CLOSE_WAIT 종료](#close_wait-종료)
-    - [원인](#원인)
-- [해결](#해결)
-    - [References](#references)
+- [원인](#원인)
+- [결론](#결론)
+- [참고 문헌](#참고-문헌)
 
 <!-- /TOC -->
 
-## 본문
-### 현상
-
+## 서론
 서버 부하 테스트 과정 중 일정 시간이 경과하면 점점 더 느려지면서 행업 상태에 빠지는 경우가 생겼다. 부하가 높으면 느려지는건 당연한 일이지만 문제는 테스트가 끝나도 행업 상태에서 복구되지 않았다는 점이다. 이는 담당자가 매 번 상태를 확인하고 복구해야 함을 뜻하며 서비스에는 도입할 수 없을 정도로 치명적이다. 분명히 특정한 원인이 있을 것이며 그에 따른 적절한 해결책이 존재할 것이다.
 
+## 현상
 먼저 행업 직전, 8080으로 서비스 중인 포트 상황은 아래와 같다.
 
 {% highlight bash %}
@@ -166,7 +165,7 @@ If you cannot fix the application or have it fixed, the solution is to kill the 
 
 저마다 강조하는 바를 살펴봐도 `CLOSE_WAIT`는 커널 옵션이나 설정으로 타임아웃을 줄 수 없으며 로컬 어플리케이션의 문제이기 때문에 정상적인 문제 해결이 필요하다는 지적을 하고 있다.
 
-### 원인
+## 원인
 
 그렇다면 해당 서버의 `CLOSE_WAIT` 상태 원인은 무엇일까. 자바로 만든 웹 서비스이므로 행업 상태인 해당 JVM의 Thread Dumps 를 분석했다.
 
@@ -198,13 +197,12 @@ $ jstack 27836
 - 그러나, 부하를 높이니 점점 느려지다 html 조차 내려주지 못하는 행업 상태 발생
 - 모든 소켓이 `CLOSE_WAIT` 상태에 빠짐
 
-## 해결
-
+## 결론
 요청과 응답을 받는 과정에서 recursive 한 호출이 교착 상태의 원인이었으며 별도 서버를 구성하여 상호 의존성 없이 호출 가능하도록 구성했다. 동일 WAS가 아닌, 별도의 nginx를 구성하고 다른 프로세스에서 html 파일을 내려주도록 처리 했다.
 
 테스트 결과 더 이상 문제가 발생하지 않음을 확인 했다.
 
-### References
+## 참고 문헌
 
 [^fn-2]: <http://www.codeitive.com/0xJeqqgPPW/reproduce-tcp-closewait-state-with-java-clientserver.html>
 [^fn-3]: <http://stackoverflow.com/questions/15912370/how-do-i-remove-a-close-wait-socket-connection#comment22663601_15912370>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: React Native 개발 경험 정리
+title: React Native 개발 정리
 tags: ["Software Development"]
 ---
 
@@ -13,7 +13,6 @@ tags: ["Software Development"]
 *2016년 6월 10일 초안 작성*
 </small>
 
-## 본문
 *참고: 아래 내용은 2016년 여름 기준이며 현재는 개발 도구 및 버전이 변경 되었습니다.*
 
 - AngularJS(2010)에 이어 React(2013) 등장. One-way data flow([Angular is known for it’s powerful two-way data-binding](https://toddmotto.com/one-way-data-binding-in-angular-1-5/)), Virtual DOM(고성능) 을 주요 기능으로 소개. 2015년 React Native 등장. 역사가 길지 않지만 폭발적인 인기를 끌고 있다. HTML을 완전히 사용할 수 있는건 아니지만 디자인 레이아웃은 HTML/CSS와 유사한 형태로 구현한다. 제한적인 컴포넌트를 사용하며 API를 이용하면 추가도 가능하다. JSX라는 js에 XML syntax를 추가한 preprocessor 단계를 사용한다. iOS/안드로이드 다른 구현이 존재한다.

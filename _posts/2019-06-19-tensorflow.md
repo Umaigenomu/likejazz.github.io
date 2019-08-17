@@ -14,7 +14,7 @@ TensorFlow는 1.1 이후 하이 레벨 추상화 API인 Estimators를 제공하�
 
 <!-- TOC -->
 
-- [본문](#본문)
+- [본론](#본론)
     - [Estimators API](#estimators-api)
     - [TensorFlow Serving](#tensorflow-serving)
         - [CLI](#cli)
@@ -25,7 +25,7 @@ TensorFlow는 1.1 이후 하이 레벨 추상화 API인 Estimators를 제공하�
 
 <!-- /TOC -->
 
-## 본문
+## 본론
 ### Estimators API
 TensorFlow는 1.1 이후 하이 레벨 추상화 API인 Estimators를 제공한다.
 

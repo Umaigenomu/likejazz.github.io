@@ -14,7 +14,7 @@ Seq2Seq는 시퀀스 데이터를 처리하는데 좋은 결과를 보여주지�
 
 <!-- TOC -->
 
-- [본문](#본문)
+- [본론](#본론)
     - [Attention](#attention)
         - [Attention LSTM](#attention-lstm)
     - [Visualize](#visualize)
@@ -29,7 +29,7 @@ Seq2Seq는 시퀀스 데이터를 처리하는데 좋은 결과를 보여주지�
 
 <!-- /TOC -->
 
-## 본문
+## 본론
 지난 번에는 시퀀스에 대한 모든 정보를 단일 벡터로 인코딩 한 다음 디코더가 이를 기반으로 결과를 추론하는 [Seq2Seq 모델](/seq2seq)이 잘 동작함을 살펴보았다.
 
 그러나, 입력 시퀀스가 매우 길 경우에는 장기 의존성<sup>long term dependencies</sup> 문제가 있다. 일반적으로 LSTM은 이 문제를 잘 처리 한다고 알려져 있지만 실제로는 여전히 문제가 있다. 이 때문에 입력 시퀀스를 뒤집을 경우 디코더에서 인코더의 관련 부분까지 경로를 단축하여, 보다 좋은 성능을 보여주기도 한다. (Sutskever et al., 2014)[^fn-2] 또한 입력 시퀀스를 두 번 반복하면 네트워크가 더 잘 기억<sup>memorize</sup>하는데 도움을 주기도 한다. (Zaremba, Sutskever, 2014)[^fn-1]

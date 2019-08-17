@@ -14,7 +14,7 @@ tags: ["Machine Learning, Statistics"]
 
 <!-- TOC -->
 
-- [본문](#본문)
+- [본론](#본론)
     - [데이터 준비](#데이터-준비)
     - [메트릭 선별](#메트릭-선별)
         - [유클리드 거리](#유클리드-거리)
@@ -27,7 +27,7 @@ tags: ["Machine Learning, Statistics"]
 
 <!-- /TOC -->
 
-## 본문
+## 본론
 여기서 사용한 주피터 코드와 설명은 [Euclidean vs. Cosine Distance](https://cmry.github.io/notes/euclidean-v-cosine)에서 가져왔다. 코사인 유사도의 의미에 대해 매우 깔끔하게 잘 정리한 글이다. 작성자는 강의 중 "언제 코사인 유사도를 사용하나요?"라는 학생의 질문을 받고 글을 작성했다고 한다.
 
 ### 데이터 준비

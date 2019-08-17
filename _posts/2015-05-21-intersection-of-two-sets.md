@@ -14,7 +14,8 @@ tags: ["Performance Optimization"]
 
 <!-- TOC -->
 
-- [본문](#본문)
+- [서론](#서론)
+- [실험 및 평가](#실험-및-평가)
     - [Straight up Java(JDK)](#straight-up-javajdk)
     - [Guava](#guava)
     - [No intermediate HashSet(NIH)](#no-intermediate-hashsetnih)
@@ -22,8 +23,7 @@ tags: ["Performance Optimization"]
 
 <!-- /TOC -->
 
-## 본문
-
+## 서론
 두 문서의 유사도를 계산하는 [w-shingling 알고리즘](http://en.wikipedia.org/wiki/W-shingling)은 A/B 두 문서의 슁글(shingle) 사이즈를 아래와 같이 간단한 교집합(intersection)과 합집합(union)으로 유사도를 표현한다.
 
 ![w-shingling](http://upload.wikimedia.org/math/5/7/c/57c09a4c79a15ebfb940af31b0594059.png)
@@ -65,8 +65,8 @@ for (int i = 0;i<100;i++) {
 System.out.println("median(elapsed) = " + median(elapsed));
 {% endhighlight %}
 
+## 실험 및 평가
 ### Straight up Java(JDK)
-
 기존 JDK 기본 라이브러리를 사용한 코드는 아래와 같다. 
 
 {% highlight java %}

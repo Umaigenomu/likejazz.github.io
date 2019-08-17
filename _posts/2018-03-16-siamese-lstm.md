@@ -14,7 +14,7 @@ tags: ["Deep Learning for NLP"]
 
 <!-- TOC -->
 
-- [본문](#본문)
+- [본론](#본론)
     - [Kaggle's Quora Question Pairs](#kaggles-quora-question-pairs)
     - [MaLSTM](#malstm)
     - [코드](#코드)
@@ -26,7 +26,7 @@ tags: ["Deep Learning for NLP"]
 
 <!-- /TOC -->
 
-## 본문
+## 본론
 [Siamese Recurrent Architectures for Learning Sentence Similarity](http://www.mit.edu/~jonasm/info/MuellerThyagarajan_AAAI16.pdf) 논문을 읽어보고 구현한 결과를 정리한다.
 
 ### Kaggle's Quora Question Pairs

@@ -14,9 +14,19 @@ tags: ["Information Retrieval"]
 *2014년 6월 23일 초안 작성*  
 </small>
 
-## 본문
+<!-- TOC -->
+
+- [서론](#서론)
+- [본론](#본론)
+- [결론](#결론)
+- [참고](#참고)
+
+<!-- /TOC -->
+
+## 서론
 C++로 Write from Scratch 를 생각했으나 그러기엔 시련이 너무 많았다. 결정적으로 주말에 끝내기엔 지나치게 방대했다. 결국 오픈소스를 fork 하기로 마음 먹었고 [Gigablast](https://github.com/gigablast/open-source-search-engine)를 고민했으나 마찬가지로 오히려 새로 짜는게 빠르겠다 싶을 정도로 구조가 복잡했다. 애당초 엔터프라이즈 레벨의 검색 엔진이라 IIR을 프로토타이핑 해보는 용도로는 지나치게 방대했다.
 
+## 본론
 그러던 중 [Simple Search Engine](https://github.com/trein/simple-search-engine)이라는 프로젝트가 눈에 띄었다. 파이썬이라 빠른 프로토타이핑이 가능할 것 같았고, 일단 IIR 구현에 중점을 두고 추후에 C++로 컨버팅하면서 구조와 성능을 개선하는 편이 낫겠다는 생각이 들었다.
 
 ![](https://38.media.tumblr.com/202fe6f384d028f5c1cc775e3ea3309d/tumblr_inline_n7m95eaXfI1qzgoac.jpg)
@@ -33,6 +43,7 @@ C++로 Write from Scratch 를 생각했으나 그러기엔 시련이 너무 많�
 <img src="https://c1.staticflickr.com/1/735/22711698613_b273732c7d_b.jpg" width="512" />
 상세한 내용은 [README](https://github.com/likejazz/simple-search-engine/blob/master/README.md)에 상세히 적어뒀고 쉽게 실행할 수 있도록 했다. 재밌는 경험이었다. 주말에 잘 끝내서 일정관리도 성공적이었고 깃헙의 편리함도 다시 한 번 깨달을 수 았었다.
 
+## 결론
 1. 모든 문서는 영어로  
 원어민이 아닌 이상 영어는 누구나 힘들다. 하지만 좋은 소프트웨어가 언어 문제로 제약을 받는건 안타까운 일이다. 언어의 제약 없이 지식을 공유하기 위해서 모든 코드와 주석, 문서를 영어로 작성하려는 노력이 필요하다.
 2. C++  
@@ -40,5 +51,6 @@ C++로 Write from Scratch 를 생각했으나 그러기엔 시련이 너무 많�
 3. 훌륭한 GitHub  
 읽기만 하는 것과 직접 사용해보는 것은 다른 문제였다. 여러번 읽기만 하면서 느끼지 못했던 부분들을, 직접 사용해보면서 커밋하고 푸쉬하면서, 깃헙이 얼마나 편리하고 얼마나 훌륭한 도구인지 새삼 깨닫게 됐다. 몰랐던 새로운 기능들도 많이 알게 됐다.
 
+## 참고
 소스 코드를 포함한 깃헙 주소는 아래와 같다.
 - [simple-search-engine - GitHub](https://github.com/likejazz/simple-search-engine)

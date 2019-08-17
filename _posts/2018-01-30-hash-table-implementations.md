@@ -15,32 +15,31 @@ tags: ["Algorithms, Data Structure"]
 
 <!-- TOC -->
 
-- [본문](#본문)
-    - [해시 테이블](#해시-테이블)
-        - [Separate chaining(with linked lists)](#separate-chainingwith-linked-lists)
-        - [Open addressing](#open-addressing)
-    - [해시 함수](#해시-함수)
+- [해시 테이블](#해시-테이블)
+    - [Separate chaining(with linked lists)](#separate-chainingwith-linked-lists)
+    - [Open addressing](#open-addressing)
+- [해시 함수](#해시-함수)
+- [언어별 구현](#언어별-구현)
     - [C++](#c)
     - [Java](#java)
     - [Go](#go)
     - [Python](#python)
     - [C](#c)
-- [정리](#정리)
+- [결론](#결론)
 
 <!-- /TOC -->
 
-## 본문
-### 해시 테이블
+## 해시 테이블
 해시 테이블은 해시 함수를 이용해 인덱스를 버킷 또는 슬롯의 배열로 계산하는 자료 구조로 둘 이상의 키에 동일한 인덱스 충돌<sup>collision</sup>이 발생할 경우 해결 방법에 따라 크게 두 가지 형태로 나뉜다.
 
-#### Separate chaining(with linked lists)
+### Separate chaining(with linked lists)
 Separate chaning은 충돌 발생시 링크드 리스트로 연결<sup>chaining</sup>하는 방식으로 간단한 알고리즘과 기본 자료 구조만    있으면 되고 간단한 해시 함수를 사용하므로 인기가 높다. 가장 널리 쓰이는 방식이며, 아래에서 살펴볼 대부분의 프로그래밍 언어에서도 이 방식으로 구현이 되어 있다.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Hash_table_5_0_1_1_1_1_1_LL.svg/450px-Hash_table_5_0_1_1_1_1_1_LL.svg.png" />
 
 ([위키피디어](https://en.wikipedia.org/wiki/Hash_table))
 
-#### Open addressing
+### Open addressing
 Open addressing은 충돌 발생시 탐사<sup>probing</sup>를 통해 빈 공간을 찾아나서는 방식이며 탐사에는 일반적으로 Linear probing, Quadratic probing, Double hashing이 사용된다.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Hash_table_5_0_1_1_1_1_0_SP.svg/450px-Hash_table_5_0_1_1_1_1_0_SP.svg.png" />
@@ -51,7 +50,7 @@ Open addressing은 충돌 발생시 탐사<sup>probing</sup>를 통해 빈 공�
 
 초기에는 성능이 좋지만 데이터가 슬롯의 80% 이상 차게 되면 급격히 성능이 떨어지며, 체이닝과 달리 전체 슬롯의 갯수 이상은 저장할 수 없다.
 
-### 해시 함수 
+## 해시 함수 
 
 해시 테이블의 성능은 얼마나 인덱스 충돌을 최소화 하느냐에 달려있다. 최악의 경우 `O(n)`에 수행되며, 따라서 해시 함수를 잘 설계하여 충돌을 최소화 하는 것이 무엇보다 중요하다. Java의 경우 소수인 31의 곱셈합으로 구현되어 있다.
 
@@ -65,6 +64,7 @@ hashCode = 31*hashCode + (e==null ? 0 : e.hashCode());
 
 <img src="/images/2018/hash-table/learned-hash-map.png" />
 
+## 언어별 구현
 그렇다면 각 프로그래밍 언어에서는 해시 테이블을 어떻게 구현하고 있는지 살펴보자.
 
 ### C++
@@ -104,5 +104,5 @@ C에는 기본으로 제공하는 해시 테이블 자료 구조가 없다. 이�
 
 그러나 [써드 파티 해시 테이블 구현](https://gist.github.com/tonious/1377667/374b9601a72faf7402d3909c75b002f9061992a3)은 다양하게 존재하며, C에서는 이처럼 해시 테이블을 사용하기 위해 별도 구현을 참고하여 직접 구현해 사용해야 한다.
 
-## 정리
+## 결론
 해시 테이블은 하루가 다르게 빠르게 발전하는 컴퓨터 과학 분야에서 벌써 70년에 가까운 역사를 자랑하면서도 여전히 사랑 받고 있는 매우 유용한 자료 구조다. C를 제외한 모든 언어에서 map(C++은 트리 기반이며, 해시 테이블은 unordered_map)의 근간이 되며, 중요한 위치를 차지하고 있다. 앞으로 딥러닝 모델로 해시 함수의 획기적인 성능 향상이 기대되는바, 앞으로 해시 테이블의 미래는 더욱 기대된다.

@@ -12,8 +12,14 @@ Code.org에서 검색이 동작하는 원리에 대해 알기 쉽게 소개한 �
 *2017년 6월 17일 초안 작성*
 </small>
 
-## 본문
+<!-- TOC -->
 
+- [본론](#본론)
+- [결론](#결론)
+
+<!-- /TOC -->
+
+## 본론
 <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FCode.org%2Fvideos%2F1360366930726273%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 
 안녕, 제 이름은 존 입니다.  
@@ -80,7 +86,7 @@ Code.org에서 검색이 동작하는 원리에 대해 알기 쉽게 소개한 �
 
 인터넷은 기하급수적으로 증가하고 있지만, 검색 엔진을 만드는 팀이 일을 제대로 해낸다면 여러분이 원하는 정보는 불과 몇 번의 입력만으로도 찾아낼 수 있게 될 거에요.
 
-## 정리
+## 결론
 영어를 번역할때 특유의 번역체는 오히려 한글로 읽었을때 더욱 이해하기 힘들게 하는 경우가 많은데요. 그래서 한글 문장을 자연스럽게 구성하기 위해 많은 노력을 기울였고, 중간 중간에 동영상의 스크린샷을 삽입하여 이해를 도왔습니다. 아울러 [유튜브에 있는 영상](https://www.youtube.com/watch?v=LVV_93mBfSU)에는 한글 자막을 작성하여 컨트리뷰션 했습니다.
 
 이 글이 검색 엔진을 이해하는데 많은 분들에게 도움이 되길 바랍니다.
