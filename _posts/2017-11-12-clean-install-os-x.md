@@ -69,9 +69,10 @@ tags: Productivity
 - **Save to Pocket** 익스텐션도 사용한다.
 
 ## 생산성
-- 버전 관리를 위해 앱은 가능한 앱스토어에서 설치한다.
+- 버전 관리를 위해 앱은 가능한 앱스토어에서 설치한다. 예전에는 cask를 사용하다 지금은 **mas**를 이용해 관리한다.
 - **네이버 캘린더**를 사용하고 있다. 음력 기능 등 한국적인 기능들이 많아서 구글에 비해 편리하다.
-- **Things(유료)** 2009년에 정품을 구매하여 여전히 사용 중이다. 버전 업데이트를 하면서 추가 비용을 받았는데 기꺼이 구매했다. 아마 맥과 아이폰을 포기하지 못하는 결정적인 이유를 한 가지 대라면 Things를 사용할 수 있기 때문이라고 답할 것 같다.
+- ~~**Things(유료)** 2009년에 정품을 구매하여 여전히 사용 중이다. 버전 업데이트를 하면서 추가 비용을 받았는데 기꺼이 구매했다. 아마 맥과 아이폰을 포기하지 못하는 결정적인 이유를 한 가지 대라면 Things를 사용할 수 있기 때문이라고 답할 것 같다.~~
+- **Microsoft To-Do** 10년간 사용해오던 Things를 밀어낸 앱이다. 스타트업의 산뜻한 앱이 아니라 수십년된 오피스 제품군에 포함된 마이크로소프트의 앱이란 점이 새삼 놀랍다. To Do 앱은 사실 누구나 만들 수 있고, 진입 장벽이 낮은 편인데 그간 어떠한 앱도 Things의 독보적인 심플함과 편리함을 넘어서지 못했다. 그러나 To-Do는 유일하게 비슷한 수준, 오히려 더 능가하는 수준으로 구현해냈다. 무엇보다 안드로이드를 잘 지원한다는 점이 주효했다. 최근에 폰을 아이폰에서 안드로이드로 변경했고, 더 이상 Things를 사용할 수 없어 매우 불편했는데, To-Do가 그 빈자리를 훌륭하게 메꿨다.
 - **Magnet(유료)** Cinch, Divvy를 쓰다가 앱스토어 상위권에 올라왔고 평가가 좋아서 구매하여 사용 중이다.
 - **AppCleaner** Uninstaller가 없는 맥에서는 삭제해도 뭔가 찜찜할때가 많다. 이 앱으로 불필요한 설정까지 찾아서 삭제한다.
 - **uTorrent** 윈도우 시절부터 유명한 토렌트 앱으로, 맥용도 훌륭하다.
@@ -120,6 +121,49 @@ tags: Productivity
   - 플러그인은 `plugins=(git history python fasd history-substring-search docker)`를 사용한다.
 - **Homebrew** 이제 brew 없는 맥 콘솔은 상상할 수 없다. 각종 도구와 컴파일러등 모든 개발 관련 도구는 brew를 통해 설치한다.
 <img width="70%" src="https://user-images.githubusercontent.com/1250095/32696328-ea701530-c7b8-11e7-9501-149a4ce0dd86.png">  
+  - `Brewfile`은 아래와 같다.  
+```
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "wallix/awless"
+brew "cmake"
+brew "fasd"
+brew "fzf"
+brew "git"
+brew "gnu-tar"
+brew "go"
+brew "htop"
+brew "python"
+brew "httpie"
+brew "jq"
+brew "m-cli"
+brew "mas"
+brew "nmap"
+brew "node"
+brew "speedtest-cli"
+brew "telnet"
+brew "the_silver_searcher"
+brew "tree"
+brew "watch"
+brew "wget"
+brew "wallix/awless/awless", link: false
+cask "anaconda"
+mas "Daum Equation Editor", id: 540665783
+mas "Evernote", id: 406056744
+mas "Hancom Office HWP 2014 VP Viewer", id: 416746898
+mas "KakaoTalk", id: 869223134
+mas "Keynote", id: 409183694
+mas "Magnet", id: 441258766
+mas "Microsoft OneNote", id: 784801555
+mas "Microsoft Outlook", id: 985367838
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Microsoft To-Do", id: 1274495053
+mas "Slack", id: 803453959
+mas "Wake Up Time", id: 495945638
+mas "Xcode", id: 497799835
+mas "Xee³", id: 639764244
+```
 - **JetBrains IDE(유료)** [All Products Pack 연간 라이센스를 사용](http://likejazz.com/post/133725850005/jetbrains-all-products-pack)하고 있다. IntelliJ 뿐만 아니라 [CLion](http://likejazz.com/post/118649049333/clion-1-0), PyCharm, PhpStorm, AppCode, GoLand등을 사용하는 [가장 즐겨쓰는 최고의 IDE](http://likejazz.com/post/112670720955/jetbrains-ide)다.
   - **JetBrains ToolBox** 제트브레인의 IDE를 통합 관리할 수 있는 메뉴바 앱이다. `Update all tools automatically`로 설정하고 사용한다.
   - IntelliJ의 테마는 Darcula를 사용한다. `Editor > General > Appearance`에서 **Show whitespaces**와 **Show method separators**는 활성화 한다.
