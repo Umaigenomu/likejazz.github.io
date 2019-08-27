@@ -91,7 +91,8 @@ C++는 Generic Programming 테크닉을 구현하기 위해 템플릿을 사용�
 Java의 Generics도 type error를 유발해 compilation-time error(run-time error가 아니라)를 내기 위한 동기로 1998년에 시작됐다.
 
 ### Template Specialization
-[특정 데이터 타입에 대해 다른 알고리즘을 정의](https://www.geeksforgeeks.org/template-specialization-c/)한다.
+[특정 데이터 타입에 대해 다른 알고리즘을 정의](https://www.geeksforgeeks.org/template-specialization-c/)한다.  
+이 부분은 추가 학습 필요
 
 ### Functors
 **Functors** are objects that can be treated as though they are a function or function pointer. 
