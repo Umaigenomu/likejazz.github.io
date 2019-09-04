@@ -17,7 +17,9 @@ title: CNN, RNN
 ## Deep Residual Network
 통계학에서 residual <sup>잔차</sup>은 표본 <sup>sample</sup>에서의 오차를 말한다. 오차는 모수의 개념이므로 표본에서는 통계량의 개념을 갖는 다른 용어로 부르는데, 반면 ResNet에서 residual은 extra의 의미에 더 가깝다.
 
-> Network depth is of crucial importance in neural network architectures, but deeper networks are more difficult to train. The residual learning framework eases the training of these networks, and enables them to be substantially deeper. [[1](https://blog.waya.ai/deep-residual-learning-9610bb62c355)]
+> Network depth is of crucial importance in neural network architectures, but deeper networks are more difficult to train. The residual learning framework eases the training of these networks, and enables them to be substantially deeper. [^fn-deep]
+
+[^fn-deep]: <https://blog.waya.ai/deep-residual-learning-9610bb62c355>
 
 residual이 학습을 쉽게 하여 더 깊은 네트워크 구성이 가능하게 한다. 비슷한 파라미터로 더 깊은 구성이 가능하다.
 
@@ -26,7 +28,9 @@ residual이 학습을 쉽게 하여 더 깊은 네트워크 구성이 가능하�
 ## Fine-tuning Deep Learning Models
 이미지 CNN, 여기서는 VGG의 경우 pre-trained 모델을 fine-tuning 하는 기법에 대해 설명한다.
 
-> one would fine-tune existing networks that are trained on a large dataset like the ImageNet (1.2M labeled images) by continue training it (i.e. running back-propagation) on the smaller dataset we have. Provided that our dataset is not drastically different in context to the original dataset (e.g. ImageNet), the pre-trained model will already have learned features that are relevant to our own classification problem. [1](https://flyyufelix.github.io/2016/10/03/fine-tuning-in-keras-part1.html)
+> one would fine-tune existing networks that are trained on a large dataset like the ImageNet (1.2M labeled images) by continue training it (i.e. running back-propagation) on the smaller dataset we have. Provided that our dataset is not drastically different in context to the original dataset (e.g. ImageNet), the pre-trained model will already have learned features that are relevant to our own classification problem. [^fn-fine-tuning]
+
+[^fn-fine-tuning]: <https://flyyufelix.github.io/2016/10/03/fine-tuning-in-keras-part1.html>
 
 ImageNet 처럼 큰 데이터셋으로 학습된 모델에 우리가 가진 작은 데이터셋으로 학습을 계속해 pre-trained 모델을 fine-tuning 할 수 있다. 우리 데이터셋의 특징이 원래 데이터셋과(ImageNet)과 크게 다르지 않다면 pre-trained 모델은 우리의 분류 문제와 관련된 특징을 이미 학습했을 것이다.
 
@@ -53,7 +57,9 @@ output layer를 제외한 모델을 feature extraction으로 활용해 SVM, XGBo
 ![](https://user-images.githubusercontent.com/1250095/47775621-8210a680-dd33-11e8-99e5-fe43477491de.jpeg)
 ![](https://user-images.githubusercontent.com/1250095/47775622-8210a680-dd33-11e8-8e65-1a9521ede8a5.jpeg)
 
-([Coursera RNN Notes](https://www.slideshare.net/TessFerrandez/notes-from-coursera-deep-learning-courses-by-andrew-ng))
+[^fn-coursera]
+
+[^fn-coursera]: <https://www.slideshare.net/TessFerrandez/notes-from-coursera-deep-learning-courses-by-andrew-ng>
 
 ![](http://karpathy.github.io/assets/rnn/diags.jpeg)
 
@@ -63,4 +69,6 @@ output layer를 제외한 모델을 feature extraction으로 활용해 SVM, XGBo
 1. Sequence input and sequence output (e.g. Machine Translation: an RNN reads a sentence in English and then outputs a sentence in French). 
 1. Synced sequence input and output (e.g. video classification where we wish to label each frame of the video). NER 태깅
 
-([source](http://karpathy.github.io/2015/05/21/rnn-effectiveness/))
+[^fn-karpathy]
+
+[^fn-karpathy]: <http://karpathy.github.io/2015/05/21/rnn-effectiveness/>
