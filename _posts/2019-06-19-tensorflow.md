@@ -190,7 +190,7 @@ Content-Type: application/json
 재밌는 점은,
 > TensorRT-based applications perform up to 40x faster than CPU-only platforms during inference.
 
-CPU-only에서도 40x 빠르다는 홍보를 하고 있다. 
+CPU-only에 비해 최대 40x 빠르다는 홍보를 하고 있다. 
 
 ## References
 [^fn-1]: [What's the difference between a Tensorflow Keras Model and Estimator?](https://stackoverflow.com/a/51455864)
