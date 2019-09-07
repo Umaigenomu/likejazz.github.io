@@ -15,6 +15,7 @@ title: NLP
     - [Memory-based networks](#memory-based-networks)
     - [Pretrained language models](#pretrained-language-models)
 - [LM Perplexity](#lm-perplexity)
+- [BERT, RoBERTa, DistilBERT, XLNet — which one to use?](#bert-roberta-distilbert-xlnet--which-one-to-use)
 
 <!-- /TOC -->
 
@@ -65,3 +66,8 @@ language models only require unlabelled text; training can thus scale to billion
 > Frederick Jelinek was a researcher in automatic speech recognition and He is well known for his oft-quoted statement, "Every time I fire a linguist, the performance of the speech recognizer goes up". (Wikipedia)
 
 젤리넥은 조건부 엔트로피와 상대 엔트로피에서 출발해 언어 모델 복잡도 <sup>perplexity</sup>라는 개념을 정의함으로써 언어모델의 장단점을 직접 측정했다. 복잡도는 앞뒤 문맥이 주어졌다는 조건 아래, 문장 중 각 위치에서 평균적으로 선택 가능한 단어의 수를 말한다. 모델의 복잡도가 작을수록 위치별 단어가 확실하고 모델은 더 뛰어나다. (수학의 아름다움, 2014, 2019)
+
+# BERT, RoBERTa, DistilBERT, XLNet — which one to use?
+<img src="https://miro.medium.com/max/2486/1*5PzGl1dNt_5jMH3_mm3PpA.png">[^fn-which]
+
+[^fn-which]: <https://towardsdatascience.com/bert-roberta-distilbert-xlnet-which-one-to-use-3d5ab82ba5f8>

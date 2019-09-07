@@ -30,14 +30,8 @@ title: NLP 가이드
 ## 문서
 
 ### 이론, 튜토리얼
-- [스탠포드 CS 딥러닝 튜토리얼](http://deeplearning.stanford.edu/tutorial/)  
-수식, 알고리즘 중심으로 정리된 딥러닝 문서. 실무 적용보다는 이론을 체계적으로 익히는데 유용. CNN 까지 설명되어 있음.
-- [모두를 위한 머신러닝/딥러닝 강의](https://hunkim.github.io/ml/)  
-한글로 가장 잘 정리된 김성훈 교수님의 머신러닝 문서. [동영상 강의 노트](http://pythonkim.tistory.com/notice/25)도 매우 깔끔하게 정리
 - [Get Started with Machine Learning](http://suriyadeepan.github.io/2016-06-06-ml-basics-course/)  
 각종 머신러닝 개념을 Cheat Sheets 형태로 깔끔하게 정리. 인도의 한 과학자가 정리. 인도는 영어가 되니 이렇게 영문서도 잘 정리한다. 부러운 부분. 그런데 매트릭스 연산을 직접 하다가 잘 안되는 부분이 있어서 저길 참조했는데 계속 틀리게 나와서 한참 고생하다 CS231n 강의 노트를 보고서야 저 곳의 numpy multiplication이 잘못 정리 되었다는걸 깨달음. 댓글로 잘못된 부분을 알려주었고 바로 수정하겠다고 함. 덕분에 고생은 좀 했지만 뿌듯
-- [THE NEURAL NETWORK ZOO](http://www.asimovinstitute.org/neural-network-zoo/)  
-새로운 신경망이 빠르게 등장하고 있기 때문에 약어만 듣고 구조를 일일이 파악하기란 매우 힘든 일이 되었다. 이 문서에서는 DCIGN, BiLSTM, DCGAN 같은 약어들의 신경망 구조를 한 눈에 알아볼 수 있도록 시각화하여 제공
 - [세상에 있는 (거의) 모든 머신러닝 문제 공략법](http://keunwoochoi.blogspot.kr/2016/08/blog-post.html)
 - [The major advancements in Deep Learning in 2016](https://tryolabs.com/blog/2016/12/06/major-advancements-deep-learning-2016/)  
 2016년 딥러닝 분야의 주요 혁신 요약. 중간에 NLP 분야도 있으며 문장이해, 질의응답(QA), 기계번역 분야의 혁신을 소개한다.
@@ -50,8 +44,6 @@ title: NLP 가이드
 수치해석을 한글로 아주 잘 정리한 블로그
 
 ### 신경망
-- [Single-Layer Neural Networks and Gradient Descent](https://sebastianraschka.com/Articles/2015_singlelayer_neurons.html)  
-단일 신경망을 구현하여 신경망의 원리를 알기쉽게 잘 설명한 글. Sebastian Raschka의 글로 아래 책 섹션에서 소개한 그의 저서 Python Machine Learning의 두 번째 챕터에 나오는 내용과 동일하다.
 - [IMPLEMENTING A NEURAL NETWORK FROM SCRATCH IN PYTHON – AN INTRODUCTION](http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/)
 - [Neural Network](http://nmhkahn.github.io/NN)  
 신경망 전반에 대해 한글로 알기 쉽게 정리
@@ -144,8 +136,7 @@ arXiv에 등록되는 수많은 논문을 분석하여 Top papers를 보기 좋�
 논문 구현을 깃헙 코드와 연동
 
 ## 책
-NLP를 위한 딥러닝을 실제 서비스에 적용하면서 매우 다양한 책을 구매하여 읽어보았다. 구매하여 읽었던 책 목록과 간략한 소감을 정리해본다.
-<img src="/images/2017/32140552121_13bf164f4c_b.png" width="400" />
+*책 내용은 독서 후기로 정리 필요*
 
 - [마스터 알고리즘](http://book.daum.net/detail/book.do?bookid=KOR9791185459547)  
 인공지능으로 나아가는 마스터 알고리즘이 존재할 것이다 라는 전제하에 각 문파들의 각종 기술과 최고 수준의 필살기를 하나씩 소개하며 끄집어 내는 책. 비개발자를 위한 책이지만 각 알고리즘의 명칭을 들어본 적이 전혀 없다면 이해하기가 쉽지 않음. 이미 알고리즘과 머신러닝에 대해 잘 알고 있다면 재밌게 읽을 수 있다.

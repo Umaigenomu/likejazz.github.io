@@ -95,7 +95,9 @@ Kepler
 # Low Precision Inference on GPU
 <img src="https://user-images.githubusercontent.com/1250095/64407402-2e8f8780-d0bf-11e9-8eb9-ff3aa8ceb348.jpg" width="80%">
 
-T4 GPU에서 Quantized 연산으로 8.1TFLOPS를 130 TOPS, 16배 개선할 수 있다. 그러나, BERT SQuAD 1.1(F1) 점수가 Int8에서 6.43%나 낮다. Activation으로 GeLU10을 사용해 0.67% 이내로 줄일 수 있다. ([발표 자료 PDF](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9659-inference-at-reduced-precision-on-gpus.pdf) 참고) MRPC는 유사 문장 판별 태스크 이다.
+T4 GPU에서 Quantized 연산으로 8.1TFLOPS를 130 TOPS, 16배 개선할 수 있다. 그러나, BERT SQuAD 1.1(F1) 점수가 Int8에서 6.43%나 낮다. Activation으로 GeLU10을 사용해 0.67% 이내로 줄일 수 있다. [^fn-pdf] MRPC는 두 문장으로 유사 문장 판별 태스크로 마찬가지로 성능 차이가 0.80% 이내 이다.
+
+[^fn-pdf]: <https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9659-inference-at-reduced-precision-on-gpus.pdf> 
 
 <img src="https://user-images.githubusercontent.com/1250095/64407574-9c3bb380-d0bf-11e9-908c-83783fcb6692.jpg" width="80%">
 
