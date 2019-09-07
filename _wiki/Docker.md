@@ -5,12 +5,16 @@ title: Docker
 
 <!-- TOC -->
 
+- [기본 명령](#기본-명령)
 - [중단, 재시작 명령 정리](#중단-재시작-명령-정리)
     - [참고](#참고)
 - [Push a docker image to a private repo](#push-a-docker-image-to-a-private-repo)
 - [CMD vs. ENTRYPOINT](#cmd-vs-entrypoint)
 
 <!-- /TOC -->
+
+# 기본 명령
+정리 필요
 
 # 중단, 재시작 명령 정리
 중단하면서 컨테이너 삭제까지 병행
