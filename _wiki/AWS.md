@@ -7,6 +7,7 @@ title: AWS
 
 - [개요](#개요)
 - [그림으로 배우는 클라우드 인프라와 API의 구조 <sub>2016, 2017</sub>](#그림으로-배우는-클라우드-인프라와-api의-구조-2016-2017)
+- [Azure V100](#azure-v100)
 
 <!-- /TOC -->
 
@@ -43,3 +44,7 @@ ROA Resource Oriented Architecture, 리소스 지향 아키텍처란 REST API의
 <img src="https://user-images.githubusercontent.com/1250095/62117432-e24e6c00-b2f6-11e9-996f-60f99ee0847a.jpg" width="60%">
 
 AWS의 CloudFormation 확인 필요
+
+# Azure V100
+V100 4ea x 3yrs = 171,651,472 KRW  
+1 hour = 1,632 KRW

@@ -22,13 +22,7 @@ title: Decision Tree
 
 테러리스트 구분에 Decision Trees를 사용했다. 신용카드 사기 검출과 얼굴 인식에는 신경망을 이용했다. (넘버스 2017)
 
-노드에 포함된 모든 example들이 원하는 y값에 대해 같은 y값을 가지고 있을때 pure하다. 아래는 [타이타닉 데이타  분석 결과](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/machine-learning/titanic.ipynb). dtreeviz가 보다 직관적이다.
-
-<img src="https://raw.githubusercontent.com/likejazz/jupyter-notebooks/master/machine-learning/data/titanic.png" width="100%" />
-
-<img src="https://user-images.githubusercontent.com/1250095/55542969-0f04c500-5703-11e9-860f-749b987d33c1.png" width="100%">
-
-decision trees는 80.9%, random forest는 81.6%. 데이타의 변별력이 부족하므로 큰 차이는 없으나, [전처리를 통해 92%까지](https://towardsdatascience.com/predicting-the-survival-of-titanic-passengers-30870ccc7e8) 높일 수 있다.
+노드에 포함된 모든 example들이 원하는 y값에 대해 같은 y값을 가지고 있을때 pure하다.
 
 ## ID3
 ID3, C4.5에서는 Entropy를 기준으로 하는 Information gain을 사용한다. (Regression은 calculate_variance_reduction)
@@ -69,6 +63,10 @@ Iris의 0:1 features로 rf 분류, 정확도 0.96667 모델 decision boundaries(
 p.384 『마스터 알고리즘』 <sub>2015, 2016</sub>
 
 CrossEntroy loss의 gradient를 구하고 이를 다시 학습, `update * learning_rate`를 반영한 다음 다시 loss를 구해 estimators 만큼 반복한다. 결국 residual errors를 반복 학습한다.
+
+<img src="https://explained.ai/gradient-boosting/images/golf-MSE.png" width="80%">[^fn-descent]
+
+[^fn-descent]: <https://explained.ai/gradient-boosting/descent.html>
 
 ```python
 for i in self.bar(range(self.n_estimators)):

@@ -187,10 +187,9 @@ Content-Type: application/json
 - <https://github.com/NVIDIA/TensorRT>
 - <https://github.com/NVIDIA/tensorrt-inference-server>
 
-재밌는 점은,
 > TensorRT-based applications perform up to 40x faster than CPU-only platforms during inference.
 
-CPU-only에 비해 최대 40x 빠르다는 홍보를 하고 있다. 
+TensorRT는 CPU-only에 비해 최대 40x 빠르다고 홍보한다.
 
 ## References
 [^fn-1]: [What's the difference between a Tensorflow Keras Model and Estimator?](https://stackoverflow.com/a/51455864)
