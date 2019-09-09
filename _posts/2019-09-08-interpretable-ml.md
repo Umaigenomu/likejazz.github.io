@@ -48,7 +48,7 @@ Decision Tree와 달리 배깅을 통한 Random Forest는 각각의 피처를 �
 
 ### Interpretable ML
 #### 책
-아래 두 권을 추천한다. 원고를 오픈한 상태로 작성 중이다.
+아래 두 권을 추천한다. 원고를 공개하여 진행 중이다.
 - [The Mechanics of Machine Learning](https://mlbook.explained.ai)  
 dtreeviz의 Terence Parr와 fast.ai의 Jeremy Howard가 함께 쓰고 있는 책
 - [Interpretable Machine Learning](https://christophm.github.io/interpretable-ml-book/)  
@@ -65,7 +65,7 @@ LIME, SHAP, ELI5를 통해 시각화에 보다 집중한 자료를 소개한다.
 ##### LIME
 LIME은 [UCI News를 Random Forest로 분류하고 시각화](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/machine-learning/news-classification.ipynb) 할때 유용하게 활용한 바 있다.
 
-<img width="50%" src="https://user-images.githubusercontent.com/1250095/64492587-627dcf00-d2b0-11e9-999d-65c0c071d456.png">
+<img src="https://user-images.githubusercontent.com/1250095/64508424-61808800-d318-11e9-8a8d-827dba703c97.png">
 
 ##### SHAP
 특히 SHAP은 이 중 가장 활발한 연구가 진행되고 있으며, 논문 1저자이자 연구를 주도하는 Scott Lundberg는 지금도 꾸준히 개선 하고 있다. KernelExplainer로 모델에 관계 없이 해석할 수 있으며, 트리 앙상블을 고속으로 해석하는 TreeExplainer 또한 별도로 제공한다. 
