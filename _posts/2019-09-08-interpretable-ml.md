@@ -17,6 +17,7 @@ tags: ["Machine Learning, Statistics"]
 
 - [본론](#본론)
     - [Decision Tree](#decision-tree)
+        - [dtreeviz 설치](#dtreeviz-설치)
     - [Random Forest](#random-forest)
     - [Interpretable ML](#interpretable-ml)
         - [책](#책)
@@ -31,9 +32,9 @@ tags: ["Machine Learning, Statistics"]
 해석 가능성<sup>Interpretable</sup>은 매우 중요하다. 통계학에서도 이를 위한 기술 통계학<sup>Descriptive Statistics</sup>은 매우 주목받는 분야이기도 하다. 작년부터 문서를 준비해왔으나 계속 정리하지 못하다 뒤늦게 정리하여 출판한다.
 
 ### Decision Tree
-scikit-learn은 기본적인 시각화를 지원한다. 아래는 [타이타닉 데이타 분석 결과](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/machine-learning/titanic.ipynb)로 왼쪽이 scikit-learn의 기본 시각화, 오른쪽이 [dtreeviz](https://explained.ai/decision-tree-viz/index.html)로 보다 직관적으로 해석한 결과이다.
+scikit-learn은 기본적인 시각화를 지원한다. 아래는 [타이타닉 데이타 분석 결과](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/machine-learning/titanic.ipynb)로 왼쪽이 scikit-learn의 기본 시각화, 오른쪽은 [dtreeviz](https://explained.ai/decision-tree-viz/index.html)로 해석한 결과이다.
 
-<img src="https://raw.githubusercontent.com/likejazz/jupyter-notebooks/master/machine-learning/data/titanic.png" width="47%" style="padding-right: 10px; float: left"><img src="https://user-images.githubusercontent.com/1250095/55542969-0f04c500-5703-11e9-860f-749b987d33c1.png" width="47%">
+<img src="https://raw.githubusercontent.com/likejazz/jupyter-notebooks/master/machine-learning/data/titanic.png" width="47%" style="padding-right: 10px; float: left"><img src="https://user-images.githubusercontent.com/1250095/64596120-4d0ebf00-d3ee-11e9-97c2-f09f1dc54a34.png" width="47%">
 
 [How to visualize decision trees](https://explained.ai/decision-tree-viz/index.html)를 [소개하는 발표 영상(YouTube)](https://www.youtube.com/watch?v=4FC1D9SuDBc)
 
@@ -41,10 +42,37 @@ scikit-learn은 기본적인 시각화를 지원한다. 아래는 [타이타닉 
 
 <img src="https://explained.ai/decision-tree-viz/images/samples/boston-TD-3.svg" width="80%">
 
-### Random Forest
-Decision Tree와 달리 배깅을 통한 Random Forest는 각각의 피처를 통한 시각화가 쉽지 않다. 이는 부스팅도 마찬가지이며, 이 경우 feature importance로 해석을 시도한다. scikit-learn의 경우 feature importance를 표현하지만 [bias를 가지므로 주의](https://explained.ai/rf-importance/index.html)가 필요하다. [rfpimp 프로젝트](https://github.com/parrt/random-forest-importances)는 신뢰성 높은 결과를 보여주며, 최근(Jul 2019) scikit-learn은 [permutation importance 구현](https://github.com/scikit-learn/scikit-learn/pull/13146)을 머지했다.
+#### dtreeviz 설치
+여전히 svg를 보여주기 위한 설치 문제가 있다.[^fn-error]
 
-파이썬 데이터 구조를 시각화하는 [lolviz](https://github.com/parrt/lolviz)도 있다.
+[^fn-error]: <https://github.com/parrt/dtreeviz/pull/36/commits/24721abf135f40a1eee81ac02c8b68be86e6f3c7>
+
+```
+$ brew uninstall graphviz
+$ brew reinstall pango librsvg --build-from-source
+$ brew reinstall cairo --build-from-source
+$ brew install graphviz --build-from-source
+```
+It may takes up to 10 mins.
+
+### Random Forest
+Decision Tree와 달리 배깅을 통한 Random Forest는 각각의 피처를 통한 시각화가 쉽지 않다. 부스팅도 마찬가지이며, 이 경우 feature importance로 해석을 시도한다. scikit-learn의 경우 feature importance 표현에 [bias를 가지므로 주의](https://explained.ai/rf-importance/index.html)가 필요하다. [rfpimp 프로젝트](https://github.com/parrt/random-forest-importances)는 신뢰성 높은 결과를 보여주며, 최근(Jul 2019) scikit-learn은 [permutation importance 구현](https://github.com/scikit-learn/scikit-learn/pull/13146)을 머지했다.
+
+<img src="https://user-images.githubusercontent.com/1250095/64596590-2735ea00-d3ef-11e9-864f-8fca315b64f7.png" width="47%" style="padding-right: 10px; float: left"><img src="https://user-images.githubusercontent.com/1250095/64596589-2735ea00-d3ef-11e9-9a8b-a59c7824b00c.png" width="50%">
+
+Decision Tree의 feature importance(왼쪽)는 sex &gt; pclass &gt; fare 순을 보인다. 그러나, Random Forest의 Feature importance via average gini/variance drop(sklearn) 방식(오른쪽)은 fare &gt; sex &gt; age 순으로 전혀 다른 결과를 보인다.
+
+<img src="https://user-images.githubusercontent.com/1250095/64596591-2735ea00-d3ef-11e9-8d9b-6948d4177c57.png" width="47%" style="padding-right: 10px; float: left"><img src="https://user-images.githubusercontent.com/1250095/64597519-e5a63e80-d3f0-11e9-9f9e-bcaa4e0e4a77.png" width="50%">
+
+rfpimp 패키지의 permutation importance(왼쪽)는 Decision Tree와 거의 유사한 결과를 보이며, Eli5 결과(오른쪽) 또한 Decision Tree와 거의 유사하다.
+
+<img src="https://user-images.githubusercontent.com/1250095/64599775-f35dc300-d3f4-11e9-802e-7b0acf82d030.png" width="80%">
+
+SHAP의 `summary_plot()`도 유사한 결과를 보인다.
+
+<img src="https://user-images.githubusercontent.com/1250095/64597294-6dd81400-d3f0-11e9-92ff-374411f1cd72.png" width="50%">
+
+학습 데이터의 상관 관계 히트맵(`plot_corr_heatmap()`)만 별도로 추출할 수 있다. 여기서 `pclass`와 `fare`는 상관 관계가 매우 높게 나온다. 비용에 따른 객실 등급을 생각해본다면 납득이 되는 결과다.
 
 ### Interpretable ML
 #### 책
@@ -59,8 +87,10 @@ Making Black Box Models Explainable을 주제로 Christoph Molnar가 쓰고 있�
 #### LIME, SHAP, ELI5
 LIME, SHAP, ELI5를 통해 시각화에 보다 집중한 자료를 소개한다.
 - [Introduction to Model Interpretability](https://github.com/klemag/pydata_nyc2018-intro-to-model-interpretability) PyData NYC 2018
-- [Explainable AI: ELI5,LIME and SHAP](https://www.kaggle.com/kritidoneria/explainable-ai-eli5-lime-and-shap) Kaggle Kernel
-- [Introducing SHAP Decision Plots](https://towardsdatascience.com/introducing-shap-decision-plots-52ed3b4a1cba)
+    - [Explainable AI: ELI5,LIME and SHAP](https://www.kaggle.com/kritidoneria/explainable-ai-eli5-lime-and-shap) Kaggle Kernel
+- [SHAP Decision Plots](https://slundberg.github.io/shap/notebooks/plots/decision_plot.html)
+
+얼마전 SHAP Decision Plots가 추가되었고, 시각화에 매우 큰 도움이 된다.
 
 ##### LIME
 LIME은 [UCI News를 Random Forest로 분류하고 시각화](https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/machine-learning/news-classification.ipynb) 할때 유용하게 활용한 바 있다.
@@ -89,14 +119,19 @@ $$\phi_i(N)=\frac1{|N|!}\sum_R\left(v(P^R_i\cup\{i\})-v(P^R_i)\right)\;,$$
 - $$v(P^R_i)$$: Contribution of set of player with order
 - $$v(P^R_i\cup\{i\})$$: Contribution of set of player with order and player i
 
-SHAPley Values를 추출한 후 [React로 만든 js 라이브러리](https://github.com/interpretable-ml/iml)를 이용해 시각화 한다. 
+<img src="https://user-images.githubusercontent.com/1250095/64600693-8d723b00-d3f6-11e9-8288-ff8c7f1f3a2f.png" width="80%">
 
-<img src="https://miro.medium.com/max/1236/1*SGD0dAQJkKhGJneq_lHsdQ.png">
+타이타닉 탑승객의 생존 확률, 모든 조건이 부정적으로 생존 확률은 0% 이다.
 
-주피터 전용으로 구현되어 있으나 수정을 통해 js 라이브러리를 떼내어 활용할 수 있으며, 2019년 3월에 열린 카카오 사내 해커톤에서 이를 이용해 타이타닉 생존 예측 시각화를 별도 웹 서비스로 구현한 바 있다.
+<img src="https://user-images.githubusercontent.com/1250095/64600736-9cf18400-d3f6-11e9-976d-7ff285d1e9d3.png" width="80%">
+
+Decision Plot 또한 동일하다.
+
+SHAPley Values를 추출한 후 이와 같이 [React로 만든 js 라이브러리](https://github.com/interpretable-ml/iml)를 이용해 시각화 한다. 주피터 전용으로 구현되어 있으나 수정을 통해 js 라이브러리를 떼내어 활용할 수 있으며, 2019년 3월에 열린 카카오 사내 해커톤에서 이를 이용해 타이타닉 생존 예측 시각화를 별도 웹 서비스로 구현한 바 있다.
 
 <img src="https://user-images.githubusercontent.com/1250095/64486971-5b829c80-d26f-11e9-9088-73af471698e8.jpg" width="70%">
 
 예측 모델은 PyTorch로 Multi-Layer Perceptron을 구현했다. 노트북에 보이는 데모는 타이타닉의 주인공 Jack Dawson(Leonardo Dicaprio)의 사망 확률을 해석한 것으로, 빨간색은 사망에 영향을 준 요인(features)을 시각화 한 그래프이다. 빨간색이 파란색 보다 훨씬 더 길고, 따라서 Jack은 92% 확률로 사망하게 된다.
 
 ## References
+파이썬 데이터 구조를 시각화하는 [lolviz](https://github.com/parrt/lolviz)도 있다.
