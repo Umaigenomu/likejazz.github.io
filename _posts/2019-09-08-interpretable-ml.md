@@ -68,7 +68,12 @@ rfpimp 패키지의 permutation importance(왼쪽)는 Decision Tree와 거의 �
 
 <img src="https://user-images.githubusercontent.com/1250095/64599775-f35dc300-d3f4-11e9-802e-7b0acf82d030.png" width="80%">
 
-SHAP의 `summary_plot()`도 유사한 결과를 보인다.
+```python
+shap.summary_plot(explainer.shap_values(X_test), X_test)
+```
+SHAP의 결과도 유사하다.[^fn-titanic]
+
+[^fn-titanic]: <https://nbviewer.jupyter.org/github/likejazz/jupyter-notebooks/blob/master/machine-learning/titanic.ipynb>
 
 <img src="https://user-images.githubusercontent.com/1250095/64597294-6dd81400-d3f0-11e9-92ff-374411f1cd72.png" width="50%">
 
@@ -125,7 +130,11 @@ $$\phi_i(N)=\frac1{|N|!}\sum_R\left(v(P^R_i\cup\{i\})-v(P^R_i)\right)\;,$$
 
 <img src="https://user-images.githubusercontent.com/1250095/64600736-9cf18400-d3f6-11e9-976d-7ff285d1e9d3.png" width="80%">
 
-Decision Plot 또한 동일하다.
+```python
+shap.decision_plot(explainer.expected_value[c], shap_values[c], X_test.iloc[i], feature_display_range=slice(-1, -6, -1))
+```
+
+Decision Plot의 feature 순서는 `feature_order="importance"`를 따른다.
 
 SHAPley Values를 추출한 후 이와 같이 [React로 만든 js 라이브러리](https://github.com/interpretable-ml/iml)를 이용해 시각화 한다. 주피터 전용으로 구현되어 있으나 수정을 통해 js 라이브러리를 떼내어 활용할 수 있으며, 2019년 3월에 열린 카카오 사내 해커톤에서 이를 이용해 타이타닉 생존 예측 시각화를 별도 웹 서비스로 구현한 바 있다.
 
