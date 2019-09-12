@@ -8,6 +8,11 @@ title: AWS
 - [개요](#개요)
 - [그림으로 배우는 클라우드 인프라와 API의 구조 <sub>2016, 2017</sub>](#그림으로-배우는-클라우드-인프라와-api의-구조-2016-2017)
 - [Azure V100](#azure-v100)
+- [서비스](#서비스)
+    - [RedShift](#redshift)
+    - [RDS](#rds)
+    - [S3](#s3)
+    - [Athena](#athena)
 
 <!-- /TOC -->
 
@@ -48,3 +53,19 @@ AWS의 CloudFormation 확인 필요
 # Azure V100
 V100 4ea x 3yrs = 171,651,472 KRW  
 1 hour = 1,632 KRW
+
+# 서비스
+## RedShift
+Amazon Redshift is an Internet hosting service and data warehouse product.
+serverless가 아니라서 instance를 구동해야 하는데, creating이 너무 오래 걸린다. serverless인 BigQuery와 비교 필요
+
+## RDS
+Amazon RDS, in its ability to handle analytic workloads on big data data sets stored by a column-oriented DBMS principle. column-oriented DBMS principle은 Apache Arrow에도 Columnar In-Memory 방식으로 적용되어 있다.
+
+Apache Arrow vs. Parquet: 둘 다 동일한 Columnar Data를 저장하며, in-memory 방식과 on-disk 방식이라는 차이점이 있다.
+
+## S3
+데이터를 쉽게 보관하고 access 할 수 있으나 분석 기능은 제대로 활용이 어렵다. 한글 JSON은 parsing하지 못했다.
+
+## Athena
+S3에 올린 파일이 128MB 이내일 경우 직접 Select from을 할 수 있으나 그 이상은 Athena에서 처리한다. 그러나 한글 JSON을 제대로 parsing하지 못했다.
