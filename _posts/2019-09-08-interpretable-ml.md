@@ -109,7 +109,7 @@ LIME은 [UCI News를 Random Forest로 분류하고 시각화](https://nbviewer.j
 
 [^fn-shap]: [Interpreting your deep learning model by SHAP](https://towardsdatascience.com/interpreting-your-deep-learning-model-by-shap-e69be2b47893)
 
-Shapley Value는 게임 이론에서 협력<sup>cooperative</sup>을 통해 얻어진 이득을 각 플레이어에게 공정하게 분배하는 개념이며, 이 개념을 소개한 수학자 Lloyd Shapley의 이름을 따 명명했다.[^fn-shapley]
+Shapley Value는 게임 이론에서 협력<sup>cooperative</sup>을 통해 얻어진 이득을 각 플레이어에게 공정하게 분배하는 개념이며, 이 개념을 소개한 수학자 이자 2012년 노벨 경제학상 수상자인 Lloyd Shapley의 이름을 따 명명했다.[^fn-shapley]
 
 [^fn-shapley]: <https://en.wikipedia.org/wiki/Shapley_value>
 
