@@ -57,7 +57,7 @@ V100 4ea x 3yrs = 171,651,472 KRW
 # 서비스
 ## RedShift
 Amazon Redshift is an Internet hosting service and data warehouse product.
-serverless가 아니라서 instance를 구동해야 하는데, creating이 너무 오래 걸린다. serverless인 BigQuery와 비교 필요
+serverless가 아니라서 instance를 구동해야 하는데, creating이 너무 오래 걸린다. BigQuery는 serverless.
 
 ## RDS
 Amazon RDS, in its ability to handle analytic workloads on big data data sets stored by a column-oriented DBMS principle. column-oriented DBMS principle은 Apache Arrow에도 Columnar In-Memory 방식으로 적용되어 있다.
