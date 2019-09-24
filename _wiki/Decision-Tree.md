@@ -24,6 +24,10 @@ title: Decision Tree
 
 노드에 포함된 모든 example들이 원하는 y값에 대해 같은 y값을 가지고 있을때 pure하다.
 
+Iris 분류를 if else 룰로 표현한다면 아래와 같은 형태가 된다.
+
+<img src="https://user-images.githubusercontent.com/1250095/65497839-deedf000-def5-11e9-85b4-9e2f0db68c84.jpg" width="60%">(데이터 마이닝 Data Mining, 2011, 2013, p.60)
+
 ## ID3
 ID3, C4.5에서는 Entropy를 기준으로 하는 Information gain을 사용한다. (Regression은 calculate_variance_reduction)
 > information gain is a synonym for Kullback–Leibler divergence (Wikipedia)
