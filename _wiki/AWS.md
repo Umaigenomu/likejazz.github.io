@@ -5,6 +5,7 @@ title: AWS
 
 <!-- TOC -->
 
+- [계정 생성](#계정-생성)
 - [개요](#개요)
 - [그림으로 배우는 클라우드 인프라와 API의 구조 <sub>2016, 2017</sub>](#그림으로-배우는-클라우드-인프라와-api의-구조-2016-2017)
 - [Azure V100](#azure-v100)
@@ -15,6 +16,10 @@ title: AWS
     - [Athena](#athena)
 
 <!-- /TOC -->
+
+# 계정 생성
+IAM에서 생성한다.  
+https://console.aws.amazon.com/iam/home?region=ap-northeast-2#/users
 
 # 개요
 IAM, S3, VPC - ELB, EC2, RDS, Bridge, Auto Scaling, CloudFront, Route 53, CloudWatch  
