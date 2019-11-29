@@ -10,6 +10,9 @@ title: Android Development
 - [Call from a custom view](#call-from-a-custom-view)
 - [Speech Recognition](#speech-recognition)
 - [Activity Lifecycle](#activity-lifecycle)
+- [AsyncTask](#asynctask)
+- [Fragment](#fragment)
+- [Glide](#glide)
 
 <!-- /TOC -->
 
@@ -80,3 +83,15 @@ protected void onActivityResult(int requestCode, int resultCode, @Nullable Inten
 
 # Activity Lifecycle
 <img src="https://developer.android.com/guide/components/images/activity_lifecycle.png" width="70%">
+
+# AsyncTask
+https://developer.android.com/reference/android/os/AsyncTask
+AsyncTask는 스레드-핸들러의 추상화 개념 정도
+
+# Fragment
+Fragment는 다른 뷰와 다르게 액티비티의 생명주기를 그대로 따르는 뷰이다.
+
+# Glide
+Glide는 2014년 구글 IO 행사에서 발표된 라이브러리로 원래 Bump 앱에서 내부적으로 이용하던 라이브러리를 구글이 인수하여 공개한 이미지 핸들링 라이브러리
+
+Matisse는 갤러리를 연동하기 위한 라이브러리
