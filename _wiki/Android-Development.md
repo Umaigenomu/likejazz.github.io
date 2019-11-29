@@ -13,6 +13,11 @@ title: Android Development
 - [AsyncTask](#asynctask)
 - [Fragment](#fragment)
 - [Glide](#glide)
+- [multidex](#multidex)
+- [AAC](#aac)
+- [Butter Knife](#butter-knife)
+- [MVVM](#mvvm)
+- [Room](#room)
 
 <!-- /TOC -->
 
@@ -95,3 +100,23 @@ Fragment는 다른 뷰와 다르게 액티비티의 생명주기를 그대로 �
 Glide는 2014년 구글 IO 행사에서 발표된 라이브러리로 원래 Bump 앱에서 내부적으로 이용하던 라이브러리를 구글이 인수하여 공개한 이미지 핸들링 라이브러리
 
 Matisse는 갤러리를 연동하기 위한 라이브러리
+
+# multidex
+https://developer.android.com/studio/build/multidex
+
+# AAC
+https://developer.android.com/topic/libraries/architecture
+
+# Butter Knife
+https://jakewharton.github.io/butterknife/  
+Development on this tool is winding down.
+
+https://developer.android.com/topic/libraries/view-binding  
+In most cases, view binding replaces findViewById.  
+정리해보면, 데이터 바인딩은 액티비티/프래그먼트에 작성해야 하는 뷰 관련 코드를 XML에 작성하자는 개념이다.
+
+# MVVM
+Model-View-ViewModel
+
+# Room
+룸은 SQLite 추상화 라이브러리
