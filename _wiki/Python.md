@@ -13,13 +13,16 @@ title: Python
     - [코딩 가이드](#코딩-가이드)
 - [Extending with C++](#extending-with-c)
 - [고성능 파이썬 <sub>2013, 2016</sub>](#고성능-파이썬-2013-2016)
+- [뇌를 자극하는 파이썬 3 <sub>2016</sub>](#뇌를-자극하는-파이썬-3-2016)
 
 <!-- /TOC -->
 
 # Pythonic way
+아래 내용들은 『파이썬 코딩의 기술 <sub>2015, 2016</sub>』에 나오는 내용들이다.
+
 - map과 filter 대신 list comprehension을 사용하라
 - range 보다는 enumerate를 사용하라
-- def 에서 `*args`를 사용하면 함수에서 가변 개수의 위치 인수를 받을 수 있다.
+- def 에서 `*args`를 사용하면 함수에서 가변 개수 <sup>variable argument</sup>의 위치 인수를 받을 수 있다.
 - class에 필요한 다른 생성자를 정의하려면 `@classmethod`를 이용하라
 - `super`로 부모 함수를 초기화 하라
 - 파이썬의 언어 후크<sup>language hook</sup>를 사용하면 시스템을 연계하는 범용 코드를 쉽게 만들 수 있다.
@@ -28,6 +31,22 @@ title: Python
 - 최적화 하기 전에 `Profile`을 이용해 프로파일 하라
 
 (Effective Python, 2015)
+
+추가:  
+
+28: 커스텀 컨테이너 타입은 `collections.abc`의 클래스를 상속받게 만들자
+
+42: `functools.wraps`로 함수 데코레이터를 정의하자
+
+자료형  
+리스트의 시작 부분에서 아이템을 삽입하거나 삭제하는 연산에는 선형적 시간 <sup>linear time</sup>이 걸리므로 deque의 일정한 시간보다 훨씬 느리다.
+
+이진 검색은 `bisect_left` 같은 효율적인 함수 이용  
+`i = bisect_left(x, 991234)`
+
+`itertools`는 이터레이터를 구성하거나 이터레이터와 상호 작용하는데 유용한 함수를 제공한다.  
+`product`: 이터레이터에 있는 아이템들의 카테시안 곱을 반환한다.  
+`permutations`, `combinations` 포함
 
 ## set, list, tuple
 ```python
@@ -120,3 +139,21 @@ JIT vs. AOT:
 
 바이트와 유니코드:  
 파이썬 2.7은 모든 유니코드가 같은 수의 바이트를 사용한다. PEP 393 덕분에 파이썬 3.3 이상은 유연한 유니코드 표현을 사용한다. 파이썬 3.3에서는 문자열에 속한 문자들의 범위를 관찰해서 가능하다면 낮은 수준의 문자(ASCII등)는 더 적은 바이트를 사용하도록 한다. p.361
+
+# 뇌를 자극하는 파이썬 3 <sub>2016</sub>
+
+가변 매개 변수 <sup>arbitrary argument list</sup>
+
+```python
+def merge_string(*text_list):
+    result = ''
+    for s in text_list:
+        result += s
+    return result
+merge_string('A','B','C')
+```
+
+`*`는 포인터가 아님. 튜플로 정의된다. 타입 확인 가능.
+
+함수 안의 함수: 중첩 함수 <sup>nested function</sup>  
+자신이 소속된 함수의 매개변수에 접근이 가능하다.
