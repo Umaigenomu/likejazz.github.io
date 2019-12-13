@@ -18,6 +18,7 @@ title: Android Development
 - [Butter Knife](#butter-knife)
 - [MVVM](#mvvm)
 - [Room](#room)
+- [예전 프로젝트에 대한 빌드](#예전-프로젝트에-대한-빌드)
 
 <!-- /TOC -->
 
@@ -120,3 +121,16 @@ Model-View-ViewModel
 
 # Room
 룸은 SQLite 추상화 라이브러리
+
+# 예전 프로젝트에 대한 빌드
+Gradle 2.x 프로젝트는 그대로 빌드되지 않는다. 왜냐면, `repositories`에 `jcenter()`만 등록되어 있기 때문이다. 따라서 아래와 같이 수정해야 한다.
+```
+repositories {
+    jcenter()
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
+}
+```
+Gradle 5.x에서는 단순히 `google()`을 지정하면 되나 예전 버전은 저렇게 주소를 명시해야 한다. 또는, 오류 화면에서 `Add Google Maven repository and sync project`를 선택 하면 자동으로 설정해준다.
