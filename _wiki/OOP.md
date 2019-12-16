@@ -7,6 +7,8 @@ title: OOP
 
 - [다형성<sup>polymorphism</sup>](#다형성polymorphism)
 - [캡슐화 <sup>encapsulation</sup>](#캡슐화-encapsulation)
+- [추상화 <sup>Abstraction</sup>](#추상화-abstraction)
+- [상속 <sup>Inheritance</sup>](#상속-inheritance)
 
 <!-- /TOC -->
 
@@ -27,3 +29,7 @@ title: OOP
 데이터와 메소드를 함께 제공하며, 데이터 직접 접근을 제한한다.
 
 은닉화 <sup>information hiding</sup> 데이터를 외부에서 직접 접근하는게 아닌 함수를 통해서 접근한다.
+
+# 추상화 <sup>Abstraction</sup>
+
+# 상속 <sup>Inheritance</sup>
