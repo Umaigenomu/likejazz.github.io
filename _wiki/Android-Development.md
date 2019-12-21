@@ -19,6 +19,7 @@ title: Android Development
 - [MVVM](#mvvm)
 - [Room](#room)
 - [예전 프로젝트에 대한 빌드](#예전-프로젝트에-대한-빌드)
+- [SharedPrefrences](#sharedprefrences)
 
 <!-- /TOC -->
 
@@ -134,3 +135,15 @@ repositories {
 }
 ```
 Gradle 5.x에서는 단순히 `google()`을 지정하면 되나 예전 버전은 저렇게 주소를 명시해야 한다. 또는, 오류 화면에서 `Add Google Maven repository and sync project`를 선택 하면 자동으로 설정해준다.
+
+# SharedPrefrences
+Device File Explorer &gt; com.google.cloud.android.speech &gt; shared_prefs &gt; com.google.cloud.android.speech_preferences.xml
+```
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="seat.heater.frontLeft.on" value="true" />
+    <string name="seat.heater.frontLeft.level">3</string>
+    ...
+</map>
+```
+string과 boolean 두 가지 타입을 지원한다.
