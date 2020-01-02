@@ -10,10 +10,10 @@ title: Python
     - [List Comprehension](#list-comprehension)
         - [Nested Loops](#nested-loops)
         - [Other Comprehensions](#other-comprehensions)
-    - [코딩 가이드](#코딩-가이드)
-- [Extending with C++](#extending-with-c)
-- [고성능 파이썬 <sub>2013, 2016</sub>](#고성능-파이썬-2013-2016)
-- [뇌를 자극하는 파이썬 3 <sub>2016</sub>](#뇌를-자극하는-파이썬-3-2016)
+- [Books](#books)
+    - [고성능 파이썬 <sub>2013, 2016</sub>](#고성능-파이썬-2013-2016)
+    - [뇌를 자극하는 파이썬 3 <sub>2016</sub>](#뇌를-자극하는-파이썬-3-2016)
+- [Links](#links)
 
 <!-- /TOC -->
 
@@ -82,20 +82,8 @@ That same code written as a **dictionary comprehension**:
 flipped = {value: key for key, value in original.items()}
 ```
 
-Python dictionary is [hash mapping or hash table](https://stackoverflow.com/a/114831/3513266).  
-[참고](http://treyhunner.com/2015/12/python-list-comprehensions-now-in-color/)
-
-## 코딩 가이드
-- PEP 8 [한글 설명](https://spoqa.github.io/2012/08/03/about-python-coding-convention.html)
-- [Google Python Style](https://google.github.io/styleguide/pyguide.html)
-
-# Extending with C++
-- [Extending with C++](http://dev.likejazz.com/post/174904974036/extending-with-c): 빌드 실패 사례
-- [Python, Extending with C](http://dev.likejazz.com/post/40095584513/python-extending-with-c): 단순 구현
-- [NumPy와 C++ Extensions의 성능 비교](http://docs.likejazz.com/python-numpy-extensions/): Cython, pybind11 구현
-
-# 고성능 파이썬 <sub>2013, 2016</sub>
-
+# Books
+## 고성능 파이썬 <sub>2013, 2016</sub>
 컴퓨터 시스템의 기본:  
 암달의 법칙 <sup>Amdahl's law</sup>: 멀티 코어에서 작동하도록 설계된 프로그램 일지라도 하나의 코어에서 실행되어야 하는 루틴이 존재하고, 더 많은 코어를 투입해도 병목으로 작용한다는 법칙.
 
@@ -140,7 +128,7 @@ JIT vs. AOT:
 바이트와 유니코드:  
 파이썬 2.7은 모든 유니코드가 같은 수의 바이트를 사용한다. PEP 393 덕분에 파이썬 3.3 이상은 유연한 유니코드 표현을 사용한다. 파이썬 3.3에서는 문자열에 속한 문자들의 범위를 관찰해서 가능하다면 낮은 수준의 문자(ASCII등)는 더 적은 바이트를 사용하도록 한다. p.361
 
-# 뇌를 자극하는 파이썬 3 <sub>2016</sub>
+## 뇌를 자극하는 파이썬 3 <sub>2016</sub>
 
 가변 매개 변수 <sup>arbitrary argument list</sup>
 
@@ -157,3 +145,13 @@ merge_string('A','B','C')
 
 함수 안의 함수: 중첩 함수 <sup>nested function</sup>  
 자신이 소속된 함수의 매개변수에 접근이 가능하다.
+
+# Links
+Extending with C++
+- [Extending with C++](http://dev.likejazz.com/post/174904974036/extending-with-c): 빌드 실패 사례
+- [Python, Extending with C](http://dev.likejazz.com/post/40095584513/python-extending-with-c): 단순 구현
+- [NumPy와 C++ Extensions의 성능 비교](http://docs.likejazz.com/python-numpy-extensions/): Cython, pybind11 구현
+
+코딩 가이드
+- PEP 8 [한글 설명](https://spoqa.github.io/2012/08/03/about-python-coding-convention.html)
+- [Google Python Style](https://google.github.io/styleguide/pyguide.html)

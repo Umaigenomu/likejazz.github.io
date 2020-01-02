@@ -18,7 +18,7 @@ title: NLP 가이드
     - [TensorFlow, Keras](#tensorflow-keras)
     - [강화 학습](#강화-학습)
     - [기타](#기타)
-- [책](#책)
+- [Books](#books)
 
 <!-- /TOC -->
 
@@ -135,7 +135,7 @@ arXiv에 등록되는 수많은 논문을 분석하여 Top papers를 보기 좋�
 - [GitXiv](http://www.gitxiv.com/)  
 논문 구현을 깃헙 코드와 연동
 
-## 책
+## Books
 *책 내용은 독서 후기로 정리 필요*
 
 - [마스터 알고리즘](http://book.daum.net/detail/book.do?bookid=KOR9791185459547)  

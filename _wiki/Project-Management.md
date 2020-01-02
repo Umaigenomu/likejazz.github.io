@@ -5,11 +5,13 @@ title: Project Management
 
 <!-- TOC -->
 
-- [Rapid Development <sub>1996, 2003</sub>](#rapid-development-1996-2003)
+- [Books](#books)
+    - [Rapid Development <sub>1996, 2003</sub>](#rapid-development-1996-2003)
 
 <!-- /TOC -->
 
-# Rapid Development <sub>1996, 2003</sub>
+# Books
+## Rapid Development <sub>1996, 2003</sub>
 '쾌속 개발 프로젝트'란 개발 속력을 강조하는 모든 프로젝트를 일컫는다. 요즘과 같은 분위기에서는 프로젝트 대부분이 이에 해당한다. p.26
 - 쾌속 개발 전략
 - 전형적인 실수 <sup>Classic Mistakes</sup>

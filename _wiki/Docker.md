@@ -10,7 +10,8 @@ title: Docker
     - [참고](#참고)
 - [Push a docker image to a private repo](#push-a-docker-image-to-a-private-repo)
 - [CMD vs. ENTRYPOINT](#cmd-vs-entrypoint)
-- [도커/쿠버네티스를 활용한 컨테이너 개발 실전 입문 <sub>2018, 2019</sub>](#도커쿠버네티스를-활용한-컨테이너-개발-실전-입문-2018-2019)
+- [Books](#books)
+    - [도커/쿠버네티스를 활용한 컨테이너 개발 실전 입문 <sub>2018, 2019</sub>](#도커쿠버네티스를-활용한-컨테이너-개발-실전-입문-2018-2019)
 
 <!-- /TOC -->
 
@@ -96,7 +97,8 @@ RUN sed -i "s/80/$CONTAINER_PORT/g" /etc/apache2/sites-available/000-default.con
 COPY ./demo/index.php /var/www/html/
 ```
 
-# 도커/쿠버네티스를 활용한 컨테이너 개발 실전 입문 <sub>2018, 2019</sub>
+# Books
+## 도커/쿠버네티스를 활용한 컨테이너 개발 실전 입문 <sub>2018, 2019</sub>
 - 도커 컨테이너 배포
 - 스웜을 이용한 실전 애플리케이션 개발
 - 쿠버네티스 입문/클러스터 구축

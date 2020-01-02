@@ -27,7 +27,8 @@ title: C++
 - [SFINAE](#sfinae)
 - [include 기본 경로](#include-기본-경로)
 - [Memory Allocation](#memory-allocation)
-- [모던 C++로 배우는 함수형 프로그래밍 <sub>2017, 2018</sub>](#모던-c로-배우는-함수형-프로그래밍-2017-2018)
+- [Books](#books)
+    - [모던 C++로 배우는 함수형 프로그래밍 <sub>2017, 2018</sub>](#모던-c로-배우는-함수형-프로그래밍-2017-2018)
 
 <!-- /TOC -->
 
@@ -216,7 +217,8 @@ $ echo "" | g++ -xc - -v -E
   - `mmap`: In this respect an anonymous mapping is similar to malloc, and is used in some malloc implementations for certain allocations. 엔진에서는 이걸로 메모리를 할당한다.
 - `calloc`, same as malloc. Only difference is that it initializes the bytes to zero.
 
-# 모던 C++로 배우는 함수형 프로그래밍 <sub>2017, 2018</sub>
+# Books
+## 모던 C++로 배우는 함수형 프로그래밍 <sub>2017, 2018</sub>
 - 모던 C++ 소개: range-based for loop  
 - 함수형 프로그래밍에서 함수 다루기  
 first order function, pure function, currying등 함수형 프로그래밍의 핵심을 다룬다.
