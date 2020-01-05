@@ -1,6 +1,7 @@
 ---
 layout: wiki 
 title: NLP 가이드
+last-modified: 2020/01/02
 ---
 
 <small>

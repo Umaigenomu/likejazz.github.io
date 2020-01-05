@@ -136,13 +136,8 @@ title: Home
     </div>
   </div>
 
-</div><!-- end #home -->
+</div>
 
 <hr>
 
-<!-- Wiki links -->
-<small style="font-size: 0.6em">
-  {% for w in site.wiki %}
-    <a href="{{ w.url }}">{{ w.title }}</a> ·
-  {% endfor %}
-</small>
+{% include wikilist.html %}

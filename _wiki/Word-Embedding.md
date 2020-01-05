@@ -1,6 +1,7 @@
 ---
 layout: wiki 
 title: Word Embedding
+last-modified: 2019/05/17
 ---
 
 <!-- TOC -->

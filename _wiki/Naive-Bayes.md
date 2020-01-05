@@ -1,6 +1,7 @@
 ---
 layout: wiki 
 title: Naive Bayes
+last-modified: 2019/07/27
 ---
 
 <!-- TOC -->

@@ -1,6 +1,7 @@
 ---
 layout: wiki 
 title: CNN, RNN
+last-modified: 2019/09/04
 ---
 
 <!-- TOC -->

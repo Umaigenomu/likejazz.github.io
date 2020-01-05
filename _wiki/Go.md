@@ -1,6 +1,7 @@
 ---
 layout: wiki 
 title: Go
+last-modified: 2019/05/11
 ---
 
 <!-- TOC -->

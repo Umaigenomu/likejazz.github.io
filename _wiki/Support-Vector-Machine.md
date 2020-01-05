@@ -1,6 +1,7 @@
 ---
 layout: wiki 
 title: Support Vector Machine
+last-modified: 2019/07/27
 ---
 
 <!-- TOC -->

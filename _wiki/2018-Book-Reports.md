@@ -1,6 +1,7 @@
 ---
 layout: wiki 
 title: 2018 Book Reports
+last-modified: 2019/09/04
 ---
 
 작년에 이어 2018년에도 읽은 책들에 대한 독서 후기를 정리한다.
