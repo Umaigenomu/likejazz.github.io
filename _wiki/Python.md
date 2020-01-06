@@ -1,7 +1,7 @@
 ---
 layout: wiki 
 title: Python
-last-modified: 2020/01/02
+last-modified: 2020/01/06 17:11:44
 ---
 
 <!-- TOC -->
@@ -19,7 +19,8 @@ last-modified: 2020/01/02
 <!-- /TOC -->
 
 # Pythonic way
-아래 내용들은 『파이썬 코딩의 기술 <sub>2015, 2016</sub>』에 나오는 내용들이다.
+아래 내용들은 『파이썬 코딩의 기술 <sub>2015, 2016</sub>』에 나오는 내용들이다.  
+[Effective Python 내용 정리](https://github.com/shoark7/Effective-Python)
 
 - map과 filter 대신 list comprehension을 사용하라
 - range 보다는 enumerate를 사용하라
