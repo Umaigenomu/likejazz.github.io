@@ -1,13 +1,12 @@
 ---
 layout: wiki 
 title: Android Development
-last-modified: 2019/12/21
+last-modified: 2020/01/18 13:22:41
 ---
 
 <!-- TOC -->
 
 - [Launch a activity](#launch-a-activity)
-- [Show toast message](#show-toast-message)
 - [Call from a custom view](#call-from-a-custom-view)
 - [Speech Recognition](#speech-recognition)
 - [Activity Lifecycle](#activity-lifecycle)
@@ -21,6 +20,7 @@ last-modified: 2019/12/21
 - [Room](#room)
 - [예전 프로젝트에 대한 빌드](#예전-프로젝트에-대한-빌드)
 - [SharedPrefrences](#sharedprefrences)
+- [Gradle](#gradle)
 
 <!-- /TOC -->
 
@@ -36,19 +36,6 @@ btn.setOnClickListener(new View.OnClickListener() {
         startActivity(intent);
     }
 });
-```
-
-# Show toast message
-```java
-    ...
-    ListView arrayView = findViewById(R.id.main_listview_array);
-    arrayView.setOnItemClickListener(this);
-    ...
-
-@Override
-public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-    Toast.makeText(this, arrayDatas[position], Toast.LENGTH_SHORT).show()
-}
 ```
 
 # Call from a custom view
@@ -148,3 +135,15 @@ Device File Explorer &gt; com.google.cloud.android.speech &gt; shared_prefs &gt;
 </map>
 ```
 string과 boolean 두 가지 타입을 지원한다.
+
+# Gradle
+Gradle 버전 업그레이드(6.1 설치) 및 `sourceCompatibility = 11`(LTS 버전)로 올리기 위해 다음 과정을 거쳤다.
+```
+$ brew list gradle      # 현재 설치 버전 확인
+$ brew upgrade gradle   # 업그레이드
+```
+Gradle은 wrapper 기반 실행이 recommend 이므로,
+```
+$ gradle wrapper
+```
+로 wrapper를 설치한다. JDK는 [Amazon Corretto 11 설치](https://aws.amazon.com/corretto/) JAVA_HOME 설정 `export JAVA_HOME=$(/usr/libexec/java_home)` 결국 `sourceCompatibility`는 `8`에서 올리지 못함.
