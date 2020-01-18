@@ -1,7 +1,7 @@
 ---
 layout: wiki 
 title: 2019 Book Reports
-last-modified: 2020/01/18 11:21:11
+last-modified: 2020/01/18 13:39:14
 ---
 
 <!-- TOC -->
@@ -89,7 +89,7 @@ last-modified: 2020/01/18 11:21:11
 
 # 매슬로의 동기이론 <sub>1943, 2018</sub>
 ★★★☆☆  
-이 책의 핵심은 위키피디어에 요약된 Maslow's hierarchy of needs 그대로다. 책에는 
+이 책의 핵심은 위키피디어에 요약된 Maslow's hierarchy of needs 그대로다. 책에는 욕구 이론 외에도 '갈등, 좌절, 위협', '심리적 안정, 불안정의 역학 이론'등 부가 챕터가 등장하지만 욕구 이론의 유명세에는 미치지 못한다.
 
 # AI 슈퍼파워 <sub>2018, 2019</sub>
 ★★☆☆☆  
