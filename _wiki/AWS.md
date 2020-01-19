@@ -1,7 +1,7 @@
 ---
 layout: wiki 
 title: AWS
-last-modified: 2020/01/02
+last-modified: 2020/01/19 14:31:50
 ---
 
 <!-- TOC -->
@@ -20,8 +20,7 @@ last-modified: 2020/01/02
 <!-- /TOC -->
 
 # 계정 생성
-IAM에서 생성한다.  
-https://console.aws.amazon.com/iam/home?region=ap-northeast-2#/users
+[IAM에서 생성](https://console.aws.amazon.com/iam/home?region=ap-northeast-2#/users)한다.  
 
 # 개요
 IAM, S3, VPC - ELB, EC2, RDS, Bridge, Auto Scaling, CloudFront, Route 53, CloudWatch  
@@ -34,6 +33,9 @@ IAM, S3, VPC - ELB, EC2, RDS, Bridge, Auto Scaling, CloudFront, Route 53, CloudW
 - ELB는 DNS만 제공. IP가 자주 변경된다. https도 지원한다.
 
 (서비스 운영이 쉬워지는 AWS 인프라 구축 가이드, 2019)와 비슷한 내용
+
+Create smart AWS diagrams:  
+<https://cloudcraft.co>
 
 # Azure V100
 V100 4ea x 3yrs = 171,651,472 KRW  
