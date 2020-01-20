@@ -1,7 +1,7 @@
 ---
 layout: wiki 
 title: OOP
-last-modified: 2019/12/23
+last-modified: 2020/01/20 14:36:45
 ---
 
 <!-- TOC -->
@@ -46,7 +46,7 @@ last-modified: 2019/12/23
 이외 Abstract Factory Pattern, Builder Pattern으로 더 깔끔한 형태로 구현 가능하나 Factory Pattern의 기본적인 형태로도 충분했다.
 
 ## State Pattern
-State Pattern을 이용해 유한 상태 머신 <sup>finite state machine</sup>을 구현할 수 있다. coin-operated turnstile 개찰구를 예([위키피디어](https://en.wikipedia.org/wiki/Finite-state_machine))로 들 수 있는데, State Pattern으로 구현 가능하다. 수학적으로 모델링할 수 있는 모든 것을 모델링하는데 사용할 수 있다.
+State Pattern을 이용해 유한 상태 머신 <sup>finite state machine</sup>을 구현할 수 있다. coin-operated turnstile 개찰구를 예([위키피디어](https://en.wikipedia.org/wiki/Finite-state_machine))로 들 수 있는데, State Pattern으로 구현 가능하다. [안드로이드 구현](https://github.com/likejazz/Android-Design-Patterns-and-Best-Practice/tree/master/Chapter10/Turnstile) 수학적으로 모델링할 수 있는 모든 것을 모델링하는데 사용할 수 있다.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Turnstile_state_machine_colored.svg/660px-Turnstile_state_machine_colored.svg.png" width="50%">
 
