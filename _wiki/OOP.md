@@ -1,7 +1,7 @@
 ---
 layout: wiki 
 title: OOP
-last-modified: 2020/01/20 14:36:45
+last-modified: 2020/01/22 11:35:38
 ---
 
 <!-- TOC -->
@@ -42,8 +42,7 @@ last-modified: 2020/01/20 14:36:45
 
 # 디자인 패턴
 ## Factory Pattern
-매우 실용적. 실제로 if else가 복잡하게 중첩된 구문을 Factory Pattern으로 깔끔하게 정리할 수 있었다.  
-이외 Abstract Factory Pattern, Builder Pattern으로 더 깔끔한 형태로 구현 가능하나 Factory Pattern의 기본적인 형태로도 충분했다.
+가장 널리 사용하는 생성 패턴 중의 하나다. 팩토리 패턴의 유용성은 로직과 분리된 공통 인터페이스를 사용하는 방식에 있다. (안드로이드 디자인 패턴과 활용 사례, 2016) 실제로 if else가 복잡하게 중첩된 구문을 Factory Pattern으로 깔끔하게 정리할 수 있었다. 이외 Abstract Factory Pattern, Builder Pattern으로 더 깔끔한 형태로 구현 가능하나 [Factory Pattern의 기본적인 형태](https://github.com/likejazz/Android-Design-Patterns-and-Best-Practice/tree/master/Chapter01/FactoryPattern)로도 충분했다.
 
 ## State Pattern
 State Pattern을 이용해 유한 상태 머신 <sup>finite state machine</sup>을 구현할 수 있다. coin-operated turnstile 개찰구를 예([위키피디어](https://en.wikipedia.org/wiki/Finite-state_machine))로 들 수 있는데, State Pattern으로 구현 가능하다. [안드로이드 구현](https://github.com/likejazz/Android-Design-Patterns-and-Best-Practice/tree/master/Chapter10/Turnstile) 수학적으로 모델링할 수 있는 모든 것을 모델링하는데 사용할 수 있다.
