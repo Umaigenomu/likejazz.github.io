@@ -1,7 +1,7 @@
 ---
 layout: wiki 
 title: Information Retrieval
-last-modified: 2019/04/16
+last-modified: 2020/02/06 11:45:11
 ---
 
 <!-- TOC -->
@@ -13,8 +13,7 @@ last-modified: 2019/04/16
 <!-- /TOC -->
 
 # 강의
-- [스탠포드 CS276](https://web.stanford.edu/class/cs276/)
-IIR 책 저자 Chris Manning과 NLP의 Dan Jurafsky 교수가 강의하는 명실상부한 세계 최고의 IR 강의다. 유튜브에 강의 영상도 있다.
+- [스탠포드 CS276](https://web.stanford.edu/class/cs276/) IR 강의 Syllabus by Chris Manning, ~~Dan Jurafsky~~ Pandu Nayak
 
 # PageRank
 - [PageRank](https://sungmooncho.com/2012/08/26/pagerank/)
