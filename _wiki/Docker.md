@@ -1,13 +1,12 @@
 ---
 layout: wiki 
 title: Docker
-last-modified: 2020/01/02
+last-modified: 2020/02/21 14:56:31
 ---
 
 <!-- TOC -->
 
 - [기본 명령](#기본-명령)
-- [중단, 재시작 명령 정리](#중단-재시작-명령-정리)
     - [참고](#참고)
 - [Push a docker image to a private repo](#push-a-docker-image-to-a-private-repo)
 - [CMD vs. ENTRYPOINT](#cmd-vs-entrypoint)
@@ -17,9 +16,16 @@ last-modified: 2020/01/02
 <!-- /TOC -->
 
 # 기본 명령
-정리 필요
+```
+FROM hashicorp/http-echo:latest
+```
 
-# 중단, 재시작 명령 정리
+이미지 빌드 및 생성된 이미지 조회
+```
+$ docker build . -t http-echo-image
+$ docker images
+```
+
 중단하면서 컨테이너 삭제까지 병행
 
 ```
@@ -29,7 +35,7 @@ $ docker rm -f 7e555bde5128
 2개의 볼륨을 마운트하고 종료시 자동으로 삭제되도록 foreground로 구동했다. 백그라운드는 `-it`를 제외하고 `-d`로 구동한다. `CMD`는 구동 마지막에 실행된다.
 
 ```
-docker run --rm -it \
+$ docker run --rm -it \
 -v /Users/kaonpark/workspace/github.daumkakao.com/NLP/simpson:/simpson/simpson \
 -v /Users/kaonpark/workspace/github.daumkakao.com/NLP/simpson-data:/simpson/simpson/data \
 -p 5000:5000 \
@@ -38,7 +44,9 @@ docker run --rm -it \
 
 최신 docker 이미지를 다른 포트에 중복 구동
 ```
-sudo docker run -d -v ~/data:/simpson/simpson/data -p 5001:5000 abc.xxx.io/kaon_park/simpson
+$ sudo docker run -d -v ~/data:/simpson/simpson/data \
+-p 5001:5000 \
+abc.xxx.io/kaon_park/simpson
 ```
 
 ## 참고
