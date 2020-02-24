@@ -1,12 +1,13 @@
 ---
 layout: wiki 
 title: Docker
-last-modified: 2020/02/21 14:56:31
+last-modified: 2020/02/24 15:54:47
 ---
 
 <!-- TOC -->
 
 - [기본 명령](#기본-명령)
+    - [예전 실행 했던 사항](#예전-실행-했던-사항)
     - [참고](#참고)
 - [Push a docker image to a private repo](#push-a-docker-image-to-a-private-repo)
 - [CMD vs. ENTRYPOINT](#cmd-vs-entrypoint)
@@ -17,21 +18,40 @@ last-modified: 2020/02/21 14:56:31
 
 # 기본 명령
 ```
+# Dockerfile
 FROM hashicorp/http-echo:latest
 ```
 
-이미지 빌드 및 생성된 이미지 조회
+이미지 빌드 및 프로세스, 생성된 이미지 조회
 ```
 $ docker build . -t http-echo-image
-$ docker images
+$ docker ps -a && docker images -a
 ```
 
 중단하면서 컨테이너 삭제까지 병행
 
 ```
-$ docker rm -f 7e555bde5128
+$ docker rm http-echo-ps
 ```
 
+5678 포트를 오픈하고, `halo` 메시지를 출력하도록 실행. 실행이 끝나면 삭제.
+
+```
+$ docker run -p 5678:5678 \
+    --rm \
+    --name http-echo-ps \
+    http-echo-image -text halo
+```
+
+우분투 콘솔에 접속할때. 마지막 `/bin/bash`는 생략가능하다.
+
+```
+docker run --rm -it \
+    --name ubuntu-latest-ps \
+    ubuntu-latest /bin/bash
+```
+
+## 예전 실행 했던 사항
 2개의 볼륨을 마운트하고 종료시 자동으로 삭제되도록 foreground로 구동했다. 백그라운드는 `-it`를 제외하고 `-d`로 구동한다. `CMD`는 구동 마지막에 실행된다.
 
 ```
