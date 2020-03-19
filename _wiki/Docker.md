@@ -1,14 +1,14 @@
 ---
 layout: wiki 
 title: Docker
-last-modified: 2020/02/24 15:54:47
+last-modified: 2020/03/19 13:19:45
 ---
 
 <!-- TOC -->
 
 - [기본 명령](#기본-명령)
     - [예전 실행 했던 사항](#예전-실행-했던-사항)
-    - [참고](#참고)
+    - [스크립트](#스크립트)
 - [Push a docker image to a private repo](#push-a-docker-image-to-a-private-repo)
 - [CMD vs. ENTRYPOINT](#cmd-vs-entrypoint)
 - [Books](#books)
@@ -69,8 +69,12 @@ $ sudo docker run -d -v ~/data:/simpson/simpson/data \
 abc.xxx.io/kaon_park/simpson
 ```
 
-## 참고
-업데이트가 있을 경우 [자동으로 이미지를 받아서 교체하는 스크립트](https://gist.github.com/likejazz/85c54f4c6b69e60cb7b75f806659153d)
+## 스크립트
+Gist 정리
+- [update-docker.sh](https://gist.github.com/likejazz/85c54f4c6b69e60cb7b75f806659153d)  
+업데이트가 있을 경우 자동으로 이미지를 받아서 교체
+- [dockerize.sh](https://gist.github.com/likejazz/ba41d83fc94dbb75b982f4e37dc008b6)  
+도커 이미지를 빌드해서 배포
 
 # Push a docker image to a private repo
 로그인, 태깅, 푸쉬 절차를 통해 업로드 할 수 있다.

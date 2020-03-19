@@ -1,7 +1,7 @@
 ---
 layout: wiki 
 title: AWS
-last-modified: 2020/01/19 14:31:50
+last-modified: 2020/03/19 13:20:49
 ---
 
 <!-- TOC -->
@@ -14,6 +14,7 @@ last-modified: 2020/01/19 14:31:50
     - [RDS](#rds)
     - [S3](#s3)
     - [Athena](#athena)
+- [스크립트](#스크립트)
 - [Books](#books)
     - [그림으로 배우는 클라우드 인프라와 API의 구조 <sub>2016, 2017</sub>](#그림으로-배우는-클라우드-인프라와-api의-구조-2016-2017)
 
@@ -56,6 +57,10 @@ Apache Arrow vs. Parquet: 둘 다 동일한 Columnar Data를 저장하며, in-me
 
 ## Athena
 S3에 올린 파일이 128MB 이내일 경우 직접 Select from을 할 수 있으나 그 이상은 Athena에서 처리한다. 그러나 한글 JSON을 제대로 parsing하지 못했다.
+
+# 스크립트
+AWS에서 Amazon Linux 2를 발급 받으면 최소 설치해야 하는 목록
+- [aws-essential-install.sh](https://gist.github.com/likejazz/2254db815675bdfd636e55460cc5b270)
 
 # Books
 ## 그림으로 배우는 클라우드 인프라와 API의 구조 <sub>2016, 2017</sub>
