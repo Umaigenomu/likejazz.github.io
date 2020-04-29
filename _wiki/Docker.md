@@ -1,13 +1,14 @@
 ---
 layout: wiki 
 title: Docker
-last-modified: 2020/04/29 15:44:48
+last-modified: 2020/04/29 16:39:00
 ---
 
 <!-- TOC -->
 
 - [기본 명령](#기본-명령)
     - [예전 실행 했던 사항](#예전-실행-했던-사항)
+    - [Apache Hello World](#apache-hello-world)
     - [스크립트](#스크립트)
     - [Push Docker Image to ECR](#push-docker-image-to-ecr)
     - [Keep Docker Containers Running](#keep-docker-containers-running)
@@ -18,26 +19,26 @@ last-modified: 2020/04/29 15:44:48
 <!-- /TOC -->
 
 # 기본 명령
-```
+```docker
 # Dockerfile
 FROM hashicorp/http-echo:latest
 ```
 
 이미지 빌드 및 프로세스, 생성된 이미지 조회
-```
+```console
 $ docker build . -t http-echo-image
 $ docker ps -a && docker images -a
 ```
 
 중단하면서 컨테이너 삭제까지 병행
 
-```
+```console
 $ docker rm http-echo-ps
 ```
 
 5678 포트를 오픈하고, `halo` 메시지를 출력하도록 실행. 실행이 끝나면 삭제.
 
-```
+```console
 $ docker run -p 5678:5678 \
     --rm \
     --name http-echo-ps \
@@ -46,8 +47,8 @@ $ docker run -p 5678:5678 \
 
 우분투 콘솔에 접속할때. 마지막 `/bin/bash`는 생략가능하다.
 
-```
-docker run --rm -it \
+```console
+$ docker run --rm -it \
     --name ubuntu-latest-ps \
     ubuntu-latest /bin/bash
 ```
@@ -55,7 +56,7 @@ docker run --rm -it \
 ## 예전 실행 했던 사항
 2개의 볼륨을 마운트하고 종료시 자동으로 삭제되도록 foreground로 구동했다. 백그라운드는 `-it`를 제외하고 `-d`로 구동한다. `CMD`는 구동 마지막에 실행된다.
 
-```
+```console
 $ docker run --rm -it \
 -v /Users/kaonpark/workspace/github.daumkakao.com/NLP/simpson:/simpson/simpson \
 -v /Users/kaonpark/workspace/github.daumkakao.com/NLP/simpson-data:/simpson/simpson/data \
@@ -64,10 +65,33 @@ $ docker run --rm -it \
 ```
 
 최신 docker 이미지를 다른 포트에 중복 구동
-```
+```console
 $ sudo docker run -d -v ~/data:/simpson/simpson/data \
 -p 5001:5000 \
 abc.xxx.io/kaon_park/simpson
+```
+
+## Apache Hello World
+```docker
+FROM ubuntu:18.04
+
+# Install dependencies
+RUN apt-get update && \
+ apt-get -y install apache2
+
+# Install apache and write hello world message
+RUN echo 'Hello World!' > /var/www/html/index.html
+
+# Configure apache
+RUN echo '. /etc/apache2/envvars' > /root/run_apache.sh && \
+ echo 'mkdir -p /var/run/apache2' >> /root/run_apache.sh && \
+ echo 'mkdir -p /var/lock/apache2' >> /root/run_apache.sh && \ 
+ echo '/usr/sbin/apache2 -D FOREGROUND' >> /root/run_apache.sh && \ 
+ chmod 755 /root/run_apache.sh
+
+EXPOSE 80
+
+CMD /root/run_apache.sh
 ```
 
 ## 스크립트
@@ -124,7 +148,7 @@ $ docker run cat /etc/passwd
 [Link](https://stackoverflow.com/a/21558992/3513266)
 
 아래는 php 어플리케이션을 구동하기 위해 몇 가지 수정한 Dockerfile이다.
-```
+```dockerfile
 FROM php:7-apache
 LABEL maintainer="kaon.park@xxx"
 
