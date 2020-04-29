@@ -1,7 +1,7 @@
 ---
 layout: wiki 
 title: Docker
-last-modified: 2020/03/19 13:19:45
+last-modified: 2020/04/29 15:44:48
 ---
 
 <!-- TOC -->
@@ -9,7 +9,8 @@ last-modified: 2020/03/19 13:19:45
 - [기본 명령](#기본-명령)
     - [예전 실행 했던 사항](#예전-실행-했던-사항)
     - [스크립트](#스크립트)
-- [Push a docker image to a private repo](#push-a-docker-image-to-a-private-repo)
+    - [Push Docker Image to ECR](#push-docker-image-to-ecr)
+    - [Keep Docker Containers Running](#keep-docker-containers-running)
 - [CMD vs. ENTRYPOINT](#cmd-vs-entrypoint)
 - [Books](#books)
     - [도커/쿠버네티스를 활용한 컨테이너 개발 실전 입문 <sub>2018, 2019</sub>](#도커쿠버네티스를-활용한-컨테이너-개발-실전-입문-2018-2019)
@@ -76,13 +77,23 @@ Gist 정리
 - [dockerize.sh](https://gist.github.com/likejazz/ba41d83fc94dbb75b982f4e37dc008b6)  
 도커 이미지를 빌드해서 배포
 
-# Push a docker image to a private repo
-로그인, 태깅, 푸쉬 절차를 통해 업로드 할 수 있다.
+## Push Docker Image to ECR
+```bash
+readonly VERSION=$(date '+%y.%m.%d')
+readonly ECR_REGISTRY=0996xxx.dkr.ecr.ap-northeast-2.amazonaws.com/edith/edith-xxxx
+readonly AWS_OTP=$(aws ecr get-login-password --region ap-northeast-2)
 
+echo "${AWS_OTP}" | docker login --username AWS --password-stdin ${ECR_REGISTRY}
+docker tag edith/edith-xxxx:latest ${ECR_REGISTRY}:"${VERSION}"
+docker push ${ECR_REGISTRY}:"${VERSION}"
 ```
-$ docker login idock.daumkakao.io/kaon_park/fusion-tomcat
-$ docker tag 8dde0f42c6b2 idock.daumkakao.io/kaon_park/fusion-tomcat
-$ docker push idock.daumkakao.io/kaon_park/fusion-tomcat
+## Keep Docker Containers Running
+```
+FROM amazonlinux:latest
+ 
+# other commands
+ 
+CMD tail -f /dev/null
 ```
 
 # CMD vs. ENTRYPOINT
@@ -115,7 +126,7 @@ $ docker run cat /etc/passwd
 아래는 php 어플리케이션을 구동하기 위해 몇 가지 수정한 Dockerfile이다.
 ```
 FROM php:7-apache
-LABEL maintainer="kaon.park@kakaocorp.com"
+LABEL maintainer="kaon.park@xxx"
 
 # 기본 포트가 80으로 설정되어 있어 sed로 교체한다.
 ENV CONTAINER_PORT 18080
@@ -137,3 +148,4 @@ COPY ./demo/index.php /var/www/html/
 - 쿠버네티스 입문/클러스터 구축
 - 컨테이너 운영
 - 가벼운 도커 이미지 만들기
+(k8s 추가 학습 필요)
